@@ -1,0 +1,26 @@
+declare module 'lumin' {
+  namespace utils {
+    enum StatusDef {
+      OK = 0,
+      NO_ERROR = 0,
+      UNKNOWN_ERROR = (-2147483647-1),
+      NO_MEMORY = -ENOMEM,
+      INVALID_OPERATION = -ENOSYS,
+      BAD_VALUE = -EINVAL,
+      BAD_TYPE = (UNKNOWN_ERROR+1),
+      NAME_NOT_FOUND = -ENOENT,
+      PERMISSION_DENIED = -EPERM,
+      NO_INIT = -ENODEV,
+      ALREADY_EXISTS = -EEXIST,
+      DEAD_OBJECT = -EPIPE,
+      FAILED_TRANSACTION = (UNKNOWN_ERROR+2),
+      BAD_INDEX = -EOVERFLOW,
+      NOT_ENOUGH_DATA = -ENODATA,
+      WOULD_BLOCK = -EWOULDBLOCK,
+      TIMED_OUT = -ETIMEDOUT,
+      UNKNOWN_TRANSACTION = -EBADMSG,
+      FDS_NOT_ALLOWED = (UNKNOWN_ERROR+7),
+      UNEXPECTED_NULL = (UNKNOWN_ERROR+8),
+    }
+  }
+}

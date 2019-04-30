@@ -1,0 +1,23 @@
+{
+  "name": "magic-script-typings",
+  "version": "1.4.0",
+  "description": "Typescript definitions for MagicScript",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magic-script/magic-script-typings.git"
+  },
+  "keywords": [
+    "typings",
+    "types",
+    "api"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/magic-script/magic-script-typings/issues"
+  },
+  "homepage": "https://github.com/magic-script/magic-script-typings#readme"
+}

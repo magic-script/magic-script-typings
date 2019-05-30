@@ -1,1 +1,1 @@
-/// <reference path='./index.d.ts' />
+/// <reference path='./lumin/index.d.ts' />

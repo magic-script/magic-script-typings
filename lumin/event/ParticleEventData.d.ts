@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class ParticleEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getEventName(): string
   };
 }

@@ -1,8 +1,8 @@
 declare module 'lumin' {
   class Node {
     static Delete(node: Node): void
-    getNodeId(): number
-    getPrismId(): number
+    getNodeId(): BigInt /* uint64_t */
+    getPrismId(): BigInt /* uint64_t */
     addChild(a_pChild: Node): boolean
     setParentedBoneName(a_boneName: string): boolean
     getParentedBoneName(): string
@@ -34,8 +34,8 @@ declare module 'lumin' {
     getName(): string
     setCursorHoverState(state: CursorHoverState): void
     getCursorHoverState(): CursorHoverState
-    addToLayer(a_layer: number): void
-    removeFromLayer(a_layer: number): void
-    isInLayer(a_layer: number): boolean
+    addToLayer(a_layer: BigInt /* uint64_t */): void
+    removeFromLayer(a_layer: BigInt /* uint64_t */): void
+    isInLayer(a_layer: BigInt /* uint64_t */): boolean
   };
 }

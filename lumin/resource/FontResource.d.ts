@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class FontResource extends FileResource {
-    constructor() {}
+    constructor()
     getFontName(): string
     getFontStyle(): string
     getFontSize(): number

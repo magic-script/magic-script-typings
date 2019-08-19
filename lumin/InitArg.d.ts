@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class InitArg {
-    constructor() {}
+    constructor()
     getUri(): string
     getFileInfoCount(): number
     getFileInfo(index: number): FileInfo

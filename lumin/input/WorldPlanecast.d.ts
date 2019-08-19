@@ -1,9 +1,9 @@
 declare module 'lumin' {
   class WorldPlaneCastResult {
-    constructor() {}
+    constructor()
     getPlanes(): Array<WorldPlaneCastResult.Plane> /* std::vector */
     getSuccess(): boolean
-    getUserValue(): number
+    getUserValue(): BigInt /* uint64_t */
   };
   class Plane {
     center: [number, number, number] /* glm::vec3 */;
@@ -12,7 +12,7 @@ declare module 'lumin' {
     width: number;
     height: number;
     flags: PlanecastFlags;
-    id: number;
+    id: BigInt /* uint64_t */;
     constructor()
   };
 }

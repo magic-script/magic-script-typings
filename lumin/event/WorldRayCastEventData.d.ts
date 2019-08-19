@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class WorldRayCastEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getResult(): WorldRayCastResult
   };
 }

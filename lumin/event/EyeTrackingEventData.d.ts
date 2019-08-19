@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class EyeTrackingEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getEyeTrackingLeftEyePosition(): [number, number, number] /* glm::vec3 */
     getEyeTrackingLeftEyeRotation(): [number, number, number, number] /* glm::quat */
     getEyeTrackingLeftEyeConfidence(): number

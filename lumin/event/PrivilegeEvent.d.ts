@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class PrivilegeEvent extends ServerEvent {
-    constructor() {}
+    constructor()
     getPrivilegeId(): PrivilegeId
     getPrivilegeResult(): PrivilegeResult
   };

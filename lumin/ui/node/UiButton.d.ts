@@ -6,6 +6,8 @@ declare module 'lumin' {
       absoluteIconPath: boolean;
       iconScale: number;
       labelText: string;
+      l10nKey: string;
+      l10nParams: Object;
       labelSide: ui.Side;
       labelDisplayMode: ui.LabelDisplayMode;
       outlineButton: boolean;

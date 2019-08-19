@@ -1,11 +1,10 @@
 declare module 'lumin' {
   class Text2dNode extends RenderNode {
-    setText(asciiText: string): void
     setUtf8Text(utf8Text: string): void
     getUtf8Text(): string
     getWorldBounds(): [[number, number, number] /* glm::vec3 */, [number, number, number] /* glm::vec3 */] /* std::pair */
     getPrismBounds(): [[number, number, number] /* glm::vec3 */, [number, number, number] /* glm::vec3 */] /* std::pair */
-    setFont(fontResourceId: number): void
+    setFont(fontResourceId: BigInt /* uint64_t */): void
     setFont(fontResource: Font2dResource): void
     setProperties(desc: Text2dDesc): void
     setAdvanceDirection(direction: glyph.AdvanceDirection): void

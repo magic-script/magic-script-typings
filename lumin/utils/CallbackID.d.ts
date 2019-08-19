@@ -4,6 +4,8 @@ declare module 'lumin' {
       constructor()
       equals(other: utils.CallbackID): boolean
       toString(): string
+      isValid(): boolean
+      invalidate(): void
     };
   }
 }

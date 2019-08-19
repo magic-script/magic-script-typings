@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class RayCastEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getHitData(): RaycastResult
     getRayCastEvent(): RayCastEventType
   };

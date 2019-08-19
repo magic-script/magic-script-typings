@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class SpriteAnimationEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getSpriteAnimationEventType(): SpriteAnimationEventType
     getCurrentFrameIndex(): number
   };

@@ -1,7 +1,7 @@
 declare module 'lumin' {
   class VideoNode extends QuadNode {
-    constructor() {}
-    getPlanarResourceId(): number
+    constructor()
+    getPlanarResourceId(): BigInt /* uint64_t */
     setVideoPath(a_sFile: string): number
     setVideoUri(a_sUri: string): number
     setTimedTextPath(a_tFile: string): number
@@ -15,7 +15,5 @@ declare module 'lumin' {
     isLooping(): boolean
     setVolume(volume: number): number
     isPlaying(): boolean
-    selectTrack(index: number): number
-    unSelectTrack(index: number): number
   };
 }

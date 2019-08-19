@@ -10,7 +10,7 @@ declare module 'lumin' {
       onCharacterEnteredUnsub(callbackID: utils.CallbackID): boolean
       onKeyboardEventSub(callback: callable): utils.CallbackID
       onKeyboardEventUnsub(callbackID: utils.CallbackID): boolean
-      setFont(fontResourceId: number): void
+      setFont(fontResourceId: BigInt /* uint64_t */): void
       setFont(fontResource: Font2dResource): void
       setFont(style: resources.FontStyle, weight: resources.FontWeight = 0 /* 0 is not the actual default value */): void
       setFontParameters(fontParameters: ui.FontParams): void
@@ -45,6 +45,7 @@ declare module 'lumin' {
       setKeyboardProperties(keyboardProperties: ui.KeyboardProperties): void
       getHintText(): string
       setHintText(str: string): void
+      setLocalizedHintText(key: string, params: Object = 0 /* 0 is not the actual default value */): void
       getHintTextColor(): [number, number, number, number] /* glm::vec4 */
       setHintTextColor(color: [number, number, number, number] /* glm::vec4 */): void
       setScrollBarVisibilityMode(visibilityMode: ui.ScrollBarVisibility = 0 /* 0 is not the actual default value */): void

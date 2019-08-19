@@ -1,8 +1,8 @@
 declare module 'lumin' {
   class VideoEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getVideoEventType(): VideoEventType
-    getAffectedNodeId(): number
+    getAffectedNodeId(): BigInt /* uint64_t */
     getXPos(): number
     getYPos(): number
   };

@@ -1,7 +1,7 @@
 declare module 'lumin' {
   class SelectionEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getSelectionEventType(): SelectionEventType
-    getAffectedPrismId(): number
+    getAffectedPrismId(): BigInt /* uint64_t */
   };
 }

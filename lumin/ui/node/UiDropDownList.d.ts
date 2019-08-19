@@ -11,8 +11,23 @@ declare module 'lumin' {
       constructor(a_label: string, a_id: number = 0 /* 0 is not the actual default value */)
       constructor(a_label: string, a_subItems: Array<ui.DropDownListItem> /* std::vector */, a_id: number = 0 /* 0 is not the actual default value */)
     };
+    class EclipseDropDownListParams {
+      type: ui.EclipseDropDownListType;
+      iconPath: string;
+      absoluteIconPath: boolean;
+      iconScale: number;
+      labelText: string;
+      l10nKey: string;
+      l10nParams: Object;
+      underline: boolean;
+      height: number;
+      width: number;
+      iconType: ui.SystemIcon;
+      constructor(a_type: ui.EclipseDropDownListType)
+    };
     class UiDropDownList extends UiButton {
       static Create(prism: Prism, labelText: string): ui.UiDropDownList
+      static CreateEclipseDropDownList(prism: Prism, dropDownListParams: ui.EclipseDropDownListParams): ui.UiDropDownList
       onHoverItemSub(callback: callable): utils.CallbackID
       onHoverItemUnsub(callbackID: utils.CallbackID): boolean
       onSelectionChangedSub(callback: callable): utils.CallbackID
@@ -25,8 +40,8 @@ declare module 'lumin' {
       setMultiSelectMode(multiSelect: boolean): void
       getMultiSelectMode(): boolean
       getSelectedItems(): Array<ui.DropDownListItem> /* std::vector */
-      setListFont(fontResourceId: number): void
-      getListFont(): number
+      setListFont(fontResourceId: BigInt /* uint64_t */): void
+      getListFont(): BigInt /* uint64_t */
       setListTextSize(size: number): void
       getListTextSize(): number
       setListMaxHeight(maxHeight: number): void

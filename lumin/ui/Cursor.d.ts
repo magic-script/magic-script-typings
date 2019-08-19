@@ -1,7 +1,7 @@
 declare module 'lumin' {
   namespace ui {
     class Cursor {
-      constructor() {}
+      constructor()
       static SetStartupPosition(prism: Prism, position: [number, number] /* glm::vec2 */): void
       static GetPosition(prism: Prism): [number, number, number] /* glm::vec3 */
       static IsEnabled(prism: Prism): boolean

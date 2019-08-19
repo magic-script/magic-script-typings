@@ -1,7 +1,7 @@
 declare module 'lumin' {
   namespace ui {
     class UiWebViewDataManager {
-      constructor() {}
+      constructor()
       removeAllCookies(): void
       clearCache(): void
     };

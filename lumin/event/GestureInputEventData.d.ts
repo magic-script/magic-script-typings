@@ -1,11 +1,13 @@
 declare module 'lumin' {
   class GestureInputEventData extends InputEventData {
-    constructor() {}
+    constructor()
     getGesture(): input.GestureType
     getHandGestureIndex(): number
     getHandGestureLocation(): [number, number, number] /* glm::vec3 */
     getHandGestureKeyPointCount(): number
     getHandGestureKeypoint(keypointName: input.HandGestureKeypointName): [number, number, number] /* glm::vec3 */
+    getHandConfidence(): number
+    getGestureKeyPoseConfidence(gesture: input.GestureType): number
     getHandGestureConfidence(): number
     getHandGestureKeyPoseConfidence(gesture: input.GestureType): number
     isHandGestureKeypointRecognized(keypointName: input.HandGestureKeypointName): boolean

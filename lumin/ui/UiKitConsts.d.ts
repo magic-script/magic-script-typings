@@ -51,6 +51,7 @@ declare module 'lumin' {
       kCopy = 47,
       kCreditCard = 48,
       kCut = 49,
+      kCVCameraPrivilege = 216,
       kDoNotDisturb = 50,
       kDot = 51,
       kDownload = 52,
@@ -93,6 +94,7 @@ declare module 'lumin' {
       kInfo = 82,
       kKeyboard = 83,
       kKeyboardCapital = 84,
+      kKeyboardLanguage = 220,
       kKeyboardLetter = 85,
       kKeyboardNumber = 86,
       kLink = 87,
@@ -146,9 +148,11 @@ declare module 'lumin' {
       kPrivacy = 132,
       kPrivateView = 133,
       kPublicView = 134,
+      kRearrange = 217,
       kRefresh = 135,
       kReplay = 136,
       kReport = 137,
+      kResize = 218,
       kRestoreMedia = 138,
       kRevolver = 139,
       kRewindTenSecond = 140,
@@ -193,6 +197,7 @@ declare module 'lumin' {
       kUpdate = 177,
       kUpload = 178,
       kUploadCloud = 179,
+      kVideoCapture = 219,
       kView = 180,
       kViewSource = 181,
       kVoiceFeedback = 182,
@@ -200,6 +205,7 @@ declare module 'lumin' {
       kVolume = 184,
       kVolumeMute = 185,
       kWarning = 186,
+      kWebXR = 221,
       kWifi = 187,
       kWifiNoBar = 188,
       kWifiNoSignal = 189,
@@ -241,11 +247,25 @@ declare module 'lumin' {
       kText,
       kTextWithIcon,
     }
+    enum EclipseDropDownListType {
+      kIconWithLabel,
+      kTextWithArrow,
+    }
     enum EclipseSliderType {
       kRadialWithIcon,
       kRadialWithIconSmall,
       kHorizontalWithIcon,
       kHorizontalWithLabel,
+    }
+    enum ToggleType {
+      kDefault,
+      kRadio,
+      kCheckbox,
+    }
+    enum EclipseToggleType {
+      kIcon,
+      kSwitchWithIcon,
+      kSwitchWithLabel,
     }
     class FontParams {
       style: resources.FontStyle;
@@ -381,6 +401,23 @@ declare module 'lumin' {
     enum TimePeriod {
       kAM,
       kPM,
+    }
+    enum DateFormat {
+      kAuto,
+      kYYYYDDMM,
+      kYYYYMMDD,
+      kMMDDYYYY,
+      kDDMMYYYY,
+      kMMYYYY,
+      kDDYYYY,
+    }
+    enum TimeFormat {
+      kAuto,
+      khhmmss,
+      khhmmssP,
+      khhmm,
+      khhmmP,
+      kmmss,
     }
     const INVALID_COMPONENT_TYPE: number = 0;
   }

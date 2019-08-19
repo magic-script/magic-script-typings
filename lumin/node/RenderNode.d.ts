@@ -25,7 +25,7 @@ declare module 'lumin' {
     enableVisualState(value: boolean): void
     setRenderingLayer(a_renderLayer: render.RenderingLayer): void
     setRenderingLayer(a_renderLayer: number): void
-    getRenderingLayer(): number
+    getRenderingLayer(): BigInt /* uint64_t */
     setBloomStrength(a_bloomStrength: number): void
   };
 }

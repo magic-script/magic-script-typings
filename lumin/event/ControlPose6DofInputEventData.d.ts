@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class ControlPose6DofInputEventData extends InputEventData {
-    constructor() {}
+    constructor()
     getQuaternionW(): number
     getQuaternionX(): number
     getQuaternionY(): number

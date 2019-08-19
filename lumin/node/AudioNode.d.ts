@@ -1,12 +1,23 @@
 declare module 'lumin' {
   class AudioNode extends TransformNode {
-    createSoundWithLoadedFile(resourceID: number, autoDestroy: boolean = 0 /* 0 is not the actual default value */, dynamicDecode: boolean = 0 /* 0 is not the actual default value */): boolean
-    createSoundWithStreamedFile(resourceID: number, autoDestroy: boolean = 0 /* 0 is not the actual default value */): boolean
+    createSoundWithLoadedFile(resourceID: BigInt /* uint64_t */, autoDestroy: boolean = 0 /* 0 is not the actual default value */, dynamicDecode: boolean = 0 /* 0 is not the actual default value */): boolean
+    createSoundWithLoadedFile(resourceIDs: Array<BigInt /* uint64_t */> /* std::vector */, autoDestroy: boolean = 0 /* 0 is not the actual default value */, dynamicDecode: boolean = 0 /* 0 is not the actual default value */): boolean
+    createSoundWithStreamedFile(resourceID: BigInt /* uint64_t */, autoDestroy: boolean = 0 /* 0 is not the actual default value */): boolean
+    createSoundWithStreamedFile(resourceIDs: Array<BigInt /* uint64_t */> /* std::vector */, autoDestroy: boolean = 0 /* 0 is not the actual default value */): boolean
+    createSoundWithSystemEnum(): boolean
     createWithSound(sound: Sound, autoDestroy: boolean = 0 /* 0 is not the actual default value */): void
+    setSoundProperties(sound: Sound): void
+    addResource(resourceID: BigInt /* uint64_t */): boolean
+    removeResource(resourceID: BigInt /* uint64_t */): boolean
+    replaceResource(newResourceID: BigInt /* uint64_t */, oldResourceID: BigInt /* uint64_t */ = 0 /* 0 is not the actual default value */): boolean
+    getNumResources(): number
+    getResources(): Array<BigInt /* uint64_t */> /* std::vector */
     startSound(): void
+    startSound(resId: BigInt /* uint64_t */): void
     stopSound(): void
     pauseSound(): void
     resumeSound(): void
+    playSystemSound(sysSound: SystemSoundEnum): boolean
     getSoundState(): AudioState
     setSoundVolumeLinear(volume: number): void
     getSoundVolumeLinear(): number
@@ -37,6 +48,9 @@ declare module 'lumin' {
     setSpatialSoundRoomSendLevels(channel: number, channelSendLevels: SpatialSoundSendLevels): void
     getSpatialSoundRoomSendLevels(channel: number): SpatialSoundSendLevels
     releaseOutputStreamBuffer(): boolean
-    releaseOutputStreamBuffer(streamId: number): boolean
+    releaseOutputStreamBuffer(streamId: BigInt /* uint64_t */): boolean
+    startInput(): boolean
+    stopInput(): boolean
+    static ReleaseInputBuffer(audioId: BigInt /* uint64_t */): boolean
   };
 }

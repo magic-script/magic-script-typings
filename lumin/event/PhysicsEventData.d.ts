@@ -1,9 +1,9 @@
 declare module 'lumin' {
   class PhysicsEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getCollisionType(): physics.CollisionType
-    getRigidBody1(): number
-    getRigidBody2(): number
+    getRigidBody1(): BigInt /* uint64_t */
+    getRigidBody2(): BigInt /* uint64_t */
     getCollisionCount(): number
     getCollisionPoints(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
     getCollisionNormals(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */

@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class PhysicsRigidBody {
-    constructor() {}
+    constructor()
     node(): Node
     getBodyType(): physics.RigidBodyType
     setBodyType(type: physics.RigidBodyType): void
@@ -16,8 +16,8 @@ declare module 'lumin' {
     setCollidesWithFlags(flags: number): void
     setCollidesWithFlag(flag: number): void
     clearCollidesWithFlag(flag: number): void
-    addShape(shape: PhysicsShape, position: [number, number, number] /* glm::vec3 */ = 0 /* 0 is not the actual default value */, rotation: [number, number, number, number] /* glm::quat */ = 0 /* 0 is not the actual default value */): number
-    removeShape(id: number): boolean
+    addShape(shape: PhysicsShape, position: [number, number, number] /* glm::vec3 */ = 0 /* 0 is not the actual default value */, rotation: [number, number, number, number] /* glm::quat */ = 0 /* 0 is not the actual default value */): BigInt /* uint64_t */
+    removeShape(id: BigInt /* uint64_t */): boolean
     getCenterOfMass(): [number, number, number] /* glm::vec3 */
     setCenterOfMass(com: [number, number, number] /* glm::vec3 */): void
     getInertiaTensor(): [number, number, number] /* glm::vec3 */

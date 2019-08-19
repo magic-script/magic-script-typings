@@ -18,9 +18,11 @@ declare module 'lumin' {
     getCollisionsEnabled(a_prism: Prism): boolean
     setCollisionBoxTransform(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */, a_rotation: [number, number, number, number] /* glm::quat */, a_scale: [number, number, number] /* glm::vec3 */): boolean
     getCollisionBoxTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void, clientVol: BigInt /* uint64_t */): ExclusiveRender
+    stopExclusiveMode(): boolean
     deInit(): number
-    onSharingStart(sessionId: number, sceneGraphIDs: Array<number> /* std::vector */): void
-    onSharingStop(sessionId: number): void
+    onSharingStart(sessionId: BigInt /* uint64_t */, sceneGraphIDs: Array<BigInt /* uint64_t */> /* std::vector */): void
+    onSharingStop(sessionId: BigInt /* uint64_t */): void
     onAppStart(initArg: InitArg): void
     onAppPause(): void
     onAppResume(): void

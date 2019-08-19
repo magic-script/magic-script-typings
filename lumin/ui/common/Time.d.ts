@@ -1,6 +1,7 @@
 declare module 'lumin' {
   namespace ui {
     class Time {
+      static GetCurrentTime(): ui.Time
       constructor(hour: number, minute: number, second: number)
       constructor()
       setHour(hour: number): void

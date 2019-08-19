@@ -1,6 +1,9 @@
 declare module 'lumin' {
   namespace ui {
     class Date {
+      static GetCurrentDate(): ui.Date
+      static GetDaysPerMonth(month: number): number
+      static IsLeapYear(year: number): boolean
       constructor(year: number, month: number, day: number)
       constructor()
       setDay(day: number): void
@@ -10,9 +13,7 @@ declare module 'lumin' {
       setYear(year: number): void
       year(): number
       getDaysPerMonth(): number
-      static GetDaysPerMonth(month: number): number
       isLeapYear(): boolean
-      static IsLeapYear(year: number): boolean
     };
   }
 }

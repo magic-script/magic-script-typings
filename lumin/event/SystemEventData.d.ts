@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class SystemEventData extends ServerEvent {
-    constructor() {}
+    constructor()
     getSystemEvent(): SystemEventType
   };
 }

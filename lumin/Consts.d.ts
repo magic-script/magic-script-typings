@@ -1,11 +1,11 @@
 declare module 'lumin' {
   const MAX_CLIENT_FPS: number = 60.0;
   const FPS_DELTA: number = 1.0/MAX_CLIENT_FPS;
-  const INVALID_NODE_ID: number = 0;
-  const INVALID_PRISM_ID: number = 0;
-  const INVALID_RESOURCE_ID: number = 0;
-  const INVALID_SESSION_ID: number = 0;
-  const INVALID_PHYSICS_ID: number = 0;
+  const INVALID_NODE_ID: BigInt /* uint64_t */ = 0n;
+  const INVALID_PRISM_ID: BigInt /* uint64_t */ = 0n;
+  const INVALID_RESOURCE_ID: BigInt /* uint64_t */ = 0n;
+  const INVALID_SESSION_ID: BigInt /* uint64_t */ = 0n;
+  const INVALID_PHYSICS_ID: BigInt /* uint64_t */ = 0n;
   const INVALID_CONTROL_ID: number = -1;
   const INVALID_DEVICE_ID: number = -1;
   enum PrismType {
@@ -59,6 +59,7 @@ declare module 'lumin' {
     kHandDynamicClosingHand = 1<<12,
     kHandDynamicThumbsUp = 1<<13,
     kHandDynamicThumbsDown = 1<<14,
+    kHandNoPose = 1<<15,
   }
   enum DeviceGestureFlags {
     kDeviceTap = 1<<0,
@@ -413,6 +414,12 @@ declare module 'lumin' {
       EVENT_PLUGGED_IN,
       EVENT_PLUGGED_OUT,
       EVENT_VOICE,
+    }
+    enum DeviceEventType {
+      UNKNOWN = 0,
+      CONNECT,
+      DISCONNECT,
+      STATE_CHANGE,
     }
   }
   namespace headtracking {

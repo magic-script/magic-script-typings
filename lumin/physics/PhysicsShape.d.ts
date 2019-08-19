@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class PhysicsShape {
-    constructor() {}
+    constructor()
     getShapeType(): physics.ShapeType
     getShapeBehavior(): physics.ShapeBehavior
     getSphereRadius(): number

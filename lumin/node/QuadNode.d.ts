@@ -2,7 +2,7 @@ declare module 'lumin' {
   class QuadNode extends RenderNode {
     setViewMode(mode: ViewMode): void
     getViewMode(): ViewMode
-    setRenderResource(id: number): void
+    setRenderResource(id: BigInt /* uint64_t */): void
     setSubTexture(subTextureName: string): void
     setSubTexture(subTextureIndex: number): void
     getTexCoords(): Array<[number, number] /* glm::vec2 */> /* std::vector */

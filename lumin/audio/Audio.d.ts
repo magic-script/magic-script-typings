@@ -1,5 +1,5 @@
 declare module 'lumin' {
-  const INVALID_AUDIO_ID: number = 0;
+  const INVALID_AUDIO_ID: BigInt /* uint64_t */ = 0n;
   const kMaxAudioChannels: number = 8;
   enum AudioState {
     kInvalidAudioState = 0,
@@ -51,4 +51,30 @@ declare module 'lumin' {
     reserved: number;
     constructor()
   };
+  enum SystemSoundEnum {
+    kInvalid = 0,
+    kHover,
+    kSelect_01,
+    kSelect_02,
+    kHover_Small,
+    kSelect_Small,
+    kDropdown_Expand,
+    kToggle_On,
+    kToggle_Off,
+    kSwitch_On,
+    kSwitch_Off,
+    kSlider_Grab,
+    kSlider_Drop,
+    kDial_Grab,
+    kDial_Drop,
+    kCheckbox_On,
+    kCheckbox_Off,
+    kError,
+    kBack,
+    kNext,
+    kSettings,
+    kAdd,
+    kEdit,
+    kDelete,
+  }
 }

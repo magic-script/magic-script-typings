@@ -42,7 +42,7 @@ declare module 'lumin' {
     readonly KEY_CROP_TOP: string = "crop-top";
     toString(): string
     setInt32(name: string, value: number): void
-    setInt64(name: string, value: number): void
+    setInt64(name: string, value: BigInt /* int64_t */): void
     setFloat(name: string, value: number): void
     setSize(name: string, value: number): void
     setString(name: string, value: string): void

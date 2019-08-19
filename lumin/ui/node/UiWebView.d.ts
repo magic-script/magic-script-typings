@@ -1,7 +1,7 @@
 declare module 'lumin' {
   namespace ui {
     class UiWebView extends UiNode {
-      constructor() {}
+      constructor()
       static EnableWebInspector(): void
       static Create(volume: Prism, size: [number, number] /* glm::vec2 */): ui.UiWebView
       loadUrl(url: string): void

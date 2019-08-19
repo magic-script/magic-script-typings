@@ -8,7 +8,7 @@ declare module 'lumin' {
     constructor()
   };
   class TextureResource extends FileResource {
-    constructor() {}
+    constructor()
     getTextureDesc(): Desc2d
     getUnlitTex2dShader(): utils.ShaderType
     getWidth(): number

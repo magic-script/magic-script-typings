@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class WorldRayCastResult {
-    constructor() {}
+    constructor()
     getFromPos(): [number, number, number] /* glm::vec3 */
     getFromDir(): [number, number, number] /* glm::vec3 */
     getFromWidth(): number
@@ -9,7 +9,7 @@ declare module 'lumin' {
     getHitPos(): [number, number, number] /* glm::vec3 */
     getHitNormal(): [number, number, number] /* glm::vec3 */
     getValid(): boolean
-    getUserValue(): number
+    getUserValue(): BigInt /* uint64_t */
     getConfidence(): number
   };
 }

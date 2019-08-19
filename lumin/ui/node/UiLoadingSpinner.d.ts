@@ -5,7 +5,7 @@ declare module 'lumin' {
       k2dSpriteAnimation,
     }
     class UiLoadingSpinner extends UiNode {
-      static Create(prism: Prism, type: ui.LoadingSpinnerType, resID: number = 0 /* 0 is not the actual default value */, resPath: string = 0 /* 0 is not the actual default value */, height: number = 0 /* 0 is not the actual default value */): ui.UiLoadingSpinner
+      static Create(prism: Prism, type: ui.LoadingSpinnerType, resID: BigInt /* uint64_t */ = 0 /* 0 is not the actual default value */, resPath: string = 0 /* 0 is not the actual default value */, height: number = 0 /* 0 is not the actual default value */): ui.UiLoadingSpinner
       static CreateDeterminate(volume: Prism, height: number = 0 /* 0 is not the actual default value */): ui.UiLoadingSpinner
       getParticleEffect(): ParticleNode
       getSpriteNode(): SpriteNode

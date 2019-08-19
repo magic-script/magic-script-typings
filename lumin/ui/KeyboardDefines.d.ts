@@ -47,15 +47,15 @@ declare module 'lumin' {
     }
     namespace KeyboardEvent {
       class EventData {
-        constructor() {}
+        constructor()
       };
       class KeyPressedData extends EventData {
-        constructor() {}
+        constructor()
         getKeyType(): ui.KeyType
         getCharCode(): number
       };
       class StringEnteredData extends EventData {
-        constructor() {}
+        constructor()
         getStringValue(): string
         isTemporary(): boolean
       };

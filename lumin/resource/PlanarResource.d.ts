@@ -1,6 +1,6 @@
 declare module 'lumin' {
   class PlanarResource extends Resource {
-    constructor() {}
+    constructor()
     refresh(): void
     getHeight(): number
     getWidth(): number

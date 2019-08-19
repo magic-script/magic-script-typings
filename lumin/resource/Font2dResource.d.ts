@@ -2,7 +2,7 @@ declare module 'lumin' {
   namespace utils {
   }
   class Font2dResource extends FontResource {
-    constructor() {}
+    constructor()
     setFont2dDesc(fontDesc: glyph.Font2dDesc): void
     getTileSize(): number
     getGlyphQuality(): glyph.Quality

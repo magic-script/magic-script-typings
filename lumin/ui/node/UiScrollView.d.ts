@@ -22,7 +22,7 @@ declare module 'lumin' {
       getScrollBar(orientation: ui.Orientation): ui.UiScrollBar
       setScrollBarVisibilityMode(visibilityMode: ui.ScrollBarVisibility): void
       getScrollBarVisibilityMode(): ui.ScrollBarVisibility
-      setScrollMask(textureResource: number): void
+      setScrollMask(textureResource: BigInt /* uint64_t */): void
     };
   }
 }

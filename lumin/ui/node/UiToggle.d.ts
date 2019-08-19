@@ -1,20 +1,12 @@
 declare module 'lumin' {
   namespace ui {
-    enum ToggleType {
-      kDefault,
-      kRadio,
-      kCheckbox,
-    }
-    enum EclipseToggleType {
-      kIcon,
-      kSwitchWithIcon,
-      kSwitchWithLabel,
-    }
     class EclipseToggleParams {
       type: ui.EclipseToggleType;
       iconPath: string;
       absoluteIconPath: boolean;
       labelText: string;
+      l10nKey: string;
+      l10nParams: Object;
       labelDisplayMode: ui.LabelDisplayMode;
       labelSide: ui.Side;
       statusText1: string;

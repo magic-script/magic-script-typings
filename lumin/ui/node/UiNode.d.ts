@@ -23,7 +23,7 @@ declare module 'lumin' {
       kLoseFocus,
     }
     class UiEventData {
-      constructor() {}
+      constructor()
       getUiNode(): ui.UiNode
     };
     class UiNode extends TransformNode {

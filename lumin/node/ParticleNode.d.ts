@@ -2,7 +2,7 @@ declare module 'lumin' {
   namespace particles {
   }
   class ParticleNode extends RenderNode {
-    setPackageResource(a_ID: number): void
+    setPackageResource(a_ID: BigInt /* uint64_t */): void
     setEffectName(effectName: string, infiniteLived: boolean = 0 /* 0 is not the actual default value */): void
     setProperty(a_name: string, a_value: number): boolean
     setProperty(a_name: string, a_value: number): boolean

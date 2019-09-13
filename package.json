@@ -2,6 +2,11 @@
   "name": "magic-script-typings",
   "version": "1.5.0",
   "description": "Typescript definitions for MagicScript",
+  "files": [
+    "lumin",
+    "index.d.ts",
+    "index.js"
+  ],
   "scripts": {
     "build": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,0 +1,20 @@
+# OSX
+#
+.DS_Store
+
+# node.js
+#
+/node_modules/
+
+# NPM
+#
+package-lock.json
+*.tgz
+/package/
+
+# Yarn
+#
+yarn.lock
+
+# jest/coverage
+/coverage/

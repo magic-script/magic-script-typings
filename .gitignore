@@ -20,4 +20,6 @@ yarn.lock
 /coverage/
 
 # Docs
-/docs/
+/docs/classes
+/docs/enums
+/docs/modules

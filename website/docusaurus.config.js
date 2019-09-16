@@ -21,7 +21,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/about', label: 'About', position: 'left'},
+        {to: 'docs/index', label: 'API', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',

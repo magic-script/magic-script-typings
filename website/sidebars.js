@@ -7,6 +7,6 @@
 
 module.exports = {
   docs: {
-    About: ["about"]
+    API: ["index"]
   }
 };

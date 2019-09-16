@@ -6,50 +6,51 @@
  */
 
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  title: "MagicScript API",
+  tagline: "MagicScript Typscript Definitions",
+  url: "https://api.magicscript.org",
+  baseUrl: "/",
+  favicon: "img/favicon.png",
+  organizationName: "magic-script", // Usually your GitHub org/user name.
+  projectName: "magic-script-typings", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: "MagicScript",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: "MagicScript Logo",
+        src: "img/magicscript.svg"
       },
       links: [
-        {to: 'docs/index', label: 'API', position: 'left'},
+        { to: "docs/index", label: "API", position: "left" },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/magic-script/magic-script-typings",
+          label: "GitHub",
+          position: "right"
         },
-      ],
+        {
+          href: "https://www.npmjs.com/package/magic-script-typings",
+          label: "NPM",
+          position: "right"
+        }
+      ]
     },
     footer: {
-      style: 'dark',
-      logo: {
-        alt: 'Facebook Open Source Logo',
-        src: 'https://docusaurus.io/img/oss_logo.png',
-      },
-      copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc. Built with Docusaurus.`,
-    },
+      style: "dark",
+      copyright: `Copyright © ${new Date().getFullYear()} Magic Leap, Inc.`
+    }
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
           path: "../docs",
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve("./sidebars.js")
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-    ],
-  ],
+          customCss: require.resolve("./src/css/custom.css")
+        }
+      }
+    ]
+  ]
 };

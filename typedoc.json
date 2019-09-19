@@ -5,7 +5,7 @@
   "includeDeclarations": true,
   "hideBreadcrumbs": true,
   "hideSources": true,
-  "theme": "docusaurus",
+  "theme": "docusaurus2",
   "excludeExternals": true,
   "readme": "none"
 }

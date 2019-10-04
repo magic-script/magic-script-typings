@@ -15,6 +15,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-color: unset;
 }
 
 @media screen and (max-width: 966px) {
@@ -37,6 +38,7 @@
 }
 
 .featureImage {
-  height: 200px;
-  width: 200px;
+  height: 140px;
+  width: 140px;
+  padding: 2rem 0;
 }

@@ -23,20 +23,27 @@ module.exports = {
       links: [
         { to: "docs/index", label: "API", position: "left" },
         {
-          href: "https://github.com/magic-script/magic-script-typings",
-          label: "GitHub",
-          position: "right"
+          href: "https://www.magicscript.org/",
+          label: "Home",
+          position: "left"
         },
         {
           href: "https://www.npmjs.com/package/magic-script-typings",
           label: "NPM",
           position: "right"
+        },
+        {
+          href: "https://github.com/magic-script/magic-script-typings",
+          label: "GitHub",
+          position: "right"
+        },
+        {
+          href:
+            "https://creator.magicleap.com/learn/guides/magicscript-overview",
+          label: "Creator Portal",
+          position: "right"
         }
       ]
-    },
-    footer: {
-      style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} Magic Leap, Inc.`
     }
   },
   presets: [

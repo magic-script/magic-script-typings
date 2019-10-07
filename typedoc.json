@@ -1,0 +1,11 @@
+{
+  "mode": "file",
+  "out": "docs",
+  "ignoreCompilerErrors": true,
+  "includeDeclarations": true,
+  "hideBreadcrumbs": true,
+  "hideSources": true,
+  "theme": "docusaurus2",
+  "excludeExternals": true,
+  "readme": "none"
+}

@@ -9,7 +9,10 @@
   ],
   "scripts": {
     "build": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typedoc": "typedoc ./lumin",
+    "docs:start": "cd website && npm install && npm run start",
+    "docs:build": "cd website && npm install && npm run build",
+    "docs:deploy": "cd website && npm install && npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -25,5 +28,9 @@
   "bugs": {
     "url": "https://github.com/magic-script/magic-script-typings/issues"
   },
-  "homepage": "https://github.com/magic-script/magic-script-typings#readme"
+  "homepage": "https://github.com/magic-script/magic-script-typings#readme",
+  "devDependencies": {
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-markdown": "^2.2.7"
+  }
 }

@@ -18,3 +18,9 @@ yarn.lock
 
 # jest/coverage
 /coverage/
+
+# Docs
+/Docs
+
+# Sidebars
+/website/sidebars.js

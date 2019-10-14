@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[648],{44:function(i){i.exports=JSON.parse('{"id":"index","title":"magic-script-typings","sidebar_label":"Globals","description":"## Index","source":"@site/../docs/index.md","permalink":"/docs/index"}')}}]);

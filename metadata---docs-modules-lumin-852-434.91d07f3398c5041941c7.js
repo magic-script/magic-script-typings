@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[650],{681:function(e){e.exports=JSON.parse('{"id":"modules/_lumin_","title":"lumin","sidebar_label":"lumin","description":"## Index","source":"@site/../docs/modules/_lumin_.md","permalink":"/docs/modules/_lumin_","sidebar":"docs","category":"Modules","next":"modules/_lumin_.assetpacker","next_title":"AssetPacker"}')}}]);

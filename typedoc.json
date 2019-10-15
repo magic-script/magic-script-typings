@@ -4,6 +4,7 @@
   "ignoreCompilerErrors": true,
   "includeDeclarations": true,
   "hideBreadcrumbs": true,
+  "hideIndexes": true,
   "hideSources": true,
   "theme": "docusaurus2",
   "excludeExternals": true,

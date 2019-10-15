@@ -21,7 +21,7 @@ module.exports = {
         src: "img/magicscript.svg"
       },
       links: [
-        { to: "docs/index", label: "API", position: "left" },
+        { to: "docs/modules/_lumin_", label: "API", position: "left" },
         {
           href: "https://www.magicscript.org/",
           label: "Home",

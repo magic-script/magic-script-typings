@@ -36,7 +36,7 @@ function Home() {
                 "button button--secondary button--lg",
                 styles.getStarted
               )}
-              to={withBaseUrl("docs/index")}
+              to={withBaseUrl("docs/modules/_lumin_")}
             >
               Get Started
             </Link>

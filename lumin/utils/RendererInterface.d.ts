@@ -1,10 +1,14 @@
 declare module 'lumin' {
   namespace utils {
+
+    /** PrimitiveType The primitive type (mode) used for drawing */
     enum PrimitiveType {
       kTriangles = 4,
       kTriangleStrip = 5,
       kTriangleFan = 6,
     }
+
+    /** LayoutLocation maps a vertex attribute to a shader location */
     enum LayoutLocation {
       kNotSupported = -1,
       kLocation0 = 0,
@@ -23,6 +27,10 @@ declare module 'lumin' {
       kLocation13 = 13,
       kLocation14 = 14,
       kLocation15 = 15,
+
+      /**
+       * Mesh streams
+       */
       kPosition = kLocation0,
       kUV = kLocation1,
       kNormal = kLocation2,
@@ -30,6 +38,8 @@ declare module 'lumin' {
       kWeight = kLocation6,
       kColor = kLocation7,
     }
+
+    /** AttributeType The datatype and elements count (number of elements used in) an attribute */
     enum AttributeType {
       kNotSupported = -1,
       kByte1 = 0,
@@ -65,6 +75,8 @@ declare module 'lumin' {
       kHalfFloat3,
       kHalfFloat4,
     }
+
+    /** Shader types for rendering objects */
     enum ShaderType {
       kPbr = 0,
       kUnlitTextured,
@@ -75,15 +87,21 @@ declare module 'lumin' {
       Point,
       Spot,
     }
+
+    /** Texture filtering type. */
     enum Filter {
       kNearest,
       kLinear,
     }
+
+    /** Control texture wrapping when a texture coordinate is outside the [0, 1] range. */
     enum Wrap {
       kClampToEdge,
       kRepeat,
       kMirroredRepeat,
     }
+
+    /** Pixel format type. */
     enum Format {
       INVALID,
       GRAY,
@@ -91,9 +109,23 @@ declare module 'lumin' {
       RGB,
       RGBA,
     }
+
+    /**
+     * Parameters for how rendered textures will appear.
+     */
     class Params2d {
+
+      /** Useful for a wide variety of texturing use cases. */
       readonly DEFAULT: utils.Params2d = Params2d();
+
+      /**
+       * Horizontal
+       */
       uCoordWrap: utils.Wrap;
+
+      /**
+       * Vertical
+       */
       vCoordWrap: utils.Wrap;
       magFilter: utils.Filter;
       minFilter: utils.Filter;
@@ -103,13 +135,31 @@ declare module 'lumin' {
       lodBias: number;
       constructor()
     };
+
+    /**
+     * Parameters for how rendered 3d textures will appear.
+     */
     class Params3d {
+
+      /** Useful for a wide variety of texturing use cases. */
       readonly DEFAULT: utils.Params3d = Params3d();
+
+      /** Horizontal wrapping mode */
       uCoordWrap: utils.Wrap;
+
+      /** Vertical wrapping mode */
       vCoordWrap: utils.Wrap;
+
+      /** Depth wrapping mode */
       wCoordWrap: utils.Wrap;
+
+      /** MAG filter mode */
       magFilter: utils.Filter;
+
+      /** MIN filter mode */
       minFilter: utils.Filter;
+
+      /** MIP MAP filter mode */
       mipMapFilter: utils.Filter;
       constructor()
     };

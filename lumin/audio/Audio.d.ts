@@ -1,18 +1,55 @@
 declare module 'lumin' {
   const INVALID_AUDIO_ID: BigInt /* uint64_t */ = 0n;
   const kMaxAudioChannels: number = 8;
+
+  /**
+   * An audio clip can be in three states, stopped, playing or paused.
+   * Upon creating new audio clip it's in stopped state.
+   */
   enum AudioState {
     kInvalidAudioState = 0,
+
+    /**
+     *1
+     */
     kStopped,
+
+    /**
+     *2
+     */
     kPlaying,
     kPaused,
   }
+
+  /**
+   * Audio event types.
+   */
   enum AudioEventType {
     kInvalidAudioEvent = 0,
+
+    /**
+     * Fires when reached end of the audio playback.
+     */
     kPlayEnd,
+
+    /**
+     * If the audio is in looping mode, the event fires at the end of each loop.
+     */
     kPlayLooped,
+
+    /**
+     * Audio volume is muted by system.
+     */
     kMutedBySystem,
+
+    /**
+     * Audio volume is un-muted by system.
+     */
     kUnmutedBySystem,
+
+    /**
+     * Ducked by system.
+     */
     kDuckedBySystem,
     kUnduckedBySystem,
   }
@@ -51,6 +88,10 @@ declare module 'lumin' {
     reserved: number;
     constructor()
   };
+
+  /**
+   * System Sound Enums.
+   */
   enum SystemSoundEnum {
     kInvalid = 0,
     kHover,

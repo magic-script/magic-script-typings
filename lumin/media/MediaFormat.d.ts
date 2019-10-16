@@ -1,4 +1,8 @@
 declare module 'lumin' {
+
+  /**
+   * Class used to retrieve track media format info
+   */
   class MediaFormat {
     readonly KEY_AAC_ENCODED_TARGET_LEVEL: string = "aac-encoded-target-level";
     readonly KEY_AAC_DRC_BOOST_FACTOR: string = "aac-drc-boost-level";
@@ -40,6 +44,10 @@ declare module 'lumin' {
     readonly KEY_CROP_RIGHT: string = "crop-right";
     readonly KEY_CROP_BOTTOM: string = "crop-bottom";
     readonly KEY_CROP_TOP: string = "crop-top";
+
+    /**
+     * Human readable representation of the format.
+     */
     toString(): string
     setInt32(name: string, value: number): void
     setInt64(name: string, value: BigInt /* int64_t */): void

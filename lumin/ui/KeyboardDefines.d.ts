@@ -1,22 +1,38 @@
 declare module 'lumin' {
   namespace ui {
     namespace Locale {
+
+      /**
+       *Locale codes
+       */
       enum Code {
-        kEn,
+        kDe_DE = 2,
+        kEn = 0,
+        kEn_GB = 1,
+        kEn_US = kEn,
+        kEs_ES = 5,
+        kFr_FR = 3,
+        kIt_IT = 4,
+      }
+
+      /**
+       *English keyboard page codes
+       */
+      enum PageCode {
+        kLowerLetters,
+        kUpperLetters,
+        kLowerLettersEmail,
+        kUpperLettersEmail,
+        kNumericSymbols,
+        kNumericSymbolsAlt,
+        kNumericOnly,
+        kEmoji,
       }
       namespace En {
-        enum PageCode {
-          kLowerLetters,
-          kUpperLetters,
-          kLowerLettersEmail,
-          kUpperLettersEmail,
-          kNumericSymbols,
-          kNumericSymbolsAlt,
-          kNumericOnly,
-          kEmoji,
-        }
       }
     }
+
+    /** The type (function) of the key */
     enum KeyType {
       kNone,
       kCharacter,
@@ -39,6 +55,8 @@ declare module 'lumin' {
       kCustom4,
       kCustom5,
     }
+
+    /** The layout type of the keyboard (i.e. what pages are available) */
     enum LayoutType {
       kFull,
       kEmail,
@@ -46,9 +64,13 @@ declare module 'lumin' {
       kNumeric,
     }
     namespace KeyboardEvent {
+
+      /** Base struct for keyboard event data */
       class EventData {
         constructor()
       };
+
+      /** Struct for key pressed events */
       class KeyPressedData extends EventData {
         constructor()
         getKeyType(): ui.KeyType
@@ -60,32 +82,126 @@ declare module 'lumin' {
         isTemporary(): boolean
       };
     }
+
+    /** Struct for keyboard properties defining the capabilities and behavior of the keyboard */
     class KeyboardProperties {
       constructor()
       equals(other: ui.KeyboardProperties): boolean
+
+      /**
+       *The width of the keyboard in world coordinates
+       */
       width: number;
+
+      /**
+       *The width of the keyboard as a ratio of the calling volume
+       */
       widthRatio: number;
+
+      /**
+       *The mode of the form buttons
+       */
       formMode: ui.KeyboardProperties.FormMode;
+
+      /**
+       *Label to use for a cancel button
+       */
       cancelLabel: ui.KeyboardProperties.CancelLabel;
+
+      /**
+       *Label to use for a previous button
+       */
       previousLabel: ui.KeyboardProperties.PreviousLabel;
+
+      /**
+       *Label to use for a next button
+       */
       nextLabel: ui.KeyboardProperties.NextLabel;
+
+      /**
+       *Label to use for a clear button
+       */
       clearLabel: ui.KeyboardProperties.ClearLabel;
+
+      /**
+       *Label to use for a close button
+       */
       closeLabel: ui.KeyboardProperties.CloseLabel;
+
+      /**
+       *Label to use for a submit button
+       */
       submitLabel: ui.KeyboardProperties.SubmitLabel;
+
+      /**
+       *Custom string label to use for a cancel button
+       */
       customCancelLabel: string;
+
+      /**
+       *Custom string label to use for a previous button
+       */
       customPreviousLabel: string;
+
+      /**
+       *Custom string label to use for a next button
+       */
       customNextLabel: string;
+
+      /**
+       *Custom string label to use for a clear button
+       */
       customClearLabel: string;
+
+      /**
+       *Custom string label to use for a close button
+       */
       customCloseLabel: string;
+
+      /**
+       *Custom string label to use for a submit button
+       */
       customSubmitLabel: string;
+
+      /**
+       *Mode to use for suggestions
+       */
       suggestionMode: ui.KeyboardProperties.SuggestionMode;
+
+      /**
+       *Whether the auxiliary is to be displayed
+       */
       showAuxiliaryRow: boolean;
+
+      /**
+       *Whether the enter button should be replaced with a submit button
+       */
       enterIsSubmit: boolean;
+
+      /**
+       *Whether the speech to text button should be enabled
+       */
       speechToTextEnabled: boolean;
+
+      /**
+       *The offset in world coordinates to move the keyboard from its location
+       */
       offsetPosition: [number, number] /* glm::vec2 */;
+
+      /**
+       *The layout type to use on the keyboard
+       */
       layoutType: ui.LayoutType;
+
+      /**
+       *If the FormMode is kcustom then use these properties
+       */
       customFormProperties: ui.KeyboardProperties.CustomFormProperties;
       keyboardMode: ui.KeyboardProperties.KeyboardMode;
+
+      /**
+       *Specifies the location to position the keyboard along the z axis
+       */
       keyboardZPosition: ui.KeyboardProperties.KeyboardZPosition;
     };
     class CustomFormProperties {

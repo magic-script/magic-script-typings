@@ -1,4 +1,8 @@
 declare module 'lumin' {
+
+  /**
+   * Privilege IDs that applications can request.
+   */
   enum PrivilegeId {
     kInvalid = 0,
     kAudioRecognizer = 13,
@@ -24,6 +28,7 @@ declare module 'lumin' {
     kConnectBackgroundMusicService = 192,
     kRegisterBackgroundMusicService = 193,
     kPwFoundObjRead = 201,
+    kPcfRead = 201,
     kNormalNotificationsUsage = 208,
     kMusicService = 218,
     kControllerPose = 263,
@@ -31,7 +36,12 @@ declare module 'lumin' {
     kGesturesSubscribe = 268,
     kGesturesConfig = 269,
     kWebView = 300,
+    kHandMesh = 315,
   }
+
+  /**
+   * The result of a privilege request.
+   */
   enum PrivilegeResult {
     kInvalid,
     kGranted,

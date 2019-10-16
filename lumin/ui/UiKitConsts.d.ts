@@ -1,5 +1,7 @@
 declare module 'lumin' {
   namespace ui {
+
+    /** System Icon Types from UX specifications */
     enum SystemIcon {
       kActions = 0,
       kActionsLeft = 1,
@@ -7,6 +9,8 @@ declare module 'lumin' {
       kActionsRight = 3,
       kAdd = 4,
       kAddressBook = 5,
+      kAirplaneMode = 228,
+      kAirplaneModeOff = 229,
       kAlbumAdd = 6,
       kAlbumRemove = 7,
       kAlphabetical = 8,
@@ -15,6 +19,10 @@ declare module 'lumin' {
       kArrowLeft = 11,
       kArrowRight = 12,
       kArrowUp = 13,
+      kAspectRatioCustom = 222,
+      kAspectRatioDefault = 223,
+      kAspectRatioTall = 224,
+      kAspectRatioWide = 225,
       kAutoPlacement = 14,
       kBackspace = 15,
       kBattery = 16,
@@ -46,6 +54,7 @@ declare module 'lumin' {
       kCloud = 42,
       kCloudOff = 43,
       kCollection = 44,
+      kComputer = 230,
       kController = 45,
       kCookie = 46,
       kCopy = 47,
@@ -62,6 +71,7 @@ declare module 'lumin' {
       kEject = 57,
       kEmoji = 58,
       kEnter = 59,
+      kEraser = 231,
       kExit = 60,
       kExtraction = 61,
       kEyeTracking = 62,
@@ -73,8 +83,10 @@ declare module 'lumin' {
       kFlagChina = 209,
       kFlagFrance = 210,
       kFlagGermany = 211,
+      kFlagItaly = 226,
       kFlagJapan = 212,
       kFlagSouthKorea = 213,
+      kFlagSpain = 227,
       kFlagUK = 214,
       kFlagUSA = 215,
       kFollow = 68,
@@ -100,6 +112,8 @@ declare module 'lumin' {
       kLink = 87,
       kListView = 88,
       kLocalAreaServer = 89,
+      kMarker = 232,
+      kMarkerSize = 233,
       kMarqueeSelection = 90,
       kMerge = 91,
       kMesh = 92,
@@ -224,57 +238,193 @@ declare module 'lumin' {
       kZoomIn = 201,
       kZoomOut = 202,
     }
+
+    /** Eclipse label types from UX specifications. */
     enum EclipseLabelType {
+
+      /**
+       * Page title (Top of screen)
+       */
       kT1,
+
+      /**
+       * Title/Label - LARGE
+       */
       kT2,
+
+      /**
+       * Title/Label - MEDIUM
+       */
       kT3,
+
+      /**
+       * Title/Label - SMALL
+       */
       kT4,
+
+      /**
+       * Title/Label - EXTRA SMALL
+       */
       kT5,
+
+      /**
+       * Title/Label - XX Large
+       */
       kT6,
+
+      /**
+       * Title/Label - X Large
+       */
       kT7,
+
+      /**
+       * Label/Body - MEDIUM
+       */
       kB1,
+
+      /**
+       * Label/Body - SMALL
+       */
       kB2,
+
+      /**
+       * Label/Body - X-SMALL
+       */
       kB3,
+
+      /**
+       * Label/Body - Large
+       */
       kB4,
+
+      /**
+       * CAPS Title - LARGE
+       */
       kC1 = kB4+2,
+
+      /**
+       * CAPS Title - MED
+       */
       kC2,
+
+      /**
+       * CAPS Title - SMALL
+       */
       kC3,
       kC4,
     }
+
+    /** Eclipse button types from UX specifications. */
     enum EclipseButtonType {
+
+      /**
+       *Circular button with icon only.
+       */
       kIcon,
+
+      /**
+       *Circular button with icon and label on the side that appears during hover.
+       */
       kIconWithLabel,
+
+      /**
+       *Capsule button with text label.
+       */
       kText,
       kTextWithIcon,
     }
+
+    /** Eclipse dropdownList types from UX specifications. */
     enum EclipseDropDownListType {
+
+      /**
+       * Circular DropDownList button with icon and label
+       */
       kIconWithLabel,
       kTextWithArrow,
     }
+
+    /** Eclipse slider types from UX specifications. */
     enum EclipseSliderType {
+
+      /**
+       *Circular slider with icon.
+       */
       kRadialWithIcon,
+
+      /**
+       *Circular slider with icon (smaller).
+       */
       kRadialWithIconSmall,
+
+      /**
+       *Horizontal slider with icon.
+       */
       kHorizontalWithIcon,
       kHorizontalWithLabel,
     }
+
+    /** Toggle button types from UX specifications. */
     enum ToggleType {
+
+      /**
+       * Default style toggle.
+       */
       kDefault,
+
+      /**
+       * Radio button style toggle.
+       */
       kRadio,
       kCheckbox,
     }
+
+    /** Eclipse toggle types from UX specifications. */
     enum EclipseToggleType {
+
+      /**
+       * Circular toggle with icon.
+       */
       kIcon,
+
+      /**
+       * Horizontal toggle with icon.
+       */
       kSwitchWithIcon,
       kSwitchWithLabel,
     }
+
+    /** Font parameters. */
     class FontParams {
+
+      /**
+       * The font style
+       */
       style: resources.FontStyle;
+
+      /**
+       * The font weight
+       */
       weight: resources.FontWeight;
+
+      /**
+       * The fond size if worldspace (meters)
+       */
       fontSize: number;
+
+      /**
+       * The font tracking (currently not supported).
+       */
       tracking: number;
+
+      /**
+       * If the text should be in all caps.
+       */
       allCaps: boolean;
       constructor(a_style: resources.FontStyle = 0 /* 0 is not the actual default value */, a_weight: resources.FontWeight = 0 /* 0 is not the actual default value */, a_fontSize: number = 0 /* 0 is not the actual default value */, a_tracking: number = 0 /* 0 is not the actual default value */, a_allCaps: boolean = 0 /* 0 is not the actual default value */)
     };
+
+    /** Describes sides for certain UI elements. */
     enum Side {
       kTop,
       kRight,
@@ -282,36 +432,80 @@ declare module 'lumin' {
       kLeft,
     }
     enum LabelDisplayMode {
+
+      /**
+       * Label display is on during cursor hover, off otherwise.
+       */
       kHover,
       kAlways,
     }
+
+    /** Describes the orientation of certain UI elements. */
     enum Orientation {
       kVertical,
       kHorizontal,
     }
+
+    /** Describes how UI elements are aligned horizontally.*/
     enum HorizontalAlignment {
       kLeft,
       kCenter,
       kRight,
     }
+
+    /** Describes how UI elements are aligned vertically. */
     enum VerticalAlignment {
       kTop,
       kCenter,
       kBottom,
     }
+
+    /** Describes levels of UiPanel edge constraints. */
     enum PanelEdgeConstraintLevel {
+
+      /**
+       * Cursor escapes freely, no constraint.
+       */
       kNone,
+
+      /**
+       * Cursor escapes with minimal effort.
+       */
       kLight,
+
+      /**
+       * Cursor standard constraint.
+       */
       kMedium,
+
+      /**
+       * Cursor heavy constraint, not easy to escape.
+       */
       kHeavy,
+
+      /**
+       * Impassable, cursor cannot escape.
+       */
       kImpassable,
       kManual,
     }
+
+    /** Describes the cursor transition type during Panel-to-Panel transitions. */
     enum PanelCursorTransitionType {
+
+      /**
+       * The cursor will appear at the closest edge of the Panel upon transition.
+       */
       kClosestEdge,
+
+      /**
+       * The cursor will appear at the center of the Panel upon transition.
+       */
       kCenter,
       kInitialPosition,
     }
+
+    /** Struct containing both horizontal and vertical alignment information for UI elements. */
     class Alignment {
       vertical: ui.VerticalAlignment;
       horizontal: ui.HorizontalAlignment;
@@ -327,95 +521,319 @@ declare module 'lumin' {
       readonly BOTTOM_CENTER: ui.Alignment = Alignment(VerticalAlignment.kBottom,HorizontalAlignment.kCenter);
       readonly BOTTOM_RIGHT: ui.Alignment = Alignment(VerticalAlignment.kBottom,HorizontalAlignment.kRight);
     };
+
+    /** Describes the scroll bar visibility */
     enum ScrollBarVisibility {
       kOff,
+
+      /**
+       *scroll bar visible while active then shuts off after 2 seconds of inactivity.
+       */
       kAuto,
       kAlways,
     }
+
+    /** Describes the scrollable directions supported by UiScrollView. */
     enum ScrollDirection {
+
+      /**
+       *Vertical scroll mode.
+       */
       kVertical,
       kHorizontal,
     }
     enum CursorEdgeScrollMode {
+
+      /**
+       * The cursor is never contrained and does not cause scrolling.
+       */
       kNever,
+
+      /**
+       * The scroll area constrains the cursor which scrolls content when scrolling is possible.
+       */
       kAuto,
       kAlways,
     }
+
+    /** Describes the text entry modes supported by UiTextEdit. */
     enum TextEntryMode {
+
+      /**
+       * Virtual Keyboard does not display
+       */
       kNone,
       kNormal,
       kEmail,
       kNumeric,
       kURL,
     }
+
+    /** Describes the justification modes supported by UiText* */
     enum HorizontalTextAlignment {
       kLeft,
       kCenter,
       kRight,
       kJustify,
     }
+
+    /** UI Sound Events. */
     enum SoundEvent {
+
+      /**
+       * Element hovered over
+       */
       kHoverEnter,
+
+      /**
+       * Element hover exited
+       */
       kHoverExit,
+
+      /**
+       * Element activated (clicked)
+       */
       kActivate,
+
+      /**
+       * Element long pressed
+       */
       kLongPress,
+
+      /**
+       * Element receives focus
+       */
       kFocusGained,
+
+      /**
+       * Element loses focus
+       */
       kFocusLost,
+
+      /**
+       * Toggle Sound Events.
+       */
       kToggleStateOn,
+
+      /**
+       * Toggle changes to OFF state
+       */
       kToggleStateOff,
+
+      /**
+       * Drop Down List Sound Events
+       */
       kDropDownItemHover,
+
+      /**
+       * Drop down list item selected
+       */
       kDropDownItemSelect,
+
+      /**
+       * Drop down list expanded
+       */
       kDropDownListExpand,
+
+      /**
+       * Drop down list collapsed
+       */
       kDropDownListCollapse,
+
+      /**
+       * Drop down nested list expanded
+       */
       kDropDownNestedListExpand,
+
+      /**
+       * Drop down nested list collapsed
+       */
       kDropDownNestedListCollapse,
+
+      /**
+       * Text Input Sound Events
+       */
       kTextCursorInsert,
+
+      /**
+       * Word selected for edit
+       */
       kTextWordSelect,
+
+      /**
+       * Selection handle grabbed
+       */
       kTextSelectionHandleGrab,
+
+      /**
+       * Selection handle dropped
+       */
       kTextSelectionHandleDrop,
+
+      /**
+       * Password is shown
+       */
       kTextPasswordShow,
+
+      /**
+       * Password hidden
+       */
       kTextPasswordHide,
+
+      /**
+       * Dialog Sound Events
+       */
       kDialogOpen,
+
+      /**
+       * The dialog box currently open
+       */
       kDialogLoop,
+
+      /**
+       * User clicks Confirm (Ok, Submit, Accept) button
+       */
       kDialogConfirm,
+
+      /**
+       * User clicks Cancel (No, Decline) button
+       */
       kDialogCancel,
+
+      /**
+       * Context Menu Sound Events
+       */
       kContextMenuOpen,
+
+      /**
+       * The context menu closes
+       */
       kContextMenuClose,
+
+      /**
+       * The context menu item hovered over
+       */
       kContextMenuItemHover,
+
+      /**
+       * The context menu item selected
+       */
       kContextMenuItemSelect,
+
+      /**
+       * Scroll View Sound Events
+       */
       kScrollViewScrollLimit,
+
+      /**
+       * Panel Sound Events
+       */
       kPanelTransitionHorizontal,
       kPanelTransitionVertical,
     }
+
+    /** Dialog types. */
     enum DialogType {
+
+      /**
+       * Modal, single action, OK button dialog
+       */
       kSingleAction,
+
+      /**
+       * Modal, dual action, Cancel and Confirm buttons dialog
+       */
       kDualAction,
+
+      /**
+       * Modal, custom content, no buttons provided.
+       */
       kCustom,
+
+      /**
+       * Modeless, no-button dialog that counts down with a timer.
+       */
       kTimed,
       kNoAction,
     }
+
+    /** Dialog layout preference. */
     enum DialogLayout {
+
+      /**
+       * Standard layout with any action buttons at the bottom of the dialog content (default).
+       */
       kStandard,
       kWide,
     }
+
+    /** Time period of the day. */
     enum TimePeriod {
+
+      /**
+       * AM timeperiod, hours 0-11
+       */
       kAM,
       kPM,
     }
     enum DateFormat {
+
+      /**
+       * Format based on locale
+       */
       kAuto,
+
+      /**
+       * Year / Day / Month
+       */
       kYYYYDDMM,
+
+      /**
+       * Year / Month / Day
+       */
       kYYYYMMDD,
+
+      /**
+       * Month / Day / Year
+       */
       kMMDDYYYY,
+
+      /**
+       * Day / Month / Year
+       */
       kDDMMYYYY,
+
+      /**
+       * Month / Year
+       */
       kMMYYYY,
       kDDYYYY,
     }
     enum TimeFormat {
+
+      /**
+       * Format based on locale
+       */
       kAuto,
+
+      /**
+       * hour(0-23) : minute : second
+       */
       khhmmss,
+
+      /**
+       * hour(1-12) : minute : second   TimePeriod(AM/PM)
+       */
       khhmmssP,
+
+      /**
+       * hour(0-23) : minute
+       */
       khhmm,
+
+      /**
+       * hour(1-12) : minute    TimePeriod(AM/PM)
+       */
       khhmmP,
       kmmss,
     }

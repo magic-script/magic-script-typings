@@ -40,6 +40,12 @@ declare module 'lumin' {
     kErrorTimedOut = -110,
     kErrorSystem = -2147483648,
   }
+
+  /**
+  *  @enum CodecActionCode
+  *  @brief action codes for MediaCodecs that tell the upper layer and application
+  *         the severity of any error..
+  */
   enum CodecActionCode {
     kCodecActionCodeFatal,
     kCodecActionCodeTransient,

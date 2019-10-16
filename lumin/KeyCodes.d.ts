@@ -1,5 +1,9 @@
 declare module 'lumin' {
   namespace input {
+
+    /**
+     * Key codes. Copied from ndk android/keycodes.h
+     */
     enum KeyCodes {
       AKEYCODE_UNKNOWN = 0,
       AKEYCODE_SOFT_LEFT = 1,
@@ -81,6 +85,10 @@ declare module 'lumin' {
       AKEYCODE_AT = 77,
       AKEYCODE_NUM = 78,
       AKEYCODE_HEADSETHOOK = 79,
+
+      /**
+       * *Camera* focus
+       */
       AKEYCODE_FOCUS = 80,
       AKEYCODE_PLUS = 81,
       AKEYCODE_MENU = 82,
@@ -205,6 +213,10 @@ declare module 'lumin' {
       AKEYCODE_BUTTON_14 = 201,
       AKEYCODE_BUTTON_15 = 202,
       AKEYCODE_BUTTON_16 = 203,
+
+      /**
+       * Key codes. Copied from /frameworks/services/inputservice2/aidl/ML_keycodes.h
+       */
       AKEYCODE_EX_TRIGGER = 500,
       AKEYCODE_EX_CAPTURE = 501,
       AKEYCODE_EX_BUMPER = 502,

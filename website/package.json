@@ -5,13 +5,13 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "node --max_old_space_size=32000 node_modules/@docusaurus/core/bin/docusaurus build",
+    "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "node --max_old_space_size=32000 node_modules/@docusaurus/core/bin/docusaurus deploy"
+    "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.27",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.27",
+    "@docusaurus/core": "^2.0.0-alpha.29",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.29",
     "classnames": "^2.2.6",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",

@@ -10,7 +10,7 @@ import classnames from "classnames";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import withBaseUrl from "@docusaurus/withBaseUrl";
+import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
 
 function Home() {
@@ -24,7 +24,7 @@ function Home() {
       <header className={classnames("hero", styles.heroBanner)}>
         <div className="container">
           <img
-            src={withBaseUrl("img/magicscript-logo.svg")}
+            src={useBaseUrl("img/magicscript-logo.svg")}
             alt={siteConfig.title}
             width="400"
           />
@@ -36,7 +36,7 @@ function Home() {
                 "button button--secondary button--lg",
                 styles.getStarted
               )}
-              to={withBaseUrl("docs/modules/_lumin_")}
+              to={useBaseUrl("docs/modules/_lumin_")}
             >
               Get Started
             </Link>

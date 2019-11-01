@@ -46,6 +46,66 @@ declare module 'lumin' {
       constructor(a_label: string, a_subItems: Array<ui.DropDownListItem> /* std::vector */, a_id?: number)
     }
 
+    /** Dropdown parameters for creating Eclipse Dropdowns */
+    class EclipseDropDownListParams {
+
+      /**
+       * Type of eclipse Dropdown.
+       */
+      type: ui.EclipseDropDownListType;
+
+      /**
+       * Button icon path used in kIconWithLabel
+       */
+      iconPath: string;
+
+      /**
+       * If the icon path is an absolute path (default false).
+       */
+      absoluteIconPath: boolean;
+
+      /**
+       * Icon scale (default 1.0f).
+       */
+      iconScale: number;
+
+      /**
+       * Button label text used in kIconWithLabel and kTextWithArrow
+       */
+      labelText: string;
+
+      /**
+       * The localization key for the element label, used in kIconWithLabel and kTextWithArrow.
+       */
+      l10nKey: string;
+
+      /**
+       * The optional localization parameters for the element label.
+       */
+      l10nParams: Object;
+
+      /**
+       * Whether the text has an underline (default false). Considered only for kTextWithArrow
+       */
+      underline: boolean;
+
+      /**
+       * Height of the eclipse Dropdown Button, (default 0 = default button height).
+       */
+      height: number;
+
+      /**
+       * Width of the eclipse Dropdown Button, (default 0 = auto calculated width).
+       */
+      width: number;
+
+      /**
+       * The type of SystemIcon to be used for the eclipse dropdown button
+       */
+      iconType: ui.SystemIcon;
+      constructor(a_type: ui.EclipseDropDownListType)
+    }
+
     /**
      * UiDropDownList - This node represents a multi-level, multi-selection capable
      *                  drop-down list.
@@ -62,6 +122,15 @@ declare module 'lumin' {
        * @priv none
        */
       static Create(prism: Prism, labelText: string): ui.UiDropDownList
+
+      /**
+       * Creates an Eclipse dropDownList from UX specifications.
+       *
+       * @param prism - The prism to create this dropDownList for.
+       * @param dropDownListParams - The EclipseDropDownListParams describing the Eclipse dropDownList to create.
+       * @return The new UiDropDownList node.
+       */
+      static CreateEclipseDropDownList(prism: Prism, dropDownListParams: ui.EclipseDropDownListParams): ui.UiDropDownList
 
       /**
        * The on hover item Event.

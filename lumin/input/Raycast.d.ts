@@ -98,6 +98,27 @@ declare module 'lumin' {
   }
 
   /**
+   * Raycast result for sprite node intersections.
+   */
+  class RaycastSpriteNodeResult extends RaycastNodeResult {
+    constructor()
+
+    /**
+     * Return normalized ray intersection on the node
+     *
+     * @priv none
+     */
+    getUV(): [number, number] /* glm::vec2 */
+
+    /**
+     * Return true if the intersection hit the "front" (+z) side of the quad
+     *
+     * @priv none
+     */
+    getHitFront(): boolean
+  }
+
+  /**
    * Raycast result for model node sphere intersections.
    */
   class RaycastModelNodeSphereResult extends RaycastNodeResult {

@@ -151,25 +151,5 @@ declare module 'lumin' {
      * @priv none
      */
     isPlaying(): boolean
-
-    /**
-     * @brief Selects a given track
-     *
-     * @param index of the track to select
-     * @return Returns INVALID_OPERATION if media player has not been initialized
-     * @return Returns XXX if the track is not valid; NO_ERROR otherwise
-     * @priv none
-     */
-    selectTrack(index: number): number
-
-    /**
-     * @brief unSelects a given track
-     *
-     * @param index of the track to unselect
-     * @return Returns INVALID_OPERATION if media player has not been initialized
-     * @return Returns XXX if the track is not valid; NO_ERROR otherwise
-     * @priv none
-     */
-    unSelectTrack(index: number): number
   }
 }

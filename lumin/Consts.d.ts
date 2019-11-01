@@ -1120,6 +1120,16 @@ declare module 'lumin' {
       EVENT_PLUGGED_OUT,
       EVENT_VOICE,
     }
+    enum DeviceEventType {
+
+      /**
+       * `value = 0`
+       */
+      UNKNOWN,
+      CONNECT,
+      DISCONNECT,
+      STATE_CHANGE,
+    }
   }
   namespace headtracking {
     enum Mode {

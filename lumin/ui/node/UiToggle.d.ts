@@ -1,36 +1,6 @@
 declare module 'lumin' {
   namespace ui {
 
-    /** Toggle button types from UX specifications. */
-    enum ToggleType {
-
-      /**
-       * Default style toggle.
-       */
-      kDefault,
-
-      /**
-       * Radio button style toggle.
-       */
-      kRadio,
-      kCheckbox,
-    }
-
-    /** Eclipse toggle types from UX specifications. */
-    enum EclipseToggleType {
-
-      /**
-       * Circular toggle with icon.
-       */
-      kIcon,
-
-      /**
-       * Horizontal toggle with icon.
-       */
-      kSwitchWithIcon,
-      kSwitchWithLabel,
-    }
-
     /** Eclipse toggle parameters for creating sliders */
     class EclipseToggleParams {
 
@@ -53,6 +23,16 @@ declare module 'lumin' {
        * The toggle label text
        */
       labelText: string;
+
+      /**
+       * The localization key for the element label.
+       */
+      l10nKey: string;
+
+      /**
+       * The optional localization parameters for the element label.
+       */
+      l10nParams: Object;
 
       /**
        * The display mode of the label, used in kIcon.

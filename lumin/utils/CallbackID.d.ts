@@ -16,6 +16,12 @@ declare module 'lumin' {
 
       /** Returns a string representation of the CallbackID. */
       toString(): string
+
+      /**  Returns True if the CallbackID is a valid Id, otherwise it returns false. */
+      isValid(): boolean
+
+      /** Resets this CallbackID to an invalid state. */
+      invalidate(): void
     }
   }
 }

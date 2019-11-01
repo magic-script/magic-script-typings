@@ -25,10 +25,36 @@ declare module 'lumin' {
        * @param prism The prism to create this node for.
        * @param text - The UTF-8 encoded text to initially set the Eclipse label to.
        * @param labelType - The EclipseLabelType.
+       * @return The new UiText node.
        *
        * @priv none
        */
       static CreateEclipseLabel(prism: Prism, text: string, labelType: ui.EclipseLabelType): ui.UiText
+
+      /**
+       * Creates a localized UiText element with default settings.
+       *
+       * @param prism The prism to create this node for.
+       * @param key The localization key.
+       * @param params `default = []`<br/> The localization parameters.
+       * @return The new UiText node.
+       *
+       * @priv none
+       */
+      static CreateLocalized(prism: Prism, key: string, params?: Object): ui.UiText
+
+      /**
+       * Creates a localized Eclipse label from UX specifications.
+       *
+       * @param prism The prism to create this node for.
+       * @param labelType The EclipseLabelType
+       * @param key The localization key.
+       * @param params `default = []`<br/> The localization parameters.
+       * @return The new UiText node.
+       *
+       * @priv none
+       */
+      static CreateLocalizedEclipseLabel(prism: Prism, labelType: ui.EclipseLabelType, key: string, params?: Object): ui.UiText
 
       /**
        * Gets the font parameters for the eclipse font type.
@@ -39,6 +65,17 @@ declare module 'lumin' {
        * @priv none
        */
       static GetEclipseFontParameters(labelType: ui.EclipseLabelType): ui.FontParams
+
+      /**
+       * The On Locale Changed Event.
+       *
+       * This event is dispatched when the locale has changed and this UiText
+       * has a localization key set.
+       *
+       * @priv none
+       */
+      onLocaleChangedSub(callback: (arg0: ui.UiEventData, arg1: string) => void): utils.CallbackID
+      onLocaleChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
        * Sets the font resource from a resource id. The font resource ID must be of a Font2dResource
@@ -73,7 +110,7 @@ declare module 'lumin' {
       setFont(style: resources.FontStyle, weight?: resources.FontWeight): void
 
       /**
-       * Sets the font parameters, including syle, weight,
+       * Sets the font parameters, including style, weight,
        * pixel size, and tracking.
        *
        * This will use one of the default set of Magic Leap
@@ -115,6 +152,9 @@ declare module 'lumin' {
       /**
        * Sets the UTF-8 encoded text.
        *
+       * Note, this call will be ignored if there is a current localization key set.
+       * Set the localization key to empty string, "", to unset it.
+       *
        * @param text - Text to set for the UiText element.
        *
        * @priv none
@@ -129,6 +169,58 @@ declare module 'lumin' {
        * @priv none
        */
       getText(): string
+
+      /**
+       * Sets the localization key and parameters for this UiText element.
+       *
+       * Once a key is set, this UiText will be populated with the translation text
+       * of the current locale based on the key and any potential parameters.
+       *
+       * @param key The localization key.  Use empty string, "", to unset the key.
+       * @param params The list of optional localization parameters.
+       *
+       * @priv none
+       */
+      setLocalization(key: string, params: Object): void
+
+      /**
+       * Sets the localization key for this UiText element.
+       *
+       * Once a key is set, this UiText will be populated with the translation text
+       * of the current locale based on the key and any potential parameters.
+       *
+       * @param key The localization key.  Use empty string, "", to unset the key.
+       *
+       * @priv none
+       */
+      setLocalizationKey(key: string): void
+
+      /**
+       * Gets the localization key for this UiText element.
+       *
+       * @return the localization key if set, empty string "" if not.
+       *
+       * @priv none
+       */
+      getLocalizationKey(): string
+
+      /**
+       * Sets the optional localization parameters to be used within the localized text.
+       *
+       * @param params The list of parameters to be used in the localized text.
+       *
+       * @priv none
+       */
+      setLocalizationParams(params: Object): void
+
+      /**
+       * Gets the localization parameters used within the localized text.
+       *
+       * @return the localization parameter list.
+       *
+       * @priv none
+       */
+      getLocalizationParams(): Object
 
       /**
        * Sets the text render size height in scene units.

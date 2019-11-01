@@ -104,4 +104,38 @@ declare module 'lumin' {
     reserved: number;
     constructor()
   }
+
+  /**
+   * System Sound Enums.
+   */
+  enum SystemSoundEnum {
+
+    /**
+     * `value = 0`
+     */
+    kInvalid,
+    kHover,
+    kSelect_01,
+    kSelect_02,
+    kHover_Small,
+    kSelect_Small,
+    kDropdown_Expand,
+    kToggle_On,
+    kToggle_Off,
+    kSwitch_On,
+    kSwitch_Off,
+    kSlider_Grab,
+    kSlider_Drop,
+    kDial_Grab,
+    kDial_Drop,
+    kCheckbox_On,
+    kCheckbox_Off,
+    kError,
+    kBack,
+    kNext,
+    kSettings,
+    kAdd,
+    kEdit,
+    kDelete,
+  }
 }

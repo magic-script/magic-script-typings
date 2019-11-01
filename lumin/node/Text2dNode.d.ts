@@ -6,15 +6,6 @@ declare module 'lumin' {
   class Text2dNode extends RenderNode {
 
     /**
-     * Convert to Unicode and render the given text.
-     *
-     * @param asciiText The text.
-     *
-     * @priv none
-     */
-    setText(asciiText: string): void
-
-    /**
      * Convert to Unicode and render the given UTF-8 encoded text.
      *
      * @param utf8Text The text.

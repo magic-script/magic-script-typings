@@ -7,6 +7,32 @@ declare module 'lumin' {
     class Date {
 
       /**
+       * Get today's date
+       *
+       * @return a Date object with today's date
+       *
+       */
+      static GetCurrentDate(): ui.Date
+
+      /**
+       * To get the amount of days in an arbitrary month
+       *
+       * @param month 1 - 12
+       * @return amount of days in specified month
+       *
+       */
+      static GetDaysPerMonth(month: number): number
+
+      /**
+       * To determine whether the passed in year is a leap year
+       *
+       * @param year the year
+       * @return true if it is a leap year, false otherwise.
+       *
+       */
+      static IsLeapYear(year: number): boolean
+
+      /**
        * Creates Date object with year, month, day.
        *
        * @param year year in the range -9999, 9999.
@@ -75,30 +101,12 @@ declare module 'lumin' {
       getDaysPerMonth(): number
 
       /**
-       * Gets the amount of days in an arbitrary month.
-       *
-       * @param month 1 - 12.
-       * @return amount of days in specified month.
-       *
-       */
-      static GetDaysPerMonth(month: number): number
-
-      /**
        * Determines whether this Date object's year is a leap year.
        *
        * @return true if it is a leap year, false otherwise.
        *
        */
       isLeapYear(): boolean
-
-      /**
-       * Determines whether the passed in year is a leap year.
-       *
-       * @param year the year.
-       * @return true if it is a leap year, false otherwise.
-       *
-       */
-      static IsLeapYear(year: number): boolean
     }
   }
 }

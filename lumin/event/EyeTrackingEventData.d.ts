@@ -93,11 +93,11 @@ declare module 'lumin' {
     getEyeTrackingFixationConfidence(): number
 
     /**
-     * Get whether the current fixation depth is uncomfortable for the user (< 37cm)
-     *
-     * @return true if the fixation depth is uncomfortable, false otherwise
-     * @priv none
-     */
+       * Get whether the current fixation depth is uncomfortable for the user (< 37cm)
+       *
+       * @return true if the fixation depth is uncomfortable, false otherwise
+       * @priv none
+       */
     isFixationDepthUnconfortable(): boolean
 
     /**

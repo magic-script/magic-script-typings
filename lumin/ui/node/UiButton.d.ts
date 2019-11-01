@@ -30,6 +30,16 @@ declare module 'lumin' {
       labelText: string;
 
       /**
+       * The localization key for the element label, used in kIconWithLabel, kText, and kTextWithIcon.
+       */
+      l10nKey: string;
+
+      /**
+       * The optional localization parameters for the element label.
+       */
+      l10nParams: Object;
+
+      /**
        * What side the button label text sits on, used in kIconWithLabel.
        */
       labelSide: ui.Side;

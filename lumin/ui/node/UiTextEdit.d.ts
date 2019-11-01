@@ -373,9 +373,23 @@ declare module 'lumin' {
        * Sets the UTF-8 encoded text for the hint.
        * @param str The text for the hint.
        *
+       * Note, this call will be ignored if there is a current localization key set for the hint.
+       * Set the localization key to empty string, "", to unset it.
+       *
        * @priv none
        */
       setHintText(str: string): void
+
+      /**
+       * Sets the localization key and optional parameters for the hint text.
+       *
+       * Once a key is set, this hint text will be populated with the translation text
+       * of the current locale based on the key and any potential parameters.
+       *
+       * @param key The localization key.  Use empty string, "", to unset the key.
+       * @param params `default = []`<br/> The list of optional localization parameters.
+       */
+      setLocalizedHintText(key: string, params?: Object): void
 
       /**
        * Gets the text color of the hint.

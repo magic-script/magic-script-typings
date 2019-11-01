@@ -219,6 +219,20 @@ declare module 'lumin' {
      *         or null if call was not successful
      */
     getCollisionBoxTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+
+    /**
+     * Start a full screen exclusive mode for a landscape app which does its own rendering full screen
+     * @param options exclusive client options
+     * @param ctxGl OpenGL render context
+     * @param clientVol owner volume id
+     * @return exclusive mode renderer
+     */
+    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void, clientVol: bigint /* uint64_t */): ExclusiveRender
+
+    /**
+     * Stop full screen exclusive mode
+     */
+    stopExclusiveMode(): boolean
     deInit(): number
     onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint /* uint64_t */> /* std::vector */): void
     onSharingStop(sessionId: bigint /* uint64_t */): void

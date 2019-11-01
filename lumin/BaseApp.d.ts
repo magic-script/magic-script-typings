@@ -341,6 +341,8 @@ declare module 'lumin' {
      *
      * @return Returned floor height.
      * 
+     *
+     * @priv WorldReconstruction
      */
     getFloorHeight(): number
 
@@ -583,46 +585,40 @@ declare module 'lumin' {
     stopTrackImage(imageName: string): boolean
 
     /**
-     * Runs the given task on the main thread (with an optional delay).
-     *
-     * @param a_runnable the callback to run on the main thread.
-     * @return a unique ID that can be used to cancel the runnable.
+     * Gets the LocaleHelper that's set to the current system locale
+     * @return the current system LocaleHelper
      */
-    static RunOnMainThread(a_runnable: () => void): utils.CallbackID
+    getCurrentLocaleHelper(): utils.LocaleHelper
 
     /**
-     * Runs the given task on the main thread (with an optional delay).
-     *
-     * @param a_runnable the callback to run on the main thread.
-     * @param delay the optional time in seconds to wait before running the callback
-     * @return a unique ID that can be used to cancel the runnable.
+     * Lock the LocaleHelper to the given locale. It will no longer change when the system locale is changed
+     * @param localeCode the lock that the LocaleHelper will be locked to
      */
-    static RunOnMainThread(a_runnable: () => void, delay: number): utils.CallbackID
+    lockCurrentLocaleHelperToLocale(localeCode: string): void
 
     /**
-     * Similar to RunOnMainThread() but synchronous. Will
-     * block caller until client event loop will process callback
-     * event. Except when invoked form client eventloop thread - in
-     * that case a_runnable will be called immediately.
-     *
-     * @param a_runnable
+     * Unlock the locale of the LocaleHelper. This will set the LocaleHelper back to the current system locale
      */
-    static RunOnMainThreadSync(a_runnable: () => void): void
+    unlockCurrentLocaleHelper(): void
 
     /**
-     * Returns true if the runnable with the given ID is still pending.
-     *
-     * @return true if the runnable with the given ID is still in the queue.
+     * Get the system locale code
+     * 
      */
-    static IsMainThreadRunnablePending(callbackId: utils.CallbackID): boolean
+    getLocaleCode(): string
 
     /**
-     * Cancels a previously added runnable if it has not yet run.
-     *
-     * @param callbackId the ID returned when the runnable was added.
-     *
-     * @return true if the runnable was canceled, false if it has already been scheduled.
+     * Register a callback for when the system locale is changed
+     * @param callbackFunction the function to be called (the new locale code is given as a parameter)
+     * @return the internal ID of the callback, can be used to unregister the callback
      */
-    static CancelMainThreadRunnable(callbackId: utils.CallbackID): boolean
+    registerOnLocaleChangedCallback(callbackFunction: (arg0: string) => void): utils.CallbackID
+
+    /**
+     * Unregister a callback for when the system locale is changed
+     * @param callbackID the ID of the callback to unregister
+     * @return true if succesfully unregistered, false otherwise
+     */
+    unregisterOnLocaleChangedCallback(callbackID: utils.CallbackID): boolean
   }
 }

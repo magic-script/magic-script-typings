@@ -1,4 +1,6 @@
 declare module 'lumin' {
+  namespace AssetPacker {
+  }
 
   /**
    * Base class for Lumin Runtime immersive apps.
@@ -34,6 +36,13 @@ declare module 'lumin' {
     setOcclusionEnabled(a_enabled: boolean): void
 
     /**
+     * Enables or disables hand occlusion
+     *
+     * @param a_enable Set to true to enable hand occlusion, false to disable
+     */
+    setHandOcclusionEnabled(a_enable: boolean): void
+
+    /**
      * Selects or deselects the specified prism.
      *
      * Input and other events are delivered only to the selected prism.
@@ -63,6 +72,15 @@ declare module 'lumin' {
     isSkipRaycast(a_prism: Prism): boolean
 
     /**
+     * Returns the world mesh data for a block at a given location.
+     *
+     * @param a_blockPos Block position in world-space.
+     * @param a_blockData Class that will be filled in with the block data.
+     * @return true if blockData has valid data
+     */
+    getWorldMeshBlockData(a_blockPos: [number, number, number] /* glm::vec3 */, a_blockData: WorldMeshBlockData): boolean
+
+    /**
      * Request to get updates when world mesh block data has changed. WorldMeshBlockEventData messages
      * will be sent to the app's eventListener function when there is a change to the mesh blocks.
      *
@@ -78,6 +96,26 @@ declare module 'lumin' {
      * @return true if the request was made successfully
      */
     stopWorldMeshBlockUpdates(a_prism: Prism): boolean
+
+    /**
+     * Gets whether hand occlusion is currently enabled or not
+     *
+     * @return true if currently enabled, false otherwise
+     */
+    isHandOcclusionEnabled(): boolean
+
+    /**
+     * Start a full screen exclusive mode for a landscape app which does its own rendering full screen
+     * @param options exclusive client options
+     * @param ctxGl OpenGL render context
+     * @return exclusive mode renderer
+     */
+    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void): ExclusiveRender
+
+    /**
+     * Stop full screen exclusive mode
+     */
+    stopExclusiveMode(): boolean
     deInit(): number
     onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint /* uint64_t */> /* std::vector */): void
     onSharingStop(sessionId: bigint /* uint64_t */): void

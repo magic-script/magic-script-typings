@@ -7,6 +7,14 @@ declare module 'lumin' {
     class Time {
 
       /**
+       * Get the time now
+       *
+       * @return a Time object with current time
+       *
+       */
+      static GetCurrentTime(): ui.Time
+
+      /**
        * Creates Time object with hour, minute, second.
        *
        * @param hour hour in the range 0-23.

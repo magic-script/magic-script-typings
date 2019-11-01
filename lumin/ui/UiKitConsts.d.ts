@@ -255,6 +255,11 @@ declare module 'lumin' {
       kCut,
 
       /**
+       * `value = 216`
+       */
+      kCVCameraPrivilege,
+
+      /**
        * `value = 50`
        */
       kDoNotDisturb,
@@ -463,6 +468,11 @@ declare module 'lumin' {
        * `value = 84`
        */
       kKeyboardCapital,
+
+      /**
+       * `value = 220`
+       */
+      kKeyboardLanguage,
 
       /**
        * `value = 85`
@@ -730,6 +740,11 @@ declare module 'lumin' {
       kPublicView,
 
       /**
+       * `value = 217`
+       */
+      kRearrange,
+
+      /**
        * `value = 135`
        */
       kRefresh,
@@ -743,6 +758,11 @@ declare module 'lumin' {
        * `value = 137`
        */
       kReport,
+
+      /**
+       * `value = 218`
+       */
+      kResize,
 
       /**
        * `value = 138`
@@ -965,6 +985,11 @@ declare module 'lumin' {
       kUploadCloud,
 
       /**
+       * `value = 219`
+       */
+      kVideoCapture,
+
+      /**
        * `value = 180`
        */
       kView,
@@ -998,6 +1023,11 @@ declare module 'lumin' {
        * `value = 186`
        */
       kWarning,
+
+      /**
+       * `value = 221`
+       */
+      kWebXR,
 
       /**
        * `value = 187`
@@ -1182,6 +1212,16 @@ declare module 'lumin' {
       kTextWithIcon,
     }
 
+    /** Eclipse dropdownList types from UX specifications. */
+    enum EclipseDropDownListType {
+
+      /**
+       * Circular DropDownList button with icon and label
+       */
+      kIconWithLabel,
+      kTextWithArrow,
+    }
+
     /** Eclipse slider types from UX specifications. */
     enum EclipseSliderType {
 
@@ -1200,6 +1240,36 @@ declare module 'lumin' {
        */
       kHorizontalWithIcon,
       kHorizontalWithLabel,
+    }
+
+    /** Toggle button types from UX specifications. */
+    enum ToggleType {
+
+      /**
+       * Default style toggle.
+       */
+      kDefault,
+
+      /**
+       * Radio button style toggle.
+       */
+      kRadio,
+      kCheckbox,
+    }
+
+    /** Eclipse toggle types from UX specifications. */
+    enum EclipseToggleType {
+
+      /**
+       * Circular toggle with icon.
+       */
+      kIcon,
+
+      /**
+       * Horizontal toggle with icon.
+       */
+      kSwitchWithIcon,
+      kSwitchWithLabel,
     }
 
     /** Font parameters. */
@@ -1619,6 +1689,67 @@ declare module 'lumin' {
        */
       kAM,
       kPM,
+    }
+    enum DateFormat {
+
+      /**
+       * Format based on locale
+       */
+      kAuto,
+
+      /**
+       * Year / Day / Month
+       */
+      kYYYYDDMM,
+
+      /**
+       * Year / Month / Day
+       */
+      kYYYYMMDD,
+
+      /**
+       * Month / Day / Year
+       */
+      kMMDDYYYY,
+
+      /**
+       * Day / Month / Year
+       */
+      kDDMMYYYY,
+
+      /**
+       * Month / Year
+       */
+      kMMYYYY,
+      kDDYYYY,
+    }
+    enum TimeFormat {
+
+      /**
+       * Format based on locale
+       */
+      kAuto,
+
+      /**
+       * hour(0-23) : minute : second
+       */
+      khhmmss,
+
+      /**
+       * hour(1-12) : minute : second   TimePeriod(AM/PM)
+       */
+      khhmmssP,
+
+      /**
+       * hour(0-23) : minute
+       */
+      khhmm,
+
+      /**
+       * hour(1-12) : minute    TimePeriod(AM/PM)
+       */
+      khhmmP,
+      kmmss,
     }
 
     /**

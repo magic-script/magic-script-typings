@@ -1,8 +1,15 @@
 declare module 'lumin' {
+
+  /**
+   * WorldMeshBlockEventData
+   */
   class WorldMeshBlockEventData extends ServerEvent {
     constructor()
-    getData(): WorldMeshBlockData
+
+    /**
+     * Returns what caused the update. If the value is MeshBlockUpdate::kDeleted, use getBlockId to
+     * get the id of the block removed.
+     */
     getUpdateType(): densemesh.MeshBlockUpdate
-    getBlockId(): WorldMeshBlockData.Id
-  };
+  }
 }

@@ -1,38 +1,158 @@
 declare module 'lumin' {
   namespace utils {
+
+    /** PrimitiveType The primitive type (mode) used for drawing */
     enum PrimitiveType {
-      kTriangles = 4,
-      kTriangleStrip = 5,
-      kTriangleFan = 6,
+
+      /**
+       * `value = 4`
+       */
+      kTriangles,
+
+      /**
+       * `value = 5`
+       */
+      kTriangleStrip,
+
+      /**
+       * `value = 6`
+       */
+      kTriangleFan,
     }
+
+    /** LayoutLocation maps a vertex attribute to a shader location */
     enum LayoutLocation {
-      kNotSupported = -1,
-      kLocation0 = 0,
-      kLocation1 = 1,
-      kLocation2 = 2,
-      kLocation3 = 3,
-      kLocation4 = 4,
-      kLocation5 = 5,
-      kLocation6 = 6,
-      kLocation7 = 7,
-      kLocation8 = 8,
-      kLocation9 = 9,
-      kLocation10 = 10,
-      kLocation11 = 11,
-      kLocation12 = 12,
-      kLocation13 = 13,
-      kLocation14 = 14,
-      kLocation15 = 15,
-      kPosition = kLocation0,
-      kUV = kLocation1,
-      kNormal = kLocation2,
-      kPalette = kLocation5,
-      kWeight = kLocation6,
-      kColor = kLocation7,
+
+      /**
+       * `value = -1`
+       */
+      kNotSupported,
+
+      /**
+       * `value = 0`
+       */
+      kLocation0,
+
+      /**
+       * `value = 1`
+       */
+      kLocation1,
+
+      /**
+       * `value = 2`
+       */
+      kLocation2,
+
+      /**
+       * `value = 3`
+       */
+      kLocation3,
+
+      /**
+       * `value = 4`
+       */
+      kLocation4,
+
+      /**
+       * `value = 5`
+       */
+      kLocation5,
+
+      /**
+       * `value = 6`
+       */
+      kLocation6,
+
+      /**
+       * `value = 7`
+       */
+      kLocation7,
+
+      /**
+       * `value = 8`
+       */
+      kLocation8,
+
+      /**
+       * `value = 9`
+       */
+      kLocation9,
+
+      /**
+       * `value = 10`
+       */
+      kLocation10,
+
+      /**
+       * `value = 11`
+       */
+      kLocation11,
+
+      /**
+       * `value = 12`
+       */
+      kLocation12,
+
+      /**
+       * `value = 13`
+       */
+      kLocation13,
+
+      /**
+       * `value = 14`
+       */
+      kLocation14,
+
+      /**
+       * `value = 15`
+       */
+      kLocation15,
+
+      /**
+       * Mesh streams
+       *
+       * `value = kLocation0`
+       */
+      kPosition,
+
+      /**
+       * `value = kLocation1`
+       */
+      kUV,
+
+      /**
+       * `value = kLocation2`
+       */
+      kNormal,
+
+      /**
+       * `value = kLocation5`
+       */
+      kPalette,
+
+      /**
+       * `value = kLocation6`
+       */
+      kWeight,
+
+      /**
+       * `value = kLocation7`
+       */
+      kColor,
     }
+
+    /** AttributeType The datatype and elements count (number of elements used in) an attribute */
     enum AttributeType {
-      kNotSupported = -1,
-      kByte1 = 0,
+
+      /**
+       * `value = -1`
+       */
+      kNotSupported,
+
+      /**
+       * `value = 0`
+       */
+      kByte1,
       kByte2,
       kByte3,
       kByte4,
@@ -65,25 +185,41 @@ declare module 'lumin' {
       kHalfFloat3,
       kHalfFloat4,
     }
+
+    /** Shader types for rendering objects */
     enum ShaderType {
-      kPbr = 0,
+
+      /**
+       * `value = 0`
+       */
+      kPbr,
       kUnlitTextured,
       kDiffuseNormalSpec,
     }
     enum LightType {
-      Directional = 0,
+
+      /**
+       * `value = 0`
+       */
+      Directional,
       Point,
       Spot,
     }
+
+    /** Texture filtering type. */
     enum Filter {
       kNearest,
       kLinear,
     }
+
+    /** Control texture wrapping when a texture coordinate is outside the [0, 1] range. */
     enum Wrap {
       kClampToEdge,
       kRepeat,
       kMirroredRepeat,
     }
+
+    /** Pixel format type. */
     enum Format {
       INVALID,
       GRAY,
@@ -91,9 +227,25 @@ declare module 'lumin' {
       RGB,
       RGBA,
     }
+
+    /**
+     * Parameters for how rendered textures will appear.
+     */
     class Params2d {
-      readonly DEFAULT: utils.Params2d = Params2d();
+
+      /** Useful for a wide variety of texturing use cases.
+       * `value = Params2d()`
+       */
+      readonly DEFAULT: utils.Params2d;
+
+      /**
+       * Horizontal
+       */
       uCoordWrap: utils.Wrap;
+
+      /**
+       * Vertical
+       */
       vCoordWrap: utils.Wrap;
       magFilter: utils.Filter;
       minFilter: utils.Filter;
@@ -102,16 +254,36 @@ declare module 'lumin' {
       maxAnisotropy: number;
       lodBias: number;
       constructor()
-    };
+    }
+
+    /**
+     * Parameters for how rendered 3d textures will appear.
+     */
     class Params3d {
-      readonly DEFAULT: utils.Params3d = Params3d();
+
+      /** Useful for a wide variety of texturing use cases.
+       * `value = Params3d()`
+       */
+      readonly DEFAULT: utils.Params3d;
+
+      /** Horizontal wrapping mode */
       uCoordWrap: utils.Wrap;
+
+      /** Vertical wrapping mode */
       vCoordWrap: utils.Wrap;
+
+      /** Depth wrapping mode */
       wCoordWrap: utils.Wrap;
+
+      /** MAG filter mode */
       magFilter: utils.Filter;
+
+      /** MIN filter mode */
       minFilter: utils.Filter;
+
+      /** MIP MAP filter mode */
       mipMapFilter: utils.Filter;
       constructor()
-    };
+    }
   }
 }

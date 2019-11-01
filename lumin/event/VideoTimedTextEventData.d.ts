@@ -1,9 +1,29 @@
 declare module 'lumin' {
+
+  /**
+   * VideoTimedTextEventData - Video events
+   */
   class VideoTimedTextEventData extends ServerEvent {
     constructor()
-    getNodeId(): BigInt /* uint64_t */
+
+    /**
+     * Returns the node ID associated with this event.
+     */
+    getNodeId(): bigint /* uint64_t */
+
+    /**
+     * @return start time
+     */
     getStartTime(): number
+
+    /**
+     * @return end time
+     */
     getEndTime(): number
+
+    /**
+     * @return text
+     */
     getText(): string
-  };
+  }
 }

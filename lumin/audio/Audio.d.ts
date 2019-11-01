@@ -1,18 +1,71 @@
 declare module 'lumin' {
-  const INVALID_AUDIO_ID: BigInt /* uint64_t */ = 0n;
-  const kMaxAudioChannels: number = 8;
+
+  /**
+   * `value = 0n`
+   */
+  const INVALID_AUDIO_ID: bigint /* uint64_t */;
+
+  /**
+   * `value = 8`
+   */
+  const kMaxAudioChannels: number;
+
+  /**
+   * An audio clip can be in three states, stopped, playing or paused.
+   * Upon creating new audio clip it's in stopped state.
+   */
   enum AudioState {
-    kInvalidAudioState = 0,
+
+    /**
+     * `value = 0`
+     */
+    kInvalidAudioState,
+
+    /**
+     *1
+     */
     kStopped,
+
+    /**
+     *2
+     */
     kPlaying,
     kPaused,
   }
+
+  /**
+   * Audio event types.
+   */
   enum AudioEventType {
-    kInvalidAudioEvent = 0,
+
+    /**
+     * `value = 0`
+     */
+    kInvalidAudioEvent,
+
+    /**
+     * Fires when reached end of the audio playback.
+     */
     kPlayEnd,
+
+    /**
+     * If the audio is in looping mode, the event fires at the end of each loop.
+     */
     kPlayLooped,
+
+    /**
+     * Audio volume is muted by system.
+     */
     kMutedBySystem,
+
+    /**
+     * Audio volume is un-muted by system.
+     */
     kUnmutedBySystem,
+
+    /**
+     * Ducked by system.
+     */
     kDuckedBySystem,
     kUnduckedBySystem,
   }
@@ -21,14 +74,14 @@ declare module 'lumin' {
     max_distance: number;
     rolloff_factor: number;
     constructor()
-  };
+  }
   class SpatialSoundRadiationProperties {
     inner_angle: number;
     outer_angle: number;
     outer_gain: number;
     outer_gain_hf: number;
     constructor()
-  };
+  }
   class SpatialSoundSendLevels {
     gain: number;
     gain_lf: number;
@@ -37,7 +90,7 @@ declare module 'lumin' {
     constructor()
     toString(): string
     fromString(a_str: string): boolean
-  };
+  }
   enum AudioSampleFormat {
     Integer,
     Float,
@@ -50,9 +103,17 @@ declare module 'lumin' {
     sample_format: AudioSampleFormat;
     reserved: number;
     constructor()
-  };
+  }
+
+  /**
+   * System Sound Enums.
+   */
   enum SystemSoundEnum {
-    kInvalid = 0,
+
+    /**
+     * `value = 0`
+     */
+    kInvalid,
     kHover,
     kSelect_01,
     kSelect_02,

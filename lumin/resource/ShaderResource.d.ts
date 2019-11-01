@@ -13,10 +13,10 @@ declare module 'lumin' {
     set(index: number, value: [number, number, number, number] /* glm::quat */): void
     set(index: number, value: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): void
     constructor()
-  };
+  }
   class ShaderResource extends Resource {
     constructor()
     createUniformBuffer(): UniformBuffer
     getShaderType(): utils.ShaderType
-  };
+  }
 }

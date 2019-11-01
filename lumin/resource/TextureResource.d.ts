@@ -8,7 +8,7 @@ declare module 'lumin' {
     /**
      * `value = Desc2d()`
      */
-    readonly DEFAULT: Desc2d;
+    static readonly DEFAULT: Desc2d;
 
     /**
      * Upscale images that have fewer than 3 bytes per channel to RGB.

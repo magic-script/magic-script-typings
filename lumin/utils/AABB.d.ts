@@ -9,7 +9,7 @@ declare module 'lumin' {
       /** Default constructed AABB with no enclosed volume.
        * `value = AABB()`
        */
-      readonly EMPTY: math.AABB;
+      static readonly EMPTY: math.AABB;
 
       /** Initially, the AABB is empty. */
       constructor()

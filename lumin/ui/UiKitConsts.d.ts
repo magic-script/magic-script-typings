@@ -1323,47 +1323,47 @@ declare module 'lumin' {
       /**
        * `value = Alignment(VerticalAlignment.kTop,HorizontalAlignment.kLeft)`
        */
-      readonly TOP_LEFT: ui.Alignment;
+      static readonly TOP_LEFT: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kTop,HorizontalAlignment.kCenter)`
        */
-      readonly TOP_CENTER: ui.Alignment;
+      static readonly TOP_CENTER: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kTop,HorizontalAlignment.kRight)`
        */
-      readonly TOP_RIGHT: ui.Alignment;
+      static readonly TOP_RIGHT: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kCenter,HorizontalAlignment.kLeft)`
        */
-      readonly CENTER_LEFT: ui.Alignment;
+      static readonly CENTER_LEFT: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kCenter,HorizontalAlignment.kCenter)`
        */
-      readonly CENTER_CENTER: ui.Alignment;
+      static readonly CENTER_CENTER: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kCenter,HorizontalAlignment.kRight)`
        */
-      readonly CENTER_RIGHT: ui.Alignment;
+      static readonly CENTER_RIGHT: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kBottom,HorizontalAlignment.kLeft)`
        */
-      readonly BOTTOM_LEFT: ui.Alignment;
+      static readonly BOTTOM_LEFT: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kBottom,HorizontalAlignment.kCenter)`
        */
-      readonly BOTTOM_CENTER: ui.Alignment;
+      static readonly BOTTOM_CENTER: ui.Alignment;
 
       /**
        * `value = Alignment(VerticalAlignment.kBottom,HorizontalAlignment.kRight)`
        */
-      readonly BOTTOM_RIGHT: ui.Alignment;
+      static readonly BOTTOM_RIGHT: ui.Alignment;
     }
 
     /** Describes the scroll bar visibility */

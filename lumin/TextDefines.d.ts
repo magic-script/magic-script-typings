@@ -153,7 +153,7 @@ declare module 'lumin' {
         /**
          * `value = [0,0]`
          */
-        readonly NONE: [number, number] /* glm::vec2 */;
+        static readonly NONE: [number, number] /* glm::vec2 */;
         static IsNone(vector: [number, number] /* glm::vec2 */): boolean
         constructor(prev: number, code: number)
 
@@ -328,7 +328,7 @@ declare module 'lumin' {
       /** Represents "no tile", which has a Unicode value of 0 (the NUL character).
        * `value = TileInfo(NUL_CHAR,0,0,[],[],TextureSize.kNormal,Metrics())`
        */
-      readonly NO_TILE: glyph.TileInfo;
+      static readonly NO_TILE: glyph.TileInfo;
 
       /**
        * Unicode character represented by the glyph.
@@ -373,7 +373,7 @@ declare module 'lumin' {
       /**
        * `value = Font2dDesc(AdvanceDirection.kRight,text.FlowDirection.kBelow,DEFAULT_GLYPH_SIZE,Quality.kStd)`
        */
-      readonly DEFAULT: glyph.Font2dDesc;
+      static readonly DEFAULT: glyph.Font2dDesc;
 
       /** Direction to the next glyph along the baseline. */
       advanceDirection: glyph.AdvanceDirection;

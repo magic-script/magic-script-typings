@@ -7,7 +7,7 @@ declare module 'lumin' {
       /**
        * `value = Params()`
        */
-      readonly DEFAULT: multipack.Params;
+      static readonly DEFAULT: multipack.Params;
 
       /**
        * If mipmapping is enabled or disabled.
@@ -80,7 +80,7 @@ declare module 'lumin' {
        *
        * `value = SubTexture()`
        */
-      readonly NONE: multipack.SubTexture;
+      static readonly NONE: multipack.SubTexture;
 
       /**
        * Unique name of the sub-texture; often a source-image (e.g., "Tex1.png").

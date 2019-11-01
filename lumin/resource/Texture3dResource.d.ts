@@ -8,7 +8,7 @@ declare module 'lumin' {
     /**
      * `value = Desc3d()`
      */
-    readonly DEFAULT: Desc3d;
+    static readonly DEFAULT: Desc3d;
 
     /** Specify if mipmapping is enabled or disabled */
     allowMipmaps: boolean;

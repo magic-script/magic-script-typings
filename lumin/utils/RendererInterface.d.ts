@@ -236,7 +236,7 @@ declare module 'lumin' {
       /** Useful for a wide variety of texturing use cases.
        * `value = Params2d()`
        */
-      readonly DEFAULT: utils.Params2d;
+      static readonly DEFAULT: utils.Params2d;
 
       /**
        * Horizontal
@@ -264,7 +264,7 @@ declare module 'lumin' {
       /** Useful for a wide variety of texturing use cases.
        * `value = Params3d()`
        */
-      readonly DEFAULT: utils.Params3d;
+      static readonly DEFAULT: utils.Params3d;
 
       /** Horizontal wrapping mode */
       uCoordWrap: utils.Wrap;

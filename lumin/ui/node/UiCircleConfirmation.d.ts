@@ -18,7 +18,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, height?: number): ui.UiCircleConfirmation
+      static Create(prism: Prism, height?: number /* float */): ui.UiCircleConfirmation
 
       /**
        * Returns the angle of the vector origin-knob with respect to 3 o'clock direction.
@@ -26,7 +26,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getAngle(): number
+      getAngle(): number /* float */
 
       /**
        * The on confirmation complete Event.
@@ -60,7 +60,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onConfirmationUpdateSub(callback: (arg0: ui.UiEventData, arg1: number) => void): utils.CallbackID
+      onConfirmationUpdateSub(callback: (arg0: ui.UiEventData, arg1: number /* float */) => void): utils.CallbackID
       onConfirmationUpdateUnsub(callbackID: utils.CallbackID): boolean
     }
   }

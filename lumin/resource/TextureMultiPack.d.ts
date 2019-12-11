@@ -17,7 +17,7 @@ declare module 'lumin' {
       /**
        * if 0 and mipmaps are allowed, full mipmap is used, else the num. Defaults to 0
        */
-      numMipmaps: number;
+      numMipmaps: number /* int8_t */;
 
       /**
        * All textures will use the same magnification filter.
@@ -44,7 +44,7 @@ declare module 'lumin' {
       /**
        * Index of the sheet in the multi-pack.
        */
-      index: number;
+      index: number /* uint32_t */;
 
       /**
        * Contains the meta-data
@@ -57,7 +57,7 @@ declare module 'lumin' {
       imageFile: string;
 
       /** Copy the files and meta-data into the object's fields. */
-      constructor(index: number, jsonFile: string, imageFile: string)
+      constructor(index: number /* uint32_t */, jsonFile: string, imageFile: string)
 
       /**
        * Construct an empty object; see empty().
@@ -90,7 +90,7 @@ declare module 'lumin' {
       /**
        * Index of the sheet in the muli-pack that contains the sub-texture.
        */
-      sheetIndex: number;
+      sheetIndex: number /* uint32_t */;
 
       /**
        * Min coordinates of the sub-texture; (x, y) both between [0, 1].
@@ -120,8 +120,8 @@ declare module 'lumin' {
       /**
        * Rotation angle in degrees wrt the main texture (e.g., to save space).
        */
-      rotation: number;
-      constructor(a_name?: string, a_sheetIndex?: number, a_coordsMin?: [number, number] /* glm::vec2 */, a_coordsMax?: [number, number] /* glm::vec2 */, a_startXY?: [number, number] /* glm::ivec2 */, a_size?: [number, number] /* glm::ivec2 */, a_pivotPoint?: [number, number] /* glm::vec2 */, a_rotation?: number)
+      rotation: number /* float */;
+      constructor(a_name?: string, a_sheetIndex?: number /* uint32_t */, a_coordsMin?: [number, number] /* glm::vec2 */, a_coordsMax?: [number, number] /* glm::vec2 */, a_startXY?: [number, number] /* glm::ivec2 */, a_size?: [number, number] /* glm::ivec2 */, a_pivotPoint?: [number, number] /* glm::vec2 */, a_rotation?: number /* float */)
 
       /**
        * True if name is empty.
@@ -168,7 +168,7 @@ declare module 'lumin' {
        * @param params `default = Params.DEFAULT`<br/> To control the rendering of the images.
        * @return The information gathered about the texture multi-pack.
        */
-      static Assemble(vMetaDataNames: Array<string> /* std::vector */, params?: multipack.Params): multipack.Descriptor
+      static Assemble(vMetaDataNames: Array<string> /* std::vector<std::string> */, params?: multipack.Params): multipack.Descriptor
 
       /**
        * Default initialize all fields
@@ -176,7 +176,7 @@ declare module 'lumin' {
       constructor()
 
       /** Initialize the fields with the given parameters, guaranteeing the lists are ordered. */
-      constructor(location: string, sheets: Array<multipack.SheetFiles> /* std::vector */, subTextures: Array<multipack.SubTexture> /* std::vector */, params: multipack.Params)
+      constructor(location: string, sheets: Array<multipack.SheetFiles> /* std::vector<SheetFiles> */, subTextures: Array<multipack.SubTexture> /* std::vector<SubTexture> */, params: multipack.Params)
 
       /** True if no sheets are present in the multi-pack. */
       empty(): boolean
@@ -188,16 +188,16 @@ declare module 'lumin' {
       getParams(): multipack.Params
 
       /** Number of sheets contained in the multi-pack. */
-      getSheetCount(): number
+      getSheetCount(): number /* uint32_t */
 
       /** List of sheets contained in the texture multi-pack, which is ordered by SheetFiles::index. */
-      getSheets(): Array<multipack.SheetFiles> /* std::vector */
+      getSheets(): Array<multipack.SheetFiles> /* std::vector<SheetFiles> */
 
       /** Number of sub-textures contained in the multi-pack. */
-      getSubTextureCount(): number
+      getSubTextureCount(): number /* uint32_t */
 
       /** List of sub-textures, which is ordered by SubTexture::name. */
-      getSubTextures(): Array<multipack.SubTexture> /* std::vector */
+      getSubTextures(): Array<multipack.SubTexture> /* std::vector<SubTexture> */
     }
   }
 }

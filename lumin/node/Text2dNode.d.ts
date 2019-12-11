@@ -31,14 +31,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getWorldBounds(): [[number, number, number] /* glm::vec3 */, [number, number, number] /* glm::vec3 */] /* std::pair */
+    getWorldBounds(): [[number, number, number], [number, number, number]] /* std::pair<glm::vec3, glm::vec3> */
 
     /**
      * The comments for getWorldBounds() apply to this function as well.
      *
      * @priv none
      */
-    getPrismBounds(): [[number, number, number] /* glm::vec3 */, [number, number, number] /* glm::vec3 */] /* std::pair */
+    getPrismBounds(): [[number, number, number], [number, number, number]] /* std::pair<glm::vec3, glm::vec3> */
 
     /**
      * Set the font resource from a resource id. The font resource ID must be of a Font2dResource
@@ -117,7 +117,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTabWidth(): number
+    getTabWidth(): number /* int */
 
     /**
      * Set the number of spaces to use for '\t' characters in
@@ -128,7 +128,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setTabWidth(width: number): void
+    setTabWidth(width: number /* int */): void
 
     /**
      * Get the height of the tallest glyph, which is provided
@@ -139,7 +139,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getGlyphHeight(): number
+    getGlyphHeight(): number /* float */
 
     /**
      * Control the size of glyphs independently of the node transform
@@ -153,7 +153,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setGlyphHeight(height: number): void
+    setGlyphHeight(height: number /* float */): void
 
     /**
      * Get the line spacing for the text, which is by default 1 (i.e.,
@@ -163,7 +163,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getLineSpacing(): number
+    getLineSpacing(): number /* float */
 
     /**
      * Set the line spacing to adjust the distance between lines
@@ -174,7 +174,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLineSpacing(spacing: number): void
+    setLineSpacing(spacing: number /* float */): void
 
     /**
      * Sets the additional character spacing that is applied
@@ -185,7 +185,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setCharacterSpacing(spacing: number): void
+    setCharacterSpacing(spacing: number /* float */): void
 
     /**
      * Gets the current value of the additional character spacing.
@@ -194,7 +194,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCharacterSpacing(): number
+    getCharacterSpacing(): number /* float */
 
     /**
      * Returns 0 by default, which means no maximum value; see
@@ -204,7 +204,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getMaxGlyphsPerLine(): number
+    getMaxGlyphsPerLine(): number /* int */
 
     /**
      * If 0, the default, no limit will be enforced on the line
@@ -215,7 +215,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setMaxGlyphsPerLine(max: number): void
+    setMaxGlyphsPerLine(max: number /* int */): void
 
     /**
      * Get the text justification, which is kStart by default.
@@ -331,6 +331,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCursorPositions(): Array<[number, number] /* glm::vec2 */> /* std::vector */
+    getCursorPositions(): Array<[number, number]> /* std::vector<glm::vec2> */
   }
 }

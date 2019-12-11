@@ -75,6 +75,26 @@ declare module 'lumin' {
       kArrowUp,
 
       /**
+       * `value = 222`
+       */
+      kAspectRatioCustom,
+
+      /**
+       * `value = 223`
+       */
+      kAspectRatioDefault,
+
+      /**
+       * `value = 224`
+       */
+      kAspectRatioTall,
+
+      /**
+       * `value = 225`
+       */
+      kAspectRatioWide,
+
+      /**
        * `value = 14`
        */
       kAutoPlacement,
@@ -1288,18 +1308,18 @@ declare module 'lumin' {
       /**
        * The fond size if worldspace (meters)
        */
-      fontSize: number;
+      fontSize: number /* float */;
 
       /**
        * The font tracking (currently not supported).
        */
-      tracking: number;
+      tracking: number /* int */;
 
       /**
        * If the text should be in all caps.
        */
       allCaps: boolean;
-      constructor(a_style?: resources.FontStyle, a_weight?: resources.FontWeight, a_fontSize?: number, a_tracking?: number, a_allCaps?: boolean)
+      constructor(a_style?: resources.FontStyle, a_weight?: resources.FontWeight, a_fontSize?: number /* float */, a_tracking?: number /* int */, a_allCaps?: boolean)
     }
 
     /** Describes sides for certain UI elements. */
@@ -1755,6 +1775,6 @@ declare module 'lumin' {
     /**
      * `value = 0`
      */
-    const INVALID_COMPONENT_TYPE: number;
+    const INVALID_COMPONENT_TYPE: number /* uint32_t */;
   }
 }

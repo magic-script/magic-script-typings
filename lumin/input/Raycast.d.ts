@@ -27,7 +27,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getDistance(): number
+    getDistance(): number /* float */
 
     /**
      * Returns the prism that was intersected by a raycast.
@@ -145,7 +145,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getDistance(): number
+    getDistance(): number /* float */
 
     /**
      * Return the point hit, in prism-space.

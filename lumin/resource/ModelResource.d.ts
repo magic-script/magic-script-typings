@@ -10,16 +10,16 @@ declare module 'lumin' {
     /**
     * @return The vector of bone names associated with this ModelResource
     */
-    getBoneNames(): Array<string> /* std::vector */
+    getBoneNames(): Array<string> /* std::vector<std::string> */
 
     /**
     * @return The vector of animation names associated with this ModelResource
     */
-    getAnimationNames(): Array<string> /* std::vector */
+    getAnimationNames(): Array<string> /* std::vector<std::string> */
 
     /**
     * @return The vector of sub mesh names associated with this ModelResource
     */
-    getSubMeshNames(): Array<string> /* std::vector */
+    getSubMeshNames(): Array<string> /* std::vector<std::string> */
   }
 }

@@ -23,7 +23,7 @@ declare module 'lumin' {
     /**
      * if 0 and mipmaps are allowed, full mipmap is used, else the numMipmaps. Defaults to 0
      */
-    numMipmaps: number;
+    numMipmaps: number /* int8_t */;
     params: utils.Params2d;
     constructor()
   }
@@ -41,9 +41,12 @@ declare module 'lumin' {
     getUnlitTex2dShader(): utils.ShaderType
 
     /** Get the width of this texture resource. */
-    getWidth(): number
+    getWidth(): number /* uint32_t */
 
     /** Get the height of this texture resource. */
-    getHeight(): number
+    getHeight(): number /* uint32_t */
+
+    /** Get the format of this texture resource. */
+    getFormat(): utils.Format
   }
 }

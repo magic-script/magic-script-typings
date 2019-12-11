@@ -14,12 +14,12 @@ declare module 'lumin' {
     /**
      * @return start time
      */
-    getStartTime(): number
+    getStartTime(): number /* int32_t */
 
     /**
      * @return end time
      */
-    getEndTime(): number
+    getEndTime(): number /* int32_t */
 
     /**
      * @return text

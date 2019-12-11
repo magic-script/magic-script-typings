@@ -126,6 +126,11 @@ declare module 'lumin' {
     kPwFoundObjRead,
 
     /**
+     * `value = 201`
+     */
+    kPcfRead,
+
+    /**
      * `value = 208`
      */
     kNormalNotificationsUsage,
@@ -159,6 +164,11 @@ declare module 'lumin' {
      * `value = 300`
      */
     kWebView,
+
+    /**
+     * `value = 315`
+     */
+    kHandMesh,
   }
 
   /**

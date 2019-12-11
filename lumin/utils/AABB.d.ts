@@ -62,13 +62,13 @@ declare module 'lumin' {
       getExtents(): [number, number, number] /* glm::vec3 */
 
       /** Get the width (x dimension) of the bounding box. */
-      getWidth(): number
+      getWidth(): number /* float */
 
       /** Get the height (y dimension) of the bounding box. */
-      getHeight(): number
+      getHeight(): number /* float */
 
       /** Get the depth (z dimension) of the bounding box. */
-      getDepth(): number
+      getDepth(): number /* float */
 
       /**
        * Set the minimum coordinate of the bounding box
@@ -119,9 +119,8 @@ declare module 'lumin' {
        * @param rayOri Start point of the ray.
        * @param rayDir Direction of the ray. The ray is assumed to be infinite in length.
        * @return Distance to the intersection. To get the intersection point, use rayOri + rayDir * dist.
-       * 
        */
-      intersect(rayOri: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */): number
+      intersect(rayOri: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */): number /* float */
     }
   }
 }

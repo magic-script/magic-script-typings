@@ -22,7 +22,7 @@ declare module 'lumin' {
       /**
        * Icon scale (default 1.0f).
        */
-      iconScale: number;
+      iconScale: number /* float */;
 
       /**
        * Button label text used in kIconWithLabel, kText, and kTextWithIcon.
@@ -57,24 +57,24 @@ declare module 'lumin' {
       /**
        * Height of the Eclipse Button, (default 0 = default button height).
        */
-      height: number;
+      height: number /* float */;
 
       /**
        * Width of the Eclipse Button, (default 0 = auto calculated width).
        */
-      width: number;
+      width: number /* float */;
 
       /**
        * The type of SystemIcon to be used for the eclipse button.
        */
       iconType: ui.SystemIcon;
       constructor(a_type: ui.EclipseButtonType)
-      constructor(a_type: ui.EclipseButtonType, a_pathOrText: string, a_height?: number)
-      constructor(a_type: ui.EclipseButtonType, a_iconPath: string, a_labelText: string, a_height?: number)
-      constructor(a_type: ui.EclipseButtonType, a_iconPath: string, a_labelText: string, a_labelSide: ui.Side, a_height?: number)
-      constructor(a_type: ui.EclipseButtonType, a_iconPath: string, a_labelText: string, a_labelSide: ui.Side, a_height: number, iconType: ui.SystemIcon)
-      constructor(a_type: ui.EclipseButtonType, a_iconType: ui.SystemIcon, a_labelText: string, a_labelSide: ui.Side, a_height?: number)
-      constructor(a_type: ui.EclipseButtonType, a_iconType: ui.SystemIcon, a_height?: number)
+      constructor(a_type: ui.EclipseButtonType, a_pathOrText: string, a_height?: number /* float */)
+      constructor(a_type: ui.EclipseButtonType, a_iconPath: string, a_labelText: string, a_height?: number /* float */)
+      constructor(a_type: ui.EclipseButtonType, a_iconPath: string, a_labelText: string, a_labelSide: ui.Side, a_height?: number /* float */)
+      constructor(a_type: ui.EclipseButtonType, a_iconPath: string, a_labelText: string, a_labelSide: ui.Side, a_height: number /* float */, iconType: ui.SystemIcon)
+      constructor(a_type: ui.EclipseButtonType, a_iconType: ui.SystemIcon, a_labelText: string, a_labelSide: ui.Side, a_height?: number /* float */)
+      constructor(a_type: ui.EclipseButtonType, a_iconType: ui.SystemIcon, a_height?: number /* float */)
     }
 
     /**
@@ -104,7 +104,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, width?: number, height?: number, roundness?: number): ui.UiButton
+      static Create(prism: Prism, labelText: string, width?: number /* float */, height?: number /* float */, roundness?: number /* float */): ui.UiButton
 
       /**
        * Creates an Eclipse button from UX specifications.
@@ -219,7 +219,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextSize(size: number): void
+      setTextSize(size: number /* float */): void
 
       /**
        * Gets the button text label render size height in scene units.
@@ -228,7 +228,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTextSize(): number
+      getTextSize(): number /* float */
 
       /**
        * Sets the button icon size in scene units.

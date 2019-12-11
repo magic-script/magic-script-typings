@@ -32,7 +32,7 @@ declare module 'lumin' {
      *       do not add resources to AudioNode which will be never used or used only once. If the resource
      *       is not going to be used any more, remove the association using removeResource() API.
      */
-    createSoundWithLoadedFile(resourceIDs: Array<bigint /* uint64_t */> /* std::vector */, autoDestroy?: boolean, dynamicDecode?: boolean): boolean
+    createSoundWithLoadedFile(resourceIDs: Array<bigint> /* std::vector<uint64_t> */, autoDestroy?: boolean, dynamicDecode?: boolean): boolean
 
     /**
      * Initializes the AudioNode for loading the audio file chunk at a time in memory.
@@ -60,7 +60,7 @@ declare module 'lumin' {
      *       do not add resources to AudioNode which will be never used or used only once. If the resource
      *       is not going to be used any more, remove the association using removeResource() API.
      */
-    createSoundWithStreamedFile(resourceIDs: Array<bigint /* uint64_t */> /* std::vector */, autoDestroy?: boolean): boolean
+    createSoundWithStreamedFile(resourceIDs: Array<bigint> /* std::vector<uint64_t> */, autoDestroy?: boolean): boolean
 
     /**
      * Sets the AudioNode for playing the predefined system sounds using the
@@ -192,14 +192,14 @@ declare module 'lumin' {
      *
      * @return Number of resources.
      */
-    getNumResources(): number
+    getNumResources(): number /* int */
 
     /**
      * Gets the list of already associated resource IDs
      *
      * @return std::vector of already associated resources.
      */
-    getResources(): Array<bigint /* uint64_t */> /* std::vector */
+    getResources(): Array<bigint> /* std::vector<uint64_t> */
 
     /**
      * Plays either the only one resource sound associated with the node
@@ -293,14 +293,14 @@ declare module 'lumin' {
      *
      * @param volume - Range 0.0f to 8.0f
      */
-    setSoundVolumeLinear(volume: number): void
+    setSoundVolumeLinear(volume: number /* float */): void
 
     /**
      * Gets the current audio volume.
      *
      * @return - Reference to a float to output current value.
      */
-    getSoundVolumeLinear(): number
+    getSoundVolumeLinear(): number /* float */
 
     /**
      * Sets sound pitch.
@@ -311,14 +311,14 @@ declare module 'lumin' {
      *
      * @param pitch - Pitch value to set. Range 0.5 t0 2.0
      */
-    setSoundPitch(pitch: number): void
+    setSoundPitch(pitch: number /* float */): void
 
     /**
      * Get sound pitch.
      *
      * @return - Reference to a float to output current value.
      */
-    getSoundPitch(): number
+    getSoundPitch(): number /* float */
 
     /**
      * Mute or unmute the sound.
@@ -360,14 +360,14 @@ declare module 'lumin' {
      *
      * @param offsetMilliSec - Value for offset in milliseconds.
      */
-    setStreamedFileOffset(offsetMilliSec: number): void
+    setStreamedFileOffset(offsetMilliSec: number /* uint32_t */): void
 
     /**
      * Gets the currently set starting point for playback of a streamed-file sound.
      *
      * @return - Reference to uint32_t to output the current value of offset.
      */
-    getStreamedFileOffset(): number
+    getStreamedFileOffset(): number /* uint32_t */
 
     /**
      * Enable\Disable the capability for spatial sound.
@@ -437,7 +437,7 @@ declare module 'lumin' {
      *
      *
      */
-    setSpatialSoundPosition(channel: number, channelPosition: [number, number, number] /* glm::vec3 */): void
+    setSpatialSoundPosition(channel: number /* uint32_t */, channelPosition: [number, number, number] /* glm::vec3 */): void
 
     /**
      *  Get position of the given audio channel. Position is relative to audio node's
@@ -447,7 +447,7 @@ declare module 'lumin' {
      *  @return - A glm::vec3 which gets populated by the offset
      *               of channels position.
      */
-    getSpatialSoundPosition(channel: number): [number, number, number] /* glm::vec3 */
+    getSpatialSoundPosition(channel: number /* uint32_t */): [number, number, number] /* glm::vec3 */
 
     /**
      * Set the sound direction of a given audio channel.
@@ -461,7 +461,7 @@ declare module 'lumin' {
      * @param channelDirection - A quaternion (glm::quat) specifying the direction of the sound for the given channel
      *                          relative to the node's local orientation.
      */
-    setSpatialSoundDirection(channel: number, channelDirection: [number, number, number, number] /* glm::quat */): void
+    setSpatialSoundDirection(channel: number /* uint32_t */, channelDirection: [number, number, number, number] /* glm::quat */): void
 
     /**
      *  Get sound direction of a given audio channel.
@@ -471,7 +471,7 @@ declare module 'lumin' {
      *  @return - A quaternion (glm::quat) which gets populated by direction
      *               of the sound for the given channel.
      */
-    getSpatialSoundDirection(channel: number): [number, number, number, number] /* glm::quat */
+    getSpatialSoundDirection(channel: number /* uint32_t */): [number, number, number, number] /* glm::quat */
 
     /**
      *  Set spatial sound distance parameters for a given channel.
@@ -479,7 +479,7 @@ declare module 'lumin' {
      *  @param channel - Channel index(zero based).
      *  @param channelProperties - spatial sound distance parameters, See struct SpatialSoundDistanceProperties
      */
-    setSpatialSoundDistanceProperties(channel: number, channelProperties: SpatialSoundDistanceProperties): void
+    setSpatialSoundDistanceProperties(channel: number /* uint32_t */, channelProperties: SpatialSoundDistanceProperties): void
 
     /**
      *  Get spatial sound distance parameters for a given channel.
@@ -488,7 +488,7 @@ declare module 'lumin' {
      *  @return - Reference to distance properties struct.
      *               See struct SpatialSoundDistanceProperties
      */
-    getSpatialSoundDistanceProperties(channel: number): SpatialSoundDistanceProperties
+    getSpatialSoundDistanceProperties(channel: number /* uint32_t */): SpatialSoundDistanceProperties
 
     /**
      *  Set spatial sound radiation parameters for a given channel.
@@ -496,7 +496,7 @@ declare module 'lumin' {
      *  @param channel - Channel index(zero based).
      *  @param channelProperties - spatial sound radiation parameters, See struct SpatialSoundRadiationProperties
      */
-    setSpatialSoundRadiationProperties(channel: number, channelProperties: SpatialSoundRadiationProperties): void
+    setSpatialSoundRadiationProperties(channel: number /* uint32_t */, channelProperties: SpatialSoundRadiationProperties): void
 
     /**
      *  Get spatial sound radiation parameters for a given channel.
@@ -505,7 +505,7 @@ declare module 'lumin' {
      *  @return - Reference to radiation properties struct.
      *               See struct SpatialSoundRadiationProperties
      */
-    getSpatialSoundRadiationProperties(channel: number): SpatialSoundRadiationProperties
+    getSpatialSoundRadiationProperties(channel: number /* uint32_t */): SpatialSoundRadiationProperties
 
     /**
      * Sets the direct send levels for one channel of a sound output.
@@ -522,7 +522,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose direct send levels are being set
      * @param channelSendlevels - SpatialSoundSendLevels struct to set the levels
      */
-    setSpatialSoundDirectSendLevels(channel: number, channelSendlevels: SpatialSoundSendLevels): void
+    setSpatialSoundDirectSendLevels(channel: number /* uint32_t */, channelSendlevels: SpatialSoundSendLevels): void
 
     /**
      * Gets the direct send levels for one channel of a sound output.
@@ -535,7 +535,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose direct send levels are being read
      * @return - SpatialSoundSendLevels struct to return the levels
      */
-    getSpatialSoundDirectSendLevels(channel: number): SpatialSoundSendLevels
+    getSpatialSoundDirectSendLevels(channel: number /* uint32_t */): SpatialSoundSendLevels
 
     /**
      * Sets the room send levels for one channel of a sound output.
@@ -552,7 +552,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose room send levels are being set
      * @param channelSendLevels - SpatialSoundSendLevels struct to set the levels
      */
-    setSpatialSoundRoomSendLevels(channel: number, channelSendLevels: SpatialSoundSendLevels): void
+    setSpatialSoundRoomSendLevels(channel: number /* uint32_t */, channelSendLevels: SpatialSoundSendLevels): void
 
     /**
      * Gets the room send levels for one channel of a sound output.
@@ -565,7 +565,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose room send levels are being read
      * @return - SpatialSoundSendLevels struct to return the levels
      */
-    getSpatialSoundRoomSendLevels(channel: number): SpatialSoundSendLevels
+    getSpatialSoundRoomSendLevels(channel: number /* uint32_t */): SpatialSoundSendLevels
 
     /**
      * Lets the audio service know that the buffer is filled and ready.

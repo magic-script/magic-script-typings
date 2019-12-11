@@ -24,17 +24,17 @@ declare module 'lumin' {
     /**
      * Returns the vertices for this block.
      */
-    getVertices(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getVertices(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /**
      * Returns the indices for this block.
      */
-    getIndices(): Array<number> /* std::vector */
+    getIndices(): Array<number> /* std::vector<uint32_t> */
 
     /**
      * Returns the vertex normals for this block.
      */
-    getNormals(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getNormals(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /**
      * Returns the offset that should be applied to the block's vertices.

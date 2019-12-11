@@ -28,7 +28,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, type: ui.LoadingSpinnerType, resID?: bigint /* uint64_t */, resPath?: string, height?: number): ui.UiLoadingSpinner
+      static Create(prism: Prism, type: ui.LoadingSpinnerType, resID?: bigint /* uint64_t */, resPath?: string, height?: number /* float */): ui.UiLoadingSpinner
 
       /**
        * Creates a determinate UiLoadingSpinner element using default settings.
@@ -37,7 +37,7 @@ declare module 'lumin' {
        * @param height `default = 0.0`<br/> - The height of the loading spinner (optional).
        * @return The new UiLoadingSpinner node.
        */
-      static CreateDeterminate(volume: Prism, height?: number): ui.UiLoadingSpinner
+      static CreateDeterminate(volume: Prism, height?: number /* float */): ui.UiLoadingSpinner
 
       /**
        * Gets the ParticleNode for this UiLoadingSpinner if one exists
@@ -95,14 +95,14 @@ declare module 'lumin' {
        * @param value The normalized value between 0-1 for loading completeness, with 0
        *              being no progress and 1 fully complete.
        */
-      setValue(value: number): void
+      setValue(value: number /* float */): void
 
       /**
        * Get the current normalized value for loading completeness.
        *
        * @return a value between 0-1.
        */
-      getValue(): number
+      getValue(): number /* float */
     }
   }
 }

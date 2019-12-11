@@ -24,7 +24,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTouch(tidx?: number): [number, number, number] /* glm::vec3 */
+    getTouch(tidx?: number /* uint8_t */): [number, number, number] /* glm::vec3 */
 
     /**
      * Returns the current touch count.
@@ -33,7 +33,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTouchCount(): number
+    getTouchCount(): number /* uint32_t */
 
     /**
      * Returns current state of the touch

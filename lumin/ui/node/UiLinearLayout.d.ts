@@ -105,7 +105,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemCount(): number
+      getItemCount(): number /* int */
 
       /**
        * Adds an item to the list.
@@ -160,7 +160,7 @@ declare module 'lumin' {
        * @param index index at which item will be placed
        * @param item The node hierarchy to add to the list.
        */
-      addItemAt(index: number, item: TransformNode): void
+      addItemAt(index: number /* int */, item: TransformNode): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -180,7 +180,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItemAt(index: number /* int */, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -201,7 +201,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItemAt(index: number /* int */, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Sets the item padding at the specified index.
@@ -218,7 +218,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(index: number, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(index: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Sets the item padding.
@@ -242,18 +242,16 @@ declare module 'lumin' {
        *
        * @param index The index of the item in the list.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getItemPadding(index: number): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(index: number /* int */): [number, number, number, number] /* glm::vec4 */
 
       /**
        * Gets the item padding.
        *
        * @param item Pointer to the item Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -274,7 +272,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(index: number, alignment: ui.Alignment): void
+      setItemAlignment(index: number /* int */, alignment: ui.Alignment): void
 
       /**
        * Sets the item alignment.
@@ -298,18 +296,16 @@ declare module 'lumin' {
        *
        * @param index The index of the item in the list.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getItemAlignment(index: number): ui.Alignment
+      getItemAlignment(index: number /* int */): ui.Alignment
 
       /**
        * Gets the item alignment.
        *
        * @param item Pointer to the item Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -325,7 +321,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItem(index: number): TransformNode
+      getItem(index: number /* int */): TransformNode
 
       /**
        * Removes the n'th item from the list.
@@ -340,7 +336,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeItem(index: number): TransformNode
+      removeItem(index: number /* int */): TransformNode
 
       /**
        * Removes the item from the list.
@@ -369,7 +365,7 @@ declare module 'lumin' {
        * @param newItem The pointer for the new new item replacing the Node in the n'th position
        * @return replaced item's pointer.
        */
-      replaceItem(index: number, newItem: TransformNode): TransformNode
+      replaceItem(index: number /* int */, newItem: TransformNode): TransformNode
 
       /**
        * Replaces an existing item in the list with a new item
@@ -392,7 +388,7 @@ declare module 'lumin' {
        * @param index2 a valid index in the list
        * @return true if the two nodes at index1 and index2 have been sucessfully swapped
        */
-      swapItems(index1: number, index2: number): boolean
+      swapItems(index1: number /* int */, index2: number /* int */): boolean
 
       /**
        * Swap two items in the list.

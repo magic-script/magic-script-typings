@@ -11,7 +11,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getPlanes(): Array<WorldPlaneCastResult.Plane> /* std::vector */
+    getPlanes(): Array<WorldPlaneCastResult.Plane> /* std::vector<Plane> */
 
     /**
      * Returns if the data in this struct is valid.
@@ -43,17 +43,17 @@ declare module 'lumin' {
       /**
        * Vertices defining the plane boundary in world space
        */
-      vertices: Array<[number, number, number] /* glm::vec3 */> /* std::vector */;
+      vertices: Array<[number, number, number]> /* std::vector<glm::vec3> */;
 
       /**
        * width of the plane
        */
-      width: number;
+      width: number /* float */;
 
       /**
        * height of the plane
        */
-      height: number;
+      height: number /* float */;
 
       /**
        * flags used to filter the plane search

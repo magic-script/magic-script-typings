@@ -12,14 +12,14 @@ declare module 'lumin' {
      *
      * @return height.
      */
-    getHeight(): number
+    getHeight(): number /* uint32_t */
 
     /**
      * Get the width of the resource
      *
      * @return the width
      */
-    getWidth(): number
+    getWidth(): number /* uint32_t */
 
     /**
      * Returns the EGL Context associated with this resource.

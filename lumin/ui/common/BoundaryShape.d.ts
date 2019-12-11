@@ -11,7 +11,7 @@ declare module 'lumin' {
     class BoundaryShape {
 
       /** Constructor */
-      constructor(size: [number, number] /* glm::vec2 */, roundness: number, offset?: [number, number, number] /* glm::vec3 */)
+      constructor(size: [number, number] /* glm::vec2 */, roundness: number /* float */, offset?: [number, number, number] /* glm::vec3 */)
 
       /**
        * Sets the size of the shape.
@@ -48,14 +48,14 @@ declare module 'lumin' {
        *
        * @param roundness - the corner roundness
        */
-      setRoundness(roundness: number): void
+      setRoundness(roundness: number /* float */): void
 
       /**
        * Gets the roundness of the shape.
        *
        * @return the corner roundness.
        */
-      getRoundness(): number
+      getRoundness(): number /* float */
     }
   }
 }

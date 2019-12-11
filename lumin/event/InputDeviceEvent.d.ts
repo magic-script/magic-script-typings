@@ -9,7 +9,7 @@ declare module 'lumin' {
     /**
      * @return The device Id
      */
-    getDeviceId(): number
+    getDeviceId(): number /* int32_t */
 
     /**
      * @return The device source

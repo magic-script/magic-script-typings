@@ -42,42 +42,42 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getSpeedFactor(): number
+    getSpeedFactor(): number /* float */
 
     /**
      * Set the speed factor; by default, this is 1.0.  Only positive values will be accepted.
      *
      * @priv none
      */
-    setSpeedFactor(a_factor: number): void
+    setSpeedFactor(a_factor: number /* float */): void
 
     /**
      * Retrieve the duration of an individual frame.
      *
      * @priv none
      */
-    getFrameDuration(): number
+    getFrameDuration(): number /* float */
 
     /**
      * Set the duration of an individual frame.
      *
      * @priv none
      */
-    setFrameDuration(a_factor: number): void
+    setFrameDuration(a_factor: number /* float */): void
 
     /**
      * Retrieve the number of iterations remaining.
      *
      * @priv none
      */
-    getRepeatCount(): number
+    getRepeatCount(): number /* uint32_t */
 
     /**
      * Set number of times to repeat playing the Sequence.
      *
      * @priv none
      */
-    setRepeatCount(a_repeatCount: number): void
+    setRepeatCount(a_repeatCount: number /* uint32_t */): void
 
     /**
      * @priv none
@@ -104,7 +104,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    pauseFor(a_pauseTimeInS: number): void
+    pauseFor(a_pauseTimeInS: number /* float */): void
 
     /**
      * @priv none
@@ -130,7 +130,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCurrentFrame(): number
+    getCurrentFrame(): number /* uint32_t */
 
     /**
      * Set the current frame the sprite is displaying. Cannot be used while animating.
@@ -140,13 +140,13 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setCurrentFrame(a_frame: number): boolean
+    setCurrentFrame(a_frame: number /* uint32_t */): boolean
 
     /**
      * Retrieve the total number of frames in the sprites.
      *
      * @priv none
      */
-    getFrameCount(): number
+    getFrameCount(): number /* uint32_t */
   }
 }

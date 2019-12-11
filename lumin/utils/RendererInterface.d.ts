@@ -250,9 +250,9 @@ declare module 'lumin' {
       magFilter: utils.Filter;
       minFilter: utils.Filter;
       mipMapFilter: utils.Filter;
-      maxMipLevel: number;
-      maxAnisotropy: number;
-      lodBias: number;
+      maxMipLevel: number /* uint32_t */;
+      maxAnisotropy: number /* float */;
+      lodBias: number /* float */;
       constructor()
     }
 

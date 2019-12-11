@@ -16,7 +16,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width: number, height?: number): ui.UiScrollBar
+      static Create(prism: Prism, width: number /* float */, height?: number /* float */): ui.UiScrollBar
 
       /**
        * Sets the size of the thumb.
@@ -27,7 +27,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setThumbSize(value: number): void
+      setThumbSize(value: number /* float */): void
 
       /**
        * Gets an indication between 0 and 1 for the size of the thumb in respect to the track.
@@ -38,7 +38,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getThumbSize(): number
+      getThumbSize(): number /* float */
 
       /**
        * Sets the position of the thumb along the track according to the value passed.
@@ -50,7 +50,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setThumbPosition(value: number): void
+      setThumbPosition(value: number /* float */): void
 
       /**
        * Gets an indication between 0 and 1 for the position of the thumb along the track.
@@ -61,7 +61,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getThumbPosition(): number
+      getThumbPosition(): number /* float */
     }
   }
 }

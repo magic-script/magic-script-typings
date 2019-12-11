@@ -7,22 +7,30 @@ declare module 'lumin' {
        */
       enum Code {
         kEn,
-      }
-      namespace En {
+        kEn_GB,
+        kDe_DE,
+        kFr_FR,
 
         /**
-         *English keyboard page codes
+         * `value = kEn`
          */
-        enum PageCode {
-          kLowerLetters,
-          kUpperLetters,
-          kLowerLettersEmail,
-          kUpperLettersEmail,
-          kNumericSymbols,
-          kNumericSymbolsAlt,
-          kNumericOnly,
-          kEmoji,
-        }
+        kEn_US,
+      }
+
+      /**
+       *English keyboard page codes
+       */
+      enum PageCode {
+        kLowerLetters,
+        kUpperLetters,
+        kLowerLettersEmail,
+        kUpperLettersEmail,
+        kNumericSymbols,
+        kNumericSymbolsAlt,
+        kNumericOnly,
+        kEmoji,
+      }
+      namespace En {
       }
     }
 
@@ -68,7 +76,7 @@ declare module 'lumin' {
       class KeyPressedData extends EventData {
         constructor()
         getKeyType(): ui.KeyType
-        getCharCode(): number
+        getCharCode(): number /* char32_t */
       }
       class StringEnteredData extends EventData {
         constructor()
@@ -85,12 +93,12 @@ declare module 'lumin' {
       /**
        *The width of the keyboard in world coordinates
        */
-      width: number;
+      width: number /* float */;
 
       /**
        *The width of the keyboard as a ratio of the calling volume
        */
-      widthRatio: number;
+      widthRatio: number /* float */;
 
       /**
        *The mode of the form buttons
@@ -200,7 +208,7 @@ declare module 'lumin' {
     }
     namespace KeyboardProperties {
       class CustomFormProperties {
-        keyTypes: Array<ui.KeyType> /* std::vector */;
+        keyTypes: Array<ui.KeyType> /* std::vector<KeyType> */;
         custom1ButtonLabel: string;
         custom2ButtonLabel: string;
         custom3ButtonLabel: string;

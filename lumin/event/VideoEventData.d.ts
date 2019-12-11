@@ -36,7 +36,7 @@ declare module 'lumin' {
      * @return event-specific data
      * @priv none
      */
-    getXPos(): number
+    getXPos(): number /* int */
 
     /**
      * Returns event-specific data (see class description).
@@ -44,6 +44,6 @@ declare module 'lumin' {
      * @return event-specific data
      * @priv none
      */
-    getYPos(): number
+    getYPos(): number /* int */
   }
 }

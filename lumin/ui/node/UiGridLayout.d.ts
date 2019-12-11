@@ -44,7 +44,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setColumns(columns: number): void
+      setColumns(columns: number /* int */): void
 
       /**
        * Gets the number of columns set for the grid.
@@ -53,7 +53,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getColumns(): number
+      getColumns(): number /* int */
 
       /**
        * Gets the current calculated columns based on row and column
@@ -61,7 +61,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCurrentColumns(): number
+      getCurrentColumns(): number /* int */
 
       /**
        * Sets the number of rows for the grid.
@@ -83,7 +83,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setRows(rows: number): void
+      setRows(rows: number /* int */): void
 
       /**
        * Gets the number of rows set for the grid.
@@ -92,7 +92,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getRows(): number
+      getRows(): number /* int */
 
       /**
        * Gets the current calculated rows based on row and column
@@ -100,7 +100,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCurrentRows(): number
+      getCurrentRows(): number /* int */
 
       /**
        * Sets the default padding of each item within the grid,
@@ -167,7 +167,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemCount(): number
+      getItemCount(): number /* int */
 
       /**
        * Adds an item to the grid.
@@ -227,7 +227,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: TransformNode): void
+      addItemAt(index: number /* int */, item: TransformNode): void
 
       /**
        * Adds an item to the grid at the specified index.
@@ -247,7 +247,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItemAt(index: number /* int */, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Adds an item to the grid at the specified index.
@@ -271,7 +271,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItemAt(index: number /* int */, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Sets the item padding at the specified row and col position.
@@ -289,7 +289,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(row: number, col: number, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(row: number /* int */, col: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Sets the item padding.
@@ -314,18 +314,16 @@ declare module 'lumin' {
        * @param row The row position of the item (zero-based).
        * @param col The column position of the item (zero-based).
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getItemPadding(row: number, col: number): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(row: number /* int */, col: number /* int */): [number, number, number, number] /* glm::vec4 */
 
       /**
        * Gets the item padding.
        *
        * @param item Pointer to the item Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -344,7 +342,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(row: number, col: number, alignment: ui.Alignment): void
+      setItemAlignment(row: number /* int */, col: number /* int */, alignment: ui.Alignment): void
 
       /**
        * Sets the item alignment.
@@ -366,18 +364,16 @@ declare module 'lumin' {
        * @param row The row position of the item (zero-based).
        * @param col The column position of the item (zero-based).
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getItemAlignment(row: number, col: number): ui.Alignment
+      getItemAlignment(row: number /* int */, col: number /* int */): ui.Alignment
 
       /**
        * Gets the item alignment.
        *
        * @param item Pointer to the item Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -394,7 +390,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItem(index: number): TransformNode
+      getItem(index: number /* int */): TransformNode
 
       /**
        * Gets the item at the row and col position.
@@ -409,7 +405,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItem(row: number, col: number): TransformNode
+      getItem(row: number /* int */, col: number /* int */): TransformNode
 
       /**
        * Removes the item at the row and col position.
@@ -428,7 +424,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeItem(row: number, col: number): TransformNode
+      removeItem(row: number /* int */, col: number /* int */): TransformNode
 
       /**
        * Replaces the item in the grid at (row, col).
@@ -443,7 +439,7 @@ declare module 'lumin' {
        * @param newItem The new item replacing the Node at (row, col)
        * @return replaced Node's pointer.
        */
-      replaceItem(row: number, col: number, newItem: TransformNode): TransformNode
+      replaceItem(row: number /* int */, col: number /* int */, newItem: TransformNode): TransformNode
 
       /**
        * Replaces an existing item in the grid with a new item
@@ -468,7 +464,7 @@ declare module 'lumin' {
        * @param col2 col for item2
        * @return true if the two Nodes at (row1, col1) and (row2, col2) have been sucessfully swapped
        */
-      swapItems(row1: number, col1: number, row2: number, col2: number): boolean
+      swapItems(row1: number /* int */, col1: number /* int */, row2: number /* int */, col2: number /* int */): boolean
 
       /**
        * Swap two items in the grid.

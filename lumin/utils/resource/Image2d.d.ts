@@ -2,10 +2,10 @@ declare module 'lumin' {
   namespace AssetPacker {
 
     /**
-     * Image-3D Data - Holds the pixel data for rendering.
-     * Pixel data to be filled up by fetching the raw memory (getData) and transferred to Texture-3D Resource.
+     * Image-2D Data - Holds the pixel data for rendering.
+     * Pixel data to be filled up by fetching the raw memory (getData) and transferred to Texture Resource.
      */
-    class Image3d {
+    class Image2d {
       constructor()
 
       /**
@@ -28,13 +28,6 @@ declare module 'lumin' {
        * @return image height.
        */
       getHeight(): number /* uint32_t */
-
-      /**
-       * Returns depth of this image data in pixels.
-       *
-       * @return image depth.
-       */
-      getDepth(): number /* uint32_t */
     }
   }
 }

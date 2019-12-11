@@ -21,29 +21,29 @@ declare module 'lumin' {
     getRigidBody2(): bigint /* uint64_t */
 
     /** Returns the number of collisions. */
-    getCollisionCount(): number
+    getCollisionCount(): number /* uint32_t */
 
     /** Returns collision points, in prism-space */
-    getCollisionPoints(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getCollisionPoints(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /** Collision normals are in volume-space */
-    getCollisionNormals(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getCollisionNormals(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /** Returns collision forces, in Newtons (kg-m/s^2) */
-    getCollisionForces(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getCollisionForces(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /**
      * Returns the material for body 1 at a collision.
      *
      * @param collision Collision index of the material.
      */
-    getBody1CollisionMaterial(collision: number): PhysicsMaterial
+    getBody1CollisionMaterial(collision: number /* uint32_t */): PhysicsMaterial
 
     /**
      * Returns the material for body 2 at a collision.
      *
      * @param collision Collision index of the material.
      */
-    getBody2CollisionMaterial(collision: number): PhysicsMaterial
+    getBody2CollisionMaterial(collision: number /* uint32_t */): PhysicsMaterial
   }
 }

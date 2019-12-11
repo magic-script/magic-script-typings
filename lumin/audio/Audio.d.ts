@@ -8,7 +8,7 @@ declare module 'lumin' {
   /**
    * `value = 8`
    */
-  const kMaxAudioChannels: number;
+  const kMaxAudioChannels: number /* uint8_t */;
 
   /**
    * An audio clip can be in three states, stopped, playing or paused.
@@ -70,23 +70,23 @@ declare module 'lumin' {
     kUnduckedBySystem,
   }
   class SpatialSoundDistanceProperties {
-    min_distance: number;
-    max_distance: number;
-    rolloff_factor: number;
+    min_distance: number /* float */;
+    max_distance: number /* float */;
+    rolloff_factor: number /* float */;
     constructor()
   }
   class SpatialSoundRadiationProperties {
-    inner_angle: number;
-    outer_angle: number;
-    outer_gain: number;
-    outer_gain_hf: number;
+    inner_angle: number /* float */;
+    outer_angle: number /* float */;
+    outer_gain: number /* float */;
+    outer_gain_hf: number /* float */;
     constructor()
   }
   class SpatialSoundSendLevels {
-    gain: number;
-    gain_lf: number;
-    gain_mf: number;
-    gain_hf: number;
+    gain: number /* float */;
+    gain_lf: number /* float */;
+    gain_mf: number /* float */;
+    gain_hf: number /* float */;
     constructor()
     toString(): string
     fromString(a_str: string): boolean
@@ -96,12 +96,12 @@ declare module 'lumin' {
     Float,
   }
   class AudioBufferFormat {
-    channel_count: number;
-    samples_per_second: number;
-    bits_per_sample: number;
-    valid_bits_per_sample: number;
+    channel_count: number /* uint32_t */;
+    samples_per_second: number /* uint32_t */;
+    bits_per_sample: number /* uint32_t */;
+    valid_bits_per_sample: number /* uint32_t */;
     sample_format: AudioSampleFormat;
-    reserved: number;
+    reserved: number /* uint32_t */;
     constructor()
   }
 

@@ -25,7 +25,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTogglesOn(): Array<ui.UiToggle> /* std::vector */
+      getTogglesOn(): Array<ui.UiToggle> /* std::vector<UiToggle*> */
 
       /**
        * Returns toggles switched OFF in the toggle group.
@@ -34,7 +34,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTogglesOff(): Array<ui.UiToggle> /* std::vector */
+      getTogglesOff(): Array<ui.UiToggle> /* std::vector<UiToggle*> */
 
       /**
        * Returns whether any of the toggles are ON.

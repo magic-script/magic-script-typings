@@ -97,7 +97,7 @@ declare module 'lumin' {
       /**
        * The time in seconds for the dialog to expire.
        */
-      expireTime: number;
+      expireTime: number /* float */;
       constructor(type: ui.DialogType, layout: ui.DialogLayout)
     }
 
@@ -279,7 +279,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setExpireTime(seconds: number): void
+      setExpireTime(seconds: number /* float */): void
 
       /**
        * Gets the dialog expiration time setting in seconds.
@@ -288,7 +288,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getExpireTime(): number
+      getExpireTime(): number /* float */
 
       /**
        * Gets the current expiration time in seconds.
@@ -297,7 +297,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCurrentExpireTime(): number
+      getCurrentExpireTime(): number /* float */
 
       /**
        * Start the expiration timer.

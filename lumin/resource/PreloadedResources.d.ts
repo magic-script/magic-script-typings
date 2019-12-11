@@ -15,7 +15,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getDefaultUiFontStylesAndWeights(): Array<resources.Preloaded.StyleAndWeight> /* std::vector */
+      getDefaultUiFontStylesAndWeights(): Array<resources.Preloaded.StyleAndWeight> /* std::vector<StyleAndWeight> */
 
       /**
        * Get the Magic Leap default UI font, which is called Lomino.

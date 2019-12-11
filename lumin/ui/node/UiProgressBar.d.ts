@@ -22,7 +22,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width: number, height?: number): ui.UiProgressBar
+      static Create(prism: Prism, width: number /* float */, height?: number /* float */): ui.UiProgressBar
 
       /**
        * The on progress bar changed Event.
@@ -42,7 +42,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMin(min: number): void
+      setMin(min: number /* float */): void
 
       /**
        * Sets the progress bar max value.
@@ -52,7 +52,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMax(max: number): void
+      setMax(max: number /* float */): void
 
       /**
        * Acquires the progress bar min value.
@@ -60,7 +60,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getMin(): number
+      getMin(): number /* float */
 
       /**
        * Acquires the progress bar max value.
@@ -68,7 +68,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getMax(): number
+      getMax(): number /* float */
 
       /**
        * Sets the progress bar min and max values.
@@ -81,7 +81,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMinMax(min: number, max: number): void
+      setMinMax(min: number /* float */, max: number /* float */): void
 
       /**
        * Gets the progress bar min and max values.
@@ -101,7 +101,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setValue(value: number): void
+      setValue(value: number /* float */): void
 
       /**
        * Gets the current progress bar value.
@@ -110,7 +110,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getValue(): number
+      getValue(): number /* float */
 
       /**
        * Gets the size of the progress bar.
@@ -138,7 +138,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getProgressColor(): Array<[number, number, number, number] /* glm::vec4 */> /* std::vector */
+      getProgressColor(): Array<[number, number, number, number]> /* std::vector<glm::vec4> */
     }
   }
 }

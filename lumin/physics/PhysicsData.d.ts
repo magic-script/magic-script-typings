@@ -14,12 +14,12 @@ declare module 'lumin' {
      * Rate to run the simulation, in frames per second. Should be less
      * than the update/render rate.
      */
-    simulationRateFps: number;
+    simulationRateFps: number /* float */;
 
     /**
      * A velocity limit below which objects will not bounce. 2 is a good base value.
      */
-    bounceThreshold: number;
+    bounceThreshold: number /* float */;
 
     /**
      * Type of collision solver to use. If the type is kFastNormal or kFastFast,

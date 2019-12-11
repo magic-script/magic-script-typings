@@ -3,12 +3,12 @@ declare module 'lumin' {
   /**
    * `value = 60.0`
    */
-  const MAX_CLIENT_FPS: number;
+  const MAX_CLIENT_FPS: number /* float */;
 
   /**
    * `value = 1.0/MAX_CLIENT_FPS`
    */
-  const FPS_DELTA: number;
+  const FPS_DELTA: number /* float */;
 
   /**
    * `value = 0n`
@@ -38,12 +38,12 @@ declare module 'lumin' {
   /**
    * `value = -1`
    */
-  const INVALID_CONTROL_ID: number;
+  const INVALID_CONTROL_ID: number /* int32_t */;
 
   /**
    * `value = -1`
    */
-  const INVALID_DEVICE_ID: number;
+  const INVALID_DEVICE_ID: number /* int32_t */;
 
   /**
    * PrismType Indicates the type of Bound Volume
@@ -521,7 +521,7 @@ declare module 'lumin' {
      *
      * `value = 0.001`
      */
-    const MIN_ZDEPTH_OFFSET: number;
+    const MIN_ZDEPTH_OFFSET: number /* float */;
     enum RenderingLayer {
 
       /**
@@ -564,38 +564,38 @@ declare module 'lumin' {
       /** Number of coordinates in the texture buffer of a quad.
        * `value = 4`
        */
-      const NUM_TEXTURE_COORDS: number;
+      const NUM_TEXTURE_COORDS: number /* int */;
 
       /** Number of coordinates in the vertex buffer of a quad.
        * `value = 4`
        */
-      const NUM_VERTEX_COORDS: number;
+      const NUM_VERTEX_COORDS: number /* int */;
 
       /** Number of indices into the vertex buffer of a quad.
        * `value = 6`
        */
-      const NUM_INDICES: number;
+      const NUM_INDICES: number /* int */;
 
       /**
        * Default texture coordinates for a quad.
        *
        * `value = [[0,1],[1,1],[1,0],[0,0]]`
        */
-      const DEFAULT_TEX_COORDS: Array<[number, number] /* glm::vec2 */> /* std::vector */;
+      const DEFAULT_TEX_COORDS: Array<[number, number]> /* std::vector<glm::vec2> */;
 
       /**
        * Default vertices for a square quad.
        *
        * `value = [[0,0,0],[1,0,0],[1,1,0],[0,1,0]]`
        */
-      const DEFAULT_VERTICES: Array<[number, number, number] /* glm::vec3 */> /* std::vector */;
+      const DEFAULT_VERTICES: Array<[number, number, number]> /* std::vector<glm::vec3> */;
 
       /**
        * Default indices into a quad mesh.
        *
        * `value = [0,1,2,0,2,3]`
        */
-      const DEFAULT_INDICES: Array<number> /* std::vector */;
+      const DEFAULT_INDICES: Array<number> /* std::vector<uint32_t> */;
 
       /**
        * Default local AABB for a quad.
@@ -1093,6 +1093,7 @@ declare module 'lumin' {
       COMPANION_APP,
       HEADPHONE,
       BATTERY,
+      TABLET_DEVICE,
     }
     enum EventType {
 
@@ -1119,6 +1120,15 @@ declare module 'lumin' {
       EVENT_PLUGGED_IN,
       EVENT_PLUGGED_OUT,
       EVENT_VOICE,
+    }
+    enum TabletToolType {
+
+      /**
+       * `value = 0`
+       */
+      TOOL_TYPE_UNKNOWN,
+      TOOL_TYPE_PEN,
+      TOOL_TYPE_ERASER,
     }
     enum DeviceEventType {
 

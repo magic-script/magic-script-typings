@@ -28,6 +28,6 @@ declare module 'lumin' {
      * @brief Returns supported schemes
      * @return Vector of supported DRM schemes
      */
-    getSupportedSchemes(): Array<Array<number> /* std::vector */> /* std::vector */
+    getSupportedSchemes(): Array<Array<number>> /* std::vector<std::vector<uint8_t>> */
   }
 }

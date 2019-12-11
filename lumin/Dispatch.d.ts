@@ -34,5 +34,5 @@ declare module 'lumin' {
    *        used to find supported applications.
    * @return DispatchResult::kOk or a DispatchResult error code
    */
-  function TryOpenApplication(fileInfoList: Array<FileInfo> /* std::vector */): DispatchResult
+  function TryOpenApplication(fileInfoList: Array<FileInfo> /* std::vector<FileInfo> */): DispatchResult
 }

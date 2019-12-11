@@ -25,7 +25,7 @@ declare module 'lumin' {
      *
      * @return The coordinates.
      */
-    getTexCoords(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getTexCoords(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /**
      * Set the texture coordinates of the node being rendered.
@@ -33,7 +33,7 @@ declare module 'lumin' {
      *
      * @param texCoords The coordinates.
      */
-    setTexCoords(texCoords: Array<[number, number, number] /* glm::vec3 */> /* std::vector */): void
+    setTexCoords(texCoords: Array<[number, number, number]> /* std::vector<glm::vec3> */): void
 
     /**
      * Set a color to use when rendering the cube. The effect of this

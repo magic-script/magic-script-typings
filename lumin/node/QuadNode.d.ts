@@ -51,7 +51,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setSubTexture(subTextureIndex: number): void
+    setSubTexture(subTextureIndex: number /* int32_t */): void
 
     /**
      * Returns the texture coordinates used by the QuadNode.
@@ -60,7 +60,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTexCoords(): Array<[number, number] /* glm::vec2 */> /* std::vector */
+    getTexCoords(): Array<[number, number]> /* std::vector<glm::vec2> */
 
     /**
      * Set the texture coordinates of the node being rendered, if the
@@ -71,14 +71,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setTexCoords(texCoords: Array<[number, number] /* glm::vec2 */> /* std::vector */): void
+    setTexCoords(texCoords: Array<[number, number]> /* std::vector<glm::vec2> */): void
 
     /**
      * Get the vertices that define the quad geometry.
      *
      * @priv none
      */
-    getVertices(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getVertices(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /**
      * Set the custom size, which is by default one: { 1, 1 }.
@@ -124,6 +124,6 @@ declare module 'lumin' {
      *
      * @param a_lodBias float value for lodBias. Default is 0. When 0, Resource LODBias will be used
      */
-    setLodBias(a_lodBias: number): void
+    setLodBias(a_lodBias: number /* float */): void
   }
 }

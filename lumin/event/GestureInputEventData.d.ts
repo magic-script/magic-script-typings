@@ -18,7 +18,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandGestureIndex(): number
+    getHandGestureIndex(): number /* uint32_t */
 
     /**
      * @return The hand gesture location in world coordinates.
@@ -32,7 +32,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandGestureKeyPointCount(): number
+    getHandGestureKeyPointCount(): number /* uint32_t */
 
     /**
      * Get the position of the hand gesture key point with the given index
@@ -47,14 +47,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandConfidence(): number
+    getHandConfidence(): number /* float */
 
     /**
      * Get the confidence of a given hand pose
      * @param gesture the hand pose for which to retreive the confidence
      * @return a confidence value between 0 and 1 (higher means greater confidence)
      */
-    getGestureKeyPoseConfidence(gesture: input.GestureType): number
+    getGestureKeyPoseConfidence(gesture: input.GestureType): number /* float */
 
     /**
      * Get the confidence that a hand is recognized.
@@ -62,7 +62,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandGestureConfidence(): number
+    getHandGestureConfidence(): number /* float */
 
     /**
      * Get the confidence of a given hand pose
@@ -72,7 +72,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandGestureKeyPoseConfidence(gesture: input.GestureType): number
+    getHandGestureKeyPoseConfidence(gesture: input.GestureType): number /* float */
 
     /**
      * Checks whether a given keypoint was recognized this event
@@ -93,35 +93,35 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getGestureSpeed(): number
+    getGestureSpeed(): number /* float */
 
     /**
      * @return The absolute value of the angular value in case of radial gestures
      *
      * @priv none
      */
-    getGestureDistance(): number
+    getGestureDistance(): number /* float */
 
     /**
      * @return Distance between 2 fingers
      *
      * @priv none
      */
-    getGestureFingerGap(): number
+    getGestureFingerGap(): number /* float */
 
     /**
      * @return Radius of the gesture in case of Radial gestures
      *
      * @priv none
      */
-    getGestureRadius(): number
+    getGestureRadius(): number /* float */
 
     /**
      * @return Angle from center of touchpad to finger
      *
      * @priv none
      */
-    getGestureAngle(): number
+    getGestureAngle(): number /* float */
 
     /**
      * @return Location of the gesture in normalized touch coordinates (-1.0 to 1.0).
@@ -135,7 +135,7 @@ declare module 'lumin' {
      * @see getTouch()
      * @priv none
      */
-    getGestureForceValue(): number
+    getGestureForceValue(): number /* float */
 
     /**
      * Get touch xy coordinates and z force
@@ -155,14 +155,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTouch(tidx?: number): [number, number, number] /* glm::vec3 */
+    getTouch(tidx?: number /* uint8_t */): [number, number, number] /* glm::vec3 */
 
     /**
      * @return the current touch count
      *
      * @priv none
      */
-    getTouchCount(): number
+    getTouchCount(): number /* uint32_t */
 
     /**
      * Get current state of the touch

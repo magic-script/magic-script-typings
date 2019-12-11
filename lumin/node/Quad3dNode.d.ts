@@ -26,14 +26,14 @@ declare module 'lumin' {
      *
      * @return The coordinates.
      */
-    getTexCoords(): Array<[number, number, number] /* glm::vec3 */> /* std::vector */
+    getTexCoords(): Array<[number, number, number]> /* std::vector<glm::vec3> */
 
     /**
      * Set the texture coordinates of the node being rendered.
      * if the resource is not a Texture3dResource, this will have no effect.
      * @param texCoords The coordinates.
      */
-    setTexCoords(texCoords: Array<[number, number, number] /* glm::vec3 */> /* std::vector */): void
+    setTexCoords(texCoords: Array<[number, number, number]> /* std::vector<glm::vec3> */): void
 
     /**
      * Set the custom size, which is by default one: { 1, 1 }.

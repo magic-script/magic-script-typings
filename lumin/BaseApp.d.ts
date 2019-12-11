@@ -109,14 +109,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setEventSleepTime(a_fSleepTime: number): void
+    setEventSleepTime(a_fSleepTime: number /* float */): void
 
     /**
      * Override this method to do one-time de-initialization before quitting.
      *
      * @priv none
      */
-    deInit(): number
+    deInit(): number /* int */
 
     /**
      * Override this method to receive sharing start callback
@@ -124,7 +124,7 @@ declare module 'lumin' {
      * @param sessionId Id associated with the sharing session that has just started
      * @param sceneGraphIDs Vector of SceneGraphIDs that are associated with an ongoing session
      */
-    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint /* uint64_t */> /* std::vector */): void
+    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint> /* std::vector<uint64_t> */): void
 
     /**
      * Override this method to receive sharing stop callback
@@ -198,7 +198,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    updateLoop(a_fDelta: number): boolean
+    updateLoop(a_fDelta: number /* float */): boolean
 
     /**
      * Override this method to react to incoming events
@@ -320,7 +320,7 @@ declare module 'lumin' {
      *
      * @return a value between 0.0 and 1.0 indicating the confidence
      */
-    getHeadposeConfidence(): number
+    getHeadposeConfidence(): number /* float */
 
     /**
      * Get the current headpose mode (6-DOF or 3-DOF)
@@ -340,11 +340,10 @@ declare module 'lumin' {
      * Returns the height (y-value) of the floor, if known, in world coordinates.
      *
      * @return Returned floor height.
-     * 
      *
      * @priv WorldReconstruction
      */
-    getFloorHeight(): number
+    getFloorHeight(): number /* float */
 
     /**
      * Checks if a privilege is currently granted.
@@ -411,7 +410,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    triggerControlHaptic(haptic: haptics.VibePattern, controlID?: number, deviceID?: number): void
+    triggerControlHaptic(haptic: haptics.VibePattern, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Trigger a control LED haptic
@@ -422,7 +421,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    triggerControlHaptic(haptic: haptics.LedPattern, controlID?: number, deviceID?: number): void
+    triggerControlHaptic(haptic: haptics.LedPattern, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Trigger a list of custom control haptics
@@ -433,7 +432,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    triggerControlCustomHaptics(haptics: Array<HapticInfo> /* std::vector */, controlID?: number, deviceID?: number): void
+    triggerControlCustomHaptics(haptics: Array<HapticInfo> /* std::vector<HapticInfo> */, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Trigger a custom control haptic
@@ -444,7 +443,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    triggerControlCustomHaptic(haptic: HapticInfo, controlID?: number, deviceID?: number): void
+    triggerControlCustomHaptic(haptic: HapticInfo, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Request vibration haptics on the body of the control device
@@ -456,7 +455,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    triggerControlBodyHaptics(pattern: haptics.VibePattern, duration?: number, intensity?: haptics.VibeIntensity, controlID?: number, deviceID?: number): void
+    triggerControlBodyHaptics(pattern: haptics.VibePattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Request light haptics on the LEDs of the control device
@@ -468,7 +467,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    triggerControlLEDHaptics(pattern: haptics.LedPattern, duration?: number, intensity?: haptics.VibeIntensity, controlID?: number, deviceID?: number): void
+    triggerControlLEDHaptics(pattern: haptics.LedPattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Get an object clients can use to find preloaded resources.
@@ -484,7 +483,6 @@ declare module 'lumin' {
      * @param a_rayStart Ray starting position, in volume coordinates.
      * @param a_rayEnd Ray end position, in volume coordinates.
      * @return Hit data.
-     * 
      */
     raycastNodes(a_prism: Prism, a_rayStart: [number, number, number] /* glm::vec3 */, a_rayEnd: [number, number, number] /* glm::vec3 */): RayCastResultLight
 
@@ -501,7 +499,7 @@ declare module 'lumin' {
     *
     * @priv WorldReconstruction
     */
-    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, userValue: bigint /* uint64_t */, confidenceThreshold?: number): boolean
+    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
 
     /**
      * Performs an area ray cast against the world around you. Results are returned as a WorldRayCastEventData
@@ -519,7 +517,7 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, width: number, height: number, horizFovDeg: number, userValue: bigint /* uint64_t */, confidenceThreshold?: number): boolean
+    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, width: number /* uint32_t */, height: number /* uint32_t */, horizFovDeg: number /* float */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
 
     /**
      * Sends a request to the server to search for planes in the environment that match given
@@ -535,11 +533,13 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    requestWorldPlaneCast(center: [number, number, number] /* glm::vec3 */, maxDistance: number, maxPlaneCount: number, flags: PlanecastFlags, userValue: bigint /* uint64_t */): boolean
+    requestWorldPlaneCast(center: [number, number, number] /* glm::vec3 */, maxDistance: number /* float */, maxPlaneCount: number /* uint32_t */, flags: PlanecastFlags, userValue: bigint /* uint64_t */): boolean
 
     /**
      * Returns if the image tracking system is ready to be used. Do not call any image tracking functions
      * until this function returns true.
+     *
+     * Currently image tracking is only available for immersive apps.
      *
      * @return true if we can start tracking images.
      * @priv CameraCapture
@@ -550,6 +550,8 @@ declare module 'lumin' {
      * Starts a request to track an non-moving image, based on an image file. Static images are easier
      * to track than moving ones, so use this method if possible. This will enable tracking if it is
      * not already enabled.
+     *
+     * Currently image tracking is only available for immersive apps.
      *
      * @param imageName Unique name for the image.
      * @param dimensions Approximate size of the image, in meters. This is used to help identify the image.
@@ -565,6 +567,8 @@ declare module 'lumin' {
      * track than non-moving ones; use this function only if sure the image is moving. This will enable
      * tracking if it is not already enabled.
      *
+     * Currently image tracking is only available for immersive apps.
+     *
      * @param imageName Unique name for the image.
      * @param dimensions Approximate size of the image, in meters. This is used to help identify the image.
      * @param file File name of the image to track. Name is relative to the app's location.
@@ -576,6 +580,8 @@ declare module 'lumin' {
 
     /**
      * Stops tracking an image. If no images are being tracked, will disable tracking.
+     *
+     * Currently image tracking is only available for immersive apps.
      *
      * @param imageName Name of the image. Should be the same as the name passed to one of the the
      * trackImage functions.
@@ -603,7 +609,6 @@ declare module 'lumin' {
 
     /**
      * Get the system locale code
-     * 
      */
     getLocaleCode(): string
 
@@ -620,5 +625,121 @@ declare module 'lumin' {
      * @return true if succesfully unregistered, false otherwise
      */
     unregisterOnLocaleChangedCallback(callbackID: utils.CallbackID): boolean
+
+    /**
+     * Get the input state tracking system (used to maintain the list of active input devices and track their input)
+     *
+     * @return a pointer to the input state tracking system
+     */
+    getInput(): InputHelper
+
+    /**
+     * Get WiFi Enabled status.
+     * return True if Wifi is enabled in settings, otherwise false.
+     */
+    isWiFiEnabled(): boolean
+
+    /**
+     * Get WiFi Connected status.
+     * return True if there is a connection, otherwise false.
+     */
+    isWiFiConnected(): boolean
+
+    /**
+     * Get Internet Connection status.
+     * return True if there is a connection, otherwise false.
+     */
+    isInternetConnected(): boolean
+
+    /**
+     * Maps the hand gesture to a NamedInputEventData.
+     *
+     * @param a_actionName The name of the NamedInputEventData.
+     * @param a_handGesture Hand gesture type.
+     * @param a_hold `default = false`<br/> Whether the event should be sent immediately (true), or send only if the
+     *   gesture is held for 1.5 seconds (false).
+     * @param a_once `default = true`<br/> Whether the event should be repeated (true), or send only once (false).
+     * @param a_handIndex `default = 0xFFFFFFFF`<br/> Hand index that the event should be associated with
+     *   (Left = 0, Right = 1, Both = 0xFFFFFFFF).
+     * @return The Id that can be used to identify this event when received in the eventListener.
+     */
+    addNamedHandGestureAction(a_actionName: string, a_handGesture: input.GestureType, a_hold?: boolean, a_once?: boolean, a_handIndex?: number /* uint32_t */): number /* std::size_t */
+
+    /**
+     * Maps a Control button to a NamedInputEventData.
+     *
+     * @param a_actionName The name of the NamedInputEventData.
+     * @param a_keyCode The button's key code
+     * @param a_longPress `default = false`<br/> Whether the event should be emitted on long press (true) or short press (false)
+     * @return The Id that can be used to identify this event when received in the eventListener
+     */
+    addNamedButtonAction(a_actionName: string, a_keyCode: input.KeyCodes, a_longPress?: boolean): number /* std::size_t */
+
+    /**
+     * Maps a Control gesture to a NamedInputEventData.
+     *
+     * @param a_actionName The name of the NamedInputEventData.
+     * @param a_touchGesture Touch gesture type.
+     * @param a_touchDirection `default = input.GestureDirection.UNKNOWN`<br/> Gesture's direction (GestureDirection::UNKNOWN for all).
+     * @return The Id that can be used to identify this event when received in the eventListener
+     */
+    addNamedTouchAction(a_actionName: string, a_touchGesture: input.GestureType, a_touchDirection?: input.GestureDirection): number /* std::size_t */
+
+    /**
+     * Maps Control's 6DoF to a NamedInputEventData.
+     *
+     * @param a_actionName The name of the NamedInputEventData.
+     * @return The Id that can be used to identify this event when received in the eventListener
+     */
+    addNamed6DOFPoseAction(a_actionName: string): number /* std::size_t */
+
+    /**
+     * Maps eye tracking events to a NamedInputEventData.
+     *
+     * @param a_actionName The name of the NamedInputEventData.
+     * @return The Id that can be used to identify this event when received in the eventListener
+     */
+    addNamedEyeTrackingAction(a_actionName: string): number /* std::size_t */
+
+    /**
+     * Returns the nearest Persistent Coordinate Frame to a given world location.
+     * NOTE: This function can be slow, use sparingly.
+     *
+     * @param worldLocation Position to get the PCF from.
+     * @return The PCF. If it is INVALID_PCF, it is likely the world mesh hasn't been built up enough
+     * to create the PCF data, or the app doesn't have the PcfRead privilege set.
+     *
+     * @priv PcfRead
+     */
+    getNearestPCF(worldLocation: [number, number, number] /* glm::vec3 */): PCFId
+
+    /**
+     * Returns the number of Persistent Coordinate Frames the system knows about.
+     *
+     * @return The PCF count.
+     *
+     * @priv PcfRead
+     */
+    getPCFCount(): number /* uint32_t */
+
+    /**
+     * Returns a list of the Persistent Coordinate Frames the system knows about. It is suggested that
+     * this function should only be called when getPCFCount() > 0 and has changed since the previous call.
+     *
+     * @return PCF list.
+     *
+     * @priv PcfRead
+     */
+    getPCFs(): Array<PCFId> /* std::vector<PCFId> */
+
+    /**
+     * Gets data associated with a given PCF.
+     *
+     * @param pcf The PCF to fetch data for.
+     * @return PCF data. Check the state value of the returned data to verify that it is good.
+     *
+     * @priv PcfRead
+     */
+    getPCFData(pcf: PCFId): PCFData
   }
 }

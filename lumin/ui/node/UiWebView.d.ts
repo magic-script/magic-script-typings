@@ -58,7 +58,7 @@ declare module 'lumin' {
        * @param xpixels amount of pixels to scroll on x
        * @param ypixels amount of pixels to scroll on y
        */
-      scrollBy(xpixels: number, ypixels: number): void
+      scrollBy(xpixels: number /* int */, ypixels: number /* int */): void
 
       /**
        * Provides if UiWebView has back navigation entry.
@@ -112,6 +112,26 @@ declare module 'lumin' {
        * @param client a pointer to UiWebViewClient instance.
        */
       setWebViewClient(client: ui.UiWebViewClient): void
+
+      /**
+       * Set the speech to text property for virtual keyboard
+       *
+       * Enable/Disable the speech to text functionality of the virtual keyboard.
+       * By default speech to text is enabled.
+       *
+       * @param enabled a boolean value for enabling/disabling keyboard speech to text
+       */
+      setVirtualKeyboardSpeechToText(enabled: boolean): void
+
+      /**
+       * Retrieves the speech to text property for virtual keyboard
+       *
+       * Return the speech to text property for virtual keyboard.
+       * By default speech to text is enabled.
+       *
+       * @return a boolean value for the property
+       */
+      getVirtualKeyboardSpeechToText(): boolean
     }
   }
 }

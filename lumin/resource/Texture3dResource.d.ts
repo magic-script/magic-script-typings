@@ -14,7 +14,7 @@ declare module 'lumin' {
     allowMipmaps: boolean;
 
     /** if 0 and mipmaps are allowed, full mipmap is used, else the num. Defaults to 0 */
-    numMipmaps: number;
+    numMipmaps: number /* int8_t */;
 
     /** Parameters for how rendered 3d textures will appear */
     params: utils.Params3d;
@@ -56,18 +56,18 @@ declare module 'lumin' {
      * Gets the width of this Texture-3D resource.
      * @return width of this resource.
      */
-    getWidth(): number
+    getWidth(): number /* uint32_t */
 
     /**
      * Gets the height of this Texture-3D resource.
      * @return height of this resource.
      */
-    getHeight(): number
+    getHeight(): number /* uint32_t */
 
     /**
      * Gets the depth of this Texture-3D resource.
      * @return depth of this resource.
      */
-    getDepth(): number
+    getDepth(): number /* uint32_t */
   }
 }

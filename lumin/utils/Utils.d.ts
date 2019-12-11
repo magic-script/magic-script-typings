@@ -56,7 +56,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function BuildTexCoords(coordsMin: [number, number] /* glm::vec2 */, coordsMax: [number, number] /* glm::vec2 */): Array<[number, number] /* glm::vec2 */> /* std::vector */
+    function BuildTexCoords(coordsMin: [number, number] /* glm::vec2 */, coordsMax: [number, number] /* glm::vec2 */): Array<[number, number]> /* std::vector<glm::vec2> */
 
     /**
      * Applies std::tolower to every character of the input string.

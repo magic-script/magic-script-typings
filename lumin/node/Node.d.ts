@@ -86,7 +86,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getChild(a_iIndex: number): Node
+    getChild(a_iIndex: number /* int */): Node
 
     /**
      * Gets the number of immediate children this Node has
@@ -95,7 +95,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getChildCount(): number
+    getChildCount(): number /* int */
 
     /**
      * Get the local AABB of this Node only, not including children,
@@ -155,7 +155,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    findChildren(a_type: number, a_bExactType?: boolean, a_bIncludeSelf?: boolean): Array<Node> /* std::vector */
+    findChildren(a_type: number /* int32_t */, a_bExactType?: boolean, a_bIncludeSelf?: boolean): Array<Node> /* std::vector<Node*> */
 
     /**
      * Searches up the tree parentage for the specific Node type.
@@ -166,7 +166,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    findParent(a_type: number, a_bExactType?: boolean): Node
+    findParent(a_type: number /* int32_t */, a_bExactType?: boolean): Node
 
     /**
      * Gets this Node's immediate parent

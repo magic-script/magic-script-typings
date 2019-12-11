@@ -21,7 +21,7 @@ declare module 'lumin' {
        * @param minute minute in the range 0-59.
        * @param second second in the range 0-59.
        */
-      constructor(hour: number, minute: number, second: number)
+      constructor(hour: number /* int */, minute: number /* int */, second: number /* int */)
 
       /** Default ctr */
       constructor()
@@ -32,7 +32,7 @@ declare module 'lumin' {
        * @param hour hour to be set in the range 0-23.
        *
        */
-      setHour(hour: number): void
+      setHour(hour: number /* int */): void
 
       /**
        * Get the hour in 24 hour time.
@@ -40,7 +40,7 @@ declare module 'lumin' {
        * @return hour, hour in the range 0-23.
        *
        */
-      hour(): number
+      hour(): number /* int */
 
       /**
        * Get the hour in 12 hour time.
@@ -48,7 +48,7 @@ declare module 'lumin' {
        * @return hour, hour in the range 1-12.
        *
        */
-      twelveHourForm(): number
+      twelveHourForm(): number /* int */
 
       /**
        * Sets the minute. Clamping will be applied for out of range values.
@@ -56,7 +56,7 @@ declare module 'lumin' {
        * @param minute minute in the range 0-59.
        *
        */
-      setMinute(minute: number): void
+      setMinute(minute: number /* int */): void
 
       /**
        * Gets the minute.
@@ -64,7 +64,7 @@ declare module 'lumin' {
        * @return minute, minute in the range 0-59.
        *
        */
-      minute(): number
+      minute(): number /* int */
 
       /**
        * Sets the second. Clamping will be applied for out of range values.
@@ -72,7 +72,7 @@ declare module 'lumin' {
        * @return second, second in the range 0-59.
        *
        */
-      setSecond(second: number): void
+      setSecond(second: number /* int */): void
 
       /**
        * Gets the second.
@@ -80,7 +80,7 @@ declare module 'lumin' {
        * @return second, second in the range 0-59.
        *
        */
-      second(): number
+      second(): number /* int */
 
       /**
        * Gets the TimePeriod, kAM or kPM.

@@ -54,5 +54,19 @@ declare module 'lumin' {
      * @return int with the result value.
      */
     getLoadStatus(): resources.LoadStatus
+
+    /**
+     * Protected/Copyrighted content, do not share with other clients
+     *
+     * @param value true if protected
+     */
+    setProtectedContent(value: boolean): void
+
+    /**
+     * Check if content is protected
+     *
+     * @return true if protected
+     */
+    isProtectedContent(): boolean
   }
 }

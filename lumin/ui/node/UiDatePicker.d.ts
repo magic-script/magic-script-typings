@@ -37,17 +37,17 @@ declare module 'lumin' {
       /**
        * Minimum year available to choose from - Default defaultDate.year - 25
        */
-      yearMin: number;
+      yearMin: number /* int */;
 
       /**
        * Maximum year available to choose from - Default defaultDate.year
        */
-      yearMax: number;
+      yearMax: number /* int */;
 
       /**
        * Delimiter between MM DD YYYY - Default to locale based delimiter
        */
-      delimiter: number;
+      delimiter: number /* char32_t */;
       constructor()
     }
 
@@ -70,7 +70,7 @@ declare module 'lumin' {
        *
        * @return The new UiDatePicker node.
        */
-      static Create(volume: Prism, label?: string, labelSide?: ui.Side, dateFormat?: string, defaultDate?: ui.Date, yearMin?: number, yearMax?: number): ui.UiDatePicker
+      static Create(volume: Prism, label?: string, labelSide?: ui.Side, dateFormat?: string, defaultDate?: ui.Date, yearMin?: number /* int */, yearMax?: number /* int */): ui.UiDatePicker
 
       /**
        * Creates a UiDatePicker element using default settings.

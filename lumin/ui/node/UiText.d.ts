@@ -229,7 +229,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextSize(size: number): void
+      setTextSize(size: number /* float */): void
 
       /**
        * Gets the text render size height in scene units.
@@ -238,7 +238,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTextSize(): number
+      getTextSize(): number /* float */
 
       /**
        * Sets the text bounds size in scene units.
@@ -273,7 +273,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setCharacterSpacing(spacing: number): void
+      setCharacterSpacing(spacing: number /* float */): void
 
       /**
        * Gets the current value of the additional character spacing.
@@ -282,7 +282,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCharacterSpacing(): number
+      getCharacterSpacing(): number /* float */
 
       /**
        * Sets the line spacing to adjust the distance between lines
@@ -293,7 +293,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setLineSpacing(spacing: number): void
+      setLineSpacing(spacing: number /* float */): void
 
       /**
        * Gets the line spacing for the text, which is by default 1 (i.e.,
@@ -303,7 +303,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getLineSpacing(): number
+      getLineSpacing(): number /* float */
 
       /**
        * Sets whether all caps is enforced or not.

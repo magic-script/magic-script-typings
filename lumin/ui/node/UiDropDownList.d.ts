@@ -12,12 +12,12 @@ declare module 'lumin' {
       /**
        * Potential list of sub-items (for multi-level) for this item.
        */
-      subItems: Array<ui.DropDownListItem> /* std::vector */;
+      subItems: Array<ui.DropDownListItem> /* std::vector<DropDownListItem> */;
 
       /**
        * An optional, custom defined, identifier to associate with each item.
        */
-      id: number;
+      id: number /* uint32_t */;
 
       /**
        * Set the selected state of this item
@@ -32,7 +32,7 @@ declare module 'lumin' {
       /**
        * Get the zero-based level of the item in the multi-level list.
        */
-      getLevel(): number
+      getLevel(): number /* int */
 
       /**
        * The parent list item this item belongs to, if any.
@@ -40,10 +40,10 @@ declare module 'lumin' {
       getParent(): ui.DropDownListItem
 
       /** Constructor with specified label and optional id (no sub-items) */
-      constructor(a_label: string, a_id?: number)
+      constructor(a_label: string, a_id?: number /* uint32_t */)
 
       /** Constructor with specified label, list of sub-items, and optional id */
-      constructor(a_label: string, a_subItems: Array<ui.DropDownListItem> /* std::vector */, a_id?: number)
+      constructor(a_label: string, a_subItems: Array<ui.DropDownListItem> /* std::vector<DropDownListItem> */, a_id?: number /* uint32_t */)
     }
 
     /** Dropdown parameters for creating Eclipse Dropdowns */
@@ -67,7 +67,7 @@ declare module 'lumin' {
       /**
        * Icon scale (default 1.0f).
        */
-      iconScale: number;
+      iconScale: number /* float */;
 
       /**
        * Button label text used in kIconWithLabel and kTextWithArrow
@@ -92,12 +92,12 @@ declare module 'lumin' {
       /**
        * Height of the eclipse Dropdown Button, (default 0 = default button height).
        */
-      height: number;
+      height: number /* float */;
 
       /**
        * Width of the eclipse Dropdown Button, (default 0 = auto calculated width).
        */
-      width: number;
+      width: number /* float */;
 
       /**
        * The type of SystemIcon to be used for the eclipse dropdown button
@@ -149,7 +149,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onSelectionChangedSub(callback: (arg0: ui.UiEventData, arg1: Array<ui.DropDownListItem> /* std::vector */) => void): utils.CallbackID
+      onSelectionChangedSub(callback: (arg0: ui.UiEventData, arg1: Array<ui.DropDownListItem> /* std::vector<const DropDownListItem*> */) => void): utils.CallbackID
       onSelectionChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -169,7 +169,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setList(list: Array<ui.DropDownListItem> /* std::vector */): void
+      setList(list: Array<ui.DropDownListItem> /* std::vector<DropDownListItem> */): void
 
       /**
        * Gets the list of options for the drop-down list.
@@ -178,7 +178,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getList(): Array<ui.DropDownListItem> /* std::vector */
+      getList(): Array<ui.DropDownListItem> /* std::vector<DropDownListItem> */
 
       /**
        * Show the dropdownlist or not.
@@ -210,7 +210,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getSelectedItems(): Array<ui.DropDownListItem> /* std::vector */
+      getSelectedItems(): Array<ui.DropDownListItem> /* std::vector<const DropDownListItem*> */
 
       /**
        * Sets the font for the list text.
@@ -245,7 +245,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setListTextSize(size: number): void
+      setListTextSize(size: number /* float */): void
 
       /**
        * Gets the size of the list text.
@@ -254,7 +254,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getListTextSize(): number
+      getListTextSize(): number /* float */
 
       /**
        * Sets the max height of a dropdown list.
@@ -267,7 +267,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setListMaxHeight(maxHeight: number): void
+      setListMaxHeight(maxHeight: number /* float */): void
 
       /**
        * Gets the max height of lists.
@@ -276,7 +276,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getListMaxHeight(): number
+      getListMaxHeight(): number /* float */
 
       /**
        * Sets the max amount of characters to be used per list item label before adding '...'.
@@ -288,7 +288,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMaxCharacterLimit(charLimit: number): void
+      setMaxCharacterLimit(charLimit: number /* int */): void
 
       /**
        * Gets the max amount of characters to be used per list item label.
@@ -298,7 +298,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getMaxCharacterLimit(): number
+      getMaxCharacterLimit(): number /* int */
 
       /**
        * Unselects all selected items in the list and sublists.
@@ -317,7 +317,7 @@ declare module 'lumin' {
        * @param id - the id assigned to the DropDownListItem
        * @param selected - true if this item should be selected
        */
-      setSelected(id: number, selected: boolean): void
+      setSelected(id: number /* int */, selected: boolean): void
     }
   }
 }

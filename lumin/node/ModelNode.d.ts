@@ -36,7 +36,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    playAnimation(a_ID: bigint /* uint64_t */, a_pAnimationName: string, a_bPaused: boolean, a_uiNumLoops?: number): void
+    playAnimation(a_ID: bigint /* uint64_t */, a_pAnimationName: string, a_bPaused: boolean, a_uiNumLoops?: number /* uint32_t */): void
 
     /**
      * Sets the animation pause state for the current model node.
@@ -63,7 +63,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setAnimationPlaybackSpeed(a_playbackSpeed: number): void
+    setAnimationPlaybackSpeed(a_playbackSpeed: number /* float */): void
 
     /**
      * Set the current time of the animation.
@@ -72,7 +72,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setAnimationTime(a_t: number): void
+    setAnimationTime(a_t: number /* float */): void
 
     /**
      * Gets the current playback speed
@@ -81,7 +81,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getAnimationPlaybackSpeed(): number
+    getAnimationPlaybackSpeed(): number /* float */
 
     /**
      * Play the Emotion FX blend setup file (state machine), this is a different type of animation
@@ -97,7 +97,7 @@ declare module 'lumin' {
      * @priv none
      */
     playBlendSetup(a_motionSetID: bigint /* uint64_t */, a_blendSetupID: bigint /* uint64_t */): void
-    blendSetupSetParam(param: string, value: number): void
+    blendSetupSetParam(param: string, value: number /* float */): void
     blendSetupSetParam(param: string, value: boolean): void
     blendSetupSetParamVec(param: string, value: [number, number] /* glm::vec2 */): void
     blendSetupSetParamVec(param: string, value: [number, number, number] /* glm::vec3 */): void
@@ -114,6 +114,6 @@ declare module 'lumin' {
      * @param textureSlot - Texture Slot, eg, Albedo, Normal, etc.
      * @param textureID - ID of the new texture
      */
-    setTexture(materialName: string, textureSlot: number, textureID: bigint /* uint64_t */): void
+    setTexture(materialName: string, textureSlot: number /* uint32_t */, textureID: bigint /* uint64_t */): void
   }
 }

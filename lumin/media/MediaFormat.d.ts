@@ -209,11 +209,11 @@ declare module 'lumin' {
      * Human readable representation of the format.
      */
     toString(): string
-    setInt32(name: string, value: number): void
+    setInt32(name: string, value: number /* int32_t */): void
     setInt64(name: string, value: bigint /* int64_t */): void
-    setFloat(name: string, value: number): void
-    setSize(name: string, value: number): void
+    setFloat(name: string, value: number /* float */): void
+    setSize(name: string, value: number /* size_t */): void
     setString(name: string, value: string): void
-    setBuffer(name: string, buffer: Array<number> /* std::vector */): void
+    setBuffer(name: string, buffer: Array<number> /* std::vector<uint8_t> */): void
   }
 }

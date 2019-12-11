@@ -18,7 +18,7 @@ declare module 'lumin' {
      *
      * @return the track number
      */
-    getTrack(): number
+    getTrack(): number /* int32_t */
 
     /**
      * Returns the time info.
@@ -39,13 +39,13 @@ declare module 'lumin' {
      *
      * @return the size info
      */
-    getSize(): number
+    getSize(): number /* int32_t */
 
     /**
      * Returns the text buffer.
      *
      * @return the text buffer
      */
-    getBuffer(): Array<number> /* std::vector */
+    getBuffer(): Array<number> /* std::vector<uint8_t> */
   }
 }

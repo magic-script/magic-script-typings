@@ -132,7 +132,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    onUpdate(a_fDelta: number): void
+    onUpdate(a_fDelta: number /* float */): void
 
     /**
      * Returns the optional name for this PrismController (used for diagnostics).
@@ -220,7 +220,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setEventSleepTime(a_fSleepTime: number): void
+    setEventSleepTime(a_fSleepTime: number /* float */): void
 
     /**
      * Sets whether the scene graph will be retained when this controller is detached
@@ -251,6 +251,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getEventSleepTime(): number
+    getEventSleepTime(): number /* float */
   }
 }

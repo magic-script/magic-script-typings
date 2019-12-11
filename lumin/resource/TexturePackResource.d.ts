@@ -10,6 +10,6 @@ declare module 'lumin' {
 
     /** Get the descriptor data used to initialize this resource. */
     getDescriptor(): multipack.Descriptor
-    getSubTextureCount(): number
+    getSubTextureCount(): number /* uint32_t */
   }
 }

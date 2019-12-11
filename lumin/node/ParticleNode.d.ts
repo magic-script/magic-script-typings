@@ -38,8 +38,8 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setProperty(a_name: string, a_value: number): boolean
-    setProperty(a_name: string, a_value: number): boolean
+    setProperty(a_name: string, a_value: number /* int */): boolean
+    setProperty(a_name: string, a_value: number /* float */): boolean
     setProperty(a_name: string, a_value: [number, number] /* glm::vec2 */): boolean
     setProperty(a_name: string, a_value: [number, number, number] /* glm::vec3 */): boolean
     setProperty(a_name: string, a_value: [number, number, number, number] /* glm::vec4 */): boolean
@@ -79,5 +79,44 @@ declare module 'lumin' {
      * @priv none
      */
     reset(): void
+
+    /**
+     * Gets the data for a curve attribute sampler. A curve attribute sampler can have 1-4 curves,
+     * which can control a particle's position, color, etc.
+     *
+     * @param name Attribute sampler name
+     * @return Sampler data
+     *
+     *
+     * @priv none
+     */
+    getCurveSampler(name: string): particles.CurveSampler
+
+    /**
+     * Sets the data for a curve attribute sampler. A curve attribute sampler can have 1-4 curves,
+     * which can control a particle's position, color, etc.
+     *
+     * @param name Attribute sampler name
+     * @param sampler Sampler data
+     *
+     * @return true if the name matches a known property
+     *
+     * @priv none
+     */
+    setSampler(name: string, sampler: particles.CurveSampler): boolean
+
+    /**
+     * Sets the data for a shape attribute sampler. A shape sampler can be used to generate particles
+     * on a surface, either a simple geometric shape, or a baked mesh (.pkmm file). A mesh shape can
+     * also be animated via a baked .pksa animation file.
+     *
+     * @param name Attribute sampler name
+     * @param sampler Sampler data
+     *
+     * @return true if the name matches a known property
+     *
+     * @priv none
+     */
+    setSampler(name: string, sampler: particles.ShapeSampler): boolean
   }
 }

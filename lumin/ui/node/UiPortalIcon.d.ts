@@ -38,14 +38,14 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setHoverScale(scale: number): void
+      setHoverScale(scale: number /* float */): void
 
       /**
        * Gets the overall hover scale multiplier of the portal icon element.
        *
        * @priv none
        */
-      getHoverScale(): number
+      getHoverScale(): number /* float */
 
       /**
        * Sets the overall hover Z offset of the portal icon element.
@@ -57,14 +57,14 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setHoverZOffset(offset: number): void
+      setHoverZOffset(offset: number /* float */): void
 
       /**
        * Gets the overall hover Z offset of the portal icon element.
        *
        * @priv none
        */
-      getHoverZOffset(): number
+      getHoverZOffset(): number /* float */
 
       /**
        * Sets the display mode for the protal icon label.  The default
@@ -286,7 +286,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextSize(size: number): void
+      setTextSize(size: number /* float */): void
 
       /**
        * Gets the portal icon text label render size height in scene units.
@@ -295,7 +295,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTextSize(): number
+      getTextSize(): number /* float */
 
       /**
        * Gets the UiText label for this portal icon.

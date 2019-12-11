@@ -85,7 +85,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getUserHandGesture(): number
+    getUserHandGesture(): number /* uint32_t */
 
     /**
      * Gives the current set of Auto Haptic Gestures for this prism
@@ -94,7 +94,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getUserAutoHapticGesture(): number
+    getUserAutoHapticGesture(): number /* uint32_t */
 
     /**
      * @return the distance threshold the hand gesture cursor must be at for a node
@@ -102,7 +102,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandGestureTouchDistance(): number
+    getHandGestureTouchDistance(): number /* float */
 
     /**
      * @return the distance threshold the hand gesture cursor must be at for a node
@@ -110,7 +110,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHandGestureHoverDistance(): number
+    getHandGestureHoverDistance(): number /* float */
 
     /**
      * Get a Node by its Id
@@ -240,13 +240,13 @@ declare module 'lumin' {
     /**
      * Creates a VideoNode with the given resolution and display mode.
      *
-     * @param a_width `default = 512`<br/> - The surface resolution width 1 to 2048
-     * @param a_height `default = 512`<br/> - The surface resolution height 1 to 2048
+     * @param a_width `default = 512`<br/> - The surface initial resolution width 1 to 2048 (will be overwritten by video resolution)
+     * @param a_height `default = 512`<br/> - The surface initial resolution height 1 to 2048 (will be overwritten by video resolution)
      * @return The new VideoNode
      *
      * @priv none
      */
-    createVideoNode(a_width?: number, a_height?: number): VideoNode
+    createVideoNode(a_width?: number /* uint32_t */, a_height?: number /* uint32_t */): VideoNode
 
     /**
      * Create a 2D text node using the Magic Leap UI font (regular weight).
@@ -371,36 +371,48 @@ declare module 'lumin' {
     setPhysicsWorldMeshEnabled(a_enable: boolean, a_material: PhysicsMaterial): void
 
     /**
-    * Creates a MaterialResource
-    *
-    * @param a_fileName File name of the resource to load. By default assumed to be a relative path
-    *                    from the executable file.
-    * @param a_localScopeOnly `default = false`<br/> The scope of this material. When set to true the kmat's contained in the material
-    *                     will not be added to the prism's list of materials for general resolve.
-    * @param a_absolutePath `default = false`<br/> Flag that a_fileName is an absolute path name, instead of a relative path.
-    *
-    * @return resource instance
-    */
-    createMaterialResourceId(a_fileName: string, a_localScopeOnly?: boolean, a_absolutePath?: boolean): bigint /* uint64_t */
+     * Creates a MaterialResource
+     *
+     * @param a_fileName File name of the resource to load. By default assumed to be a relative path
+     *                    from the executable file.
+     * @param a_localScopeOnly `default = false`<br/> The scope of this material. When set to true the kmat's contained in the material
+     *                     will not be added to the prism's list of materials for general resolve.
+     * @param a_absolutePath `default = false`<br/> Flag that a_fFileName is an absolute path name, instead of a relative path.
+     * @param a_descriptor `default = -1`<br/> - optional file descriptor that points to a resource.
+     *                     If passed to the resource the resource takes ownership of the File Descriptor.
+     * @param a_basePath `default = null`<br/> - If you are loading a resource from an absolute path, and that path !=
+     *                     The current process path, set this field to the equivalent base path in the other
+     *                     client directory. This allows path relative dependencies to solve a fully
+     *                     qualified (absolute) path outside of the current process. This value defaults to
+     *                     the currently executing process root.
+     *
+     * @return resource instance
+     */
+    createMaterialResourceId(a_fileName: string, a_localScopeOnly?: boolean, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
-    * Creates a ModelResource
-    *
-    * @param a_fileName File name of the resource to load. By default assumed to be a relative path
-    *                    from the executable file.
-    * @param a_importScale The scale that will be applied to this resource
-    * @param a_absolutePath `default = false`<br/> Flag that a_fileName is an absolute path name, instead of a relative path.
-    * @param a_descriptor `default = -1`<br/> - optional file descriptor that points to a resource.
-    *                     If passed to the resource the resource takes ownership of the File Descriptor.
-    * @param a_basePath `default = null`<br/> - If you are loading a resource from an absolute path, and that path !=
-    *                     The current process path, set this field to the equivalent base path in the other
-    *                     client directory. This allows path relative dependencies to solve a fully
-    *                     qualified (absolute) path outside of the current process. This value defaults to
-    *                     the currently executing process root.
-    *
-    * @return ID for the Resource
-    */
-    createModelResourceId(a_fileName: string, a_importScale: number, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+     * Creates a ModelResource
+     *
+     * @param a_fileName File name of the resource to load. By default assumed to be a relative path
+     *                    from the executable file.
+     * @param a_importScale The scale that will be applied to this resource
+     * @param a_absolutePath `default = false`<br/> Flag that a_fileName is an absolute path name, instead of a relative path.
+     * @param a_descriptor `default = -1`<br/> - optional file descriptor that points to a resource.
+     *                     If passed to the resource the resource takes ownership of the File Descriptor.
+     * @param a_basePath `default = null`<br/> - If you are loading a resource from an absolute path, and that path !=
+     *                     The current process path, set this field to the equivalent base path in the other
+     *                     client directory. This allows path relative dependencies to solve a fully
+     *                     qualified (absolute) path outside of the current process. This value defaults to
+     *                     the currently executing process root.
+     * @param a_materialScopeId `default = INVALID_RESOURCE_ID`<br/> Optional MaterialResouce. When set the new ModelResoure will only use KMATs that
+     *                     are available in this MaterialResources scope. When not set, ModelResource will resolve
+     *                     KMAT's from the Prism's scope. See a_forceMaterialScope.
+     * @param a_forceMaterialScope `default = false`<br/> When optionally set the new ModelResource will only attempt to resolve KMAT's
+     *                     from embedded materials, or when a_materialScopeId also from that MaterialResource.
+     *
+     * @return ID for the Resource
+     */
+    createModelResourceId(a_fileName: string, a_importScale: number /* float */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string, a_materialScopeId?: bigint /* uint64_t */, a_forceMaterialScope?: boolean): bigint /* uint64_t */
 
     /**
       * Creates instanced model resource
@@ -426,7 +438,7 @@ declare module 'lumin' {
       *
       * @priv none
       */
-    createInstancedModelResourceId(a_fileName: string, a_maxInstances: number, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+    createInstancedModelResourceId(a_fileName: string, a_maxInstances: number /* uint32_t */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
      * Creates animation resource
@@ -451,7 +463,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAnimationResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+    createAnimationResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
      * Creates animation set resource
@@ -476,7 +488,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAnimationSetResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+    createAnimationSetResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
      * Creates animation blend setup resource
@@ -501,7 +513,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAnimationBlendSetupResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+    createAnimationBlendSetupResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
      * Creates a PlanarResource of given size which provides access to EGL Context and EGL Surface.
@@ -512,7 +524,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createPlanarEGLResourceId(a_width?: number, a_height?: number): bigint /* uint64_t */
+    createPlanarEGLResourceId(a_width?: number /* uint32_t */, a_height?: number /* uint32_t */): bigint /* uint64_t */
 
     /**
      * Create a TextureResource with the given description from the PNG image file.
@@ -528,7 +540,17 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createTextureResourceId(tex2dDesc: Desc2d, imageFile: string, a_absolutePath?: boolean, a_fileDescriptor?: number): bigint /* uint64_t */
+    createTextureResourceId(tex2dDesc: Desc2d, imageFile: string, a_absolutePath?: boolean, a_fileDescriptor?: number /* int */): bigint /* uint64_t */
+
+    /**
+    * Create a Texture-2D resource with the decoded image data.
+    *
+    * @param tex2dDesc Initialization parameters for the resource.  For reasonable default values,
+    *                  use the DEFAULT static member.
+    * @param image Decoded Image data to be used for rendering.
+    * @return The new TextureResource Id when succeeded, INVALID_RESOURCE_ID otherwise.
+    */
+    createTextureResourceId(tex2dDesc: Desc2d, image: AssetPacker.Image2d): bigint /* uint64_t */
 
     /**
      * Create and initialize a TexturePackResource.
@@ -540,7 +562,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createTexturePackResourceId(a_vMetaDataNames: Array<string> /* std::vector */, a_params: multipack.Params, absolutePath?: boolean): bigint /* uint64_t */
+    createTexturePackResourceId(a_vMetaDataNames: Array<string> /* std::vector<std::string> */, a_params: multipack.Params, absolutePath?: boolean): bigint /* uint64_t */
 
     /**
      * Create and initialize a TexturePackResource.
@@ -572,7 +594,7 @@ declare module 'lumin' {
      * @param desc `default = Desc3d.DEFAULT`<br/> Optional Initialization parameters for the resource to control rendering.
      * @return The new Texture-3D resource id.
      */
-    createTexture3dResourceId(image: Object, desc?: Desc3d): bigint /* uint64_t */
+    createTexture3dResourceId(image: AssetPacker.Image3d, desc?: Desc3d): bigint /* uint64_t */
 
     /**
      * Create a Font2dResource with the given description.
@@ -606,7 +628,7 @@ declare module 'lumin' {
      *
      * @return Resource ID
      */
-    createLoadedFileAudioResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+    createLoadedFileAudioResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
      * Create audio resource with streamed file.
@@ -617,7 +639,7 @@ declare module 'lumin' {
      *
      * @return Resource ID
      */
-    createStreamedFileAudioResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number, a_basePath?: string): bigint /* uint64_t */
+    createStreamedFileAudioResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
 
     /**
      * Creates particle package resource
@@ -688,7 +710,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    startTrackHandGesture(a_uieHandGesture: number): void
+    startTrackHandGesture(a_uieHandGesture: number /* uint32_t */): void
 
     /**
      * Stops Tracking a set of Hand Gesture
@@ -697,7 +719,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    stopTrackHandGesture(a_uieHandGesture: number): void
+    stopTrackHandGesture(a_uieHandGesture: number /* uint32_t */): void
 
     /**
      * Tracks a set of gestures we wish to enable auto haptics on
@@ -706,7 +728,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    startTrackingAutoHapticOnGesture(a_uieGesture: number): void
+    startTrackingAutoHapticOnGesture(a_uieGesture: number /* uint32_t */): void
 
     /**
      * Stops tracking a set of gestures for auto haptics
@@ -715,7 +737,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    stopTrackingAutoHapticOnGesture(a_uieGesture: number): void
+    stopTrackingAutoHapticOnGesture(a_uieGesture: number /* uint32_t */): void
 
     /**
      * Set how close the hand gesture cursor must be to a node for a touch to register
@@ -723,7 +745,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setHandGestureTouchDistance(distance: number): void
+    setHandGestureTouchDistance(distance: number /* float */): void
 
     /**
      * Set how close the hand gesture cursor must be to a node for a hover to register
@@ -731,7 +753,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setHandGestureHoverDistance(distance: number): void
+    setHandGestureHoverDistance(distance: number /* float */): void
 
     /**
      * Set the input service hand gesture poll rate
@@ -739,7 +761,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setHandGestureFilterPollRate(pollRate: number): void
+    setHandGestureFilterPollRate(pollRate: number /* float */): void
 
     /**
      * Set the input service hand gesture position delta filter
@@ -747,7 +769,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setHandGestureFilterPositionDelta(positionDelta: number): void
+    setHandGestureFilterPositionDelta(positionDelta: number /* float */): void
 
     /**
      * Set the input service hand gesture confidence level filter
@@ -755,7 +777,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setHandGestureFilterConfidenceLevel(confidenceLevel: number): void
+    setHandGestureFilterConfidenceLevel(confidenceLevel: number /* float */): void
 
     /**
      * Load a resource model into memory, and create its defined resources.
@@ -780,7 +802,6 @@ declare module 'lumin' {
      *
      * @param filePath Path to object model file.
      * @return If successful this string will be populated with the object model's name.
-     * 
      *
      * @priv none
      */
@@ -791,7 +812,6 @@ declare module 'lumin' {
      *
      * @param modelString Object model data as a string.
      * @return If successful this string will be populated with the object model's name.
-     * 
      *
      * @priv none
      */
@@ -915,7 +935,16 @@ declare module 'lumin' {
     setPrismController(rootPrismController: PrismController): void
 
     /**
-     * Enable//Disable the Prism Visual state changes
+     * Returns the current root scene controller.
+     *
+     * @return The current root scene controller or nullptr if there is none.
+     *
+     * @priv none
+     */
+    getPrismController(): PrismController
+
+    /**
+     * Enable/Disable the Prism Visual state changes
      *
      * @param value - Enable/Disable the state changing
      *
@@ -976,24 +1005,34 @@ declare module 'lumin' {
     retainFloorUpdates(): PrismDataHandle
 
     /** deprecated, please use setPrismBloomStrength instead */
-    setVolumeBloomStrength(a_volumeBloomStrength: number): void
+    setVolumeBloomStrength(a_volumeBloomStrength: number /* float */): void
 
     /**
      * Set the Bloom Strength for this prism. Default is set to 1.0
      *
      * @param a_prismBloomStrength - Bloom strength that will be applied to all the RenderNodes of the prism
      */
-    setPrismBloomStrength(a_prismBloomStrength: number): void
+    setPrismBloomStrength(a_prismBloomStrength: number /* float */): void
+
+    /**
+     * Create a Image-2D data.
+     *
+     * @param format The format of the pixel data.
+     * @param width The width of the image(in pixels).
+     * @param height The height of the image(in pixels).
+     * @return Return a valid Image-2D that should be used to create Texture Resource, null otherwise.
+     */
+    createImage2d(format: utils.Format, width: number /* uint32_t */, height: number /* uint32_t */): AssetPacker.Image2d
 
     /**
      * Create a Image-3D data.
      *
      * @param format The format of the pixel data.
-     * @param width The width of the texture.
-     * @param height The height of the texture.
-     * @param depth The depth of the texture.
-     * @return Return a valid Image-3D that should be used to create Texture-3D Resource.
+     * @param width The width of the image(in pixels).
+     * @param height The height of the image(in pixels).
+     * @param depth The depth of the image(in pixels).
+     * @return Return a valid Image-3D that should be used to create Texture-3D Resource, null otherwise.
      */
-    createImage3d(format: utils.Format, width: number, height: number, depth: number): Object
+    createImage3d(format: utils.Format, width: number /* uint32_t */, height: number /* uint32_t */, depth: number /* uint32_t */): AssetPacker.Image3d
   }
 }

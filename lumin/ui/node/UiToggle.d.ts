@@ -57,7 +57,7 @@ declare module 'lumin' {
       /**
        * Icon scale (default 1.0f).
        */
-      iconScale: number;
+      iconScale: number /* float */;
 
       /**
        * Whether to show the toggle background (OFF outline or solid ON states)
@@ -67,7 +67,7 @@ declare module 'lumin' {
       /**
        * Height of the Eclipse toggle, (default 0 = default toggle height).
        */
-      height: number;
+      height: number /* float */;
 
       /**
        * The type of SystemIcon to be used for the eclipse toggle
@@ -78,11 +78,11 @@ declare module 'lumin' {
        * Optional SystemIcon to be displayed in the toggle off state
        */
       iconTypeOffState: ui.SystemIcon;
-      constructor(a_type: ui.EclipseToggleType, a_iconPath: string, a_labelText?: string, a_statusText1?: string, a_statusText2?: string, a_height?: number)
-      constructor(a_type: ui.EclipseToggleType, a_iconPath: string, a_labelText: string, a_statusText1: string, a_statusText2: string, a_height: number, a_iconType: ui.SystemIcon)
-      constructor(a_type: ui.EclipseToggleType, a_iconPath: string, a_labelText: string, a_statusText1: string, a_statusText2: string, a_height: number, a_iconType: ui.SystemIcon, a_iconTypeOffState: ui.SystemIcon)
-      constructor(a_type: ui.EclipseToggleType, a_iconType: ui.SystemIcon, a_labelText?: string, a_statusText1?: string, a_statusText2?: string, a_height?: number)
-      constructor(a_type: ui.EclipseToggleType, a_iconType: ui.SystemIcon, a_iconTypeOffState: ui.SystemIcon, a_labelText?: string, a_statusText1?: string, a_statusText2?: string, a_height?: number)
+      constructor(a_type: ui.EclipseToggleType, a_iconPath: string, a_labelText?: string, a_statusText1?: string, a_statusText2?: string, a_height?: number /* float */)
+      constructor(a_type: ui.EclipseToggleType, a_iconPath: string, a_labelText: string, a_statusText1: string, a_statusText2: string, a_height: number /* float */, a_iconType: ui.SystemIcon)
+      constructor(a_type: ui.EclipseToggleType, a_iconPath: string, a_labelText: string, a_statusText1: string, a_statusText2: string, a_height: number /* float */, a_iconType: ui.SystemIcon, a_iconTypeOffState: ui.SystemIcon)
+      constructor(a_type: ui.EclipseToggleType, a_iconType: ui.SystemIcon, a_labelText?: string, a_statusText1?: string, a_statusText2?: string, a_height?: number /* float */)
+      constructor(a_type: ui.EclipseToggleType, a_iconType: ui.SystemIcon, a_iconTypeOffState: ui.SystemIcon, a_labelText?: string, a_statusText1?: string, a_statusText2?: string, a_height?: number /* float */)
     }
 
     /**
@@ -109,7 +109,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, height?: number): ui.UiToggle
+      static Create(prism: Prism, labelText: string, height?: number /* float */): ui.UiToggle
 
       /** Creates a UiToggle element using default settings.
        *
@@ -131,7 +131,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, toggleType: ui.ToggleType, height?: number): ui.UiToggle
+      static Create(prism: Prism, labelText: string, toggleType: ui.ToggleType, height?: number /* float */): ui.UiToggle
 
       /**
        * Creates an Eclipse toggle from UX specifications.
@@ -256,7 +256,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextSize(size: number): void
+      setTextSize(size: number /* float */): void
 
       /**
        * Gets the toggle text size in scene units.
@@ -265,7 +265,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTextSize(): number
+      getTextSize(): number /* float */
 
       /**
        * Gets the UiText label for this toggle if one exists

@@ -37,7 +37,7 @@ declare module 'lumin' {
       /**
        * Delimiter between hh mm ss - Default to locale based delimiter
        */
-      delimiter: number;
+      delimiter: number /* char32_t */;
       constructor()
     }
 

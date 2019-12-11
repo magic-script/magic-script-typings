@@ -71,7 +71,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextSize(size: number): void
+      setTextSize(size: number /* float */): void
 
       /**
        * Gets the tab text label render size height in scene units.
@@ -80,7 +80,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTextSize(): number
+      getTextSize(): number /* float */
 
       /**
        * Gets the UiText label for this button if one exists

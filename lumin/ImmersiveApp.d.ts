@@ -14,7 +14,7 @@ declare module 'lumin' {
      *        As a special case, 0.0f represents event-based mode, where update callbacks
      *        will not happen at regular intervals -- only in response to events.
      */
-    constructor(a_fTimeDelta?: number)
+    constructor(a_fTimeDelta?: number /* float */)
 
     /**
      * Get a new Prism for use by the Application
@@ -116,8 +116,8 @@ declare module 'lumin' {
      * Stop full screen exclusive mode
      */
     stopExclusiveMode(): boolean
-    deInit(): number
-    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint /* uint64_t */> /* std::vector */): void
+    deInit(): number /* int */
+    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint> /* std::vector<uint64_t> */): void
     onSharingStop(sessionId: bigint /* uint64_t */): void
     onAppStart(initArg: InitArg): void
     onAppPause(): void
@@ -126,7 +126,7 @@ declare module 'lumin' {
     onDeviceActive(): void
     onDeviceReality(): void
     onDeviceStandby(): void
-    updateLoop(a_fDelta: number): boolean
+    updateLoop(a_fDelta: number /* float */): boolean
     eventListener(a_pEvent: ServerEvent): boolean
   }
 }

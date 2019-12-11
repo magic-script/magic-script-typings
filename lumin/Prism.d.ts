@@ -842,6 +842,15 @@ declare module 'lumin' {
      */
     retainEyeTrackingUpdates(): PrismDataHandle
 
+    /**
+     * Retain this shared pointer to force the volume to receive floor updates.
+     *
+     * NOTE: Must be called on client main thread.
+     *
+     * @priv none
+     */
+    retainFloorUpdates(): PrismDataHandle
+
     /** deprecated, please use setPrismBloomStrength instead */
     setVolumeBloomStrength(a_volumeBloomStrength: number /* float */): void
 

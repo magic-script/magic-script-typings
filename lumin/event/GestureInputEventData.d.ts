@@ -43,7 +43,22 @@ declare module 'lumin' {
     getHandGestureKeypoint(keypointName: input.HandGestureKeypointName): [number, number, number] /* glm::vec3 */
 
     /**
-     * Get the confidence of the hand gesture
+     * Get the confidence that a hand is recognized.
+     *
+     * @priv none
+     */
+    getHandConfidence(): number /* float */
+
+    /**
+     * Get the confidence of a given hand pose
+     * @param gesture the hand pose for which to retreive the confidence
+     * @return a confidence value between 0 and 1 (higher means greater confidence)
+     */
+    getGestureKeyPoseConfidence(gesture: input.GestureType): number /* float */
+
+    /**
+     * Get the confidence that a hand is recognized.
+     * @deprecated use getHandConfidence instead.
      *
      * @priv none
      */
@@ -53,6 +68,9 @@ declare module 'lumin' {
      * Get the confidence of a given hand pose
      * @param gesture the hand pose for which to retreive the confidence
      * @return a confidence value between 0 and 1 (higher means greater confidence)
+     * @deprecated use getGestureKeyPoseConfidence instead.
+     *
+     * @priv none
      */
     getHandGestureKeyPoseConfidence(gesture: input.GestureType): number /* float */
 

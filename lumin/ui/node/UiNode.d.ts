@@ -295,6 +295,21 @@ declare module 'lumin' {
       getGravityWellEnabled(): boolean
 
       /**
+       * Return whether or not this node, and its children, should be included in the bounds
+       *
+       * @return bounds hidden or not
+       */
+      getHideBounds(): boolean
+
+      /**
+       * Set whether or not this node, and its children, should be included in the bounds
+       *
+       * @param hide - flag indicating hide status
+       *
+       */
+      setHideBounds(hide: boolean): void
+
+      /**
        * Sets the UiNodes's self alignment relative to Node position.
        *
        * Alignment is defined as what side the Node position

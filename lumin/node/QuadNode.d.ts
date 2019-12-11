@@ -115,5 +115,15 @@ declare module 'lumin' {
      * @priv none
      */
     getShaderType(): utils.ShaderType
+
+    /**
+     * Sets the LOD Bias for the this QuadNode
+     * Which forces and overwrites the lod on the one of
+     * Used to modify the lod selection during runtime
+     * NOTE: This only works with SurfaceQueueResource
+     *
+     * @param a_lodBias float value for lodBias. Default is 0. When 0, Resource LODBias will be used
+     */
+    setLodBias(a_lodBias: number /* float */): void
   }
 }

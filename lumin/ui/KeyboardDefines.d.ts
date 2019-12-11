@@ -59,16 +59,9 @@ declare module 'lumin' {
     }
     namespace KeyboardEvent {
 
-      /** The event types a keyboard can send */
-      enum EventType {
-        KEY_PRESSED,
-        STRING_ENTERED,
-      }
-
       /** Base struct for keyboard event data */
       class EventData {
         constructor()
-        getEventType(): ui.KeyboardEvent.EventType
       }
 
       /** Struct for key pressed events */

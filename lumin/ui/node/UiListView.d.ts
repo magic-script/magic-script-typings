@@ -405,6 +405,55 @@ declare module 'lumin' {
       removeItem(index: number /* int */): ui.UiListViewItem
 
       /**
+       * Replaces the n'th item in the list.
+       *
+       * The returned Node hierarchy will be orphaned (no longer attached
+       * to the scene graph) and must be handled by the caller.
+       *
+       * If the index is out of bounds, nothing happens.
+       *
+       * @param index The index of the item to be replaced.
+       * @param newItem The new item replacing the UiListViewItem in the n'th position
+       * @return replaced UiListViewItem's pointer.
+       */
+      replaceItem(index: number /* int */, newItem: ui.UiListViewItem): ui.UiListViewItem
+
+      /**
+       * Replaces an existing UiListViewItem with a new UiListViewItem
+       *
+       * If either of the Node's are invalid - Null or not contained in the list -
+       * nothing happens.
+       *
+       * @param oldItem The pointer for the UiListViewItem you would like to replace
+       * @param newItem The new UiListViewItem replacing the oldItem in the list
+       * @return true if the newItem has successfully replaced the oldItem
+       */
+      replaceItem(oldItem: ui.UiListViewItem, newItem: ui.UiListViewItem): boolean
+
+      /**
+       * Swap two items in the list.
+       *
+       * If either of the indices are invalid, nothing happens.
+       *
+       * @param index1 a valid index in the list
+       * @param index2 a valid index in the list
+       * @return true if the two UiListViewItems at index1 and index2 have been sucessfully swapped
+       */
+      swapItems(index1: number /* int */, index2: number /* int */): boolean
+
+      /**
+       * Swap two items in the list.
+       *
+       * If the UiListViewItems are the same or invalid - Null or not contained in the list -
+       * nothing happens.
+       *
+       * @param item1 a valid UiListViewItem in the list
+       * @param item2 a valid UiListViewItem in the list
+       * @return true if the two UiListViewItems have been sucessfully swapped
+       */
+      swapItems(item1: ui.UiListViewItem, item2: ui.UiListViewItem): boolean
+
+      /**
        * Skips invisble items.
        *
        * Setting this value to true will cause the layout to skip over any

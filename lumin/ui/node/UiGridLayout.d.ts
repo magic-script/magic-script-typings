@@ -380,8 +380,23 @@ declare module 'lumin' {
       getItemAlignment(item: TransformNode): ui.Alignment
 
       /**
+       * Gets the item found at the zero-based index,
+       * regardless whether it's visible or not.
+       *
+       * If the index is out of bounds, nullptr will be returned.
+       *
+       * @param index The position of the item (zero-based).
+       * @return Item node pointer.
+       *
+       * @priv none
+       */
+      getItem(index: number /* int */): TransformNode
+
+      /**
        * Gets the item at the row and col position.
        *
+       * Invisible items in the grid will not be considered
+       * if the grid is set to skip invisble items.
        * If the row and column are out of bounds, nullptr will be returned.
        *
        * @param row The row position of the item (zero-based).
@@ -410,6 +425,58 @@ declare module 'lumin' {
        * @priv none
        */
       removeItem(row: number /* int */, col: number /* int */): TransformNode
+
+      /**
+       * Replaces the item in the grid at (row, col).
+       *
+       * The returned Node hierarchy will be orphaned (no longer attached
+       * to the scene graph) and must be handled by the caller.
+       *
+       * If (row, col) is out of bounds, nothing happens.
+       *
+       * @param row The row of the item to be replaced.
+       * @param col The column of the item to be replaced.
+       * @param newItem The new item replacing the Node at (row, col)
+       * @return replaced Node's pointer.
+       */
+      replaceItem(row: number /* int */, col: number /* int */, newItem: TransformNode): TransformNode
+
+      /**
+       * Replaces an existing item in the grid with a new item
+       *
+       * If either of the Node's are invalid - Null or not contained in the grid -
+       * nothing happens.
+       *
+       * @param oldItem The pointer for the grid item you would like to replace
+       * @param newItem The pointer for the new item replacing the oldItem in the grid
+       * @return true if the newItem has successfully replaced the oldItem
+       */
+      replaceItem(oldItem: TransformNode, newItem: TransformNode): boolean
+
+      /**
+       * Swap two items in the grid.
+       *
+       * If either of the row and column pair's are out of bounds, nothing will happen.
+       *
+       * @param row1 row for item1
+       * @param col1 col for item1
+       * @param row2 row for item2
+       * @param col2 col for item2
+       * @return true if the two Nodes at (row1, col1) and (row2, col2) have been sucessfully swapped
+       */
+      swapItems(row1: number /* int */, col1: number /* int */, row2: number /* int */, col2: number /* int */): boolean
+
+      /**
+       * Swap two items in the grid.
+       *
+       * If the Node's are the same or invalid - Null or not contained in the grid -
+       * nothing happens.
+       *
+       * @param item1 The pointer for a valid item in the grid
+       * @param item2 The pointer for a valid item in the grid
+       * @return true if item1 and item2 have successfully been swapped
+       */
+      swapItems(item1: TransformNode, item2: TransformNode): boolean
 
       /**
        * Skips invisble items.

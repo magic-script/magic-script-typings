@@ -345,6 +345,41 @@ declare module 'lumin' {
       kFlag,
 
       /**
+       * `value = 209`
+       */
+      kFlagChina,
+
+      /**
+       * `value = 210`
+       */
+      kFlagFrance,
+
+      /**
+       * `value = 211`
+       */
+      kFlagGermany,
+
+      /**
+       * `value = 212`
+       */
+      kFlagJapan,
+
+      /**
+       * `value = 213`
+       */
+      kFlagSouthKorea,
+
+      /**
+       * `value = 214`
+       */
+      kFlagUK,
+
+      /**
+       * `value = 215`
+       */
+      kFlagUSA,
+
+      /**
        * `value = 68`
        */
       kFollow,
@@ -533,6 +568,11 @@ declare module 'lumin' {
        * `value = 105`
        */
       kNotification,
+
+      /**
+       * `value = 206`
+       */
+      kObjectRecognition,
 
       /**
        * `value = 106`
@@ -760,6 +800,11 @@ declare module 'lumin' {
       kShare,
 
       /**
+       * `value = 207`
+       */
+      kShareScreen,
+
+      /**
        * `value = 149`
        */
       kShiftDisabled,
@@ -823,6 +868,11 @@ declare module 'lumin' {
        * `value = 161`
        */
       kSummon,
+
+      /**
+       * `value = 208`
+       */
+      kTablet,
 
       /**
        * `value = 162`

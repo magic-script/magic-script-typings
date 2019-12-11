@@ -170,6 +170,27 @@ declare module 'lumin' {
     onAppUnloadResources(): void
 
     /**
+     * This indicates to the app that the device has transtioned to the active mode
+     *
+     * @priv none
+     */
+    onDeviceActive(): void
+
+    /**
+     * This indicates to the app that the device has transitioned to the reality mode
+     *
+     * @priv none
+     */
+    onDeviceReality(): void
+
+    /**
+     * This indicates to the app that the device has transitioned to the standby mode
+     *
+     * @priv none
+     */
+    onDeviceStandby(): void
+
+    /**
      * Override this method to do things on the Event Update Thread
      *
      * @param a_fDelta - Time Delta since last frame
@@ -208,6 +229,70 @@ declare module 'lumin' {
      * @priv none
      */
     deletePrism(prism: Prism): void
+
+    /**
+     * Resizes the Prism
+     *
+     * @param a_prism - the prism to resize
+     * @param a_size - the new size of the prism
+     */
+    resizePrism(a_prism: Prism, a_size: [number, number, number] /* glm::vec3 */): void
+
+    /**
+     * Sets the Prism Position
+     *
+     * @param a_prism - the prism
+     * @param a_position - the new prism position
+     */
+    positionPrism(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
+
+    /**
+     * Sets the Orientation of the Prism
+     *
+     * @param a_prism - the prism
+     * @param a_orientation - the new prism orientation quaternion
+     */
+    orientPrism(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
+
+    /**
+     * Sets the Prism Position relative to the camera
+     *
+     * @param a_prism - the prism
+     * @param a_position - the new prism position, relative to the camera
+     */
+    positionPrismRelativeToCamera(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
+
+    /**
+     * Sets the Orientation of the Prism relative to the Camera
+     *
+     * @param a_prism - the prism
+     * @param a_orientation - the new prism orientation quaternion
+     */
+    orientPrismRelativeToCamera(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
+
+    /**
+     * Returns the position of a volume in world space
+     *
+     * @param a_prism - the prism
+     * @return - the prism position
+     */
+    getPrismPosition(a_prism: Prism): [number, number, number] /* glm::vec3 */
+
+    /**
+     *  Returns the rotation of a volume in world space
+     *
+     * @param a_prism - the prism
+     * @return - the prism orientation quaternion
+     */
+    getPrismRotation(a_prism: Prism): [number, number, number, number] /* glm::quat */
+
+    /**
+     * Returns the transform of a volume in world space
+     *
+     * @param a_prism the prism
+     * @return The transform of the Prism in world space
+     */
+    getPrismTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Get the Headpose position in world space.
@@ -250,6 +335,13 @@ declare module 'lumin' {
      * @return the current headpose error
      */
     getHeadposeError(): headtracking.Error
+
+    /**
+     * Returns the height (y-value) of the floor, if known, in world coordinates.
+     *
+     * @return Returned floor height.
+     */
+    getFloorHeight(): number /* float */
 
     /**
      * Checks if a privilege is currently granted.
@@ -311,63 +403,69 @@ declare module 'lumin' {
      * Trigger a control vibration haptic
      *
      * @param haptic the VibePattern to trigger
-     * @param controlID `default = 0`<br/> id of control device
+     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
+     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
      *
      * @priv none
      */
-    triggerControlHaptic(haptic: haptics.VibePattern, controlID?: number /* int32_t */): void
+    triggerControlHaptic(haptic: haptics.VibePattern, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Trigger a control LED haptic
      *
      * @param haptic the LedPattern to trigger
-     * @param controlID `default = 0`<br/> id of control device
+     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
+     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
      *
      * @priv none
      */
-    triggerControlHaptic(haptic: haptics.LedPattern, controlID?: number /* int32_t */): void
+    triggerControlHaptic(haptic: haptics.LedPattern, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Trigger a list of custom control haptics
      *
      * @param haptics the combined list of haptics
-     * @param controlID `default = 0`<br/> id of control device
+     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
+     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
      *
      * @priv none
      */
-    triggerControlCustomHaptics(haptics: Array<HapticInfo> /* std::vector<HapticInfo> */, controlID?: number /* int32_t */): void
+    triggerControlCustomHaptics(haptics: Array<HapticInfo> /* std::vector<HapticInfo> */, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Trigger a custom control haptic
      *
      * @param haptic and individual custom haptic
-     * @param controlID `default = 0`<br/> id of control device
+     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
+     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
      *
      * @priv none
      */
-    triggerControlCustomHaptic(haptic: HapticInfo, controlID?: number /* int32_t */): void
+    triggerControlCustomHaptic(haptic: HapticInfo, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Request vibration haptics on the body of the control device
      * @param pattern the vibration pattern to use
      * @param duration `default = 100`<br/> the duration to play the pattern over (ms)
      * @param intensity `default = haptics.VibeIntensity.MEDIUM`<br/> the intensity of the vibration
-     * @param controlID `default = 0`<br/> the id of the device to send the haptic request to
+     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
+     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
      *
      * @priv none
      */
-    triggerControlBodyHaptics(pattern: haptics.VibePattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */): void
+    triggerControlBodyHaptics(pattern: haptics.VibePattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Request light haptics on the LEDs of the control device
      * @param pattern the LED light pattern to use
      * @param duration `default = 100`<br/> the duration to play the pattern over (ms)
      * @param intensity `default = haptics.VibeIntensity.MEDIUM`<br/> the intensity of the haptic
-     * @param controlID `default = 0`<br/> the id of the device to send the haptic request to
+     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
+     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
      *
      * @priv none
      */
-    triggerControlLEDHaptics(pattern: haptics.LedPattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */): void
+    triggerControlLEDHaptics(pattern: haptics.LedPattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */, deviceID?: number /* int32_t */): void
 
     /**
      * Get an object clients can use to find preloaded resources.
@@ -375,6 +473,16 @@ declare module 'lumin' {
      * @priv none
      */
     getPreloadedResources(): resources.Preloaded
+
+    /**
+     * Do a raycast in a prism and return the results.
+     *
+     * @param a_prism Prism to do the ray in.
+     * @param a_rayStart Ray starting position, in volume coordinates.
+     * @param a_rayEnd Ray end position, in volume coordinates.
+     * @return Hit data.
+     */
+    raycastNodes(a_prism: Prism, a_rayStart: [number, number, number] /* glm::vec3 */, a_rayEnd: [number, number, number] /* glm::vec3 */): RayCastResultLight
 
     /**
     * Performs a single ray cast against the world around you. Results are returned as a WorldRayCastEventData

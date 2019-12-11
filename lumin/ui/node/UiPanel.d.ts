@@ -307,6 +307,16 @@ declare module 'lumin' {
       addExternalGravityWell(uiNode: ui.UiNode): void
 
       /**
+       * Removes an external UiNode gravity well from consideration when interacting with this Panel.
+       *
+       * @param uiNode - The UiNode to remove from the external gravity well list
+       * @return TRUE if the removal is successful, FALSE otherwise
+       *
+       * @priv none
+       */
+      removeExternalGravityWell(uiNode: ui.UiNode): boolean
+
+      /**
        * Checks if the UiNode is included in the external gravity well list.
        *
        * @param uiNode - The UiNode to check.

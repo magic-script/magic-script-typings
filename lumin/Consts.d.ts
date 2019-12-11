@@ -36,75 +36,14 @@ declare module 'lumin' {
   const INVALID_PHYSICS_ID: bigint /* uint64_t */;
 
   /**
-   * ResourceType Indicates the type of Resource, similar to RTTi
+   * `value = -1`
    */
-  enum ResourceType {
+  const INVALID_CONTROL_ID: number /* int32_t */;
 
-    /**
-     * `value = -1`
-     */
-    kUndefined,
-
-    /**
-     * `value = 0`
-     */
-    kObjMtl,
-
-    /**
-     * `value = 1`
-     */
-    kTexture,
-
-    /**
-     * `value = 5`
-     */
-    kMaterial,
-
-    /**
-     * `value = 6`
-     */
-    kModel,
-
-    /**
-     * `value = 7`
-     */
-    kAnimation,
-
-    /**
-     * `value = 9`
-     */
-    kPlanar,
-
-    /**
-     * `value = 11`
-     */
-    kFont2d,
-
-    /**
-     * `value = 12`
-     */
-    kAudio,
-
-    /**
-     * `value = 14`
-     */
-    kParticlePackage,
-
-    /**
-     * `value = 16`
-     */
-    kAnimationBlendSetup,
-
-    /**
-     * `value = 17`
-     */
-    kAnimationSet,
-
-    /**
-     * `value = 18`
-     */
-    kTexturePack,
-  }
+  /**
+   * `value = -1`
+   */
+  const INVALID_DEVICE_ID: number /* int32_t */;
 
   /**
    * PrismType Indicates the type of Bound Volume
@@ -305,6 +244,11 @@ declare module 'lumin' {
      * `value = 1<<14`
      */
     kHandDynamicThumbsDown,
+
+    /**
+     * `value = 1<<15`
+     */
+    kHandNoPose,
   }
   enum DeviceGestureFlags {
 
@@ -429,142 +373,6 @@ declare module 'lumin' {
   enum SelectionEventType {
     kVolumeOnSelected,
     kVolumeOnDeselected,
-  }
-
-  /**
-   * ServerEventType Indicates the type of ServerEvent, whether Raycast, Video, OS Input, etc.
-   */
-  enum ServerEventType {
-
-    /**
-     * `value = 0`
-     */
-    kSelectionEvent,
-
-    /**
-     * `value = 1`
-     */
-    kRayCastEvent,
-
-    /**
-     * `value = 2`
-     */
-    kVideoEvent,
-
-    /**
-     * `value = 3`
-     */
-    kVideoSubtitleEvent,
-
-    /**
-     * `value = 4`
-     */
-    kVideoTimedTextEvent,
-
-    /**
-     * `value = 5`
-     */
-    kSpriteAnimationEvent,
-
-    /**
-     * `value = 7`
-     */
-    kKeyInputEvent,
-
-    /**
-     * `value = 8`
-     */
-    kGestureInputEvent,
-
-    /**
-     * `value = 9`
-     */
-    kControlPose3DofInputEvent,
-
-    /**
-     * `value = 10`
-     */
-    kControlPose6DofInputEvent,
-
-    /**
-     * `value = 11`
-     */
-    kControlTouchPadInputEvent,
-
-    /**
-     * `value = 12`
-     */
-    kTransformAnimationEvent,
-
-    /**
-     * `value = 13`
-     */
-    kWorldPlaneData,
-
-    /**
-     * `value = 14`
-     */
-    kWorldRayHit,
-
-    /**
-     * `value = 18`
-     */
-    kSystemEvent,
-
-    /**
-     * `value = 19`
-     */
-    kPhysicsEvent,
-
-    /**
-     * `value = 20`
-     */
-    kParticleEvent,
-
-    /**
-     * `value = 23`
-     */
-    kAudioEvent,
-
-    /**
-     * `value = 26`
-     */
-    kEyeTrackingEvent,
-
-    /**
-     * `value = 27`
-     */
-    kAnimationEvent,
-
-    /**
-     * `value = 28`
-     */
-    kAnimationCustomEvent,
-
-    /**
-     * `value = 32`
-     */
-    kAnimationBlendSetupEvent,
-
-    /**
-     * `value = 34`
-     */
-    kPrivilegeEvent,
-
-    /**
-     * `value = 35`
-     */
-    kResourceEvent,
-
-    /**
-     * `value = 36`
-     */
-    kWorldMeshBlockData,
-
-    /**
-     * `value = 38`
-     */
-    kWorldImageTrackingData,
   }
   enum SystemEventType {
 

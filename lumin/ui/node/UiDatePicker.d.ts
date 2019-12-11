@@ -72,6 +72,13 @@ declare module 'lumin' {
       * @return the DatePicker's color.
       */
       getColor(): [number, number, number, number] /* glm::vec4 */
+
+      /**
+      * Gets the DatePicker's UiText label
+      *
+      * @return the UiText label
+      */
+      getUiTextLabel(): ui.UiText
     }
   }
 }

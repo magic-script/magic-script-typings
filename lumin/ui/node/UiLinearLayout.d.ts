@@ -339,6 +339,70 @@ declare module 'lumin' {
       removeItem(index: number /* int */): TransformNode
 
       /**
+       * Removes the item from the list.
+       *
+       * The item Node hierarchy will be orphaned (no longer attached
+       * to the scene graph) and must be handled by the caller.
+       *
+       * If the item is not found in the layout, nothing happens.
+       *
+       * @param item The item to remove.
+       * @return TRUE if the removal is successful, FALSE otherwise.
+       *
+       * @priv none
+       */
+      removeItem(item: TransformNode): boolean
+
+      /**
+       * Replaces the n'th item in the list.
+       *
+       * The returned Node hierarchy will be orphaned (no longer attached
+       * to the scene graph) and must be handled by the caller.
+       *
+       * If the index is out of bounds, nothing happens.
+       *
+       * @param index The index of the item to be replaced.
+       * @param newItem The pointer for the new new item replacing the Node in the n'th position
+       * @return replaced item's pointer.
+       */
+      replaceItem(index: number /* int */, newItem: TransformNode): TransformNode
+
+      /**
+       * Replaces an existing item in the list with a new item
+       *
+       * If either of the Node's are invalid - Null or not contained in the list -
+       * nothing happens.
+       *
+       * @param oldItem The pointer for the list item you would like to replace
+       * @param newItem The pointer for the new item replacing the oldItem in the list
+       * @return true if the newItem has successfully replaced the oldItem
+       */
+      replaceItem(oldItem: TransformNode, newItem: TransformNode): boolean
+
+      /**
+       * Swap two items in the list.
+       *
+       * If either of the indices are out of bounds, nothing happens.
+       *
+       * @param index1 a valid index in the list
+       * @param index2 a valid index in the list
+       * @return true if the two nodes at index1 and index2 have been sucessfully swapped
+       */
+      swapItems(index1: number /* int */, index2: number /* int */): boolean
+
+      /**
+       * Swap two items in the list.
+       *
+       * If the Node's are the same or invalid - Null or not contained in the list -
+       * nothing happens.
+       *
+       * @param item1 The pointer for a valid item in the list
+       * @param item2 The pointer for a valid item in the list
+       * @return true if item1 and item2 have successfully been swapped
+       */
+      swapItems(item1: TransformNode, item2: TransformNode): boolean
+
+      /**
        * Skips invisble items.
        *
        * Setting this value true will cause the layout to skip over any

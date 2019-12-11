@@ -58,18 +58,25 @@ declare module 'lumin' {
       setTime(newTime: ui.Time): boolean
 
       /**
-      * Sets the timePicker component's color. This doesn't affect label.
+      * Sets the TimePicker component's color. This doesn't affect label.
       *
       * @param color The color to set
       */
       setColor(color: [number, number, number, number] /* glm::vec4 */): void
 
       /**
-      * Gets the timePicker component's color
+      * Gets the TimePicker component's color
       *
-      * @return the timepicker's color
+      * @return the Timepicker's color
       */
       getColor(): [number, number, number, number] /* glm::vec4 */
+
+      /**
+      * Gets the TimePicker's UiText label
+      *
+      * @return the UiText label
+      */
+      getUiTextLabel(): ui.UiText
     }
   }
 }

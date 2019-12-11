@@ -308,6 +308,21 @@ declare module 'lumin' {
       removePage(index: number /* int */): TransformNode
 
       /**
+       * Removes the page from the view.
+       *
+       * The page Node hierarchy will be orphaned (no longer attached
+       * to the scene graph) and must be handled by the caller.
+       *
+       * If the page is not found in the layout, nothing happens.
+       *
+       * @param page The page to remove.
+       * @return TRUE if the removal is successful, FALSE otherwise.
+       *
+       * @priv none
+       */
+      removePage(page: TransformNode): boolean
+
+      /**
        * Shows the n'th page in the page view, all others will be invisible.
        *
        * @param index The index of the page.

@@ -20,5 +20,25 @@ declare module 'lumin' {
      * @return the width
      */
     getWidth(): number /* uint32_t */
+
+    /**
+     * Returns the EGL Context associated with this resource.
+     *
+     * NOTE: This is only available after initPlanarGLContext has been called
+     *       (this note applies only to internal applications since that method will be
+     *        called automatically when a planar resource is created by 3rd party apps
+     *        using the createPlanarEGLResource function)
+     */
+    getEGLContext(): void
+
+    /**
+     * Returns the EGL Surface associated with this resource.
+     *
+     * NOTE: This is only available after initPlanarGLContext has been called
+     *       (this note applies only to internal applications since that method will be
+     *        called automatically when a planar resource is created by 3rd party apps
+     *        using the createPlanarEGLResource function)
+     */
+    getEGLSurface(): void
   }
 }

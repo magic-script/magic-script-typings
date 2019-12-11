@@ -46,70 +46,6 @@ declare module 'lumin' {
     selectPrism(a_prism: Prism, a_bSelected: boolean): void
 
     /**
-     * Resizes the Prism
-     *
-     * @param a_prism - the prism to resize
-     * @param a_size - the new size of the prism
-     */
-    resizePrism(a_prism: Prism, a_size: [number, number, number] /* glm::vec3 */): void
-
-    /**
-     * Sets the Prism Position
-     *
-     * @param a_prism - the prism
-     * @param a_position - the new prism position
-     */
-    positionPrism(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
-
-    /**
-     * Sets the Orientation of the Prism
-     *
-     * @param a_prism - the prism
-     * @param a_orientation - the new prism orientation quaternion
-     */
-    orientPrism(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
-
-    /**
-     * Sets the Prism Position relative to the camera
-     *
-     * @param a_prism - the prism
-     * @param a_position - the new prism position, relative to the camera
-     */
-    positionPrismRelativeToCamera(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
-
-    /**
-     * Sets the Orientation of the Prism relative to the Camera
-     *
-     * @param a_prism - the prism
-     * @param a_orientation - the new prism orientation quaternion
-     */
-    orientPrismRelativeToCamera(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
-
-    /**
-     * Returns the position of a volume in world space
-     *
-     * @param a_prism - the prism
-     * @return - the prism position
-     */
-    getPrismPosition(a_prism: Prism): [number, number, number] /* glm::vec3 */
-
-    /**
-     *  Returns the rotation of a volume in world space
-     *
-     * @param a_prism - the prism
-     * @return - the prism orientation quaternion
-     */
-    getPrismRotation(a_prism: Prism): [number, number, number, number] /* glm::quat */
-
-    /**
-     * Returns the transform of a volume in world space
-     *
-     * @param a_prism the prism
-     * @return The transform of the Prism in world space
-     */
-    getPrismTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
-
-    /**
      * Sets the skip raycast state of the prism. If the prism is skipped, all its Nodes will be as
      * well.
      *
@@ -149,6 +85,9 @@ declare module 'lumin' {
     onAppPause(): void
     onAppResume(): void
     onAppUnloadResources(): void
+    onDeviceActive(): void
+    onDeviceReality(): void
+    onDeviceStandby(): void
     updateLoop(a_fDelta: number /* float */): boolean
     eventListener(a_pEvent: ServerEvent): boolean
   }

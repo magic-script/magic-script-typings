@@ -59,16 +59,23 @@ declare module 'lumin' {
     }
     namespace KeyboardEvent {
 
+      /** The event types a keyboard can send */
+      enum EventType {
+        KEY_PRESSED,
+        STRING_ENTERED,
+      }
+
       /** Base struct for keyboard event data */
       class EventData {
         constructor()
+        getEventType(): ui.KeyboardEvent.EventType
       }
 
       /** Struct for key pressed events */
       class KeyPressedData extends EventData {
         constructor()
         getKeyType(): ui.KeyType
-        getCharCode(): number
+        getCharCode(): number /* char32_t */
       }
       class StringEnteredData extends EventData {
         constructor()
@@ -85,12 +92,12 @@ declare module 'lumin' {
       /**
        *The width of the keyboard in world coordinates
        */
-      width: number;
+      width: number /* float */;
 
       /**
        *The width of the keyboard as a ratio of the calling volume
        */
-      widthRatio: number;
+      widthRatio: number /* float */;
 
       /**
        *The mode of the form buttons
@@ -200,7 +207,7 @@ declare module 'lumin' {
     }
     namespace KeyboardProperties {
       class CustomFormProperties {
-        keyTypes: Array<ui.KeyType> /* std::vector */;
+        keyTypes: Array<ui.KeyType> /* std::vector<KeyType> */;
         custom1ButtonLabel: string;
         custom2ButtonLabel: string;
         custom3ButtonLabel: string;

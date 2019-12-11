@@ -18,6 +18,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCurrentFrameIndex(): number
+    getCurrentFrameIndex(): number /* int32_t */
   }
 }

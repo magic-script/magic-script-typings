@@ -26,14 +26,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getFontSize(): number
+    getFontSize(): number /* int */
 
     /**
      * Get the list of character codes for which glyphs have been loaded.
      *
      * @priv none
      */
-    getLoadedGlyphs(): Array<number> /* std::vector */
+    getLoadedGlyphs(): Array<number> /* std::vector<char32_t> */
 
     /**
      * Get the advance direction.
@@ -58,7 +58,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getLineSpacing(): number
+    getLineSpacing(): number /* float */
 
     /**
      * The ascender is the vertical distance from the horizontal
@@ -66,7 +66,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getAscender(): number
+    getAscender(): number /* float */
 
     /**
      * The descender is the vertical distance from the horizontal
@@ -75,7 +75,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getDescender(): number
+    getDescender(): number /* float */
 
     /**
      * Get the global glyph height for the font.
@@ -85,6 +85,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getGlyphHeight(): number
+    getGlyphHeight(): number /* float */
   }
 }

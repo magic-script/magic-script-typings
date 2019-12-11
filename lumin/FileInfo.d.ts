@@ -16,7 +16,7 @@ declare module 'lumin' {
      * @return the file descriptor.
      * @priv none
      */
-    getFileDescriptor(): number
+    getFileDescriptor(): number /* int */
 
     /**
      * Returns the name of the file.
@@ -43,7 +43,7 @@ declare module 'lumin' {
      * @param fd the file descriptor.
      * @priv none
      */
-    setFileDescriptor(fd: number): void
+    setFileDescriptor(fd: number /* int */): void
 
     /**
      * Sets the name of the file.

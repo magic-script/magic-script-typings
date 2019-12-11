@@ -28,7 +28,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    constructor(staticFriction: number, dynamicFriction: number, restitution: number)
+    constructor(staticFriction: number /* float */, dynamicFriction: number /* float */, restitution: number /* float */)
 
     /**
      * Returns the static friction.
@@ -37,7 +37,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getStaticFriction(): number
+    getStaticFriction(): number /* float */
 
     /**
      * Returns the dynamic friction.
@@ -46,7 +46,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getDynamicFriction(): number
+    getDynamicFriction(): number /* float */
 
     /**
      * Returns the restitution.
@@ -55,6 +55,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRestitution(): number
+    getRestitution(): number /* float */
   }
 }

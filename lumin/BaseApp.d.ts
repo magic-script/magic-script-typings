@@ -109,14 +109,14 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setEventSleepTime(a_fSleepTime: number): void
+    setEventSleepTime(a_fSleepTime: number /* float */): void
 
     /**
      * Override this method to do one-time de-initialization before quitting.
      *
      * @priv none
      */
-    deInit(): number
+    deInit(): number /* int */
 
     /**
      * Override this method to receive sharing start callback
@@ -124,7 +124,7 @@ declare module 'lumin' {
      * @param sessionId Id associated with the sharing session that has just started
      * @param sceneGraphIDs Vector of SceneGraphIDs that are associated with an ongoing session
      */
-    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint /* uint64_t */> /* std::vector */): void
+    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint> /* std::vector<uint64_t> */): void
 
     /**
      * Override this method to receive sharing stop callback
@@ -170,27 +170,6 @@ declare module 'lumin' {
     onAppUnloadResources(): void
 
     /**
-     * This indicates to the app that the device has transtioned to the active mode
-     *
-     * @priv none
-     */
-    onDeviceActive(): void
-
-    /**
-     * This indicates to the app that the device has transitioned to the reality mode
-     *
-     * @priv none
-     */
-    onDeviceReality(): void
-
-    /**
-     * This indicates to the app that the device has transitioned to the standby mode
-     *
-     * @priv none
-     */
-    onDeviceStandby(): void
-
-    /**
      * Override this method to do things on the Event Update Thread
      *
      * @param a_fDelta - Time Delta since last frame
@@ -198,7 +177,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    updateLoop(a_fDelta: number): boolean
+    updateLoop(a_fDelta: number /* float */): boolean
 
     /**
      * Override this method to react to incoming events
@@ -231,70 +210,6 @@ declare module 'lumin' {
     deletePrism(prism: Prism): void
 
     /**
-     * Resizes the Prism
-     *
-     * @param a_prism - the prism to resize
-     * @param a_size - the new size of the prism
-     */
-    resizePrism(a_prism: Prism, a_size: [number, number, number] /* glm::vec3 */): void
-
-    /**
-     * Sets the Prism Position
-     *
-     * @param a_prism - the prism
-     * @param a_position - the new prism position
-     */
-    positionPrism(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
-
-    /**
-     * Sets the Orientation of the Prism
-     *
-     * @param a_prism - the prism
-     * @param a_orientation - the new prism orientation quaternion
-     */
-    orientPrism(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
-
-    /**
-     * Sets the Prism Position relative to the camera
-     *
-     * @param a_prism - the prism
-     * @param a_position - the new prism position, relative to the camera
-     */
-    positionPrismRelativeToCamera(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
-
-    /**
-     * Sets the Orientation of the Prism relative to the Camera
-     *
-     * @param a_prism - the prism
-     * @param a_orientation - the new prism orientation quaternion
-     */
-    orientPrismRelativeToCamera(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
-
-    /**
-     * Returns the position of a volume in world space
-     *
-     * @param a_prism - the prism
-     * @return - the prism position
-     */
-    getPrismPosition(a_prism: Prism): [number, number, number] /* glm::vec3 */
-
-    /**
-     *  Returns the rotation of a volume in world space
-     *
-     * @param a_prism - the prism
-     * @return - the prism orientation quaternion
-     */
-    getPrismRotation(a_prism: Prism): [number, number, number, number] /* glm::quat */
-
-    /**
-     * Returns the transform of a volume in world space
-     *
-     * @param a_prism the prism
-     * @return The transform of the Prism in world space
-     */
-    getPrismTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
-
-    /**
      * Get the Headpose position in world space.
      *
      * @return the world space headpose position.
@@ -320,7 +235,7 @@ declare module 'lumin' {
      *
      * @return a value between 0.0 and 1.0 indicating the confidence
      */
-    getHeadposeConfidence(): number
+    getHeadposeConfidence(): number /* float */
 
     /**
      * Get the current headpose mode (6-DOF or 3-DOF)
@@ -335,16 +250,6 @@ declare module 'lumin' {
      * @return the current headpose error
      */
     getHeadposeError(): headtracking.Error
-
-    /**
-     * Returns the height (y-value) of the floor, if known, in world coordinates.
-     *
-     * @return Returned floor height.
-     * 
-     *
-     * @priv WorldReconstruction
-     */
-    getFloorHeight(): number
 
     /**
      * Checks if a privilege is currently granted.
@@ -406,69 +311,63 @@ declare module 'lumin' {
      * Trigger a control vibration haptic
      *
      * @param haptic the VibePattern to trigger
-     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
-     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
+     * @param controlID `default = 0`<br/> id of control device
      *
      * @priv none
      */
-    triggerControlHaptic(haptic: haptics.VibePattern, controlID?: number, deviceID?: number): void
+    triggerControlHaptic(haptic: haptics.VibePattern, controlID?: number /* int32_t */): void
 
     /**
      * Trigger a control LED haptic
      *
      * @param haptic the LedPattern to trigger
-     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
-     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
+     * @param controlID `default = 0`<br/> id of control device
      *
      * @priv none
      */
-    triggerControlHaptic(haptic: haptics.LedPattern, controlID?: number, deviceID?: number): void
+    triggerControlHaptic(haptic: haptics.LedPattern, controlID?: number /* int32_t */): void
 
     /**
      * Trigger a list of custom control haptics
      *
      * @param haptics the combined list of haptics
-     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
-     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
+     * @param controlID `default = 0`<br/> id of control device
      *
      * @priv none
      */
-    triggerControlCustomHaptics(haptics: Array<HapticInfo> /* std::vector */, controlID?: number, deviceID?: number): void
+    triggerControlCustomHaptics(haptics: Array<HapticInfo> /* std::vector<HapticInfo> */, controlID?: number /* int32_t */): void
 
     /**
      * Trigger a custom control haptic
      *
      * @param haptic and individual custom haptic
-     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
-     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
+     * @param controlID `default = 0`<br/> id of control device
      *
      * @priv none
      */
-    triggerControlCustomHaptic(haptic: HapticInfo, controlID?: number, deviceID?: number): void
+    triggerControlCustomHaptic(haptic: HapticInfo, controlID?: number /* int32_t */): void
 
     /**
      * Request vibration haptics on the body of the control device
      * @param pattern the vibration pattern to use
      * @param duration `default = 100`<br/> the duration to play the pattern over (ms)
      * @param intensity `default = haptics.VibeIntensity.MEDIUM`<br/> the intensity of the vibration
-     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
-     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
+     * @param controlID `default = 0`<br/> the id of the device to send the haptic request to
      *
      * @priv none
      */
-    triggerControlBodyHaptics(pattern: haptics.VibePattern, duration?: number, intensity?: haptics.VibeIntensity, controlID?: number, deviceID?: number): void
+    triggerControlBodyHaptics(pattern: haptics.VibePattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */): void
 
     /**
      * Request light haptics on the LEDs of the control device
      * @param pattern the LED light pattern to use
      * @param duration `default = 100`<br/> the duration to play the pattern over (ms)
      * @param intensity `default = haptics.VibeIntensity.MEDIUM`<br/> the intensity of the haptic
-     * @param controlID `default = INVALID_CONTROL_ID`<br/> the ID of the control to use (0 will be the primary control)
-     * @param deviceID `default = INVALID_DEVICE_ID`<br/> the internal ID of the device to use (note, this takes precedence over the control ID)
+     * @param controlID `default = 0`<br/> the id of the device to send the haptic request to
      *
      * @priv none
      */
-    triggerControlLEDHaptics(pattern: haptics.LedPattern, duration?: number, intensity?: haptics.VibeIntensity, controlID?: number, deviceID?: number): void
+    triggerControlLEDHaptics(pattern: haptics.LedPattern, duration?: number /* int32_t */, intensity?: haptics.VibeIntensity, controlID?: number /* int32_t */): void
 
     /**
      * Get an object clients can use to find preloaded resources.
@@ -476,17 +375,6 @@ declare module 'lumin' {
      * @priv none
      */
     getPreloadedResources(): resources.Preloaded
-
-    /**
-     * Do a raycast in a prism and return the results.
-     *
-     * @param a_prism Prism to do the ray in.
-     * @param a_rayStart Ray starting position, in volume coordinates.
-     * @param a_rayEnd Ray end position, in volume coordinates.
-     * @return Hit data.
-     * 
-     */
-    raycastNodes(a_prism: Prism, a_rayStart: [number, number, number] /* glm::vec3 */, a_rayEnd: [number, number, number] /* glm::vec3 */): RayCastResultLight
 
     /**
     * Performs a single ray cast against the world around you. Results are returned as a WorldRayCastEventData
@@ -501,7 +389,7 @@ declare module 'lumin' {
     *
     * @priv WorldReconstruction
     */
-    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, userValue: bigint /* uint64_t */, confidenceThreshold?: number): boolean
+    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
 
     /**
      * Performs an area ray cast against the world around you. Results are returned as a WorldRayCastEventData
@@ -519,7 +407,7 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, width: number, height: number, horizFovDeg: number, userValue: bigint /* uint64_t */, confidenceThreshold?: number): boolean
+    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, width: number /* uint32_t */, height: number /* uint32_t */, horizFovDeg: number /* float */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
 
     /**
      * Sends a request to the server to search for planes in the environment that match given
@@ -535,7 +423,7 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    requestWorldPlaneCast(center: [number, number, number] /* glm::vec3 */, maxDistance: number, maxPlaneCount: number, flags: PlanecastFlags, userValue: bigint /* uint64_t */): boolean
+    requestWorldPlaneCast(center: [number, number, number] /* glm::vec3 */, maxDistance: number /* float */, maxPlaneCount: number /* uint32_t */, flags: PlanecastFlags, userValue: bigint /* uint64_t */): boolean
 
     /**
      * Returns if the image tracking system is ready to be used. Do not call any image tracking functions
@@ -585,40 +473,46 @@ declare module 'lumin' {
     stopTrackImage(imageName: string): boolean
 
     /**
-     * Gets the LocaleHelper that's set to the current system locale
-     * @return the current system LocaleHelper
+     * Runs the given task on the main thread (with an optional delay).
+     *
+     * @param a_runnable the callback to run on the main thread.
+     * @return a unique ID that can be used to cancel the runnable.
      */
-    getCurrentLocaleHelper(): utils.LocaleHelper
+    static RunOnMainThread(a_runnable: () => void): utils.CallbackID
 
     /**
-     * Lock the LocaleHelper to the given locale. It will no longer change when the system locale is changed
-     * @param localeCode the lock that the LocaleHelper will be locked to
+     * Runs the given task on the main thread (with an optional delay).
+     *
+     * @param a_runnable the callback to run on the main thread.
+     * @param delay the optional time in seconds to wait before running the callback
+     * @return a unique ID that can be used to cancel the runnable.
      */
-    lockCurrentLocaleHelperToLocale(localeCode: string): void
+    static RunOnMainThread(a_runnable: () => void, delay: number /* float */): utils.CallbackID
 
     /**
-     * Unlock the locale of the LocaleHelper. This will set the LocaleHelper back to the current system locale
+     * Similar to RunOnMainThread() but synchronous. Will
+     * block caller until client event loop will process callback
+     * event. Except when invoked form client eventloop thread - in
+     * that case a_runnable will be called immediately.
+     *
+     * @param a_runnable
      */
-    unlockCurrentLocaleHelper(): void
+    static RunOnMainThreadSync(a_runnable: () => void): void
 
     /**
-     * Get the system locale code
-     * 
+     * Returns true if the runnable with the given ID is still pending.
+     *
+     * @return true if the runnable with the given ID is still in the queue.
      */
-    getLocaleCode(): string
+    static IsMainThreadRunnablePending(callbackId: utils.CallbackID): boolean
 
     /**
-     * Register a callback for when the system locale is changed
-     * @param callbackFunction the function to be called (the new locale code is given as a parameter)
-     * @return the internal ID of the callback, can be used to unregister the callback
+     * Cancels a previously added runnable if it has not yet run.
+     *
+     * @param callbackId the ID returned when the runnable was added.
+     *
+     * @return true if the runnable was canceled, false if it has already been scheduled.
      */
-    registerOnLocaleChangedCallback(callbackFunction: (arg0: string) => void): utils.CallbackID
-
-    /**
-     * Unregister a callback for when the system locale is changed
-     * @param callbackID the ID of the callback to unregister
-     * @return true if succesfully unregistered, false otherwise
-     */
-    unregisterOnLocaleChangedCallback(callbackID: utils.CallbackID): boolean
+    static CancelMainThreadRunnable(callbackId: utils.CallbackID): boolean
   }
 }

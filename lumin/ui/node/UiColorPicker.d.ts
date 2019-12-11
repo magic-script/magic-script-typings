@@ -13,7 +13,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, startingColor?: [number, number, number, number] /* glm::vec4 */, height?: number): ui.UiColorPicker
+      static Create(prism: Prism, startingColor?: [number, number, number, number] /* glm::vec4 */, height?: number /* float */): ui.UiColorPicker
 
       /**
        * The on color changed Event.

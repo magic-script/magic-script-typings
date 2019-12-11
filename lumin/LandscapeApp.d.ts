@@ -12,7 +12,7 @@ declare module 'lumin' {
      *        As a special case, 0.0f represents event-based mode, where update callbacks
      *        will not happen at regular intervals -- only in response to events.
      */
-    constructor(a_fTimeDelta?: number)
+    constructor(a_fTimeDelta?: number /* float */)
 
     /**
      * Get a new Prism for use by the Application
@@ -48,7 +48,6 @@ declare module 'lumin' {
      *
      * @param a_prism the Prism
      * @return the Content Persistence ID assigned to this Prism
-     * 
      */
     getContentPersistenceId(a_prism: Prism): string
 
@@ -72,7 +71,6 @@ declare module 'lumin' {
      *
      * @param a_prism the Prism
      * @return the body dynamic of the Prism
-     * 
      */
     getBodyDynamic(a_prism: Prism): BodyDynamicType
 
@@ -95,7 +93,6 @@ declare module 'lumin' {
      *
      * @param a_prism the Prism
      * @return the scale mode retrieved from the Prism
-     * 
      */
     getScaleMode(a_prism: Prism): ScaleModeType
 
@@ -118,7 +115,6 @@ declare module 'lumin' {
      *
      * @param a_prism the Prism
      * @return whether this Prism is snapping or not
-     * 
      */
     getSnap(a_prism: Prism): boolean
 
@@ -132,7 +128,7 @@ declare module 'lumin' {
      * @param a_max the maximum physical size this prism can be, in meters
      * @return whether this call was successful or not
      */
-    setPhysicalSizeRange(a_prism: Prism, a_min: number, a_max: number): boolean
+    setPhysicalSizeRange(a_prism: Prism, a_min: number /* float */, a_max: number /* float */): boolean
 
     /**
      * Gets the physical size range of the Prism
@@ -165,7 +161,6 @@ declare module 'lumin' {
      *
      * @param a_prism the Prism
      * @return whether direct manipulation is enabled for the prism
-     * 
      */
     getDirectManipulationEnabled(a_prism: Prism): boolean
 
@@ -188,62 +183,16 @@ declare module 'lumin' {
      * @param a_prism Prism to get whether collisions are enabled.
      * @return True if collisions are enabled
      * for the given prism; false otherwise.
-     * 
      */
     getCollisionsEnabled(a_prism: Prism): boolean
-
-    /**
-     * Set the components of the transform of the collision box attached to the given prism.
-     *
-     * The transform of the collision box is relative to the boundaries of the
-     * prism. It is required that the final transformed collision box not exceed
-     * the boundaries of the prism itself along any axis.
-     *
-     * @param a_prism Prism whose collision box will be affected.
-     * @param a_position Position to set for the collision box attached to the given
-     * prism.  The default value is the origin: (0, 0, 0).
-     * @param a_rotation Rotation to set for the collision box attached to the given
-     * prism, which must be normalized.  The default value is unrotated.
-     * @param a_scale Scale to set for the collision box attached to the given
-     * prism.  The default value is unscaled: (1, 1, 1).
-     * @return True if the call was successful and the collision-box transform was set;
-     * false otherwise, in which case additional information will be posted in the log.
-     */
-    setCollisionBoxTransform(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */, a_rotation: [number, number, number, number] /* glm::quat */, a_scale: [number, number, number] /* glm::vec3 */): boolean
-
-    /**
-     * Get the transform of the collision box attached to the given prism.
-     *
-     * @param a_prism the prism.
-     * @return transform of collision box attached to the given prism
-     *         or null if call was not successful
-     */
-    getCollisionBoxTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
-
-    /**
-     * Start a full screen exclusive mode for a landscape app which does its own rendering full screen
-     * @param options exclusive client options
-     * @param ctxGl OpenGL render context
-     * @param clientVol owner volume id
-     * @return exclusive mode renderer
-     */
-    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void, clientVol: bigint /* uint64_t */): ExclusiveRender
-
-    /**
-     * Stop full screen exclusive mode
-     */
-    stopExclusiveMode(): boolean
-    deInit(): number
-    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint /* uint64_t */> /* std::vector */): void
+    deInit(): number /* int */
+    onSharingStart(sessionId: bigint /* uint64_t */, sceneGraphIDs: Array<bigint> /* std::vector<uint64_t> */): void
     onSharingStop(sessionId: bigint /* uint64_t */): void
     onAppStart(initArg: InitArg): void
     onAppPause(): void
     onAppResume(): void
     onAppUnloadResources(): void
-    onDeviceActive(): void
-    onDeviceReality(): void
-    onDeviceStandby(): void
-    updateLoop(a_fDelta: number): boolean
+    updateLoop(a_fDelta: number /* float */): boolean
     eventListener(a_pEvent: ServerEvent): boolean
   }
 }

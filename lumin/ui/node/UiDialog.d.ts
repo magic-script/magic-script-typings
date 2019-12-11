@@ -1,120 +1,10 @@
 declare module 'lumin' {
   namespace ui {
 
-    /** Dialog parameters for dialog creation. */
-    class DialogParams {
-
-      /**
-       * The dialog type
-       */
-      dialogType: ui.DialogType;
-
-      /**
-       * The dialog layout preference
-       */
-      dialogLayout: ui.DialogLayout;
-
-      /**
-       * The dialog title text
-       */
-      title: string;
-
-      /**
-       * The dialog title localization key
-       */
-      titleL10nKey: string;
-
-      /**
-       * The dialog title localization parameters
-       */
-      titleL10nParams: Object;
-
-      /**
-       * The dialog message text
-       */
-      message: string;
-
-      /**
-       * The dialog message localization key
-       */
-      messageL10nKey: string;
-
-      /**
-       * The dialog message localization parameters
-       */
-      messageL10nParams: Object;
-
-      /**
-       * The confirm button text
-       */
-      confirmText: string;
-
-      /**
-       * The confirm button localization key
-       */
-      confirmL10nKey: string;
-
-      /**
-       * The confirm button localization params
-       */
-      confirmL10nParams: Object;
-
-      /**
-       * The confirm button icon
-       */
-      confirmIcon: ui.SystemIcon;
-
-      /**
-       * The cancel button text
-       */
-      cancelText: string;
-
-      /**
-       * The cancel button localization key
-       */
-      cancelL10nKey: string;
-
-      /**
-       * The cancel button localization params
-       */
-      cancelL10nParams: Object;
-
-      /**
-       * The cancel button icon
-       */
-      cancelIcon: ui.SystemIcon;
-
-      /**
-       * The button type for the dialog.
-       */
-      buttonType: ui.EclipseButtonType;
-
-      /**
-       * Flag to indicate the dialog content will be placed within a scroll view.
-       */
-      scrolling: boolean;
-
-      /**
-       * The time in seconds for the dialog to expire.
-       */
-      expireTime: number;
-      constructor(type: ui.DialogType, layout: ui.DialogLayout)
-    }
-
     /**
      * UiDialog - Supports modal and modeless dialogs.
      */
     class UiDialog extends UiNode {
-
-      /**
-       * Create a new UiDialog with provided parameters.
-       *
-       * @param prism The prism to create this dialog for.
-       * @param params The dialog parameters.
-       *
-       * @priv none
-       */
-      static Create(prism: Prism, params: ui.DialogParams): ui.UiDialog
 
       /**
        * Creates a new UiDialog ready for content.
@@ -236,38 +126,6 @@ declare module 'lumin' {
       detachDialogContent(): TransformNode
 
       /**
-       * Sets the dialog image at the top of the dialog, above content and title.
-       *
-       * If there is an image already set, the old one will be destroyed
-       * and the new image will take its place.  If the old image needs
-       * to be kept, call detachDialogImage() before calling setDialogImage().
-       *
-       * @param pNode - A pointer to the Node hierarchy representing the dialog image.
-       *
-       * @priv none
-       */
-      setDialogImage(pNode: TransformNode): void
-
-      /**
-       * Gets the dialog image.
-       *
-       * @return A pointer to the Node hierarchy representing the dialog image.
-       *
-       * @priv none
-       */
-      getDialogImage(): TransformNode
-
-      /**
-       * Detaches the image from the UiDialog.
-       *
-       * The returned Node hierarchy will be orphaned (no longer attached
-       * to the scene graph) and must be handled by the caller.
-       *
-       * @priv none
-       */
-      detachDialogImage(): TransformNode
-
-      /**
        * Sets the expiration time for the dialog in seconds.
        *
        * For modeless timed dialogs, and optionally for other dialogs, a timer can be set
@@ -279,7 +137,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setExpireTime(seconds: number): void
+      setExpireTime(seconds: number /* float */): void
 
       /**
        * Gets the dialog expiration time setting in seconds.
@@ -288,7 +146,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getExpireTime(): number
+      getExpireTime(): number /* float */
 
       /**
        * Gets the current expiration time in seconds.
@@ -297,7 +155,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCurrentExpireTime(): number
+      getCurrentExpireTime(): number /* float */
 
       /**
        * Start the expiration timer.

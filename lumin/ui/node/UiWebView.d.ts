@@ -15,14 +15,6 @@ declare module 'lumin' {
       constructor()
 
       /**
-       * Enables web inspector for all the UiWebViews in the App.
-       * Call this before creating the first UiWebView.
-       * Once enabled, the webinspector will be enabled for lifetime
-       * of the app.
-       */
-      static EnableWebInspector(): void
-
-      /**
        * Creates a UiWebView element.
        *
        * @param volume The volume to create this UiWebView for.
@@ -58,38 +50,7 @@ declare module 'lumin' {
        * @param xpixels amount of pixels to scroll on x
        * @param ypixels amount of pixels to scroll on y
        */
-      scrollBy(xpixels: number, ypixels: number): void
-
-      /**
-       * Provides if UiWebView has back navigation entry.
-       *
-       * @return true if UiWebView can navigate back, else false.
-       */
-      canGoBack(): boolean
-
-      /**
-       * Provides if UiWebView has forward navigation entry.
-       *
-       * @return true if UiWebView can navigate forward, else false.
-       */
-      canGoForward(): boolean
-
-      /**
-       * Reloads current page.
-       */
-      reload(): void
-
-      /**
-       * If UiWebView has back navigation entry then goes back to
-       * to the previous page.
-       */
-      goBack(): void
-
-      /**
-       * If UiWebView has forward navigation entry then goes forward to
-       * to the next page.
-       */
-      goForward(): void
+      scrollBy(xpixels: number /* int */, ypixels: number /* int */): void
 
       /**
        * Provides DataManager for the webview.

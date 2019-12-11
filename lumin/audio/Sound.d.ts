@@ -24,7 +24,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    resources(): Array<bigint /* uint64_t */> /* std::vector */
+    resources(): Array<bigint> /* std::vector<uint64_t> */
 
     /**
      * Stream property accessor. Signifies whether the audio resource should be streamed or not.
@@ -48,7 +48,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    volume(): number
+    volume(): number /* float */
 
     /**
      * Pitch property accessor.
@@ -56,7 +56,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    pitch(): number
+    pitch(): number /* float */
 
     /**
      * Mute property accessor.
@@ -96,7 +96,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setResources(resources: Array<bigint /* uint64_t */> /* std::vector */): void
+    setResources(resources: Array<bigint> /* std::vector<uint64_t> */): void
 
     /**
      * Stream property accessor. Signifies whether the audio resource should be streamed or not.
@@ -120,7 +120,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setVolume(volume: number): void
+    setVolume(volume: number /* float */): void
 
     /**
      * Pitch property accessor.
@@ -128,7 +128,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setPitch(pitch: number): void
+    setPitch(pitch: number /* float */): void
 
     /**
      * Mute property accessor.

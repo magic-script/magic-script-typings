@@ -1,0 +1,1170 @@
+{
+  "version-1.3.0/docs": [
+    {
+      "type": "category",
+      "label": "Modules",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.animation"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.color"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.densemesh"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.files"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.glyph"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.glyph.kerning"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.haptics"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.headtracking"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.input"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.math"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.multipack"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.particles"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.physics"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.render"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.render.quads"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.resources"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.text"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.ui"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.ui.keyboardevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.ui.locale"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.ui.locale.en"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/modules/_lumin_.utils"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Enums",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.animation.playbackorder"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.densemesh.meshblockupdate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.glyph.advancedirection"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.glyph.quality"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.glyph.texturesize"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.ledcolor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.ledeffect"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.ledeffectspeed"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.ledpattern"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.type"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.vibeintensity"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.haptics.vibepattern"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.headtracking.error"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.headtracking.mode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.input.eventsource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.input.eventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.input.gesturedirection"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.input.gesturetype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.input.handgesturekeypointname"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.input.keycodes"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.axislock"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.collisiontype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.forcetype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.rigidbodytype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.shapebehavior"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.shapetype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.physics.solvertype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.render.renderinglayer"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.render.texturetype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.resources.fontstyle"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.resources.fontweight"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.resources.loadstatus"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.text.flowdirection"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.text.justification"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardevent.eventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.locale.en.pagecode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.locale.code"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.cursoredgescrollmode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.dialoglayout"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.dialogtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.eclipsebuttontype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.eclipselabeltype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.eclipseslidertype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.eclipsetoggletype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.gravitywellsnap"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.horizontalalignment"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.horizontaltextalignment"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keytype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.labeldisplaymode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.layouttype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.loadingspinnertype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.orientation"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.panelcursortransitiontype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.paneledgeconstraintlevel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.portaliconsize"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.scrollbarvisibility"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.scrolldirection"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.side"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.soundevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.systemicon"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.textentrymode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.timeperiod"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.toggletype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.verticalalignment"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboard.showkeyboardreturncode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.cancellabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.clearlabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.closelabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.formmode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.keyboardmode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.keyboardzposition"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.nextlabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.previouslabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.shiftlabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.submitlabel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.keyboardproperties.suggestionmode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.ui.onactivateresponse.focusrequest"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.utils.filter"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.utils.lighttype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.utils.shadertype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.utils.statusdef"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.utils.wrap"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.animationblendsetupeventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.animationeventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.audioeventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.audiosampleformat"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.audiostate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.bodydynamictype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.cursorhoverstate"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.devicegestureflags"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.dispatchresult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.handgestureflags"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.mediatracktype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.planecastflags"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.prismtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.privilegeid"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.privilegeresult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.raycasteventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.raycastresulttype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.resourcetype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.scalemodetype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.selectioneventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.servereventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.spriteanimationeventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.spriteevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.systemeventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.timemodtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.videoeventtype"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.viewmode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.notification.notificationactivateglyph"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.notification.notificationdismissglyph"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/enums/_lumin_.notification.notificationsound"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Classes",
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.glyph.kerning.pair"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.glyph.font2ddesc"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.glyph.metrics"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.glyph.metrics.advancepen"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.glyph.metrics.boundingbox"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.glyph.tileinfo"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.math.aabb"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.multipack.descriptor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.multipack.params"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.multipack.sheetfiles"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.multipack.subtexture"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.resources.preloaded"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.resources.preloaded.styleandweight"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.text.fixedboundsdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.keyboardevent.eventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.keyboardevent.keypresseddata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.keyboardevent.stringentereddata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.alignment"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.boundaryshape"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.cursor"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.date"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.dropdownlistitem"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.eclipsebuttonparams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.eclipsesliderparams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.eclipsetoggleparams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.fontparams"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.gravitywellproperties"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.keyboard"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.keyboardproperties"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.keyboardproperties.customformproperties"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.onactivateresponse"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.time"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uibutton"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uicircleconfirmation"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uicolorpicker"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uidatepicker"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uidialog"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uidropdownlist"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uieventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uigridlayout"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uigroup"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiimage"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uilayout"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uilinearlayout"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uilistview"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uilistviewitem"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiloadingspinner"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uinode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uipageview"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uipanel"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiportalicon"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiprogressbar"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uirectlayout"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiscrollbar"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiscrollview"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uislider"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uitab"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uitext"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uitextedit"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uitimepicker"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uitoggle"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uitogglegroup"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiwebview"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiwebviewclient"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ui.uiwebviewdatamanager"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.utils.callbackid"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.utils.params2d"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.animationblendsetupevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.animationevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.animationeventbase"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.animationeventcustom"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.audiobufferformat"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.audioevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.audionode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.baseapp"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.controlpose3dofinputeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.controlpose6dofinputeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.controltouchpadinputeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.desc2d"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.eyetrackingeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.fileinfo"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.fileresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.font2dresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.fontresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.gestureinputeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.hapticinfo"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.immersiveapp"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.initarg"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.inputeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.kempty"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.keyinputeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.landscapeapp"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ledarcpattern"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.ledinbuiltpattern"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.lightnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.linenode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.mediaformat"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.modelattachmentnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.modelnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.modelresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.node"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.notification"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.particleeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.particlenode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.physicseventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.physicsinitializationdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.physicsmaterial"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.physicsrigidbody"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.physicsshape"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.planarresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.prism"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.prismcontroller"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.prismdatahandle"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.privilegeevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.quadnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.raycasteventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.raycastmodelnoderesult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.raycastmodelnodesphereresult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.raycastnoderesult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.raycastquadnoderesult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.raycastresult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.rendernode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.resource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.resourceevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.rootnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.selectioneventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.serverevent"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.sound"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.spatialsounddistanceproperties"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.spatialsoundradiationproperties"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.spatialsoundsendlevels"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.spriteanimationeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.spritenode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.systemeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.text2ddesc"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.text2dnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.texturepackresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.textureresource"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.transformanimationeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.transformnode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.vibehapticpattern"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.videoeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.videonode"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.videosubtitleeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.videotimedtexteventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldimagetrackingeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldmeshblockeventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldplanecasteventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldplanecastresult"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldplanecastresult.plane"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldraycasteventdata"
+        },
+        {
+          "type": "doc",
+          "id": "version-1.3.0/classes/_lumin_.worldraycastresult"
+        }
+      ]
+    }
+  ]
+}

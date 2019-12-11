@@ -54,7 +54,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getSphereRadius(): number
+    getSphereRadius(): number /* float */
 
     /**
      * Returns the radius of a capsule shape.
@@ -63,7 +63,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCapsuleRadius(): number
+    getCapsuleRadius(): number /* float */
 
     /**
      * Returns the length of a capsule shape. The length is for the cylinder part of the shape,
@@ -73,7 +73,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCapsuleLength(): number
+    getCapsuleLength(): number /* float */
 
     /**
      * Returns the side lengths of a box shape.

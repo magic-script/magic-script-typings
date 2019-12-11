@@ -21,13 +21,13 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    keyVal(): number
+    keyVal(): number /* int32_t */
 
     /**
      * @return The meta key flag (for Control, Shift, Alt, etc.)
      *
      * @priv none
      */
-    metaKeys(): number
+    metaKeys(): number /* uint32_t */
   }
 }

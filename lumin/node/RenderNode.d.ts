@@ -52,7 +52,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setIsOpaque(a_on: boolean, a_renderStateIndex?: number): void
+    setIsOpaque(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets if this should be rendered on the UI Layer.
@@ -65,7 +65,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setIsUI(a_on: boolean, a_renderStateIndex?: number): void
+    setIsUI(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the stencil push setting for one or more render states.
@@ -77,7 +77,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setPushesStencil(a_on: boolean, a_renderStateIndex?: number): void
+    setPushesStencil(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the stencil write setting for one or more render states.
@@ -89,7 +89,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setWritesStencil(a_on: boolean, a_renderStateIndex?: number): void
+    setWritesStencil(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the depth read setting for one or more render states.
@@ -101,7 +101,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setReadsDepth(a_on: boolean, a_renderStateIndex?: number): void
+    setReadsDepth(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the depth write setting for one or more render states.
@@ -113,7 +113,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setWritesDepth(a_on: boolean, a_renderStateIndex?: number): void
+    setWritesDepth(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the color write setting for one or more render states.
@@ -125,7 +125,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setWritesColor(a_on: boolean, a_renderStateIndex?: number): void
+    setWritesColor(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the clip read setting for one or more render states.
@@ -137,7 +137,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setReadsClip(a_on: boolean, a_renderStateIndex?: number): void
+    setReadsClip(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the back-face-cull setting for one or more render states.
@@ -149,7 +149,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setBackFaceCulls(a_on: boolean, a_renderStateIndex?: number): void
+    setBackFaceCulls(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Sets the front-face-cull setting for one or more render states.
@@ -161,7 +161,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setFrontFaceCulls(a_on: boolean, a_renderStateIndex?: number): void
+    setFrontFaceCulls(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Flags whether or not the indicated render state will receive light.
@@ -173,7 +173,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setReceivesLight(a_on: boolean, a_renderStateIndex?: number): void
+    setReceivesLight(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Flags whether or not the indicated render state will bloom
@@ -185,7 +185,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setBlooms(a_on: boolean, a_renderStateIndex?: number): void
+    setBlooms(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Flags whether or not the indicated render state will cast shadows.
@@ -197,7 +197,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setCastsShadows(a_on: boolean, a_renderStateIndex?: number): void
+    setCastsShadows(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Flags whether or not the indicated render state will receive shadows.
@@ -209,7 +209,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setReceivesShadows(a_on: boolean, a_renderStateIndex?: number): void
+    setReceivesShadows(a_on: boolean, a_renderStateIndex?: number /* std::ptrdiff_t */): void
 
     /**
      * Flags If this renderable node is using DRM Content
@@ -258,7 +258,7 @@ declare module 'lumin' {
     /**
      * @priv none
      */
-    setRenderingLayer(a_renderLayer: number): void
+    setRenderingLayer(a_renderLayer: number /* uint16_t */): void
 
     /**
      * Get the rendering layer of this node.
@@ -275,6 +275,6 @@ declare module 'lumin' {
      *
      * @param a_bloomStrength - the Bloom Strength
      */
-    setBloomStrength(a_bloomStrength: number): void
+    setBloomStrength(a_bloomStrength: number /* float */): void
   }
 }

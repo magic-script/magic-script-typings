@@ -1,0 +1,155 @@
+---
+id: "_lumin_.input.handgesturekeypointname"
+title: "HandGestureKeypointName"
+sidebar_label: "HandGestureKeypointName"
+---
+
+## Enumeration members
+
+###  HAND_CENTER
+
+• **HAND_CENTER**:
+
+___
+
+###  INDEX_FINGER_BASE
+
+• **INDEX_FINGER_BASE**:
+
+___
+
+###  INDEX_FINGER_FIRST_JOINT
+
+• **INDEX_FINGER_FIRST_JOINT**:
+
+___
+
+###  INDEX_FINGER_SECOND_JOINT
+
+• **INDEX_FINGER_SECOND_JOINT**:
+
+___
+
+###  INDEX_FINGER_TIP
+
+• **INDEX_FINGER_TIP**:
+
+___
+
+###  MIDDLE_FINGER_BASE
+
+• **MIDDLE_FINGER_BASE**:
+
+___
+
+###  MIDDLE_FINGER_FIRST_JOINT
+
+• **MIDDLE_FINGER_FIRST_JOINT**:
+
+___
+
+###  MIDDLE_FINGER_SECOND_JOINT
+
+• **MIDDLE_FINGER_SECOND_JOINT**:
+
+___
+
+###  MIDDLE_FINGER_TIP
+
+• **MIDDLE_FINGER_TIP**:
+
+___
+
+###  NONE
+
+• **NONE**:
+
+___
+
+###  PINKY_FINGER_BASE
+
+• **PINKY_FINGER_BASE**:
+
+___
+
+###  PINKY_FINGER_FIRST_JOINT
+
+• **PINKY_FINGER_FIRST_JOINT**:
+
+___
+
+###  PINKY_FINGER_SECOND_JOINT
+
+• **PINKY_FINGER_SECOND_JOINT**:
+
+___
+
+###  PINKY_FINGER_TIP
+
+• **PINKY_FINGER_TIP**:
+
+___
+
+###  RING_FINGER_BASE
+
+• **RING_FINGER_BASE**:
+
+___
+
+###  RING_FINGER_FIRST_JOINT
+
+• **RING_FINGER_FIRST_JOINT**:
+
+___
+
+###  RING_FINGER_SECOND_JOINT
+
+• **RING_FINGER_SECOND_JOINT**:
+
+___
+
+###  RING_FINGER_TIP
+
+• **RING_FINGER_TIP**:
+
+___
+
+###  THUMB_BASE
+
+• **THUMB_BASE**:
+
+___
+
+###  THUMB_CARPAL_JOINT
+
+• **THUMB_CARPAL_JOINT**:
+
+___
+
+###  THUMB_FIRST_JOINT
+
+• **THUMB_FIRST_JOINT**:
+
+___
+
+###  THUMB_TIP
+
+• **THUMB_TIP**:
+
+___
+
+###  WRIST_CENTER
+
+• **WRIST_CENTER**:
+
+___
+
+###  WRIST_PINKY_SIDE
+
+• **WRIST_PINKY_SIDE**:
+
+___
+
+###  WRIST_THUMB_SIDE
+
+• **WRIST_THUMB_SIDE**:

@@ -1,6 +1,23 @@
 declare module 'lumin' {
 
   /**
+   * The type of raycast result and what the ray hit.
+   */
+  enum RaycastResultType {
+
+    /**
+     * this should only be used for serializing null data
+     */
+    kInvalid,
+    kVolume,
+    kNode,
+    kQuadNode,
+    kQuad3dNode,
+    kModelNodeSphere,
+    kModelNode,
+  }
+
+  /**
    * Base raycast result, also used for prism hits.
    */
   class RaycastResult {
@@ -27,7 +44,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getDistance(): number
+    getDistance(): number /* float */
 
     /**
      * Returns the prism that was intersected by a raycast.
@@ -35,6 +52,15 @@ declare module 'lumin' {
      * @priv none
      */
     getPrismId(): bigint /* uint64_t */
+
+    /**
+     * Returns the Raycast result type.
+     *
+     * @return the result type.
+     *
+     * @priv none
+     */
+    getType(): RaycastResultType
   }
 
   /**
@@ -98,27 +124,6 @@ declare module 'lumin' {
   }
 
   /**
-   * Raycast result for sprite node intersections.
-   */
-  class RaycastSpriteNodeResult extends RaycastNodeResult {
-    constructor()
-
-    /**
-     * Return normalized ray intersection on the node
-     *
-     * @priv none
-     */
-    getUV(): [number, number] /* glm::vec2 */
-
-    /**
-     * Return true if the intersection hit the "front" (+z) side of the quad
-     *
-     * @priv none
-     */
-    getHitFront(): boolean
-  }
-
-  /**
    * Raycast result for model node sphere intersections.
    */
   class RaycastModelNodeSphereResult extends RaycastNodeResult {
@@ -130,49 +135,5 @@ declare module 'lumin' {
    */
   class RaycastModelNodeResult extends RaycastNodeResult {
     constructor()
-  }
-
-  /**
-   * A light weight ray cast result
-   **/
-  class RayCastResultLight {
-
-    /** Constructor */
-    constructor()
-
-    /**
-     * Return the distance between the ray start and the point hit.
-     *
-     * @priv none
-     */
-    getDistance(): number
-
-    /**
-     * Return the point hit, in prism-space.
-     *
-     * @priv none
-     */
-    getPointHit(): [number, number, number] /* glm::vec3 */
-
-    /**
-     * Return the normal vector at the point hit.
-     *
-     * @priv none
-     */
-    getHitNormal(): [number, number, number] /* glm::vec3 */
-
-    /**
-     * Return the id of the Node hit.
-     *
-     * @priv none
-     */
-    getNodeId(): bigint /* uint64_t */
-
-    /**
-     * Return the id of the Prism the hit Node is contained in.
-     *
-     * @priv none
-     */
-    getPrismId(): bigint /* uint64_t */
   }
 }

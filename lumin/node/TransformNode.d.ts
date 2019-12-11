@@ -107,7 +107,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    delayMove(durationSecs: number, track?: number): void
+    delayMove(durationSecs: number /* float */, track?: number /* int */): void
 
     /**
      * Adds a client-side callback event to the move list. When the event is reached during the
@@ -116,7 +116,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    addMoveCallback(track?: number): void
+    addMoveCallback(track?: number /* int */): void
 
     /**
      * Stops all current property animations.

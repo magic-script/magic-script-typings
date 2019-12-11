@@ -25,6 +25,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getDeviceId(): number
+    getDeviceId(): number /* int32_t */
   }
 }

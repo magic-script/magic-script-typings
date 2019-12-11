@@ -52,7 +52,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCursorEdgeSub(callback: (arg0: ui.UiEventData, arg1: ui.Side, arg2: [number, number] /* glm::vec2 */, arg3: number) => void): utils.CallbackID
+      onCursorEdgeSub(callback: (arg0: ui.UiEventData, arg1: ui.Side, arg2: [number, number] /* glm::vec2 */, arg3: number /* float */) => void): utils.CallbackID
       onCursorEdgeUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -196,7 +196,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setEdgeConstraint(side: ui.Side, constraintMagnitude: number, transitionPanel: ui.UiPanel): void
+      setEdgeConstraint(side: ui.Side, constraintMagnitude: number /* float */, transitionPanel: ui.UiPanel): void
 
       /**
        * Sets the edge constraint for a side of the Panel shape.
@@ -213,7 +213,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setEdgeConstraint(side: ui.Side, constraintMagnitude: number): void
+      setEdgeConstraint(side: ui.Side, constraintMagnitude: number /* float */): void
 
       /**
        * Gets the edge constraint properties for a Side of the Panel shape.
@@ -223,7 +223,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getEdgeConstraint(side: ui.Side): number
+      getEdgeConstraint(side: ui.Side): number /* float */
 
       /**
        * Sets the edge constraint for a side of the Panel shape using a discrete
@@ -281,7 +281,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getEscapeMagnitude(side: ui.Side): number
+      getEscapeMagnitude(side: ui.Side): number /* float */
 
       /**
        * Gets the normalized escape magnitude for a Side.
@@ -290,7 +290,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getNormalizedEscapeMagnitude(side: ui.Side): number
+      getNormalizedEscapeMagnitude(side: ui.Side): number /* float */
 
       /**
        * Adds an external UiNode gravity well for consideration when interacting with this Panel.
@@ -305,16 +305,6 @@ declare module 'lumin' {
        * @priv none
        */
       addExternalGravityWell(uiNode: ui.UiNode): void
-
-      /**
-       * Removes an external UiNode gravity well from consideration when interacting with this Panel.
-       *
-       * @param uiNode - The UiNode to remove from the external gravity well list
-       * @return TRUE if the removal is successful, FALSE otherwise
-       *
-       * @priv none
-       */
-      removeExternalGravityWell(uiNode: ui.UiNode): boolean
 
       /**
        * Checks if the UiNode is included in the external gravity well list.

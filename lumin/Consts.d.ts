@@ -3,12 +3,12 @@ declare module 'lumin' {
   /**
    * `value = 60.0`
    */
-  const MAX_CLIENT_FPS: number;
+  const MAX_CLIENT_FPS: number /* float */;
 
   /**
    * `value = 1.0/MAX_CLIENT_FPS`
    */
-  const FPS_DELTA: number;
+  const FPS_DELTA: number /* float */;
 
   /**
    * `value = 0n`
@@ -36,14 +36,75 @@ declare module 'lumin' {
   const INVALID_PHYSICS_ID: bigint /* uint64_t */;
 
   /**
-   * `value = -1`
+   * ResourceType Indicates the type of Resource, similar to RTTi
    */
-  const INVALID_CONTROL_ID: number;
+  enum ResourceType {
 
-  /**
-   * `value = -1`
-   */
-  const INVALID_DEVICE_ID: number;
+    /**
+     * `value = -1`
+     */
+    kUndefined,
+
+    /**
+     * `value = 0`
+     */
+    kObjMtl,
+
+    /**
+     * `value = 1`
+     */
+    kTexture,
+
+    /**
+     * `value = 5`
+     */
+    kMaterial,
+
+    /**
+     * `value = 6`
+     */
+    kModel,
+
+    /**
+     * `value = 7`
+     */
+    kAnimation,
+
+    /**
+     * `value = 9`
+     */
+    kPlanar,
+
+    /**
+     * `value = 11`
+     */
+    kFont2d,
+
+    /**
+     * `value = 12`
+     */
+    kAudio,
+
+    /**
+     * `value = 14`
+     */
+    kParticlePackage,
+
+    /**
+     * `value = 16`
+     */
+    kAnimationBlendSetup,
+
+    /**
+     * `value = 17`
+     */
+    kAnimationSet,
+
+    /**
+     * `value = 18`
+     */
+    kTexturePack,
+  }
 
   /**
    * PrismType Indicates the type of Bound Volume
@@ -244,11 +305,6 @@ declare module 'lumin' {
      * `value = 1<<14`
      */
     kHandDynamicThumbsDown,
-
-    /**
-     * `value = 1<<15`
-     */
-    kHandNoPose,
   }
   enum DeviceGestureFlags {
 
@@ -373,6 +429,142 @@ declare module 'lumin' {
   enum SelectionEventType {
     kVolumeOnSelected,
     kVolumeOnDeselected,
+  }
+
+  /**
+   * ServerEventType Indicates the type of ServerEvent, whether Raycast, Video, OS Input, etc.
+   */
+  enum ServerEventType {
+
+    /**
+     * `value = 0`
+     */
+    kSelectionEvent,
+
+    /**
+     * `value = 1`
+     */
+    kRayCastEvent,
+
+    /**
+     * `value = 2`
+     */
+    kVideoEvent,
+
+    /**
+     * `value = 3`
+     */
+    kVideoSubtitleEvent,
+
+    /**
+     * `value = 4`
+     */
+    kVideoTimedTextEvent,
+
+    /**
+     * `value = 5`
+     */
+    kSpriteAnimationEvent,
+
+    /**
+     * `value = 7`
+     */
+    kKeyInputEvent,
+
+    /**
+     * `value = 8`
+     */
+    kGestureInputEvent,
+
+    /**
+     * `value = 9`
+     */
+    kControlPose3DofInputEvent,
+
+    /**
+     * `value = 10`
+     */
+    kControlPose6DofInputEvent,
+
+    /**
+     * `value = 11`
+     */
+    kControlTouchPadInputEvent,
+
+    /**
+     * `value = 12`
+     */
+    kTransformAnimationEvent,
+
+    /**
+     * `value = 13`
+     */
+    kWorldPlaneData,
+
+    /**
+     * `value = 14`
+     */
+    kWorldRayHit,
+
+    /**
+     * `value = 18`
+     */
+    kSystemEvent,
+
+    /**
+     * `value = 19`
+     */
+    kPhysicsEvent,
+
+    /**
+     * `value = 20`
+     */
+    kParticleEvent,
+
+    /**
+     * `value = 23`
+     */
+    kAudioEvent,
+
+    /**
+     * `value = 26`
+     */
+    kEyeTrackingEvent,
+
+    /**
+     * `value = 27`
+     */
+    kAnimationEvent,
+
+    /**
+     * `value = 28`
+     */
+    kAnimationCustomEvent,
+
+    /**
+     * `value = 32`
+     */
+    kAnimationBlendSetupEvent,
+
+    /**
+     * `value = 34`
+     */
+    kPrivilegeEvent,
+
+    /**
+     * `value = 35`
+     */
+    kResourceEvent,
+
+    /**
+     * `value = 36`
+     */
+    kWorldMeshBlockData,
+
+    /**
+     * `value = 38`
+     */
+    kWorldImageTrackingData,
   }
   enum SystemEventType {
 
@@ -521,7 +713,7 @@ declare module 'lumin' {
      *
      * `value = 0.001`
      */
-    const MIN_ZDEPTH_OFFSET: number;
+    const MIN_ZDEPTH_OFFSET: number /* float */;
     enum RenderingLayer {
 
       /**
@@ -564,38 +756,38 @@ declare module 'lumin' {
       /** Number of coordinates in the texture buffer of a quad.
        * `value = 4`
        */
-      const NUM_TEXTURE_COORDS: number;
+      const NUM_TEXTURE_COORDS: number /* int */;
 
       /** Number of coordinates in the vertex buffer of a quad.
        * `value = 4`
        */
-      const NUM_VERTEX_COORDS: number;
+      const NUM_VERTEX_COORDS: number /* int */;
 
       /** Number of indices into the vertex buffer of a quad.
        * `value = 6`
        */
-      const NUM_INDICES: number;
+      const NUM_INDICES: number /* int */;
 
       /**
        * Default texture coordinates for a quad.
        *
        * `value = [[0,1],[1,1],[1,0],[0,0]]`
        */
-      const DEFAULT_TEX_COORDS: Array<[number, number] /* glm::vec2 */> /* std::vector */;
+      const DEFAULT_TEX_COORDS: Array<[number, number]> /* std::vector<glm::vec2> */;
 
       /**
        * Default vertices for a square quad.
        *
        * `value = [[0,0,0],[1,0,0],[1,1,0],[0,1,0]]`
        */
-      const DEFAULT_VERTICES: Array<[number, number, number] /* glm::vec3 */> /* std::vector */;
+      const DEFAULT_VERTICES: Array<[number, number, number]> /* std::vector<glm::vec3> */;
 
       /**
        * Default indices into a quad mesh.
        *
        * `value = [0,1,2,0,2,3]`
        */
-      const DEFAULT_INDICES: Array<number> /* std::vector */;
+      const DEFAULT_INDICES: Array<number> /* std::vector<uint32_t> */;
 
       /**
        * Default local AABB for a quad.
@@ -1119,16 +1311,6 @@ declare module 'lumin' {
       EVENT_PLUGGED_IN,
       EVENT_PLUGGED_OUT,
       EVENT_VOICE,
-    }
-    enum DeviceEventType {
-
-      /**
-       * `value = 0`
-       */
-      UNKNOWN,
-      CONNECT,
-      DISCONNECT,
-      STATE_CHANGE,
     }
   }
   namespace headtracking {

@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, type: ui.SystemIcon, height: number): ui.UiImage
+      static Create(prism: Prism, type: ui.SystemIcon, height: number /* float */): ui.UiImage
 
       /**
        * Creates a UiImage element with default settings.
@@ -31,7 +31,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, resID: bigint /* uint64_t */, width: number, height: number, useFrame?: boolean): ui.UiImage
+      static Create(prism: Prism, resID: bigint /* uint64_t */, width: number /* float */, height: number /* float */, useFrame?: boolean): ui.UiImage
 
       /**
        * Creates a UiImage element with default settings.
@@ -46,7 +46,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, pngFile: string, width: number, height: number, a_absolutePath?: boolean, useFrame?: boolean): ui.UiImage
+      static Create(prism: Prism, pngFile: string, width: number /* float */, height: number /* float */, a_absolutePath?: boolean, useFrame?: boolean): ui.UiImage
 
       /**
        * Gets the texture resource for the system icon.
@@ -108,7 +108,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTexCoords(texCoords: Array<[number, number] /* glm::vec2 */> /* std::vector */): void
+      setTexCoords(texCoords: Array<[number, number]> /* std::vector<glm::vec2> */): void
 
       /**
        * Returns the texture coordinates used by the UiImage.
@@ -117,7 +117,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTexCoords(): Array<[number, number] /* glm::vec2 */> /* std::vector */
+      getTexCoords(): Array<[number, number]> /* std::vector<glm::vec2> */
 
       /**
        * Sets a color to modulate the image with.

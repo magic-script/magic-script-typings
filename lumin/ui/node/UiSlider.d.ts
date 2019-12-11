@@ -34,17 +34,17 @@ declare module 'lumin' {
       /**
        * Icon scale (default 1.0f).
        */
-      iconScale: number;
+      iconScale: number /* float */;
 
       /**
        * Height of the Eclipse slider, (default 0 = default slider height).
        */
-      height: number;
+      height: number /* float */;
 
       /**
        * Width of the Eclipse slider, (default 0 = default slider width. Ignored if type == kCircularWithIcon).
        */
-      width: number;
+      width: number /* float */;
 
       /**
        * The type of SystemIcon to be used for the eclipse slider icon_1.
@@ -56,13 +56,13 @@ declare module 'lumin' {
        */
       iconType2: ui.SystemIcon;
       constructor(a_type: ui.EclipseSliderType)
-      constructor(a_type: ui.EclipseSliderType, a_pathOrText: string, a_height?: number, a_width?: number)
-      constructor(a_type: ui.EclipseSliderType, a_pathOrText1: string, a_pathOrText2: string, a_height?: number, a_width?: number)
-      constructor(a_type: ui.EclipseSliderType, a_iconPath1: string, a_iconPath2: string, a_labelText1: string, a_labelText2: string, a_height?: number, a_width?: number)
-      constructor(a_type: ui.EclipseSliderType, a_iconPath1: string, a_iconPath2: string, a_labelText1: string, a_labelText2: string, a_height: number, a_width: number, a_iconType1: ui.SystemIcon)
-      constructor(a_type: ui.EclipseSliderType, a_iconPath1: string, a_iconPath2: string, a_labelText1: string, a_labelText2: string, a_height: number, a_width: number, a_iconType1: ui.SystemIcon, a_iconType2: ui.SystemIcon)
-      constructor(a_type: ui.EclipseSliderType, a_iconType1: ui.SystemIcon, a_height?: number, a_width?: number)
-      constructor(a_type: ui.EclipseSliderType, a_iconType1: ui.SystemIcon, a_labelText1: string, a_height?: number, a_width?: number)
+      constructor(a_type: ui.EclipseSliderType, a_pathOrText: string, a_height?: number /* float */, a_width?: number /* float */)
+      constructor(a_type: ui.EclipseSliderType, a_pathOrText1: string, a_pathOrText2: string, a_height?: number /* float */, a_width?: number /* float */)
+      constructor(a_type: ui.EclipseSliderType, a_iconPath1: string, a_iconPath2: string, a_labelText1: string, a_labelText2: string, a_height?: number /* float */, a_width?: number /* float */)
+      constructor(a_type: ui.EclipseSliderType, a_iconPath1: string, a_iconPath2: string, a_labelText1: string, a_labelText2: string, a_height: number /* float */, a_width: number /* float */, a_iconType1: ui.SystemIcon)
+      constructor(a_type: ui.EclipseSliderType, a_iconPath1: string, a_iconPath2: string, a_labelText1: string, a_labelText2: string, a_height: number /* float */, a_width: number /* float */, a_iconType1: ui.SystemIcon, a_iconType2: ui.SystemIcon)
+      constructor(a_type: ui.EclipseSliderType, a_iconType1: ui.SystemIcon, a_height?: number /* float */, a_width?: number /* float */)
+      constructor(a_type: ui.EclipseSliderType, a_iconType1: ui.SystemIcon, a_labelText1: string, a_height?: number /* float */, a_width?: number /* float */)
     }
 
     /**
@@ -87,7 +87,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width: number, height?: number): ui.UiSlider
+      static Create(prism: Prism, width: number /* float */, height?: number /* float */): ui.UiSlider
 
       /**
        * Creates an Eclipse slider from UX specifications.
@@ -117,7 +117,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMin(min: number): void
+      setMin(min: number /* float */): void
 
       /**
        * Sets the max slider value.
@@ -126,7 +126,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMax(max: number): void
+      setMax(max: number /* float */): void
 
       /**
        * Gets the min slider value.
@@ -134,7 +134,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getMin(): number
+      getMin(): number /* float */
 
       /**
        * Gets the max slider value.
@@ -142,7 +142,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getMax(): number
+      getMax(): number /* float */
 
       /**
        * Sets the slider min and max values.
@@ -155,7 +155,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMinMax(min: number, max: number): void
+      setMinMax(min: number /* float */, max: number /* float */): void
 
       /**
        * Gets the slider min and max values.
@@ -175,7 +175,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setValue(value: number): void
+      setValue(value: number /* float */): void
 
       /**
        * Gets the current slider value.
@@ -184,7 +184,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getValue(): number
+      getValue(): number /* float */
 
       /**
        * Sets the Node hierarchy used as visual representation for this UiSlider.

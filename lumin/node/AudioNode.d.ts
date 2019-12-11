@@ -3,10 +3,8 @@ declare module 'lumin' {
 
     /**
      * Initializes the AudioNode for using the already loaded resource(keyed on resource ID)
-     * Associates audio resource id with AudioNode.
+     * Associates audio resource id with audio node.
      * Also, sets resource related properties.
-     *
-     * NOTE: Must be called only once to set the AudioNode's behavior in terms of it's sound resource(s).
      *
      * @param resourceID - ID of the audio resource which is already created.
      * @param autoDestroy `default = false`<br/> - If true, play the sound once and  delete the node. If false the audio
@@ -21,20 +19,6 @@ declare module 'lumin' {
     createSoundWithLoadedFile(resourceID: bigint /* uint64_t */, autoDestroy?: boolean, dynamicDecode?: boolean): boolean
 
     /**
-     * An overload of createSoundWithLoadedFile with a vector of resource IDs.
-     * See the comments for single resource Id overload.
-     * This API will associate all the resource IDs in the vector with the AudioNode.
-     *
-     * NOTE: Must be called only once to set the AudioNode's behavior in terms of it's sound resource(s).
-
-     * PERFORMANCE: Associating many resources to one AudioNode will result in slight performance penalty.
-     *       So, only associate multiple resources if necessary(eg. playing random sounds) and
-     *       do not add resources to AudioNode which will be never used or used only once. If the resource
-     *       is not going to be used any more, remove the association using removeResource() API.
-     */
-    createSoundWithLoadedFile(resourceIDs: Array<bigint /* uint64_t */> /* std::vector */, autoDestroy?: boolean, dynamicDecode?: boolean): boolean
-
-    /**
      * Initializes the AudioNode for loading the audio file chunk at a time in memory.
      * Associates audio resource(file) with audio node. Also, sets resource related properties.
      *
@@ -47,189 +31,12 @@ declare module 'lumin' {
      * @return bool - Returns true on success else, returns false.
      */
     createSoundWithStreamedFile(resourceID: bigint /* uint64_t */, autoDestroy?: boolean): boolean
-
-    /**
-     * An overload of createSoundWithStreamedFile with a vector of resource IDs.
-     * See the comments for single resource Id overload.
-     * This API will associate all the resource IDs in the vector with the AudioNode.
-     *
-     * NOTE: Must be called only once to set the AudioNode's behavior in terms of it's sound resource(s).
-
-     * PERFORMANCE: Associating many resources to one AudioNode will result in slight performance penalty.
-     *       So, only associate multiple resources if necessary(eg. playing random sounds) and
-     *       do not add resources to AudioNode which will be never used or used only once. If the resource
-     *       is not going to be used any more, remove the association using removeResource() API.
-     */
-    createSoundWithStreamedFile(resourceIDs: Array<bigint /* uint64_t */> /* std::vector */, autoDestroy?: boolean): boolean
-
-    /**
-     * Sets the AudioNode for playing the predefined system sounds using the
-     * AudioSytemSound enums.
-     *
-     * NOTE: Must be called only once to set the AudioNode's behavior in terms of it's sound resource(s).
-     *
-     * 1) The node can be the child of some visible node to perceive the sounds
-     * direction coming from that visual artifact\model's location.
-     * -- OR --
-     * 2) The node may be the child of RootNode and set the
-     * audioNode->setLocalPosition(x,y,z) to perceive the sounds direction coming
-     * from the arbitrary location specified by x,y,z
-     *
-     * Call audionode->playSystemSound(SystemSoundEnum sysSound); to play
-     * the specified system sound from the location specified by #1 or #2 method.
-     */
-    createSoundWithSystemEnum(): boolean
-
-    /**
-     * Creates the AudioNode using the properties set in Sound object.
-     * The Sound object reads it's properties from an XML Sound Model file.
-     * XML Sound Model which, contains AudioNode's properties are created for
-     * various purposes for example, internally, SystemSoundModel.xml is used to define
-     * each system sound's properties.
-     *
-     * NOTE: Must be called only once to set the AudioNode's behavior in terms of it's sound resource(s).
-     *
-     * @param sound A Sound object to apply it's properties to this AudioNode.
-     * @param autoDestroy `default = false`<br/> Default is false and currently ignored.
-     */
     createWithSound(sound: Sound, autoDestroy?: boolean): void
 
     /**
-     * Similar to createWithSound with a difference that the sound has already
-     * been create using any of the createWithXxxx APIs.
-     * This method will set the AudioNodes properties as set in
-     * the Sound* parameter.
-     *
-     * NOTE: The stream="false"|"true" and res=<res_id> properties(from XML from which
-     *       the Sound object was created) will be ignored because the AudioNode was
-     *       already initialized using either createSoundWithLoadedfile,
-     *       createSoundWithStreamedFile or any other createSoundXxxx APIs.
-     *
-     * @param sound A Sound object to apply it's properties to this AudioNode.
-     *
-     */
-    setSoundProperties(sound: Sound): void
-
-    /**
-     * AudioNode can have multiple AudioResource(s) associated with it.
-     * The first resource is associated when AudioNode is initialized by calling
-     * createSoundWithLoadefFile or createSoundWithStreamedFile API.
-     * This addResource API may be called to add(associate) more resources. However, it must be
-     * called after initializing the AudioNode with the above mentioned createSoundWithXxxx APIs.
-     *
-     * Note that the same resource type must be used when adding additional resources as the one used in
-     * createSoundWithXxxx API
-     * Example:
-     *   AudioNode->createSoundWithLoadedFile( loadedFileResourceID_1 ); // Node initialized with "loaded file" type resource.
-     *   AudioNode->addResource( loadedFileResourceID_2 ); // OK - adding "loaded file" resource
-     *   AudioNode->addResource( streamedFileResourceID_3 ); // ERROR - adding "streamed  file" resource
-     *   ...
-     *   Later, when startSound() API is called, it will play any one randomly picked resource sound.
-     *
-     * Some use cases:
-     * Example 1:
-     *   Using just one AudioNode, an alternative to having multiple AudioNodes for different sounds
-     *   playing from the same position(and orientation) but not at the same time(not overlapped).
-     *   Just add (associate) multiple resources using this addResource(resID_n) API and call startSound(resID_n)
-     *   different times with different resource IDs to play.
-     *   NOTE: Intentionally not adding resource if not already added when startSound(resId_n)
-     *       is called. This, is to avoid accidentally or easily associating too many resources
-     *       which, has performance implications.
-     *
-     * Example 2:
-     *   Randomly playing different sound(from set of already added resources) each time startSound() is called.
-     *   This can be used to repeated sounds with slight variations for realism like, footsteps, breathing,
-     *   bullets, etc.. In this case, associate slightly varying audio resources with the same AudioNode and call
-     *   audioNode->statrtSound() with no arguments. It will play one randomly picked resource each time
-     *   startSound() is called.
-     *
-     *
-     * @param resourceID - Additional AudioResource ID to be associated with this AudioNode.
-     *                     Calling addResource on same resource again is okay. The resource is added(associated)
-     *                     only the first time.
-     *
-     * @return - true, if successful added or already associated.
-     *           false, if the type of resource is not the same type of resource (LoadedFile
-     *           or StreamedFile) as the one when AudioNode was initialized with the resource using
-     *           createSoundWithXxxx API.
-     *
-     * NOTE: Associating many resources to one AudioNode will result in slight performance penalty.
-     *       So, only associate multiple resources if necessary(eg. playing random sounds) and
-     *       do not add resources to AudioNode which will be never used or used only once. If the resource
-     *       is not going to be used any more, remove the association using removeResource() API.
-     */
-    addResource(resourceID: bigint /* uint64_t */): boolean
-
-    /**
-     * Removes or disassociates the specified resource from the AudioNode.
-     * A valid AudioNode should have at least one resource associated with it. Hence, if the node has only
-     * one resource it will not be removed and the method will return false.
-     *
-     * @return true, if resource successfully removed.
-     *         false, if the node had only one resource in which case it cannot be removed.
-     *                Or if the resource was not associated with the node.
-     */
-    removeResource(resourceID: bigint /* uint64_t */): boolean
-
-    /**
-     * Replaces the specified oldResourceID with the new one, newResourceID.
-     * If only one resource associated with the node, then the oldResourceID
-     * parameter is optional. In this case that resource will be replaced with the new one.
-     *
-     * @param newResourceID The new resource to be associated.
-     * @param oldResourceID `default = INVALID_RESOURCE_ID`<br/> The old resource to be disassociated.
-     *
-     * @ return true, if the resource was successfully replaced.
-     *          false, in the following scenarios:
-     *                 1) If the specified old resource is not associated with the node.
-     *                 2) If multiple resources are associated and oldResourceID argument not specified.
-     *                 3) If this API called before any of the createSoundWithXxxx APIs were called.
-     */
-    replaceResource(newResourceID: bigint /* uint64_t */, oldResourceID?: bigint /* uint64_t */): boolean
-
-    /**
-     * Gets total number of resources associated with this AudioNode.
-     *
-     * @return Number of resources.
-     */
-    getNumResources(): number
-
-    /**
-     * Gets the list of already associated resource IDs
-     *
-     * @return std::vector of already associated resources.
-     */
-    getResources(): Array<bigint /* uint64_t */> /* std::vector */
-
-    /**
-     * Plays either the only one resource sound associated with the node
-     * or if more than one resources associated, picks any one of them randomly
-     * - each time startSound() is called - and plays it.
-     *
-     * NOTE: If looping is enabled [setLooping(true)] and multiple resources associated,
-     *       startSound() will indefinitely play random sequence of all the associated
-     *       sound resources.
-     *       If only one resource associated, will indefinitely play that one resource
-     *       back to back.
-     *       To stop playing, call stopSound().
+     * Plays the sound from the beginning.
      */
     startSound(): void
-
-    /**
-     * Plays the sound specified by the audio resource ID. The resource ID must be associated
-     * prior to this API call.
-     *
-     * Intentionally not adding resource if not already added\associated with the node
-     * to avoid accidentally or easily associating too many resources which, has slight
-     * performance implications.
-     *
-     * NOTE: If looping is enabled [setLooping(true)] will indefinitely play the
-     *       specified resource back to back.
-     *       To stop playing, call stopSound().
-     *
-     * @param resId The resource sound to play.
-     */
-    startSound(resId: bigint /* uint64_t */): void
 
     /**
      * Stops the sound if already playing.
@@ -247,38 +54,6 @@ declare module 'lumin' {
     resumeSound(): void
 
     /**
-     * Plays the specified system sound.
-     * By nature system sounds are expected to be of small duration like button_click etc...
-     * and are of fire-and-forget style, that is, cannot be stopped, paused and such.
-     * Usage:
-     *   dialogBox_1->setLocalPosition(1.2, 0.0. -0.5);
-     *   dialogBox_2->setLocalPosition(-0.7, 0.0. -0.5);
-     *   AudioNode* audioNode =  prism->createAudioNode();
-     *   audioNode->createSoundWithSystenEnum();
-     *
-     *   // Upon some event or a particular iteration of update loop.
-     *   // To play sound from dialogBox_1's location:
-     *   dialogBox_1->addChild(audioNode);
-     *   audioNode->playSystemSound(SystemSoundEnum::kClose);
-     *
-     *   // Upon some other event or other iteration of update loop.
-     *   // To play sound from dialogBox_2's location:
-     *   dialogBox_2->addChild(audioNode);
-     *   audioNode->playSystemSound(SystemSoundEnum::kClick);
-     *
-     *   // Upon yet other event or yet another iteration of update loop:
-     *   // To play the sound from arbitrary location:
-     *   rootNode->addChild(audioNode);
-     *   audioNode->setLocalPosition(x,y,z);
-     *   audioNode->playSystemSound(SystemSoundEnum::kAlert);
-     *
-     *   @param sysSound The system sound to be played.
-     *
-     *   @return Returns true if successful, else returns false.
-     */
-    playSystemSound(sysSound: SystemSoundEnum): boolean
-
-    /**
      * Gets the current state of the audio, see enum AudioState.
      *
      * @return - Output parameter where the audio state will be stored.
@@ -291,16 +66,16 @@ declare module 'lumin' {
      *  The range of the volume is 0 to 8, with 0 for silence,
      *  1 for unity gain, and 8 for 8x gain.
      *
-     * @param volume - Range 0.0f to 8.0f
+     * @param volume - Volume value to set. Range 0.0f to 8.0f
      */
-    setSoundVolumeLinear(volume: number): void
+    setSoundVolumeLinear(volume: number /* float */): void
 
     /**
      * Gets the current audio volume.
      *
      * @return - Reference to a float to output current value.
      */
-    getSoundVolumeLinear(): number
+    getSoundVolumeLinear(): number /* float */
 
     /**
      * Sets sound pitch.
@@ -311,14 +86,14 @@ declare module 'lumin' {
      *
      * @param pitch - Pitch value to set. Range 0.5 t0 2.0
      */
-    setSoundPitch(pitch: number): void
+    setSoundPitch(pitch: number /* float */): void
 
     /**
      * Get sound pitch.
      *
      * @return - Reference to a float to output current value.
      */
-    getSoundPitch(): number
+    getSoundPitch(): number /* float */
 
     /**
      * Mute or unmute the sound.
@@ -360,14 +135,14 @@ declare module 'lumin' {
      *
      * @param offsetMilliSec - Value for offset in milliseconds.
      */
-    setStreamedFileOffset(offsetMilliSec: number): void
+    setStreamedFileOffset(offsetMilliSec: number /* uint32_t */): void
 
     /**
      * Gets the currently set starting point for playback of a streamed-file sound.
      *
      * @return - Reference to uint32_t to output the current value of offset.
      */
-    getStreamedFileOffset(): number
+    getStreamedFileOffset(): number /* uint32_t */
 
     /**
      * Enable\Disable the capability for spatial sound.
@@ -437,7 +212,7 @@ declare module 'lumin' {
      *
      *
      */
-    setSpatialSoundPosition(channel: number, channelPosition: [number, number, number] /* glm::vec3 */): void
+    setSpatialSoundPosition(channel: number /* uint32_t */, channelPosition: [number, number, number] /* glm::vec3 */): void
 
     /**
      *  Get position of the given audio channel. Position is relative to audio node's
@@ -447,7 +222,7 @@ declare module 'lumin' {
      *  @return - A glm::vec3 which gets populated by the offset
      *               of channels position.
      */
-    getSpatialSoundPosition(channel: number): [number, number, number] /* glm::vec3 */
+    getSpatialSoundPosition(channel: number /* uint32_t */): [number, number, number] /* glm::vec3 */
 
     /**
      * Set the sound direction of a given audio channel.
@@ -461,7 +236,7 @@ declare module 'lumin' {
      * @param channelDirection - A quaternion (glm::quat) specifying the direction of the sound for the given channel
      *                          relative to the node's local orientation.
      */
-    setSpatialSoundDirection(channel: number, channelDirection: [number, number, number, number] /* glm::quat */): void
+    setSpatialSoundDirection(channel: number /* uint32_t */, channelDirection: [number, number, number, number] /* glm::quat */): void
 
     /**
      *  Get sound direction of a given audio channel.
@@ -471,7 +246,7 @@ declare module 'lumin' {
      *  @return - A quaternion (glm::quat) which gets populated by direction
      *               of the sound for the given channel.
      */
-    getSpatialSoundDirection(channel: number): [number, number, number, number] /* glm::quat */
+    getSpatialSoundDirection(channel: number /* uint32_t */): [number, number, number, number] /* glm::quat */
 
     /**
      *  Set spatial sound distance parameters for a given channel.
@@ -479,7 +254,7 @@ declare module 'lumin' {
      *  @param channel - Channel index(zero based).
      *  @param channelProperties - spatial sound distance parameters, See struct SpatialSoundDistanceProperties
      */
-    setSpatialSoundDistanceProperties(channel: number, channelProperties: SpatialSoundDistanceProperties): void
+    setSpatialSoundDistanceProperties(channel: number /* uint32_t */, channelProperties: SpatialSoundDistanceProperties): void
 
     /**
      *  Get spatial sound distance parameters for a given channel.
@@ -488,7 +263,7 @@ declare module 'lumin' {
      *  @return - Reference to distance properties struct.
      *               See struct SpatialSoundDistanceProperties
      */
-    getSpatialSoundDistanceProperties(channel: number): SpatialSoundDistanceProperties
+    getSpatialSoundDistanceProperties(channel: number /* uint32_t */): SpatialSoundDistanceProperties
 
     /**
      *  Set spatial sound radiation parameters for a given channel.
@@ -496,7 +271,7 @@ declare module 'lumin' {
      *  @param channel - Channel index(zero based).
      *  @param channelProperties - spatial sound radiation parameters, See struct SpatialSoundRadiationProperties
      */
-    setSpatialSoundRadiationProperties(channel: number, channelProperties: SpatialSoundRadiationProperties): void
+    setSpatialSoundRadiationProperties(channel: number /* uint32_t */, channelProperties: SpatialSoundRadiationProperties): void
 
     /**
      *  Get spatial sound radiation parameters for a given channel.
@@ -505,7 +280,7 @@ declare module 'lumin' {
      *  @return - Reference to radiation properties struct.
      *               See struct SpatialSoundRadiationProperties
      */
-    getSpatialSoundRadiationProperties(channel: number): SpatialSoundRadiationProperties
+    getSpatialSoundRadiationProperties(channel: number /* uint32_t */): SpatialSoundRadiationProperties
 
     /**
      * Sets the direct send levels for one channel of a sound output.
@@ -522,7 +297,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose direct send levels are being set
      * @param channelSendlevels - SpatialSoundSendLevels struct to set the levels
      */
-    setSpatialSoundDirectSendLevels(channel: number, channelSendlevels: SpatialSoundSendLevels): void
+    setSpatialSoundDirectSendLevels(channel: number /* uint32_t */, channelSendlevels: SpatialSoundSendLevels): void
 
     /**
      * Gets the direct send levels for one channel of a sound output.
@@ -535,7 +310,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose direct send levels are being read
      * @return - SpatialSoundSendLevels struct to return the levels
      */
-    getSpatialSoundDirectSendLevels(channel: number): SpatialSoundSendLevels
+    getSpatialSoundDirectSendLevels(channel: number /* uint32_t */): SpatialSoundSendLevels
 
     /**
      * Sets the room send levels for one channel of a sound output.
@@ -552,7 +327,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose room send levels are being set
      * @param channelSendLevels - SpatialSoundSendLevels struct to set the levels
      */
-    setSpatialSoundRoomSendLevels(channel: number, channelSendLevels: SpatialSoundSendLevels): void
+    setSpatialSoundRoomSendLevels(channel: number /* uint32_t */, channelSendLevels: SpatialSoundSendLevels): void
 
     /**
      * Gets the room send levels for one channel of a sound output.
@@ -565,7 +340,7 @@ declare module 'lumin' {
      * @param channel - selects the channel whose room send levels are being read
      * @return - SpatialSoundSendLevels struct to return the levels
      */
-    getSpatialSoundRoomSendLevels(channel: number): SpatialSoundSendLevels
+    getSpatialSoundRoomSendLevels(channel: number /* uint32_t */): SpatialSoundSendLevels
 
     /**
      * Lets the audio service know that the buffer is filled and ready.
@@ -582,33 +357,5 @@ declare module 'lumin' {
      * @return bool - Returns true on success else false.
      */
     releaseOutputStreamBuffer(streamId: bigint /* uint64_t */): boolean
-
-    /**
-     * Starts capture for a sound input.
-     * This method must be called before acquiring audio data in the buffer using getInputBuffer().
-     *
-     * @return true if successful. false on any failure.
-     */
-    startInput(): boolean
-
-    /**
-     * Stops capture on sound input.
-     *
-     * @return true if successful. false on any failure.
-     */
-    stopInput(): boolean
-
-    /**
-     * Releases the input audio buffer for reuse.
-     *
-     * After receiving a full buffer from getInputBuffer and
-     * reading the audio data from that buffer, call this function to
-     * indicate that the buffer has been read and can now be re-used.
-     *
-     * @param audioId MLHandle used to identify the sound input
-     *
-     * @return true if successful. false on any failure.
-     */
-    static ReleaseInputBuffer(audioId: bigint /* uint64_t */): boolean
   }
 }

@@ -7,39 +7,13 @@ declare module 'lumin' {
     class Date {
 
       /**
-       * Get today's date
-       *
-       * @return a Date object with today's date
-       *
-       */
-      static GetCurrentDate(): ui.Date
-
-      /**
-       * To get the amount of days in an arbitrary month
-       *
-       * @param month 1 - 12
-       * @return amount of days in specified month
-       *
-       */
-      static GetDaysPerMonth(month: number): number
-
-      /**
-       * To determine whether the passed in year is a leap year
-       *
-       * @param year the year
-       * @return true if it is a leap year, false otherwise.
-       *
-       */
-      static IsLeapYear(year: number): boolean
-
-      /**
        * Creates Date object with year, month, day.
        *
        * @param year year in the range -9999, 9999.
        * @param month month in the range 1-12.
        * @param day day in the range 1-31.
        */
-      constructor(year: number, month: number, day: number)
+      constructor(year: number /* int */, month: number /* int */, day: number /* int */)
 
       /** Default ctor */
       constructor()
@@ -50,7 +24,7 @@ declare module 'lumin' {
        * @param day day to be set in the range 1-31.
        *
        */
-      setDay(day: number): void
+      setDay(day: number /* int */): void
 
       /**
        * Gets the day.
@@ -58,7 +32,7 @@ declare module 'lumin' {
        * @return day, in the range of 1-31.
        *
        */
-      day(): number
+      day(): number /* int */
 
       /**
        * Sets the month. Clamping will be applied for out of range values.
@@ -66,7 +40,7 @@ declare module 'lumin' {
        * @param month month to be set in the range of 1-12.
        *
        */
-      setMonth(month: number): void
+      setMonth(month: number /* int */): void
 
       /**
        * Gets the month.
@@ -74,7 +48,7 @@ declare module 'lumin' {
        * @return month, month in the range of 1-12.
        *
        */
-      month(): number
+      month(): number /* int */
 
       /**
        * Sets the year. Clamping will be applied for out of range values.
@@ -82,7 +56,7 @@ declare module 'lumin' {
        * @param year year in the range of -9999, 9999.
        *
        */
-      setYear(year: number): void
+      setYear(year: number /* int */): void
 
       /**
        * Gets the year.
@@ -90,7 +64,7 @@ declare module 'lumin' {
        * @return year, year in the range of -9999, 9999.
        *
        */
-      year(): number
+      year(): number /* int */
 
       /**
        * Gets the amount of days in this Date object's month.
@@ -98,7 +72,16 @@ declare module 'lumin' {
        * @return amount of days in this Date's month.
        *
        */
-      getDaysPerMonth(): number
+      getDaysPerMonth(): number /* int */
+
+      /**
+       * Gets the amount of days in an arbitrary month.
+       *
+       * @param month 1 - 12.
+       * @return amount of days in specified month.
+       *
+       */
+      static GetDaysPerMonth(month: number /* int */): number /* int */
 
       /**
        * Determines whether this Date object's year is a leap year.
@@ -107,6 +90,15 @@ declare module 'lumin' {
        *
        */
       isLeapYear(): boolean
+
+      /**
+       * Determines whether the passed in year is a leap year.
+       *
+       * @param year the year.
+       * @return true if it is a leap year, false otherwise.
+       *
+       */
+      static IsLeapYear(year: number /* int */): boolean
     }
   }
 }

@@ -1,5 +1,15 @@
 declare module 'lumin' {
   namespace resources {
+
+    /**
+     * Query whether a resource of the given type derives from FileResource.
+     *
+     * @param resourceType type of the resource.
+     * @return true if resources of the given type derive from FileResource.
+     *
+     * @priv none
+     */
+    function DerivesFromFileResource(resourceType: ResourceType): boolean
   }
 
   /**
@@ -29,6 +39,15 @@ declare module 'lumin' {
      * @priv none
      */
     isResourceValid(): boolean
+
+    /**
+     * Returns the type of this resource
+     *
+     * @return Resource Type
+     *
+     * @priv none
+     */
+    getResourceType(): ResourceType
 
     /**
      * Gets the FileName Associated with this resource.

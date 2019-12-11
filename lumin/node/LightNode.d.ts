@@ -33,37 +33,37 @@ declare module 'lumin' {
      * Sets the light intensity.
      * @param a_intensity The required intensity.
      */
-    setIntensity(a_intensity: number): void
+    setIntensity(a_intensity: number /* float */): void
 
     /**
      * Gets the light intensity.
      * @return The current light type.
      */
-    getIntensity(): number
+    getIntensity(): number /* float */
 
     /**
      * Sets the light range.
      * @param a_range The required range.
      */
-    setRange(a_range: number): void
+    setRange(a_range: number /* float */): void
 
     /**
      * Gets the light range.
      * @return The current light range.
      */
-    getRange(): number
+    getRange(): number /* float */
 
     /**
      * Sets the light spot angle (ignored if this is not a spot light).
      * @param a_spotAngle The required spot angle (in radians).
      */
-    setSpotAngle(a_spotAngle: number): void
+    setSpotAngle(a_spotAngle: number /* float */): void
 
     /**
      * Gets the light spot angle.
      * @return The current light spot angle (in radians).
      */
-    getSpotAngle(): number
+    getSpotAngle(): number /* float */
 
     /**
     * Attempts to set the light's shadow casting status.  Currently the system supports only

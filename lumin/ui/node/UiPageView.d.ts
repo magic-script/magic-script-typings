@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width?: number, height?: number): ui.UiPageView
+      static Create(prism: Prism, width?: number /* float */, height?: number /* float */): ui.UiPageView
 
       /**
        * Sets the size of the page view.
@@ -113,7 +113,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPageCount(): number
+      getPageCount(): number /* int */
 
       /**
        * Adds a page to the view.
@@ -155,7 +155,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addPageAt(index: number, page: TransformNode): void
+      addPageAt(index: number /* int */, page: TransformNode): void
 
       /**
        * Adds a page to the view at the specific index.
@@ -178,7 +178,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addPageAt(index: number, page: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment?: ui.Alignment): void
+      addPageAt(index: number /* int */, page: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment?: ui.Alignment): void
 
       /**
        * Sets the page padding at the specified index.
@@ -193,7 +193,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPagePadding(index: number, padding: [number, number, number, number] /* glm::vec4 */): void
+      setPagePadding(index: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Sets the page padding.
@@ -215,18 +215,16 @@ declare module 'lumin' {
        *
        * @param index The index of the page in the view.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getPagePadding(index: number): [number, number, number, number] /* glm::vec4 */
+      getPagePadding(index: number /* int */): [number, number, number, number] /* glm::vec4 */
 
       /**
        * Gets the page padding.
        *
        * @param page Pointer to the page Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -245,7 +243,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPageAlignment(index: number, alignment: ui.Alignment): void
+      setPageAlignment(index: number /* int */, alignment: ui.Alignment): void
 
       /**
        * Sets the page alignment.
@@ -267,18 +265,16 @@ declare module 'lumin' {
        *
        * @param index The index of the page in the view.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getPageAlignment(index: number): ui.Alignment
+      getPageAlignment(index: number /* int */): ui.Alignment
 
       /**
        * Gets the page alignment.
        *
        * @param page Pointer to the page Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -294,7 +290,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPage(index: number): TransformNode
+      getPage(index: number /* int */): TransformNode
 
       /**
        * Removes the n'th page from the view.
@@ -309,22 +305,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removePage(index: number): TransformNode
-
-      /**
-       * Removes the page from the view.
-       *
-       * The page Node hierarchy will be orphaned (no longer attached
-       * to the scene graph) and must be handled by the caller.
-       *
-       * If the page is not found in the layout, nothing happens.
-       *
-       * @param page The page to remove.
-       * @return TRUE if the removal is successful, FALSE otherwise.
-       *
-       * @priv none
-       */
-      removePage(page: TransformNode): boolean
+      removePage(index: number /* int */): TransformNode
 
       /**
        * Shows the n'th page in the page view, all others will be invisible.
@@ -333,7 +314,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      showPage(index: number): void
+      showPage(index: number /* int */): void
 
       /**
        * Shows the page in the page view, all others will be invisible.
@@ -351,7 +332,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getActivePageIndex(): number
+      getActivePageIndex(): number /* int */
 
       /**
        * Gets the currently active (displayed) page in the page view.

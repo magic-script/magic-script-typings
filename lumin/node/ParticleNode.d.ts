@@ -38,8 +38,8 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setProperty(a_name: string, a_value: number): boolean
-    setProperty(a_name: string, a_value: number): boolean
+    setProperty(a_name: string, a_value: number /* int */): boolean
+    setProperty(a_name: string, a_value: number /* float */): boolean
     setProperty(a_name: string, a_value: [number, number] /* glm::vec2 */): boolean
     setProperty(a_name: string, a_value: [number, number, number] /* glm::vec3 */): boolean
     setProperty(a_name: string, a_value: [number, number, number, number] /* glm::vec4 */): boolean

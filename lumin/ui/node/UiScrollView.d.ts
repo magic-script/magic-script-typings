@@ -76,7 +76,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollSpeed(scrollSpeed: number): void
+      setScrollSpeed(scrollSpeed: number /* float */): void
 
       /**
        * Gets the scroll speed in scene units per second.
@@ -85,7 +85,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollSpeed(): number
+      getScrollSpeed(): number /* float */
 
       /**
        * Sets the scroll content offset manually.
@@ -112,7 +112,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollValue(value: number): void
+      setScrollValue(value: number /* float */): void
 
       /**
        * Gets the normalized position of the scroll content, between 0 and 1.
@@ -121,7 +121,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollValue(): number
+      getScrollValue(): number /* float */
 
       /**
        * Sets the scroll view bounds.  The bounds are defined

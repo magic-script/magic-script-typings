@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width?: number, height?: number): ui.UiListView
+      static Create(prism: Prism, width?: number /* float */, height?: number /* float */): ui.UiListView
 
       /**
        * The on scroll changed Event.
@@ -167,7 +167,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollSpeed(scrollSpeed: number): void
+      setScrollSpeed(scrollSpeed: number /* float */): void
 
       /**
        * Gets the scroll speed in scene units per second.
@@ -176,7 +176,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollSpeed(): number
+      getScrollSpeed(): number /* float */
 
       /**
        * Sets the scroll content position manually with normalized value between 0 and 1.
@@ -185,7 +185,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollValue(value: number): void
+      setScrollValue(value: number /* float */): void
 
       /**
        * Gets the normalized position of the scroll content, between 0 and 1.
@@ -194,7 +194,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollValue(): number
+      getScrollValue(): number /* float */
 
       /**
        * Scrolls the list view to item at position index.
@@ -204,7 +204,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      scrollToItem(index: number): boolean
+      scrollToItem(index: number /* int */): boolean
 
       /**
        * Scrolls the list view to the particular item.
@@ -223,7 +223,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemCount(): number
+      getItemCount(): number /* int */
 
       /**
        * Adds an item to the list.
@@ -266,7 +266,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: ui.UiListViewItem): void
+      addItemAt(index: number /* int */, item: ui.UiListViewItem): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -280,7 +280,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItemAt(index: number /* int */, item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -295,7 +295,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number, item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItemAt(index: number /* int */, item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Sets the item padding at the specified index.
@@ -305,7 +305,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(index: number, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(index: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
 
       /**
        * Sets the item padding.
@@ -322,18 +322,16 @@ declare module 'lumin' {
        *
        * @param index The index of the item in the list.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getItemPadding(index: number): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(index: number /* int */): [number, number, number, number] /* glm::vec4 */
 
       /**
        * Gets the item padding.
        *
        * @param item Pointer to the item Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -347,7 +345,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(index: number, alignment: ui.Alignment): void
+      setItemAlignment(index: number /* int */, alignment: ui.Alignment): void
 
       /**
        * Sets the item alignment.
@@ -364,18 +362,16 @@ declare module 'lumin' {
        *
        * @param index The index of the item in the list.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
-      getItemAlignment(index: number): ui.Alignment
+      getItemAlignment(index: number /* int */): ui.Alignment
 
       /**
        * Gets the item alignment.
        *
        * @param item Pointer to the item Node.
        * @return Reference to receive the setting.
-       * 
        *
        * @priv none
        */
@@ -391,7 +387,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItem(index: number): ui.UiListViewItem
+      getItem(index: number /* int */): ui.UiListViewItem
 
       /**
        * Removes the n'th item from the list.
@@ -406,56 +402,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeItem(index: number): ui.UiListViewItem
-
-      /**
-       * Replaces the n'th item in the list.
-       *
-       * The returned Node hierarchy will be orphaned (no longer attached
-       * to the scene graph) and must be handled by the caller.
-       *
-       * If the index is out of bounds, nothing happens.
-       *
-       * @param index The index of the item to be replaced.
-       * @param newItem The new item replacing the UiListViewItem in the n'th position
-       * @return replaced UiListViewItem's pointer.
-       */
-      replaceItem(index: number, newItem: ui.UiListViewItem): ui.UiListViewItem
-
-      /**
-       * Replaces an existing UiListViewItem with a new UiListViewItem
-       *
-       * If either of the Node's are invalid - Null or not contained in the list -
-       * nothing happens.
-       *
-       * @param oldItem The pointer for the UiListViewItem you would like to replace
-       * @param newItem The new UiListViewItem replacing the oldItem in the list
-       * @return true if the newItem has successfully replaced the oldItem
-       */
-      replaceItem(oldItem: ui.UiListViewItem, newItem: ui.UiListViewItem): boolean
-
-      /**
-       * Swap two items in the list.
-       *
-       * If either of the indices are invalid, nothing happens.
-       *
-       * @param index1 a valid index in the list
-       * @param index2 a valid index in the list
-       * @return true if the two UiListViewItems at index1 and index2 have been sucessfully swapped
-       */
-      swapItems(index1: number, index2: number): boolean
-
-      /**
-       * Swap two items in the list.
-       *
-       * If the UiListViewItems are the same or invalid - Null or not contained in the list -
-       * nothing happens.
-       *
-       * @param item1 a valid UiListViewItem in the list
-       * @param item2 a valid UiListViewItem in the list
-       * @return true if the two UiListViewItems have been sucessfully swapped
-       */
-      swapItems(item1: ui.UiListViewItem, item2: ui.UiListViewItem): boolean
+      removeItem(index: number /* int */): ui.UiListViewItem
 
       /**
        * Skips invisble items.

@@ -25,21 +25,21 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getFromWidth(): number
+    getFromWidth(): number /* uint32_t */
 
     /**
      * Returns the number of vertical rays.
      *
      * @priv none
      */
-    getFromHeight(): number
+    getFromHeight(): number /* uint32_t */
 
     /**
      * Returns the horizontal field-of-view, in degrees.
      *
      * @priv none
      */
-    getFromHorizFovDeg(): number
+    getFromHorizFovDeg(): number /* float */
 
     /**
      * Returns the ray hit position in world coordinates.
@@ -74,6 +74,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getConfidence(): number
+    getConfidence(): number /* float */
   }
 }

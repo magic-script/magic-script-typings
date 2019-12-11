@@ -36,7 +36,7 @@ declare module 'lumin' {
        * @param is_main_frame if this event was for the main frame.
        * @param http_error_code the standard http error code, 0 is returned for success.
        */
-      onLoadEnd(webview: ui.UiWebView, is_main_frame: boolean, http_error_code: number): void
+      onLoadEnd(webview: ui.UiWebView, is_main_frame: boolean, http_error_code: number /* int */): void
 
       /**
        * Notify host application of load error. These errors could be due to connectivity,
@@ -49,7 +49,7 @@ declare module 'lumin' {
        * @param error_str human readable error string
        * @param failed_url the url that caused the load error
        */
-      onLoadError(webview: ui.UiWebView, is_main_frame: boolean, error_code: number, error_str: string, failed_url: string): void
+      onLoadError(webview: ui.UiWebView, is_main_frame: boolean, error_code: number /* int */, error_str: string, failed_url: string): void
     }
   }
 }

@@ -27,7 +27,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setVideoPath(a_sFile: string): number
+    setVideoPath(a_sFile: string): number /* int32_t */
 
     /**
      * Sets the file Uri to Play.
@@ -41,7 +41,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setVideoUri(a_sUri: string): number
+    setVideoUri(a_sUri: string): number /* int32_t */
 
     /**
      * Sets the timed text file.
@@ -51,7 +51,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setTimedTextPath(a_tFile: string): number
+    setTimedTextPath(a_tFile: string): number /* int32_t */
 
     /**
      * Seeks to the specified time position.
@@ -61,7 +61,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    seekTo(msec: number): number
+    seekTo(msec: number /* int */): number /* int32_t */
 
     /**
      * This function is now a no-op and there is no need to call it.
@@ -75,7 +75,7 @@ declare module 'lumin' {
      * @deprecated Preparing the node for playback is done automatically when the
      *             content to play is selected (via setVideoPath or setVideoUri)
      */
-    prepareAsync(): number
+    prepareAsync(): number /* int32_t */
 
     /**
      * Starts or resumes playback.
@@ -84,7 +84,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    start(): number
+    start(): number /* int32_t */
 
     /**
      * Stops playback after playback has been stopped or paused.
@@ -93,7 +93,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    stop(): number
+    stop(): number /* int32_t */
 
     /**
      * Resets the node to its uninitialized state.
@@ -102,7 +102,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    reset(): number
+    reset(): number /* int32_t */
 
     /**
      * Pauses playback.
@@ -111,7 +111,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    pause(): number
+    pause(): number /* int32_t */
 
     /**
      * Sets the looping mode of the player.
@@ -122,7 +122,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLooping(loop: number): number
+    setLooping(loop: number /* int */): number /* int32_t */
 
     /**
      * Checks whether the node is looping or non-looping.
@@ -141,7 +141,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setVolume(volume: number): number
+    setVolume(volume: number /* float */): number /* int32_t */
 
     /**
      * Checks whether the MediaPlayer is playing.
@@ -151,5 +151,25 @@ declare module 'lumin' {
      * @priv none
      */
     isPlaying(): boolean
+
+    /**
+     * @brief Selects a given track
+     *
+     * @param index of the track to select
+     * @return Returns INVALID_OPERATION if media player has not been initialized
+     * @return Returns XXX if the track is not valid; NO_ERROR otherwise
+     * @priv none
+     */
+    selectTrack(index: number /* uint32_t */): number /* int32_t */
+
+    /**
+     * @brief unSelects a given track
+     *
+     * @param index of the track to unselect
+     * @return Returns INVALID_OPERATION if media player has not been initialized
+     * @return Returns XXX if the track is not valid; NO_ERROR otherwise
+     * @priv none
+     */
+    unSelectTrack(index: number /* uint32_t */): number /* int32_t */
   }
 }

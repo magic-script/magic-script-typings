@@ -25,7 +25,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTileSize(): number
+    getTileSize(): number /* short */
 
     /**
      * Get the glyph quality of the font resource specified in the
@@ -40,7 +40,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getMinAlphaToDiscard(): number
+    getMinAlphaToDiscard(): number /* float */
 
     /**
      * Get the information for rendering a particular character.
@@ -51,7 +51,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTileInfo(character: number): glyph.TileInfo
+    getTileInfo(character: number /* char32_t */): glyph.TileInfo
 
     /**
      * Get the type of shader to use for rendering this resource.
@@ -71,13 +71,13 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTextureDims(textureId: number): [number, number, number] /* glm::ivec3 */
+    getTextureDims(textureId: number /* int */): [number, number, number] /* glm::ivec3 */
 
     /**
      * Get the IDs of all 2D texture arrays containing the glyphs of the font.
      *
      * @priv none
      */
-    getTexture2dArrayIds(): Array<number> /* std::vector */
+    getTexture2dArrayIds(): Array<number> /* std::vector<unsigned int> */
   }
 }

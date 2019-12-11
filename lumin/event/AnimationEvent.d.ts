@@ -40,7 +40,7 @@ declare module 'lumin' {
    */
   class AnimationEventCustom extends AnimationEventBase {
     constructor()
-    getTimeValue(): number
+    getTimeValue(): number /* float */
     getParameters(): string
     getTypeString(): string
   }

@@ -56,7 +56,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static GetScale(prism: Prism): number
+      static GetScale(prism: Prism): number /* float */
 
       /**
        * Sets the scale of the Eclipse Cursor in scene units.
@@ -66,7 +66,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetScale(prism: Prism, a_scale: number): void
+      static SetScale(prism: Prism, a_scale: number /* float */): void
 
       /**
        * Returns the current movement rate of the Eclipse Cursor.
@@ -76,7 +76,7 @@ declare module 'lumin' {
        *
        * @priv none
        **/
-      static GetMoveRate(prism: Prism): number
+      static GetMoveRate(prism: Prism): number /* float */
 
       /**
        * Sets the movement rate of the Eclipse Cursor.
@@ -86,7 +86,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetMoveRate(prism: Prism, a_rate: number): void
+      static SetMoveRate(prism: Prism, a_rate: number /* float */): void
 
       /**
        * Gets the depth of the cursor plane along the Prism's Z axis.
@@ -96,7 +96,7 @@ declare module 'lumin' {
        *
        * @priv none
        **/
-      static GetPlaneDepth(prism: Prism): number
+      static GetPlaneDepth(prism: Prism): number /* float */
 
       /**
        * Sets the depth of the cursor plane along the Prism's Z axis.
@@ -106,7 +106,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetPlaneDepth(prism: Prism, a_depth: number): void
+      static SetPlaneDepth(prism: Prism, a_depth: number /* float */): void
 
       /**
        * Resets cursor defaults for scale and move rate
@@ -169,7 +169,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static GetGravityWellMaxDistance(prism: Prism): number
+      static GetGravityWellMaxDistance(prism: Prism): number /* float */
 
       /**
        * Sets the gravity well max distance.
@@ -179,7 +179,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetGravityWellMaxDistance(prism: Prism, distance: number): void
+      static SetGravityWellMaxDistance(prism: Prism, distance: number /* float */): void
 
       /**
        * Gets the gravity well blend time in seconds.
@@ -188,7 +188,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static GetGravityWellBlendTime(prism: Prism): number
+      static GetGravityWellBlendTime(prism: Prism): number /* float */
 
       /**
        * Sets the gravity well blend time in seconds.
@@ -198,7 +198,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetGravityWellBlendTime(prism: Prism, seconds: number): void
+      static SetGravityWellBlendTime(prism: Prism, seconds: number /* float */): void
 
       /**
        * Gets the cursor snap mode.
@@ -226,7 +226,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static GetCursorSnapMinDistance(prism: Prism): number
+      static GetCursorSnapMinDistance(prism: Prism): number /* float */
 
       /**
        * Sets the cursor minimum travel distance for a snap transition.
@@ -236,7 +236,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetCursorSnapMinDistance(prism: Prism, distance: number): void
+      static SetCursorSnapMinDistance(prism: Prism, distance: number /* float */): void
 
       /**
        * Gets the cursor minimum visit time for a snap transition.
@@ -245,7 +245,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static GetCursorSnapMinTime(prism: Prism): number
+      static GetCursorSnapMinTime(prism: Prism): number /* float */
 
       /**
        * Sets the cursor minimum visit time for a snap transition.
@@ -255,7 +255,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static SetCursorSnapMinTime(prism: Prism, seconds: number): void
+      static SetCursorSnapMinTime(prism: Prism, seconds: number /* float */): void
     }
   }
 }

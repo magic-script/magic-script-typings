@@ -51,7 +51,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getMass(): number
+    getMass(): number /* float */
 
     /**
      * Sets the mass of the rigid body.
@@ -60,7 +60,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setMass(massKg: number): void
+    setMass(massKg: number /* float */): void
 
     /**
      * Returns the collider flags for the body.
@@ -69,7 +69,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getColliderFlags(): number
+    getColliderFlags(): number /* uint32_t */
 
     /**
      * Returns if a given collider flag is set.
@@ -79,7 +79,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    isColliderFlagSet(flag: number): boolean
+    isColliderFlagSet(flag: number /* int */): boolean
 
     /**
      * Sets the collider flags for the body. If the collider flags of one body anded with the
@@ -89,7 +89,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setColliderFlags(flags: number): void
+    setColliderFlags(flags: number /* uint32_t */): void
 
     /**
      * Sets a single collider flag for the body.
@@ -98,7 +98,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setColliderFlag(flag: number): void
+    setColliderFlag(flag: number /* int */): void
 
     /**
      * Clears a single collider flag for the body.
@@ -107,7 +107,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    clearColliderFlag(flag: number): void
+    clearColliderFlag(flag: number /* int */): void
 
     /**
      * Returns the collides with flags for the body.
@@ -116,7 +116,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCollidesWithFlags(): number
+    getCollidesWithFlags(): number /* uint32_t */
 
     /**
      * Returns if a given collides with flag is set.
@@ -126,7 +126,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    isCollidesWithFlagSet(flag: number): boolean
+    isCollidesWithFlagSet(flag: number /* int */): boolean
 
     /**
      * Sets the collides with flags for the body. If the collider flags of one body anded with the
@@ -136,7 +136,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setCollidesWithFlags(flags: number): void
+    setCollidesWithFlags(flags: number /* uint32_t */): void
 
     /**
      * Sets a single collides with flag for the body.
@@ -145,7 +145,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setCollidesWithFlag(flag: number): void
+    setCollidesWithFlag(flag: number /* int */): void
 
     /**
      * Clears a single collides with flag for the body.
@@ -154,7 +154,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    clearCollidesWithFlag(flag: number): void
+    clearCollidesWithFlag(flag: number /* int */): void
 
     /**
      * Adds a shape to the body. A shape may not be added to the body after it has been added to a Prism.
@@ -259,7 +259,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getLinearDamping(): number
+    getLinearDamping(): number /* float */
 
     /**
      * Sets linear damping coefficient being applied to the body. This can be used to simulate things
@@ -269,7 +269,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLinearDamping(damping: number): void
+    setLinearDamping(damping: number /* float */): void
 
     /**
      * Returns angular damping coefficient being applied to the body.
@@ -278,7 +278,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getAngularDamping(): number
+    getAngularDamping(): number /* float */
 
     /**
      * Sets angular damping coefficient being applied to the body. This can be used to simulate things
@@ -288,7 +288,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setAngularDamping(damping: number): void
+    setAngularDamping(damping: number /* float */): void
 
     /**
      * Returns the maximum angular velocity of the body.
@@ -297,7 +297,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getMaxAngularVelocity(): number
+    getMaxAngularVelocity(): number /* float */
 
     /**
      * Sets the maximum angular velocity of the body. This helps keep the simulation stable; it can become
@@ -307,7 +307,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setMaxAngularVelocity(velocity: number): void
+    setMaxAngularVelocity(velocity: number /* float */): void
 
     /**
      * Returns the sleep threshold of the body.
@@ -316,7 +316,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getSleepThreshold(): number
+    getSleepThreshold(): number /* float */
 
     /**
      * Sets the sleep threshold of the body. This controls when the body is marked to be stopped
@@ -326,7 +326,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setSleepThreshold(threshold: number): void
+    setSleepThreshold(threshold: number /* float */): void
 
     /**
      * Applies a force to the body. The force will only be applied for the current frame; to apply a

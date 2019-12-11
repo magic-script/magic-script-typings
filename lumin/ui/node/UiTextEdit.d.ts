@@ -19,7 +19,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, text: string, width: number, height: number): ui.UiTextEdit
+      static Create(prism: Prism, text: string, width: number /* float */, height: number /* float */): ui.UiTextEdit
 
       /**
        * The on text changed Event.
@@ -39,7 +39,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCharacterEnteredSub(callback: (arg0: ui.UiEventData, arg1: number) => void): utils.CallbackID
+      onCharacterEnteredSub(callback: (arg0: ui.UiEventData, arg1: number /* char32_t */) => void): utils.CallbackID
       onCharacterEnteredUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -171,7 +171,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextSize(size: number): void
+      setTextSize(size: number /* float */): void
 
       /**
        * Gets the text render size height in scene units.
@@ -180,7 +180,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTextSize(): number
+      getTextSize(): number /* float */
 
       /**
        * Sets whether the scrolling is enabled or not.
@@ -225,7 +225,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollSpeed(scrollSpeed: number): void
+      setScrollSpeed(scrollSpeed: number /* float */): void
 
       /**
        * Gets the scroll speed in scene units per second.
@@ -234,7 +234,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollSpeed(): number
+      getScrollSpeed(): number /* float */
 
       /**
        * Sets the maximum number of characters allowed in the text edit.
@@ -243,7 +243,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setCharacterLimit(limit: number): void
+      setCharacterLimit(limit: number /* size_t */): void
 
       /**
        * Gets the maximum number of characters allowed in the text edit.
@@ -252,7 +252,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCharacterLimit(): number
+      getCharacterLimit(): number /* size_t */
 
       /**
        * Gets the character count in the text edit.
@@ -261,7 +261,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCharacterCount(): number
+      getCharacterCount(): number /* size_t */
 
       /**
        * Sets whether the text edit is in multiline mode or not.
@@ -336,7 +336,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSelectedText(startIndex: number, endIndex: number): void
+      setSelectedText(startIndex: number /* int */, endIndex: number /* int */): void
 
       /**
        * Selects all characters in the text edit.
@@ -373,23 +373,9 @@ declare module 'lumin' {
        * Sets the UTF-8 encoded text for the hint.
        * @param str The text for the hint.
        *
-       * Note, this call will be ignored if there is a current localization key set for the hint.
-       * Set the localization key to empty string, "", to unset it.
-       *
        * @priv none
        */
       setHintText(str: string): void
-
-      /**
-       * Sets the localization key and optional parameters for the hint text.
-       *
-       * Once a key is set, this hint text will be populated with the translation text
-       * of the current locale based on the key and any potential parameters.
-       *
-       * @param key The localization key.  Use empty string, "", to unset the key.
-       * @param params `default = []`<br/> The list of optional localization parameters.
-       */
-      setLocalizedHintText(key: string, params?: Object): void
 
       /**
        * Gets the text color of the hint.
@@ -426,7 +412,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setCharacterSpacing(spacing: number): void
+      setCharacterSpacing(spacing: number /* float */): void
 
       /**
        * Gets the current value of the additional character spacing.
@@ -435,7 +421,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getCharacterSpacing(): number
+      getCharacterSpacing(): number /* float */
 
       /**
        * Sets the line spacing to adjust the distance between lines
@@ -446,7 +432,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setLineSpacing(spacing: number): void
+      setLineSpacing(spacing: number /* float */): void
 
       /**
        * Gets the line spacing for the text, which is by default 1 (i.e.,
@@ -456,7 +442,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getLineSpacing(): number
+      getLineSpacing(): number /* float */
 
       /**
        * Aligns the text to the left, center or right or justifies it.
@@ -473,7 +459,7 @@ declare module 'lumin' {
        *
        *  @priv none
        */
-      setScrollValue(scrollValue: number): void
+      setScrollValue(scrollValue: number /* float */): void
 
       /**
        * Gets the normalized position of the text edit's scroll content, between 0 and 1.
@@ -482,7 +468,7 @@ declare module 'lumin' {
        *
        *  @priv none
        */
-      getScrollValue(): number
+      getScrollValue(): number /* float */
     }
   }
 }

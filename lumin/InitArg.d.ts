@@ -20,7 +20,7 @@ declare module 'lumin' {
      * @return the count of FileInfo objects.
      * @priv none
      */
-    getFileInfoCount(): number
+    getFileInfoCount(): number /* uint32_t */
 
     /**
      * Gets the FileInfo object at the specified index.
@@ -29,6 +29,6 @@ declare module 'lumin' {
      * @return the FileInfo object or nullptr if out of bounds.
      * @priv none
      */
-    getFileInfo(index: number): FileInfo
+    getFileInfo(index: number /* uint32_t */): FileInfo
   }
 }

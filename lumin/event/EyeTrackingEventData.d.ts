@@ -30,7 +30,7 @@ declare module 'lumin' {
      *         data confidence for the left eye this frame.
      * @priv none
      */
-    getEyeTrackingLeftEyeConfidence(): number
+    getEyeTrackingLeftEyeConfidence(): number /* float */
 
     /**
      * Get the blink state of the left eye
@@ -64,7 +64,7 @@ declare module 'lumin' {
      *         data confidence for the right eye this frame.
      * @priv none
      */
-    getEyeTrackingRightEyeConfidence(): number
+    getEyeTrackingRightEyeConfidence(): number /* float */
 
     /**
      * Get the blink state of the right eye
@@ -90,14 +90,14 @@ declare module 'lumin' {
      *         data confidence for the eye fixation point this frame.
      * @priv none
      */
-    getEyeTrackingFixationConfidence(): number
+    getEyeTrackingFixationConfidence(): number /* float */
 
     /**
-       * Get whether the current fixation depth is uncomfortable for the user (< 37cm)
-       *
-       * @return true if the fixation depth is uncomfortable, false otherwise
-       * @priv none
-       */
+     * Get whether the current fixation depth is uncomfortable for the user (< 37cm)
+     *
+     * @return true if the fixation depth is uncomfortable, false otherwise
+     * @priv none
+     */
     isFixationDepthUnconfortable(): boolean
 
     /**
@@ -115,6 +115,6 @@ declare module 'lumin' {
      * @return the time remaining at the uncomfortable depth (in seconds)
      * @priv none
      */
-    remainingTimeAtUncomfortableDepth(): number
+    remainingTimeAtUncomfortableDepth(): number /* float */
   }
 }

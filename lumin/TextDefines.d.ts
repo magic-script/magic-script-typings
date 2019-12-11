@@ -59,12 +59,12 @@ declare module 'lumin' {
       /**
        * Width of the area in which to render the text.
        */
-      width: number;
+      width: number /* float */;
 
       /**
        * Height of the area in which to render the text.
        */
-      height: number;
+      height: number /* float */;
 
       /**
        * Control whether text wraps at the edge; single-line only if false.
@@ -81,7 +81,7 @@ declare module 'lumin' {
        * to the edges of the area is not yet implemented.  At present, only
        * glyphs fully enclosed by the area will be drawn.
        */
-      constructor(width: number, height: number, wrap?: boolean, clip?: boolean)
+      constructor(width: number /* float */, height: number /* float */, wrap?: boolean, clip?: boolean)
 
       /**
        * Leaves all values uninitialized, same as a C-style struct.
@@ -103,42 +103,42 @@ declare module 'lumin' {
     /** Abbreviated name of the 'no-character' in unicode.
      * `value = 0`
      */
-    const NUL_CHAR: number;
+    const NUL_CHAR: number /* char32_t */;
 
     /** Newline character
      * `value = '\n'`
      */
-    const NEWLINE: number;
+    const NEWLINE: number /* char32_t */;
 
     /** Tab character
      * `value = '\t'`
      */
-    const TAB_CHAR: number;
+    const TAB_CHAR: number /* char32_t */;
 
     /** Space character
      * `value = ' '`
      */
-    const SPACE_CHAR: number;
+    const SPACE_CHAR: number /* char32_t */;
 
     /** Default size of glyphs in the sheet.
      * `value = 128`
      */
-    const DEFAULT_GLYPH_SIZE: number;
+    const DEFAULT_GLYPH_SIZE: number /* short */;
 
     /** Glyph heights must be positive numbers.
      * `value = 0`
      */
-    const INVALID_HEIGHT: number;
+    const INVALID_HEIGHT: number /* float */;
 
     /**
      * `value = 0`
      */
-    const BASE_TEXTURE_LEVEL: number;
+    const BASE_TEXTURE_LEVEL: number /* int */;
 
     /**
      * `value = 2`
      */
-    const MIN_MIPMAP_TILE_SIZE: number;
+    const MIN_MIPMAP_TILE_SIZE: number /* int */;
     namespace kerning {
 
       /**
@@ -147,15 +147,15 @@ declare module 'lumin' {
        * kerning parameters.
        */
       class Pair {
-        previous: number;
-        character: number;
+        previous: number /* char32_t */;
+        character: number /* char32_t */;
 
         /**
          * `value = [0,0]`
          */
         static readonly NONE: [number, number] /* glm::vec2 */;
         static IsNone(vector: [number, number] /* glm::vec2 */): boolean
-        constructor(prev: number, code: number)
+        constructor(prev: number /* char32_t */, code: number /* char32_t */)
 
         /**
          * Provide a convenient string representation.
@@ -295,9 +295,9 @@ declare module 'lumin' {
        * The layout-dependent distances to advance the pen to the next glyph.
        */
       class AdvancePen {
-        horizontal: number;
-        vertical: number;
-        constructor(horizontal?: number, vertical?: number)
+        horizontal: number /* float */;
+        vertical: number /* float */;
+        constructor(horizontal?: number /* float */, vertical?: number /* float */)
         toString(): string
       }
 
@@ -305,16 +305,16 @@ declare module 'lumin' {
        * Describes the bounding-box of a glyph within its tile.
        */
       class BoundingBox {
-        horizMin: number;
-        horizMax: number;
-        vertMin: number;
-        vertMax: number;
+        horizMin: number /* float */;
+        horizMax: number /* float */;
+        vertMin: number /* float */;
+        vertMax: number /* float */;
 
         /** Preconditions: 0 <= xmin <= xmax and 0 <= ymin <= ymax. */
-        constructor(xmin?: number, xmax?: number, ymin?: number, ymax?: number)
-        getWidth(): number
-        getHeight(): number
-        getAspectRatio(): number
+        constructor(xmin?: number /* float */, xmax?: number /* float */, ymin?: number /* float */, ymax?: number /* float */)
+        getWidth(): number /* float */
+        getHeight(): number /* float */
+        getAspectRatio(): number /* float */
         toString(): string
       }
     }
@@ -333,17 +333,17 @@ declare module 'lumin' {
       /**
        * Unicode character represented by the glyph.
        */
-      charCode: number;
+      charCode: number /* char32_t */;
 
       /**
        * ID of the 2D texture array in which this glyph's tile is drawn.
        */
-      textureId: number;
+      textureId: number /* int */;
 
       /**
        * Index of the layer in the 2D texture array containing the glyph.
        */
-      layerIndex: number;
+      layerIndex: number /* int */;
 
       /**
        * Min texture coordinate (u, v) on the 2D-texture layer.
@@ -364,7 +364,7 @@ declare module 'lumin' {
        * Positioning information for the glyph in a string of text.
        */
       metrics: glyph.Metrics;
-      constructor(code: number, texId: number, layer: number, texMin: [number, number] /* glm::vec2 */, texMax: [number, number] /* glm::vec2 */, size: glyph.TextureSize, mt: glyph.Metrics)
+      constructor(code: number /* char32_t */, texId: number /* int */, layer: number /* int */, texMin: [number, number] /* glm::vec2 */, texMax: [number, number] /* glm::vec2 */, size: glyph.TextureSize, mt: glyph.Metrics)
     }
 
     /** Object that can be used to create a BitmapFontResource object. */
@@ -385,7 +385,7 @@ declare module 'lumin' {
        * The size of all glyph images are given by this parameter; e.g., 32,
        * which implies each glyph will occupy a 32x32 region of a glyph sheet.
        */
-      tileSize: number;
+      tileSize: number /* short */;
 
       /**
        * Control the quality of the rendered text.  Note kStd
@@ -407,12 +407,12 @@ declare module 'lumin' {
        * Values much below 0.1, however, can lead to visible edges
        * from overlapping glyphs in the rendered text.
        */
-      minAlphaToDiscard: number;
-      constructor(advanceDir: glyph.AdvanceDirection, flowDir: text.FlowDirection, tileSize: number, quality?: glyph.Quality, minAlpha?: number)
+      minAlphaToDiscard: number /* float */;
+      constructor(advanceDir: glyph.AdvanceDirection, flowDir: text.FlowDirection, tileSize: number /* short */, quality?: glyph.Quality, minAlpha?: number /* float */)
     }
 
     /** Ratio of the texture size to the tile size: MEDIUM = 1.0, LARGE = 2.0. */
-    function GetSizeRatio(size: glyph.TextureSize): number
+    function GetSizeRatio(size: glyph.TextureSize): number /* float */
 
     /**
      * @return true if the "prefont" tool is required to precondition
@@ -424,7 +424,7 @@ declare module 'lumin' {
      * @return true for characters, such as SPACE_CHAR, that are used for
      *   typesetting and do not have a visual representation.
      */
-    function IsSpecialCharacter(charCode: number): boolean
+    function IsSpecialCharacter(charCode: number /* char32_t */): boolean
 
     /** Vertical layout (i.e., up or down). */
     function IsVertical(direction: glyph.AdvanceDirection): boolean
@@ -433,14 +433,14 @@ declare module 'lumin' {
     function IsNegative(direction: glyph.AdvanceDirection): boolean
 
     /** Gets texture size from ratio. */
-    function FromSizeRatio(sizeRatio: number): glyph.TextureSize
+    function FromSizeRatio(sizeRatio: number /* float */): glyph.TextureSize
 
     /**
      * For scaling glyph metrics in 26.6 pixel format (i.e., 1/64th of
      * pixels); see the FT manual.  Divide FreeType glyph metrics by
      * this value to normalize.
      */
-    function PixelFormatNormalizationFactor(tileSize: number): number
+    function PixelFormatNormalizationFactor(tileSize: number /* short */): number /* float */
   }
 
   /**
@@ -460,15 +460,15 @@ declare module 'lumin' {
     /**
      * Don't override the font's default glyph height
      */
-    glyphHeight: number;
-    tabWidth: number;
-    lineSpacing: number;
-    characterSpacing: number;
+    glyphHeight: number /* float */;
+    tabWidth: number /* int */;
+    lineSpacing: number /* float */;
+    characterSpacing: number /* float */;
 
     /**
      * 0 implies no limit by default
      */
-    maxGlyphsPerLine: number;
+    maxGlyphsPerLine: number /* int */;
     justification: text.Justification;
     colorRGBA: [number, number, number, number] /* glm::vec4 */;
     constructor(text: string)

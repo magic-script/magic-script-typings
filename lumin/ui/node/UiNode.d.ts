@@ -218,7 +218,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onUpdateSub(callback: (arg0: ui.UiEventData, arg1: number) => void): utils.CallbackID
+      onUpdateSub(callback: (arg0: ui.UiEventData, arg1: number /* float */) => void): utils.CallbackID
       onUpdateUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -293,21 +293,6 @@ declare module 'lumin' {
        * @priv none
        */
       getGravityWellEnabled(): boolean
-
-      /**
-       * Return whether or not this node, and its children, should be included in the bounds
-       *
-       * @return bounds hidden or not
-       */
-      getHideBounds(): boolean
-
-      /**
-       * Set whether or not this node, and its children, should be included in the bounds
-       *
-       * @param hide - flag indicating hide status
-       *
-       */
-      setHideBounds(hide: boolean): void
 
       /**
        * Sets the UiNodes's self alignment relative to Node position.
@@ -505,7 +490,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setRenderingLayer(a_renderLayer: number): void
+      setRenderingLayer(a_renderLayer: number /* uint16_t */): void
 
       /**
        * Gets the rendering layer of this UiNode.
@@ -514,7 +499,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getRenderingLayer(): number
+      getRenderingLayer(): number /* uint16_t */
     }
   }
 }

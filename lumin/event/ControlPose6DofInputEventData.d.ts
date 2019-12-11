@@ -13,7 +13,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getQuaternionW(): number
+    getQuaternionW(): number /* float */
 
     /**
      * Returns the X component of the quaternion in world coordinates.
@@ -22,7 +22,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getQuaternionX(): number
+    getQuaternionX(): number /* float */
 
     /**
      * Returns the Y component of the quaternion in world coordinates.
@@ -31,7 +31,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getQuaternionY(): number
+    getQuaternionY(): number /* float */
 
     /**
      * Returns the Z component of the quaternion in world coordinates.
@@ -40,7 +40,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getQuaternionZ(): number
+    getQuaternionZ(): number /* float */
 
     /**
      * Returns the full quaternion representing Control orientation in world coordinates.

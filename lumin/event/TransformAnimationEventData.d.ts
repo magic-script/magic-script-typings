@@ -18,6 +18,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTrack(): number
+    getTrack(): number /* int */
   }
 }

@@ -255,11 +255,6 @@ declare module 'lumin' {
       kCut,
 
       /**
-       * `value = 216`
-       */
-      kCVCameraPrivilege,
-
-      /**
        * `value = 50`
        */
       kDoNotDisturb,
@@ -350,41 +345,6 @@ declare module 'lumin' {
       kFlag,
 
       /**
-       * `value = 209`
-       */
-      kFlagChina,
-
-      /**
-       * `value = 210`
-       */
-      kFlagFrance,
-
-      /**
-       * `value = 211`
-       */
-      kFlagGermany,
-
-      /**
-       * `value = 212`
-       */
-      kFlagJapan,
-
-      /**
-       * `value = 213`
-       */
-      kFlagSouthKorea,
-
-      /**
-       * `value = 214`
-       */
-      kFlagUK,
-
-      /**
-       * `value = 215`
-       */
-      kFlagUSA,
-
-      /**
        * `value = 68`
        */
       kFollow,
@@ -468,11 +428,6 @@ declare module 'lumin' {
        * `value = 84`
        */
       kKeyboardCapital,
-
-      /**
-       * `value = 220`
-       */
-      kKeyboardLanguage,
 
       /**
        * `value = 85`
@@ -578,11 +533,6 @@ declare module 'lumin' {
        * `value = 105`
        */
       kNotification,
-
-      /**
-       * `value = 206`
-       */
-      kObjectRecognition,
 
       /**
        * `value = 106`
@@ -740,11 +690,6 @@ declare module 'lumin' {
       kPublicView,
 
       /**
-       * `value = 217`
-       */
-      kRearrange,
-
-      /**
        * `value = 135`
        */
       kRefresh,
@@ -758,11 +703,6 @@ declare module 'lumin' {
        * `value = 137`
        */
       kReport,
-
-      /**
-       * `value = 218`
-       */
-      kResize,
 
       /**
        * `value = 138`
@@ -818,11 +758,6 @@ declare module 'lumin' {
        * `value = 148`
        */
       kShare,
-
-      /**
-       * `value = 207`
-       */
-      kShareScreen,
 
       /**
        * `value = 149`
@@ -888,11 +823,6 @@ declare module 'lumin' {
        * `value = 161`
        */
       kSummon,
-
-      /**
-       * `value = 208`
-       */
-      kTablet,
 
       /**
        * `value = 162`
@@ -985,11 +915,6 @@ declare module 'lumin' {
       kUploadCloud,
 
       /**
-       * `value = 219`
-       */
-      kVideoCapture,
-
-      /**
        * `value = 180`
        */
       kView,
@@ -1023,11 +948,6 @@ declare module 'lumin' {
        * `value = 186`
        */
       kWarning,
-
-      /**
-       * `value = 221`
-       */
-      kWebXR,
 
       /**
        * `value = 187`
@@ -1212,16 +1132,6 @@ declare module 'lumin' {
       kTextWithIcon,
     }
 
-    /** Eclipse dropdownList types from UX specifications. */
-    enum EclipseDropDownListType {
-
-      /**
-       * Circular DropDownList button with icon and label
-       */
-      kIconWithLabel,
-      kTextWithArrow,
-    }
-
     /** Eclipse slider types from UX specifications. */
     enum EclipseSliderType {
 
@@ -1242,36 +1152,6 @@ declare module 'lumin' {
       kHorizontalWithLabel,
     }
 
-    /** Toggle button types from UX specifications. */
-    enum ToggleType {
-
-      /**
-       * Default style toggle.
-       */
-      kDefault,
-
-      /**
-       * Radio button style toggle.
-       */
-      kRadio,
-      kCheckbox,
-    }
-
-    /** Eclipse toggle types from UX specifications. */
-    enum EclipseToggleType {
-
-      /**
-       * Circular toggle with icon.
-       */
-      kIcon,
-
-      /**
-       * Horizontal toggle with icon.
-       */
-      kSwitchWithIcon,
-      kSwitchWithLabel,
-    }
-
     /** Font parameters. */
     class FontParams {
 
@@ -1288,18 +1168,18 @@ declare module 'lumin' {
       /**
        * The fond size if worldspace (meters)
        */
-      fontSize: number;
+      fontSize: number /* float */;
 
       /**
        * The font tracking (currently not supported).
        */
-      tracking: number;
+      tracking: number /* int */;
 
       /**
        * If the text should be in all caps.
        */
       allCaps: boolean;
-      constructor(a_style?: resources.FontStyle, a_weight?: resources.FontWeight, a_fontSize?: number, a_tracking?: number, a_allCaps?: boolean)
+      constructor(a_style?: resources.FontStyle, a_weight?: resources.FontWeight, a_fontSize?: number /* float */, a_tracking?: number /* int */, a_allCaps?: boolean)
     }
 
     /** Describes sides for certain UI elements. */
@@ -1690,71 +1570,10 @@ declare module 'lumin' {
       kAM,
       kPM,
     }
-    enum DateFormat {
-
-      /**
-       * Format based on locale
-       */
-      kAuto,
-
-      /**
-       * Year / Day / Month
-       */
-      kYYYYDDMM,
-
-      /**
-       * Year / Month / Day
-       */
-      kYYYYMMDD,
-
-      /**
-       * Month / Day / Year
-       */
-      kMMDDYYYY,
-
-      /**
-       * Day / Month / Year
-       */
-      kDDMMYYYY,
-
-      /**
-       * Month / Year
-       */
-      kMMYYYY,
-      kDDYYYY,
-    }
-    enum TimeFormat {
-
-      /**
-       * Format based on locale
-       */
-      kAuto,
-
-      /**
-       * hour(0-23) : minute : second
-       */
-      khhmmss,
-
-      /**
-       * hour(1-12) : minute : second   TimePeriod(AM/PM)
-       */
-      khhmmssP,
-
-      /**
-       * hour(0-23) : minute
-       */
-      khhmm,
-
-      /**
-       * hour(1-12) : minute    TimePeriod(AM/PM)
-       */
-      khhmmP,
-      kmmss,
-    }
 
     /**
      * `value = 0`
      */
-    const INVALID_COMPONENT_TYPE: number;
+    const INVALID_COMPONENT_TYPE: number /* uint32_t */;
   }
 }

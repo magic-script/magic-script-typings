@@ -6,6 +6,7 @@
   "hideBreadcrumbs": true,
   "hideIndexes": true,
   "hideSources": true,
+  "longTitle": true,
   "theme": "docusaurus2",
   "excludeExternals": true,
   "readme": "none"

@@ -1,1 +1,0 @@
-/// <reference path='./lumin/index.d.ts' />

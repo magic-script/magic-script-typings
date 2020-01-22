@@ -1,20 +1,20 @@
 {
   "name": "magic-script-typings",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Typescript definitions for MagicScript",
   "files": [
+    "egl",
     "gl",
     "jpeg",
     "lumin",
     "mxs",
     "png",
-    "uv",
-    "index.d.ts",
-    "index.js"
+    "ssl",
+    "uv"
   ],
   "scripts": {
     "build": "node index.js",
-    "typedoc": "typedoc ./lumin",
+    "typedoc": "typedoc ./egl ./gl ./jpeg ./lumin ./mxs ./png ./ssl ./uv",
     "docs:start": "cd website && npm install && npm run start",
     "docs:build": "cd website && npm install && npm run build",
     "docs:deploy": "cd website && npm install && npm run deploy"

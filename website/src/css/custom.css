@@ -152,3 +152,7 @@ table {
     display: block !important;
   }
 }
+
+div.container {
+  max-width: unset;
+}

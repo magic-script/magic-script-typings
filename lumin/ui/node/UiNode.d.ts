@@ -100,7 +100,8 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiNode
+      // For now, manually disable this since it breaks typescript.
+      //static Create(prism: Prism): ui.UiNode
 
       /**
        * Requests focus for a UiNode.

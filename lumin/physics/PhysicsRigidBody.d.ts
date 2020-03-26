@@ -22,7 +22,7 @@ declare module 'lumin' {
      *
      * @return the Node pointer.
      */
-    node(): Node
+    node(): Node | null
 
     /**
      * Returns the rigid body type (static/kinematic/dynamic).
@@ -166,7 +166,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    addShape(shape: PhysicsShape, position?: [number, number, number] /* glm::vec3 */, rotation?: [number, number, number, number] /* glm::quat */): bigint /* uint64_t */
+    addShape(shape: PhysicsShape | null /* std::shared_ptr<PhysicsShape> */, position?: [number, number, number] | Float32Array /* glm::vec3 */, rotation?: [number, number, number, number] | Float32Array /* glm::quat */): bigint /* uint64_t */
 
     /**
      * Removes a shape from the body. A shape may not be removed from the body after it has been added to a Prism.
@@ -195,7 +195,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setCenterOfMass(com: [number, number, number] /* glm::vec3 */): void
+    setCenterOfMass(com: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Returns the inertia tensor of the body.
@@ -214,7 +214,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setInertiaTensor(tensor: [number, number, number] /* glm::vec3 */): void
+    setInertiaTensor(tensor: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Returns the linear velocity of the body, in meter/sec.
@@ -232,7 +232,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLinearVelocity(velocity: [number, number, number] /* glm::vec3 */): void
+    setLinearVelocity(velocity: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Returns the angular velocity of the body, in rad/sec.
@@ -250,7 +250,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setAngularVelocity(velocity: [number, number, number] /* glm::vec3 */): void
+    setAngularVelocity(velocity: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Returns linear damping coefficient being applied to the body.
@@ -337,7 +337,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    applyForce(type: physics.ForceType, force: [number, number, number] /* glm::vec3 */): void
+    applyForce(type: physics.ForceType, force: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Applies a force to the body at a given position. If the force is not at the center of mass, this
@@ -351,7 +351,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    applyForceAtPos(type: physics.ForceType, force: [number, number, number] /* glm::vec3 */, pos: [number, number, number] /* glm::vec3 */): void
+    applyForceAtPos(type: physics.ForceType, force: [number, number, number] | Float32Array /* glm::vec3 */, pos: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Applies a force to the body at a given position. If the force is not at the center of mass, this
@@ -365,7 +365,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    applyLocalForceAtPos(type: physics.ForceType, force: [number, number, number] /* glm::vec3 */, pos: [number, number, number] /* glm::vec3 */): void
+    applyLocalForceAtPos(type: physics.ForceType, force: [number, number, number] | Float32Array /* glm::vec3 */, pos: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Applies a torque to the body. The torque will only be applied for the current frame; to apply a
@@ -376,7 +376,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    applyTorque(type: physics.ForceType, force: [number, number, number] /* glm::vec3 */): void
+    applyTorque(type: physics.ForceType, force: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Clears all linear forces on the body.

@@ -20,15 +20,7 @@ declare module 'lumin' {
      * `value = 0`
      */
     kInvalidAudioState,
-
-    /**
-     *1
-     */
     kStopped,
-
-    /**
-     *2
-     */
     kPlaying,
     kPaused,
   }
@@ -43,29 +35,19 @@ declare module 'lumin' {
      */
     kInvalidAudioEvent,
 
-    /**
-     * Fires when reached end of the audio playback.
-     */
+    /** Fires when reached end of the audio playback. */
     kPlayEnd,
 
-    /**
-     * If the audio is in looping mode, the event fires at the end of each loop.
-     */
+    /** If the audio is in looping mode, the event fires at the end of each loop. */
     kPlayLooped,
 
-    /**
-     * Audio volume is muted by system.
-     */
+    /** Audio volume is muted by system. */
     kMutedBySystem,
 
-    /**
-     * Audio volume is un-muted by system.
-     */
+    /** Audio volume is un-muted by system. */
     kUnmutedBySystem,
 
-    /**
-     * Ducked by system.
-     */
+    /** Ducked by system. */
     kDuckedBySystem,
     kUnduckedBySystem,
   }
@@ -94,6 +76,16 @@ declare module 'lumin' {
   enum AudioSampleFormat {
     Integer,
     Float,
+  }
+
+  /**
+   * Types of audio output devices.
+   */
+  enum AudioOutputDevice {
+
+    /** Built-in speakers in the wearable. */
+    AudioOutputDevice_Wearable,
+    AudioOutputDevice_AnalogJack,
   }
   class AudioBufferFormat {
     channel_count: number /* uint32_t */;

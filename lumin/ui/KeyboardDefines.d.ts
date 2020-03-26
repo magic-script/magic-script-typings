@@ -6,15 +6,41 @@ declare module 'lumin' {
        *Locale codes
        */
       enum Code {
-        kEn,
-        kEn_GB,
+
+        /**
+         * `value = 2`
+         */
         kDe_DE,
-        kFr_FR,
+
+        /**
+         * `value = 0`
+         */
+        kEn,
+
+        /**
+         * `value = 1`
+         */
+        kEn_GB,
 
         /**
          * `value = kEn`
          */
         kEn_US,
+
+        /**
+         * `value = 5`
+         */
+        kEs_ES,
+
+        /**
+         * `value = 3`
+         */
+        kFr_FR,
+
+        /**
+         * `value = 4`
+         */
+        kIt_IT,
       }
 
       /**
@@ -73,12 +99,12 @@ declare module 'lumin' {
       }
 
       /** Struct for key pressed events */
-      class KeyPressedData extends EventData {
+      class KeyPressedData extends ui.KeyboardEvent.EventData {
         constructor()
         getKeyType(): ui.KeyType
         getCharCode(): number /* char32_t */
       }
-      class StringEnteredData extends EventData {
+      class StringEnteredData extends ui.KeyboardEvent.EventData {
         constructor()
         getStringValue(): string
         isTemporary(): boolean

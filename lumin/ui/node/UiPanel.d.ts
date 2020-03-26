@@ -9,7 +9,7 @@ declare module 'lumin' {
      * where the cursor can be restricted within or provide means to move between
      * different UiPanel areas.
      */
-    class UiPanel extends UiGroup {
+    class UiPanel extends ui.UiGroup {
 
       /**
        * Creates a new UiPanel.
@@ -19,7 +19,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiPanel
+      static Create(prism: Prism | null): ui.UiPanel | null
 
       /**
        * The on Panel enter event.
@@ -28,7 +28,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onPanelEnterSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onPanelEnterSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onPanelEnterUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -38,7 +38,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onPanelExitSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onPanelExitSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onPanelExitUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -52,7 +52,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCursorEdgeSub(callback: (arg0: ui.UiEventData, arg1: ui.Side, arg2: [number, number] /* glm::vec2 */, arg3: number /* float */) => void): utils.CallbackID
+      onCursorEdgeSub(callback: ((arg0: ui.UiEventData, arg1: ui.Side, arg2: [number, number] | Float32Array, arg3: number) => void) | null /* std::function<void(UiEventData, Side,glm::vec2, float)> */): utils.CallbackID
       onCursorEdgeUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -70,7 +70,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCursorOffEdgeSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onCursorOffEdgeSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onCursorOffEdgeUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -167,7 +167,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setCursorInitialPosition(position: [number, number, number] /* glm::vec3 */): void
+      setCursorInitialPosition(position: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the initial position of the cursor for a Panel-to-Panel transition.
@@ -196,7 +196,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setEdgeConstraint(side: ui.Side, constraintMagnitude: number /* float */, transitionPanel: ui.UiPanel): void
+      setEdgeConstraint(side: ui.Side, constraintMagnitude: number /* float */, transitionPanel: ui.UiPanel | null): void
 
       /**
        * Sets the edge constraint for a side of the Panel shape.
@@ -262,7 +262,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setEdgeTransition(side: ui.Side, transitionPanel: ui.UiPanel): void
+      setEdgeTransition(side: ui.Side, transitionPanel: ui.UiPanel | null): void
 
       /**
        * Gets the edge transition Panel for a Side.
@@ -272,7 +272,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getEdgeTransition(side: ui.Side): ui.UiPanel
+      getEdgeTransition(side: ui.Side): ui.UiPanel | null
 
       /**
        * Gets the current, accumulated escape magnitude for a Side.
@@ -304,7 +304,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addExternalGravityWell(uiNode: ui.UiNode): void
+      addExternalGravityWell(uiNode: ui.UiNode | null): void
 
       /**
        * Removes an external UiNode gravity well from consideration when interacting with this Panel.
@@ -314,7 +314,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeExternalGravityWell(uiNode: ui.UiNode): boolean
+      removeExternalGravityWell(uiNode: ui.UiNode | null): boolean
 
       /**
        * Checks if the UiNode is included in the external gravity well list.
@@ -324,7 +324,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      isExternalGravityWell(uiNode: ui.UiNode): boolean
+      isExternalGravityWell(uiNode: ui.UiNode | null): boolean
 
       /**
        * Clears the external gravity well list.

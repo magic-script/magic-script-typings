@@ -37,7 +37,7 @@ declare module 'lumin' {
       /**
        * The optional localization parameters for the element label.
        */
-      l10nParams: Object;
+      l10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * What side the button label text sits on, used in kIconWithLabel.
@@ -80,7 +80,7 @@ declare module 'lumin' {
     /**
      * UiButton - This node represents a standard, clickable button.
      */
-    class UiButton extends UiNode {
+    class UiButton extends ui.UiNode {
 
       /**
        * Creates a UiButton element using default settings.
@@ -104,7 +104,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, width?: number /* float */, height?: number /* float */, roundness?: number /* float */): ui.UiButton
+      static Create(prism: Prism | null, labelText: string, width?: number /* float */, height?: number /* float */, roundness?: number /* float */): ui.UiButton | null
 
       /**
        * Creates an Eclipse button from UX specifications.
@@ -115,7 +115,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateEclipseButton(prism: Prism, buttonParams: ui.EclipseButtonParams): ui.UiButton
+      static CreateEclipseButton(prism: Prism | null, buttonParams: ui.EclipseButtonParams): ui.UiButton | null
 
       /**
        * Sets the Node hierarchy used as visual representation for this UiButton.
@@ -137,7 +137,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setButtonModel(pNode: Node, offset?: [number, number, number] /* glm::vec3 */): void
+      setButtonModel(pNode: Node | null, offset?: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the Node hierarchy used as visual representation for this UiButton.
@@ -146,7 +146,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getButtonModel(): Node
+      getButtonModel(): Node | null
 
       /**
        * Detaches the Node hierarchy used as visual representation for this UiButton.
@@ -156,7 +156,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachButtonModel(): Node
+      detachButtonModel(): Node | null
 
       /**
        * Sets the UTF-8 encoded button text.
@@ -183,7 +183,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setTextColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the RGBA color of the button text; the default is white; i.e., (1, 1, 1, 1).
@@ -201,7 +201,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setIconColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setIconColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the RGBA color of the button icon; the default is white; i.e., (1, 1, 1, 1).
@@ -237,7 +237,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setIconSize(size: [number, number] /* glm::vec2 */): void
+      setIconSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the button icon size in scene units.
@@ -256,7 +256,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
 
       /**
        * Gets the UiImage icon for this button if one exists
@@ -266,7 +266,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiImageIcon(): ui.UiImage
+      getUiImageIcon(): ui.UiImage | null
     }
   }
 }

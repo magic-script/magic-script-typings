@@ -11,14 +11,14 @@ declare module 'lumin' {
     class BoundaryShape {
 
       /** Constructor */
-      constructor(size: [number, number] /* glm::vec2 */, roundness: number /* float */, offset?: [number, number, number] /* glm::vec3 */)
+      constructor(size: [number, number] | Float32Array /* glm::vec2 */, roundness: number /* float */, offset?: [number, number, number] | Float32Array /* glm::vec3 */)
 
       /**
        * Sets the size of the shape.
        *
        * @param size - the shape size in X and Y.
        */
-      setSize(size: [number, number] /* glm::vec2 */): void
+      setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the size of the shape.
@@ -32,7 +32,7 @@ declare module 'lumin' {
        *
        * @param offset - the offset of the shape.
        */
-      setOffset(offset: [number, number, number] /* glm::vec3 */): void
+      setOffset(offset: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the offset of the shape.

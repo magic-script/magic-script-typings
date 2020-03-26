@@ -38,14 +38,10 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setProperty(a_name: string, a_value: number /* int */): boolean
     setProperty(a_name: string, a_value: number /* float */): boolean
-    setProperty(a_name: string, a_value: [number, number] /* glm::vec2 */): boolean
-    setProperty(a_name: string, a_value: [number, number, number] /* glm::vec3 */): boolean
-    setProperty(a_name: string, a_value: [number, number, number, number] /* glm::vec4 */): boolean
-    setProperty(a_name: string, a_value: [number, number] /* glm::ivec2 */): boolean
-    setProperty(a_name: string, a_value: [number, number, number] /* glm::ivec3 */): boolean
-    setProperty(a_name: string, a_value: [number, number, number, number] /* glm::ivec4 */): boolean
+    setProperty(a_name: string, a_value: [number, number] | Float32Array /* glm::vec2 */): boolean
+    setProperty(a_name: string, a_value: [number, number, number] | Float32Array /* glm::vec3 */): boolean
+    setProperty(a_name: string, a_value: [number, number, number, number] | Float32Array /* glm::vec4 */): boolean
 
     /**
      * Start playing the particle effect.
@@ -90,7 +86,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getCurveSampler(name: string): particles.CurveSampler
+    getCurveSampler(name: string): particles.CurveSampler | null /* std::optional<particles::CurveSampler> */
 
     /**
      * Sets the data for a curve attribute sampler. A curve attribute sampler can have 1-4 curves,

@@ -32,7 +32,7 @@ declare module 'lumin' {
       /**
        * The optional localization parameters for the element label.
        */
-      l10nParams: Object;
+      l10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * The display mode of the label, used in kIcon.
@@ -88,7 +88,7 @@ declare module 'lumin' {
     /**
      * UiToggle - This node represents a standard, clickable toggle.
      */
-    class UiToggle extends UiNode {
+    class UiToggle extends ui.UiNode {
 
       /**
        * Creates a UiToggle element using default settings.
@@ -109,7 +109,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, height?: number /* float */): ui.UiToggle
+      static Create(prism: Prism | null, labelText: string, height?: number /* float */): ui.UiToggle | null
 
       /** Creates a UiToggle element using default settings.
        *
@@ -131,7 +131,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, toggleType: ui.ToggleType, height?: number /* float */): ui.UiToggle
+      static Create(prism: Prism | null, labelText: string, toggleType: ui.ToggleType, height?: number /* float */): ui.UiToggle | null
 
       /**
        * Creates an Eclipse toggle from UX specifications.
@@ -142,7 +142,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateEclipseToggle(prism: Prism, toggleParams: ui.EclipseToggleParams): ui.UiToggle
+      static CreateEclipseToggle(prism: Prism | null, toggleParams: ui.EclipseToggleParams): ui.UiToggle | null
 
       /**
        * The on toggle changed Event.
@@ -151,7 +151,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onToggleChangedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onToggleChangedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onToggleChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -192,7 +192,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setToggleModel(pNode: Node, offset?: [number, number, number] /* glm::vec3 */): void
+      setToggleModel(pNode: Node | null, offset?: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the Node hierarchy used as visual representation for this UiToggle.
@@ -201,7 +201,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getToggleModel(): Node
+      getToggleModel(): Node | null
 
       /**
        * Detaches the Node hierarchy used as visual representation for this UiToggle.
@@ -211,7 +211,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachToggleModel(): Node
+      detachToggleModel(): Node | null
 
       /**
        * Sets the UTF-8 encoded toggle label text.
@@ -238,7 +238,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setTextColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the RGBA color of the toggle label text; the default is white; i.e., (1, 1, 1, 1).
@@ -275,7 +275,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
     }
   }
 }

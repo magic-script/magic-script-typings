@@ -25,7 +25,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    requestNewPrism(a_size: [number, number, number] /* glm::vec3 */, a_ePrismType?: PrismType): Prism
+    requestNewPrism(a_size: [number, number, number] | Float32Array /* glm::vec3 */, a_ePrismType?: PrismType): Prism | null
 
     /**
      * Toggles occlusion.
@@ -52,7 +52,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    selectPrism(a_prism: Prism, a_bSelected: boolean): void
+    selectPrism(a_prism: Prism | null, a_bSelected: boolean): void
 
     /**
      * Sets the skip raycast state of the prism. If the prism is skipped, all its Nodes will be as
@@ -61,7 +61,7 @@ declare module 'lumin' {
      * @param a_prism The Prism.
      * @param a_skipRaycast Raycast skip flag.
      */
-    setSkipRaycast(a_prism: Prism, a_skipRaycast: boolean): void
+    setSkipRaycast(a_prism: Prism | null, a_skipRaycast: boolean): void
 
     /**
      * Returns the skip raycast state of the volume.
@@ -69,7 +69,7 @@ declare module 'lumin' {
      * @param a_prism The Prism.
      * @return true if the prism is skipped during raycasting
      **/
-    isSkipRaycast(a_prism: Prism): boolean
+    isSkipRaycast(a_prism: Prism | null): boolean
 
     /**
      * Returns the world mesh data for a block at a given location.
@@ -78,7 +78,7 @@ declare module 'lumin' {
      * @param a_blockData Class that will be filled in with the block data.
      * @return true if blockData has valid data
      */
-    getWorldMeshBlockData(a_blockPos: [number, number, number] /* glm::vec3 */, a_blockData: WorldMeshBlockData): boolean
+    getWorldMeshBlockData(a_blockPos: [number, number, number] | Float32Array /* glm::vec3 */, a_blockData: WorldMeshBlockData): boolean
 
     /**
      * Request to get updates when world mesh block data has changed. WorldMeshBlockEventData messages
@@ -87,7 +87,7 @@ declare module 'lumin' {
      * @param a_prism Prism used to send the event messages.
      * @return true if the request was made successfully
      */
-    requestWorldMeshBlockUpdates(a_prism: Prism): boolean
+    requestWorldMeshBlockUpdates(a_prism: Prism | null): boolean
 
     /**
      * Request to stop getting updates when world mesh block data has changed.
@@ -95,7 +95,7 @@ declare module 'lumin' {
      * @param a_prism Prism used to make the requestWorldMeshBlockUpdates call.
      * @return true if the request was made successfully
      */
-    stopWorldMeshBlockUpdates(a_prism: Prism): boolean
+    stopWorldMeshBlockUpdates(a_prism: Prism | null): boolean
 
     /**
      * Gets whether hand occlusion is currently enabled or not
@@ -110,7 +110,7 @@ declare module 'lumin' {
      * @param ctxGl OpenGL render context
      * @return exclusive mode renderer
      */
-    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void): ExclusiveRender
+    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void | null /* void* */): ExclusiveRender | null
 
     /**
      * Stop full screen exclusive mode
@@ -127,6 +127,6 @@ declare module 'lumin' {
     onDeviceReality(): void
     onDeviceStandby(): void
     updateLoop(a_fDelta: number /* float */): boolean
-    eventListener(a_pEvent: ServerEvent): boolean
+    eventListener(a_pEvent: ServerEvent | null): boolean
   }
 }

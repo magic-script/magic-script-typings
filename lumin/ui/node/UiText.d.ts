@@ -4,7 +4,7 @@ declare module 'lumin' {
     /**
      * UiText - This node represents a UI text element.
      */
-    class UiText extends UiNode {
+    class UiText extends ui.UiNode {
 
       /**
        * Creates a UiText element with default settings.
@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, text: string, style?: resources.FontStyle, weight?: resources.FontWeight): ui.UiText
+      static Create(prism: Prism | null, text: string, style?: resources.FontStyle, weight?: resources.FontWeight): ui.UiText | null
 
       /**
        * Creates an Eclipse label from UX specifications.
@@ -29,7 +29,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateEclipseLabel(prism: Prism, text: string, labelType: ui.EclipseLabelType): ui.UiText
+      static CreateEclipseLabel(prism: Prism | null, text: string, labelType: ui.EclipseLabelType): ui.UiText | null
 
       /**
        * Creates a localized UiText element with default settings.
@@ -41,7 +41,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateLocalized(prism: Prism, key: string, params?: Object): ui.UiText
+      static CreateLocalized(prism: Prism | null, key: string, params?: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, utils::LocaleHelper::Param> */): ui.UiText | null
 
       /**
        * Creates a localized Eclipse label from UX specifications.
@@ -54,7 +54,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateLocalizedEclipseLabel(prism: Prism, labelType: ui.EclipseLabelType, key: string, params?: Object): ui.UiText
+      static CreateLocalizedEclipseLabel(prism: Prism | null, labelType: ui.EclipseLabelType, key: string, params?: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, utils::LocaleHelper::Param> */): ui.UiText | null
 
       /**
        * Gets the font parameters for the eclipse font type.
@@ -74,7 +74,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onLocaleChangedSub(callback: (arg0: ui.UiEventData, arg1: string) => void): utils.CallbackID
+      onLocaleChangedSub(callback: ((arg0: ui.UiEventData, arg1: string) => void) | null /* std::function<void(UiEventData,std::string)> */): utils.CallbackID
       onLocaleChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -129,7 +129,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getFontResource(): Font2dResource
+      getFontResource(): Font2dResource | null
 
       /**
        * Sets the RGBA color of the rendered text.
@@ -138,7 +138,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setTextColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the RGBA color of the rendered text.
@@ -181,7 +181,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setLocalization(key: string, params: Object): void
+      setLocalization(key: string, params: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, utils::LocaleHelper::Param> */): void
 
       /**
        * Sets the localization key for this UiText element.
@@ -211,7 +211,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setLocalizationParams(params: Object): void
+      setLocalizationParams(params: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, utils::LocaleHelper::Param> */): void
 
       /**
        * Gets the localization parameters used within the localized text.
@@ -220,7 +220,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getLocalizationParams(): Object
+      getLocalizationParams(): { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */
 
       /**
        * Sets the text render size height in scene units.
@@ -248,12 +248,26 @@ declare module 'lumin' {
        * the bounds greater than 0 in both X and Y will set
        * the text bounds and cause the text to wrap or truncate within.
        *
-       * @param boundsSize the text bounds.
-       * @param wrap `default = true`<br/> to wrap the text within the bounds or truncate
+       * @param boundsSize the text bounds
        *
        * @priv none
        */
-      setBoundsSize(boundsSize: [number, number] /* glm::vec2 */, wrap?: boolean): void
+      setBoundsSize(boundsSize: [number, number] | Float32Array /* glm::vec2 */): void
+
+      /**
+       * Sets the text bounds size in scene units.
+       *
+       * The default value of 0,0 indicates there is no bounds
+       * and the text can grow and will not wrap or truncate. Setting
+       * the bounds greater than 0 in both X and Y will set
+       * the text bounds and cause the text to wrap or truncate within.
+       *
+       * @param boundsSize the text bounds.
+       * @param wrap to wrap the text within the bounds or truncate
+       *
+       * @priv none
+       */
+      setBoundsSize(boundsSize: [number, number] | Float32Array /* glm::vec2 */, wrap: boolean): void
 
       /**
        * Gets the text bounds size.
@@ -263,6 +277,61 @@ declare module 'lumin' {
        * @priv none
        */
       getBoundsSize(): [number, number] /* glm::vec2 */
+
+      /**
+       * Sets whether the text should wrap within a set bounds or not.
+       *
+       * @param wrap whether or not to use word wrap
+       *
+       * @priv none
+       */
+      setWrapEnabled(wrap: boolean): void
+
+      /**
+       * Gets whether the text should wrap within a set bounds or not.
+       *
+       * @return bool
+       *
+       * @priv none
+       */
+      getWrapEnabled(): boolean
+
+      /**
+       * Sets the text to use ellipses if the width exceeds its bounds, instead of just truncating it.
+       * If no bounds are set or wrapping is enabled, this function has no effect.
+       *
+       * @param ellipses true to enable ellipses, false to disable.
+       *
+       * @priv none
+       */
+      setEllipsesEnabled(ellipses: boolean): void
+
+      /**
+       * Gets if the text will use ellipses if the width exceeds its bounds.
+       *
+       * @return The current ellipses enabled status.
+       *
+       * @priv none
+       */
+      getEllipsesEnabled(): boolean
+
+      /**
+       * Sets whether the UiText trims leading and trailing spaces, true by default.
+       *
+       * @param trimSpaces The flag to trim spaces or not.
+       *
+       * @priv none
+       */
+      setTrimSpaces(trimSpaces: boolean): void
+
+      /**
+       * Gets whether the UiText trims leading and trailing spaces.
+       *
+       * @return true if leading and trailing spaces are being trimmed, false otherwise.
+       *
+       * @priv none
+       */
+      getTrimSpaces(): boolean
 
       /**
        * Sets the additional character spacing that is applied

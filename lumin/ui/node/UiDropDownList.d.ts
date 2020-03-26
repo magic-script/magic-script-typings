@@ -32,12 +32,12 @@ declare module 'lumin' {
       /**
        * Get the zero-based level of the item in the multi-level list.
        */
-      getLevel(): number /* int */
+      getLevel(): number /* unsigned int */
 
       /**
        * The parent list item this item belongs to, if any.
        */
-      getParent(): ui.DropDownListItem
+      getParent(): ui.DropDownListItem | null
 
       /** Constructor with specified label and optional id (no sub-items) */
       constructor(a_label: string, a_id?: number /* uint32_t */)
@@ -82,7 +82,7 @@ declare module 'lumin' {
       /**
        * The optional localization parameters for the element label.
        */
-      l10nParams: Object;
+      l10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * Whether the text has an underline (default false). Considered only for kTextWithArrow
@@ -110,7 +110,7 @@ declare module 'lumin' {
      * UiDropDownList - This node represents a multi-level, multi-selection capable
      *                  drop-down list.
      */
-    class UiDropDownList extends UiButton {
+    class UiDropDownList extends ui.UiButton {
 
       /**
        * Creates a UiDropDownList element using default settings.
@@ -121,7 +121,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string): ui.UiDropDownList
+      static Create(prism: Prism | null, labelText: string): ui.UiDropDownList | null
 
       /**
        * Creates an Eclipse dropDownList from UX specifications.
@@ -130,7 +130,7 @@ declare module 'lumin' {
        * @param dropDownListParams - The EclipseDropDownListParams describing the Eclipse dropDownList to create.
        * @return The new UiDropDownList node.
        */
-      static CreateEclipseDropDownList(prism: Prism, dropDownListParams: ui.EclipseDropDownListParams): ui.UiDropDownList
+      static CreateEclipseDropDownList(prism: Prism | null, dropDownListParams: ui.EclipseDropDownListParams): ui.UiDropDownList | null
 
       /**
        * The on hover item Event.
@@ -139,7 +139,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onHoverItemSub(callback: (arg0: ui.UiEventData, arg1: ui.DropDownListItem) => void): utils.CallbackID
+      onHoverItemSub(callback: ((arg0: ui.UiEventData, arg1: ui.DropDownListItem | null) => void) | null /* std::function<void(UiEventData,DropDownListItem*)> */): utils.CallbackID
       onHoverItemUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -149,7 +149,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onSelectionChangedSub(callback: (arg0: ui.UiEventData, arg1: Array<ui.DropDownListItem> /* std::vector<const DropDownListItem*> */) => void): utils.CallbackID
+      onSelectionChangedSub(callback: ((arg0: ui.UiEventData, arg1: Array<ui.DropDownListItem | null>) => void) | null /* std::function<void(UiEventData,std::vector<DropDownListItem*>)> */): utils.CallbackID
       onSelectionChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -159,7 +159,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onListVisibilityChangedSub(callback: (arg0: ui.UiEventData, arg1: boolean) => void): utils.CallbackID
+      onListVisibilityChangedSub(callback: ((arg0: ui.UiEventData, arg1: boolean) => void) | null /* std::function<void(UiEventData, bool)> */): utils.CallbackID
       onListVisibilityChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -210,7 +210,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getSelectedItems(): Array<ui.DropDownListItem> /* std::vector<const DropDownListItem*> */
+      getSelectedItems(): Array<ui.DropDownListItem | null> /* std::vector<DropDownListItem*> */
 
       /**
        * Sets the font for the list text.
@@ -288,7 +288,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setMaxCharacterLimit(charLimit: number /* int */): void
+      setMaxCharacterLimit(charLimit: number /* unsigned int */): void
 
       /**
        * Gets the max amount of characters to be used per list item label.
@@ -298,7 +298,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getMaxCharacterLimit(): number /* int */
+      getMaxCharacterLimit(): number /* unsigned int */
 
       /**
        * Unselects all selected items in the list and sublists.
@@ -317,7 +317,7 @@ declare module 'lumin' {
        * @param id - the id assigned to the DropDownListItem
        * @param selected - true if this item should be selected
        */
-      setSelected(id: number /* int */, selected: boolean): void
+      setSelected(id: number /* unsigned int */, selected: boolean): void
     }
   }
 }

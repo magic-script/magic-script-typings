@@ -15,7 +15,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setColor(a_color: [number, number, number, number] /* glm::vec4 */): void
+    setColor(a_color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
     /**
      * Get the custom color, which is by default white: { 1, 1, 1, 1 }.
@@ -214,6 +214,10 @@ declare module 'lumin' {
     /**
      * Flags If this renderable node is using DRM Content
      *
+     * NOTE: This API is only used for QuadNodes and VideoNodes. In future release,
+     * this API will moved to the former mentioned nodes headers. And RenderNode API
+     * will be deprecated.
+     *
      * @param a_on The desired flag setting.
      * @priv none
      */
@@ -221,6 +225,10 @@ declare module 'lumin' {
 
     /**
      * Check if this Render Node is marked for DRM
+     *
+     * NOTE: This API is only used for QuadNodes and VideoNodes. In future release,
+     * this API will moved to the former mentioned nodes headers. And RenderNode API
+     * will be deprecated.
      *
      * @return True = Marked as DRM Content
      * @priv none
@@ -267,7 +275,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRenderingLayer(): bigint /* uint64_t */
+    getRenderingLayer(): number /* uint16_t */
 
     /**
      * Set Bloom strength for this Render Node. If a material exists, the material bloom

@@ -14,7 +14,7 @@ declare module 'lumin' {
      * UiPortalIcon - This node represents a portal icon for use in the Universe
      * icon grid launcer.
      */
-    class UiPortalIcon extends UiNode {
+    class UiPortalIcon extends ui.UiNode {
 
       /**
        * Creates a UiPortalIcon element using default settings.
@@ -26,7 +26,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string, portalSize?: ui.PortalIconSize): ui.UiPortalIcon
+      static Create(prism: Prism | null, labelText: string, portalSize?: ui.PortalIconSize): ui.UiPortalIcon | null
 
       /**
        * Sets the overall hover scale of the portal icon element.
@@ -95,7 +95,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setBackgroundModel(pNode: Node, offset?: [number, number, number] /* glm::vec3 */): void
+      setBackgroundModel(pNode: Node | null, offset?: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the Node hierarchy used as background visual representation for the portal icon.
@@ -104,7 +104,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getBackgroundModel(): Node
+      getBackgroundModel(): Node | null
 
       /**
        * Detaches the Node hierarchy used as background visual representation for this portal icon.
@@ -114,7 +114,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachBackgroundModel(): Node
+      detachBackgroundModel(): Node | null
 
       /**
        * Sets the Node hierarchy used as visual representation for the icon of
@@ -128,7 +128,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setIconModel(pNode: ModelNode, offset?: [number, number, number] /* glm::vec3 */): void
+      setIconModel(pNode: ModelNode | null, offset?: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the Node hierarchy used as icon visual representation for the portal icon.
@@ -137,7 +137,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getIconModel(): ModelNode
+      getIconModel(): ModelNode | null
 
       /**
        * Detaches the Node hierarchy used as icon visual representation for this portal icon.
@@ -147,7 +147,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachIconModel(): ModelNode
+      detachIconModel(): ModelNode | null
 
       /**
        * Sets the icon hover position relative to portal circle.
@@ -160,7 +160,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setIconHoverPosition(position: [number, number, number] /* glm::vec3 */): void
+      setIconHoverPosition(position: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the icon hover position.
@@ -268,7 +268,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setTextColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the RGBA color of the portal icon text; the default is white; i.e., (1, 1, 1, 1).
@@ -304,7 +304,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
     }
   }
 }

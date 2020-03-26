@@ -39,7 +39,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRootNode(): RootNode
+    getRootNode(): RootNode | null
 
     /**
      * Get the position of this prism in world space
@@ -120,7 +120,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getNode(a_id: bigint /* uint64_t */): Node
+    getNode(a_id: bigint /* uint64_t */): Node | null
 
     /**
      * Find a Node by name.
@@ -130,12 +130,12 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    findNode(a_name: string, a_parent: Node): Node
+    findNode(a_name: string, a_parent: Node | null): Node | null
 
     /**
      * Creates a node of the base type, suitable for organizing a group of child nodes.
      */
-    createNode(): Node
+    createNode(): Node | null
 
     /**
      * Create a new TransformNode.
@@ -146,7 +146,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createTransformNode(localTransform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): TransformNode
+    createTransformNode(localTransform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */): TransformNode | null
 
     /**
      * Create a new LineNode.
@@ -155,7 +155,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createLineNode(): LineNode
+    createLineNode(): LineNode | null
 
     /**
      * Create a new ModelAttachmentNode.
@@ -163,7 +163,7 @@ declare module 'lumin' {
      * @param boneName the name of the bone
      * @return New ModelAttachmentNode on success; nullptr on failure.
      */
-    createModelAttachmentNode(modelNode: ModelNode, boneName: string): ModelAttachmentNode
+    createModelAttachmentNode(modelNode: ModelNode | null, boneName: string): ModelAttachmentNode | null
 
     /**
      * Create a new ModelNode.
@@ -173,7 +173,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createModelNode(resourceId: bigint /* uint64_t */): ModelNode
+    createModelNode(resourceId: bigint /* uint64_t */): ModelNode | null
 
     /**
      * Create a new QuadNode.
@@ -183,7 +183,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createQuadNode(resourceId: bigint /* uint64_t */): QuadNode
+    createQuadNode(resourceId: bigint /* uint64_t */): QuadNode | null
 
     /**
      * Create a new Quad3dNode with a Texture3dResource id.
@@ -196,7 +196,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createQuad3dNode(resourceId: bigint /* uint64_t */): Quad3dNode
+    createQuad3dNode(resourceId: bigint /* uint64_t */): Quad3dNode | null
 
     /**
      * Creates a VolumeCubeNode with a Texture3dResource id.
@@ -209,7 +209,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createVolumeCubeNode(resourceId: bigint /* uint64_t */): VolumeCubeNode
+    createVolumeCubeNode(resourceId: bigint /* uint64_t */): VolumeCubeNode | null
 
     /** Create a new SpriteNode from a texture pack resource.
      *
@@ -218,7 +218,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createSpriteNode(resourceId: bigint /* uint64_t */): SpriteNode
+    createSpriteNode(resourceId: bigint /* uint64_t */): SpriteNode | null
 
     /**
      * Create a new AudioNode.
@@ -227,7 +227,7 @@ declare module 'lumin' {
      *
      * @return New AudioNode on success; nullptr on failure.
      */
-    createAudioNode(): AudioNode
+    createAudioNode(): AudioNode | null
 
     /**
      * Create a new ParticleNode.
@@ -235,7 +235,7 @@ declare module 'lumin' {
      * @param packageResource resource Id of the particle effect package to use.
      * @return New ParticleNode on success; nullptr on failure.
      */
-    createParticleNode(packageResource: bigint /* uint64_t */): ParticleNode
+    createParticleNode(packageResource: bigint /* uint64_t */): ParticleNode | null
 
     /**
      * Creates a VideoNode with the given resolution and display mode.
@@ -246,7 +246,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createVideoNode(a_width?: number /* uint32_t */, a_height?: number /* uint32_t */): VideoNode
+    createVideoNode(a_width?: number /* uint32_t */, a_height?: number /* uint32_t */): VideoNode | null
 
     /**
      * Create a 2D text node using the Magic Leap UI font (regular weight).
@@ -257,7 +257,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createDefaultText2dNode(desc: Text2dDesc, style?: resources.FontStyle): Text2dNode
+    createDefaultText2dNode(desc: Text2dDesc, style?: resources.FontStyle): Text2dNode | null
 
     /**
      * Create a 2D text node with the given font and properties
@@ -269,7 +269,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createText2dNode(fontResourceId: bigint /* uint64_t */, desc: Text2dDesc): Text2dNode
+    createText2dNode(fontResourceId: bigint /* uint64_t */, desc: Text2dDesc): Text2dNode | null
 
     /**
      * Creates directional light node
@@ -278,7 +278,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createLightNode(): LightNode
+    createLightNode(): LightNode | null
 
     /**
      * Tells the Prism to delete this Node and all its children
@@ -287,7 +287,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    deleteNode(a_pNode: Node): void
+    deleteNode(a_pNode: Node | null): void
 
     /**
      * Enables/disables physics simulation on the prism. Until physics is enabled, no simulation will
@@ -307,7 +307,7 @@ declare module 'lumin' {
      * @param a_enable Flag to enable/disable the simulation.
      * @param a_data `default = null`<br/> Optional data used to initialize the simulation. Ignored if a_enable = false.
      */
-    setPhysicsEnabled(a_enable: boolean, a_data?: PhysicsInitializationData): void
+    setPhysicsEnabled(a_enable: boolean, a_data?: PhysicsInitializationData | null): void
 
     /**
      * Pauses/resumes the physics simulation on the prism. setPhysicsEnabled(true) must have been
@@ -388,7 +388,7 @@ declare module 'lumin' {
      *
      * @return resource instance
      */
-    createMaterialResourceId(a_fileName: string, a_localScopeOnly?: boolean, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createMaterialResourceId(a_fileName: string | null /* char* */, a_localScopeOnly?: boolean, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Creates a ModelResource
@@ -412,7 +412,7 @@ declare module 'lumin' {
      *
      * @return ID for the Resource
      */
-    createModelResourceId(a_fileName: string, a_importScale: number /* float */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string, a_materialScopeId?: bigint /* uint64_t */, a_forceMaterialScope?: boolean): bigint /* uint64_t */
+    createModelResourceId(a_fileName: string | null /* char* */, a_importScale: number /* float */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */, a_materialScopeId?: bigint /* uint64_t */, a_forceMaterialScope?: boolean): bigint /* uint64_t */
 
     /**
       * Creates instanced model resource
@@ -438,7 +438,7 @@ declare module 'lumin' {
       *
       * @priv none
       */
-    createInstancedModelResourceId(a_fileName: string, a_maxInstances: number /* uint32_t */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createInstancedModelResourceId(a_fileName: string | null /* char* */, a_maxInstances: number /* uint32_t */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Creates animation resource
@@ -463,7 +463,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAnimationResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createAnimationResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Creates animation set resource
@@ -488,7 +488,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAnimationSetResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createAnimationSetResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Creates animation blend setup resource
@@ -513,7 +513,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAnimationBlendSetupResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createAnimationBlendSetupResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Creates a PlanarResource of given size which provides access to EGL Context and EGL Surface.
@@ -550,7 +550,7 @@ declare module 'lumin' {
     * @param image Decoded Image data to be used for rendering.
     * @return The new TextureResource Id when succeeded, INVALID_RESOURCE_ID otherwise.
     */
-    createTextureResourceId(tex2dDesc: Desc2d, image: AssetPacker.Image2d): bigint /* uint64_t */
+    createTextureResourceId(tex2dDesc: Desc2d, image: AssetPacker.Image2d | null /* std::unique_ptr<AssetPacker::Image2d> */): bigint /* uint64_t */
 
     /**
      * Create and initialize a TexturePackResource.
@@ -594,7 +594,7 @@ declare module 'lumin' {
      * @param desc `default = Desc3d.DEFAULT`<br/> Optional Initialization parameters for the resource to control rendering.
      * @return The new Texture-3D resource id.
      */
-    createTexture3dResourceId(image: AssetPacker.Image3d, desc?: Desc3d): bigint /* uint64_t */
+    createTexture3dResourceId(image: AssetPacker.Image3d | null /* std::unique_ptr<AssetPacker::Image3d> */, desc?: Desc3d): bigint /* uint64_t */
 
     /**
      * Create a Font2dResource with the given description.
@@ -628,7 +628,7 @@ declare module 'lumin' {
      *
      * @return Resource ID
      */
-    createLoadedFileAudioResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createLoadedFileAudioResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Create audio resource with streamed file.
@@ -639,7 +639,7 @@ declare module 'lumin' {
      *
      * @return Resource ID
      */
-    createStreamedFileAudioResourceId(a_fileName: string, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string): bigint /* uint64_t */
+    createStreamedFileAudioResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean, a_descriptor?: number /* int */, a_basePath?: string | null /* char* */): bigint /* uint64_t */
 
     /**
      * Creates particle package resource
@@ -650,7 +650,7 @@ declare module 'lumin' {
      *
      * @return ID for the Resource
      */
-    createParticlePackageResourceId(a_fileName: string, a_absolutePath?: boolean): bigint /* uint64_t */
+    createParticlePackageResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean): bigint /* uint64_t */
 
     /**
      * Creates mtl resource
@@ -661,7 +661,7 @@ declare module 'lumin' {
      *
      * @return ID for the Resource
      */
-    createObjMtlResourceId(a_fileName: string, a_absolutePath?: boolean): bigint /* uint64_t */
+    createObjMtlResourceId(a_fileName: string | null /* char* */, a_absolutePath?: boolean): bigint /* uint64_t */
 
     /**
      * Destroys a Resource with a given ResourceIDType.
@@ -682,7 +682,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getResource(a_iID: bigint /* uint64_t */): Resource
+    getResource(a_iID: bigint /* uint64_t */): Resource | null
 
     /**
      * Get whether this Prism is selected.
@@ -805,7 +805,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    loadObjectModel(filePath: string): string
+    loadObjectModel(filePath: string): string | null /* std::optional<std::string> */
 
     /**
      * Load an object model from a string into memory.
@@ -815,7 +815,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    parseObjectModel(modelString: string): string
+    parseObjectModel(modelString: string): string | null /* std::optional<std::string> */
 
     /**
      * Unload cached object model.
@@ -859,7 +859,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createNode(objectModelName: string, objectName?: string): Node
+    createNode(objectModelName: string, objectName?: string): Node | null
 
     /**
      * Create a node tree from a loaded object model.
@@ -869,7 +869,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createTree(objectModelName: string, objectName?: string): Node
+    createTree(objectModelName: string, objectName?: string): Node | null
 
     /**
      * Create all objects from a loaded object model and
@@ -879,7 +879,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    createAll(objectModelName: string): Node
+    createAll(objectModelName: string): Node | null
 
     /**
      * Update a node with property values from an object in an object model.
@@ -890,7 +890,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    updateNode(node: Node, objectModelName: string, objectName?: string): boolean
+    updateNode(node: Node | null, objectModelName: string, objectName?: string): boolean
 
     /**
      * Update a node with property values from an object in an object model as a string.
@@ -901,7 +901,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    updateNodeFromString(node: Node, modelString: string, objectName: string): boolean
+    updateNodeFromString(node: Node | null, modelString: string, objectName: string): boolean
 
     /**
      * Acquire loaded resource mapped to the given name in the declarative system.
@@ -919,7 +919,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getSound(name: string): Sound
+    getSound(name: string): Sound | null
 
     /**
      * Sets the root prism controller that will receive event and update loop callbacks
@@ -932,7 +932,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setPrismController(rootPrismController: PrismController): void
+    setPrismController(rootPrismController: PrismController | null /* std::shared_ptr<PrismController> */): void
 
     /**
      * Returns the current root scene controller.
@@ -941,7 +941,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getPrismController(): PrismController
+    getPrismController(): PrismController | null /* std::shared_ptr<PrismController> */
 
     /**
      * Enable/Disable the Prism Visual state changes
@@ -960,7 +960,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    onDestroyEventSub(callback: (arg0: Prism) => void): utils.CallbackID
+    onDestroyEventSub(callback: ((arg0: Prism | null) => void) | null /* std::function<void(Prism*)> */): utils.CallbackID
     onDestroyEventUnsub(callbackID: utils.CallbackID): boolean
 
     /**
@@ -975,7 +975,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    retainFPSMode(): KEmpty
+    retainFPSMode(): KEmpty | null /* std::shared_ptr<KEmpty> */
 
     /**
      * Retain this shared pointer to force the prism to receive headpose updates.
@@ -984,7 +984,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    retainHeadposeUpdates(): PrismDataHandle
+    retainHeadposeUpdates(): PrismDataHandle | null /* std::shared_ptr<PrismDataHandle> */
 
     /**
      * Retain this shared pointer to force the prism to receive eye tracking updates.
@@ -993,7 +993,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    retainEyeTrackingUpdates(): PrismDataHandle
+    retainEyeTrackingUpdates(): PrismDataHandle | null /* std::shared_ptr<PrismDataHandle> */
 
     /**
      * Retain this shared pointer to force the volume to receive floor updates.
@@ -1002,7 +1002,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    retainFloorUpdates(): PrismDataHandle
+    retainFloorUpdates(): PrismDataHandle | null /* std::shared_ptr<PrismDataHandle> */
 
     /** deprecated, please use setPrismBloomStrength instead */
     setVolumeBloomStrength(a_volumeBloomStrength: number /* float */): void
@@ -1022,7 +1022,7 @@ declare module 'lumin' {
      * @param height The height of the image(in pixels).
      * @return Return a valid Image-2D that should be used to create Texture Resource, null otherwise.
      */
-    createImage2d(format: utils.Format, width: number /* uint32_t */, height: number /* uint32_t */): AssetPacker.Image2d
+    createImage2d(format: utils.Format, width: number /* uint32_t */, height: number /* uint32_t */): AssetPacker.Image2d | null /* std::unique_ptr<AssetPacker::Image2d> */
 
     /**
      * Create a Image-3D data.
@@ -1033,6 +1033,43 @@ declare module 'lumin' {
      * @param depth The depth of the image(in pixels).
      * @return Return a valid Image-3D that should be used to create Texture-3D Resource, null otherwise.
      */
-    createImage3d(format: utils.Format, width: number /* uint32_t */, height: number /* uint32_t */, depth: number /* uint32_t */): AssetPacker.Image3d
+    createImage3d(format: utils.Format, width: number /* uint32_t */, height: number /* uint32_t */, depth: number /* uint32_t */): AssetPacker.Image3d | null /* std::unique_ptr<AssetPacker::Image3d> */
+
+    /**
+     * Tests if a user defined property exists on the Prism's Pcf data. A property is a generic key-value pair.
+     *
+     * @param a_name The property name.
+     * @return true on if the property exists, otherwise false.
+     */
+    hasPropertyOnPcf(a_name: string): boolean
+
+    /**
+     * Save a user defined property within the Prism's Pcf data. A property is a generic key-value pair.
+     *
+     * @param a_name The property name.
+     * @param a_value The property value.
+     * @return utils::OK on success, otherwise an error code is returned.
+     */
+    savePropertyWithPcf(a_name: string, a_value: boolean): number /* int32_t */
+    savePropertyWithPcf(a_name: string, a_value: number /* double */): number /* int32_t */
+    savePropertyWithPcf(a_name: string, a_value: string): number /* int32_t */
+    savePropertyWithPcf(a_name: string, a_value: [number, number] | Float32Array /* glm::vec2 */): number /* int32_t */
+    savePropertyWithPcf(a_name: string, a_value: [number, number, number] | Float32Array /* glm::vec3 */): number /* int32_t */
+    savePropertyWithPcf(a_name: string, a_value: [number, number, number, number] | Float32Array /* glm::vec4 */): number /* int32_t */
+    savePropertyWithPcf(a_name: string, a_value: [number, number, number, number] | Float32Array /* glm::quat */): number /* int32_t */
+
+    /**
+     * Reads a user defined property from within the Prism's Pcf data. A property is a generic key-value pair.
+     *
+     * @param a_name The property name.
+     * @return The property value.
+     */
+    readBoolPropertyFromPcf(a_name: string): boolean | null /* std::optional<bool> */
+    readNumberPropertyFromPcf(a_name: string): number | null /* std::optional<double> */
+    readStringPropertyFromPcf(a_name: string): string | null /* std::optional<std::string> */
+    readVec2PropertyFromPcf(a_name: string): [number, number] | null /* std::optional<glm::vec2> */
+    readVec3PropertyFromPcf(a_name: string): [number, number, number] | null /* std::optional<glm::vec3> */
+    readVec4PropertyFromPcf(a_name: string): [number, number, number, number] | null /* std::optional<glm::vec4> */
+    readQuatPropertyFromPcf(a_name: string): [number, number, number, number] | null /* std::optional<glm::quat> */
   }
 }

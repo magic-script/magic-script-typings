@@ -121,7 +121,7 @@ declare module 'lumin' {
        * Rotation angle in degrees wrt the main texture (e.g., to save space).
        */
       rotation: number /* float */;
-      constructor(a_name?: string, a_sheetIndex?: number /* uint32_t */, a_coordsMin?: [number, number] /* glm::vec2 */, a_coordsMax?: [number, number] /* glm::vec2 */, a_startXY?: [number, number] /* glm::ivec2 */, a_size?: [number, number] /* glm::ivec2 */, a_pivotPoint?: [number, number] /* glm::vec2 */, a_rotation?: number /* float */)
+      constructor(a_name?: string, a_sheetIndex?: number /* uint32_t */, a_coordsMin?: [number, number] | Float32Array /* glm::vec2 */, a_coordsMax?: [number, number] | Float32Array /* glm::vec2 */, a_startXY?: [number, number] | Float32Array /* glm::ivec2 */, a_size?: [number, number] | Float32Array /* glm::ivec2 */, a_pivotPoint?: [number, number] | Float32Array /* glm::vec2 */, a_rotation?: number /* float */)
 
       /**
        * True if name is empty.

@@ -5,7 +5,7 @@ declare module 'lumin' {
      * UiListView provides a scrollable, selectable
      * vertical list of elements.
      */
-    class UiListView extends UiNode {
+    class UiListView extends ui.UiNode {
 
       /**
        * Creates a UiListView element with default settings.
@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width?: number /* float */, height?: number /* float */): ui.UiListView
+      static Create(prism: Prism | null, width?: number /* float */, height?: number /* float */): ui.UiListView | null
 
       /**
        * The on scroll changed Event.
@@ -26,7 +26,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onScrollChangedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onScrollChangedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onScrollChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -64,7 +64,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSize(size: [number, number] /* glm::vec2 */): void
+      setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the size of the list view.
@@ -89,7 +89,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setDefaultItemPadding(padding: [number, number, number, number] /* glm::vec4 */): void
+      setDefaultItemPadding(padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the default padding for items within the linear layout.
@@ -204,7 +204,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      scrollToItem(index: number /* int */): boolean
+      scrollToItem(index: number /* unsigned int */): boolean
 
       /**
        * Scrolls the list view to the particular item.
@@ -214,7 +214,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      scrollToItem(item: ui.UiListViewItem): boolean
+      scrollToItem(item: ui.UiListViewItem | null): boolean
 
       /**
        * Gets the number of items in the list.
@@ -223,7 +223,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemCount(): number /* int */
+      getItemCount(): number /* unsigned int */
 
       /**
        * Adds an item to the list.
@@ -232,7 +232,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItem(item: ui.UiListViewItem): void
+      addItem(item: ui.UiListViewItem | null): void
 
       /**
        * Adds an item to the list.
@@ -242,7 +242,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItem(item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItem(item: ui.UiListViewItem | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Adds an item to the list.
@@ -253,7 +253,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItem(item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItem(item: ui.UiListViewItem | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Adds an item to the list at the specific index.
@@ -266,7 +266,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number /* int */, item: ui.UiListViewItem): void
+      addItemAt(index: number /* unsigned int */, item: ui.UiListViewItem | null): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -280,7 +280,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number /* int */, item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItemAt(index: number /* unsigned int */, item: ui.UiListViewItem | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -295,7 +295,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number /* int */, item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItemAt(index: number /* unsigned int */, item: ui.UiListViewItem | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Sets the item padding at the specified index.
@@ -305,7 +305,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(index: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(index: number /* unsigned int */, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Sets the item padding.
@@ -315,7 +315,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(item: ui.UiListViewItem, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(item: ui.UiListViewItem | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the item padding at the specified index.
@@ -325,7 +325,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemPadding(index: number /* int */): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(index: number /* unsigned int */): [number, number, number, number] | null /* std::optional<glm::vec4> */
 
       /**
        * Gets the item padding.
@@ -335,7 +335,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemPadding(item: ui.UiListViewItem): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(item: ui.UiListViewItem | null): [number, number, number, number] | null /* std::optional<glm::vec4> */
 
       /**
        * Sets the item alignment at the specified index.
@@ -345,7 +345,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(index: number /* int */, alignment: ui.Alignment): void
+      setItemAlignment(index: number /* unsigned int */, alignment: ui.Alignment): void
 
       /**
        * Sets the item alignment.
@@ -355,7 +355,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(item: ui.UiListViewItem, alignment: ui.Alignment): void
+      setItemAlignment(item: ui.UiListViewItem | null, alignment: ui.Alignment): void
 
       /**
        * Gets the item alignment at the specified index.
@@ -365,7 +365,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemAlignment(index: number /* int */): ui.Alignment
+      getItemAlignment(index: number /* unsigned int */): ui.Alignment | null /* std::optional<Alignment> */
 
       /**
        * Gets the item alignment.
@@ -375,7 +375,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemAlignment(item: ui.UiListViewItem): ui.Alignment
+      getItemAlignment(item: ui.UiListViewItem | null): ui.Alignment | null /* std::optional<Alignment> */
 
       /**
        * Gets the n'th item in the list.
@@ -387,7 +387,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItem(index: number /* int */): ui.UiListViewItem
+      getItem(index: number /* unsigned int */): ui.UiListViewItem | null
 
       /**
        * Removes the n'th item from the list.
@@ -402,7 +402,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeItem(index: number /* int */): ui.UiListViewItem
+      removeItem(index: number /* unsigned int */): ui.UiListViewItem | null
 
       /**
        * Replaces the n'th item in the list.
@@ -416,7 +416,7 @@ declare module 'lumin' {
        * @param newItem The new item replacing the UiListViewItem in the n'th position
        * @return replaced UiListViewItem's pointer.
        */
-      replaceItem(index: number /* int */, newItem: ui.UiListViewItem): ui.UiListViewItem
+      replaceItem(index: number /* unsigned int */, newItem: ui.UiListViewItem | null): ui.UiListViewItem | null
 
       /**
        * Replaces an existing UiListViewItem with a new UiListViewItem
@@ -428,7 +428,7 @@ declare module 'lumin' {
        * @param newItem The new UiListViewItem replacing the oldItem in the list
        * @return true if the newItem has successfully replaced the oldItem
        */
-      replaceItem(oldItem: ui.UiListViewItem, newItem: ui.UiListViewItem): boolean
+      replaceItem(oldItem: ui.UiListViewItem | null, newItem: ui.UiListViewItem | null): boolean
 
       /**
        * Swap two items in the list.
@@ -439,7 +439,7 @@ declare module 'lumin' {
        * @param index2 a valid index in the list
        * @return true if the two UiListViewItems at index1 and index2 have been sucessfully swapped
        */
-      swapItems(index1: number /* int */, index2: number /* int */): boolean
+      swapItems(index1: number /* unsigned int */, index2: number /* unsigned int */): boolean
 
       /**
        * Swap two items in the list.
@@ -451,7 +451,7 @@ declare module 'lumin' {
        * @param item2 a valid UiListViewItem in the list
        * @return true if the two UiListViewItems have been sucessfully swapped
        */
-      swapItems(item1: ui.UiListViewItem, item2: ui.UiListViewItem): boolean
+      swapItems(item1: ui.UiListViewItem | null, item2: ui.UiListViewItem | null): boolean
 
       /**
        * Skips invisble items.
@@ -483,7 +483,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollBar(uiSB: ui.UiScrollBar): void
+      setScrollBar(uiSB: ui.UiScrollBar | null): void
 
       /**
        * Gets the scrollbar associated with the UiListView's orientation.
@@ -492,7 +492,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollBar(): ui.UiScrollBar
+      getScrollBar(): ui.UiScrollBar | null
 
       /**
        * Sets the vibility mode of the scrollbar(s) attached.

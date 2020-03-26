@@ -101,6 +101,21 @@ declare module 'lumin' {
        * `value = (UNKNOWN_ERROR+8)`
        */
       UNEXPECTED_NULL,
+
+      /**
+       * `value = (UNKNOWN_ERROR+9)`
+       */
+      EXCEEDED_QUOTA,
+
+      /**
+       * `value = (UNKNOWN_ERROR+10)`
+       */
+      NOT_ENOUGH_SPACE,
+
+      /**
+       * `value = (UNKNOWN_ERROR+11)`
+       */
+      KEY_NOT_FOUND,
     }
   }
 }

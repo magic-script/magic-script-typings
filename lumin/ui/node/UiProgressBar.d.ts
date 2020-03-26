@@ -4,7 +4,7 @@ declare module 'lumin' {
     /**
      * UiProgressBar - This node represents a standard progress bar.
      */
-    class UiProgressBar extends UiNode {
+    class UiProgressBar extends ui.UiNode {
 
       /**
        * Creates a UiProgressBar element using default settings.
@@ -22,7 +22,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width: number /* float */, height?: number /* float */): ui.UiProgressBar
+      static Create(prism: Prism | null, width: number /* float */, height?: number /* float */): ui.UiProgressBar | null
 
       /**
        * The on progress bar changed Event.
@@ -31,7 +31,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onProgressBarChangedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onProgressBarChangedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onProgressBarChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -129,7 +129,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setProgressColor(startColor: [number, number, number, number] /* glm::vec4 */, endColor: [number, number, number, number] /* glm::vec4 */): void
+      setProgressColor(startColor: [number, number, number, number] | Float32Array /* glm::vec4 */, endColor: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the progress color.

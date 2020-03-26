@@ -134,6 +134,51 @@ declare module 'lumin' {
     isLooping(): boolean
 
     /**
+    * Sets unique ID for the mediaplayer.
+    *
+    * This function needs to be called immediatly after creating the media player,
+    * before making any further operations on the media player.
+    *
+    * Once the id is set, then it can not be changed. If called multiple times,
+    * the call returns an error and keeps the id which was set at the first call.
+    *
+    * @param id Unique ID set for the player,
+    *
+    * @return NO_ERROR if successful, error code otherwise.
+    **/
+    setMediaPlayerID(id: number /* unsigned int */): number /* int32_t */
+
+    /**
+    * Sets sharing information for the media player being shared and enables only functionality
+    * for synchronize the content playback.
+    *
+    * This function needs to be called only after Id is set on media player using setMediaPlayerID().
+    *
+    * For sharing the encrypted/subscribed content, application needs to make sure that all necessary
+    * setups for DRM/Subscription/account validation etc are already done, before calling this function to share.
+    * This function does not resolve any DRM/subscription/account issues occurred during the sharing by itself.
+    *
+    * For an initiator instance of the player this is called when the application is shared.
+    * For a follower instance of the player, this function must be called immediatly after
+    * setting the id and before setting data source by calling one of setVideoUri/setVideoPath methods.
+    *
+    * @param sharedType The shared type for the current media player (Initiator or Follower)
+    * @param sessionID  Unique Identifier of the sharing session in which the media players are being shared.
+    *                   Sessions can be created by different sharing protocols.
+    *
+    *                   Current supported sharing protocols:
+    *                   Application Connectivity Platform (ACP)
+    *
+    *                   If Application Connectivity Platform (ACP) is used as protocol to share, then
+    *                   this parameter holds the name of the connection given by application, which is
+    *                   used to create ACP connection.
+    *
+    *
+    * @return NO_ERROR if successful, error code otherwise.
+    **/
+    setSharingInfo(sharedType: MediaSharedType, sessionID: string): number /* int32_t */
+
+    /**
      * Sets the volume of the node.
      *
      * @param volume - The new volume in the [0.0, 1.0] range
@@ -165,5 +210,19 @@ declare module 'lumin' {
      * @return true if protected
      */
     isProtectedContent(): boolean
+
+    /**
+     * Get metrics information
+     * @return the current video metric information
+     */
+    getMetrics(): VideoNode.VideoMetrics | null /* std::optional<VideoMetrics> */
+  }
+  namespace VideoNode {
+    class VideoMetrics {
+      constructor()
+      avgFrameRate: number /* float */;
+      avgVideoBitrate: number /* int32_t */;
+      avgAudioBitrate: number /* int32_t */;
+    }
   }
 }

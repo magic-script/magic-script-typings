@@ -18,7 +18,7 @@ declare module 'lumin' {
      *
      * @return Resource The underlying resource, can be a nullptr.
      */
-    getRenderResource(): Resource
+    getRenderResource(): Resource | null
 
     /**
      * Returns the texture coordinates used by the VolumeCubeNode.
@@ -33,7 +33,7 @@ declare module 'lumin' {
      *
      * @param texCoords The coordinates.
      */
-    setTexCoords(texCoords: Array<[number, number, number]> /* std::vector<glm::vec3> */): void
+    setTexCoords(texCoords: Array<[number, number, number] | Float32Array> /* std::vector<glm::vec3> */): void
 
     /**
      * Set a color to use when rendering the cube. The effect of this
@@ -48,7 +48,7 @@ declare module 'lumin' {
      *
      * @param color The color.
      */
-    setColor(color: [number, number, number, number] /* glm::vec4 */): void
+    setColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
     /**
      * Get the custom color, which is by default white: { 1, 1, 1, 1 }.
@@ -83,7 +83,7 @@ declare module 'lumin' {
 
       /** Maximum clipping range. */
       maxClipRange: [number, number, number] /* glm::vec3 */;
-      constructor(a_minClipRange: [number, number, number] /* glm::vec3 */, a_maxClipRange: [number, number, number] /* glm::vec3 */)
+      constructor(a_minClipRange: [number, number, number] | Float32Array /* glm::vec3 */, a_maxClipRange: [number, number, number] | Float32Array /* glm::vec3 */)
     }
   }
 }

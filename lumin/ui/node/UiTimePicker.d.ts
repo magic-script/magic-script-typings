@@ -17,7 +17,7 @@ declare module 'lumin' {
       /**
        * The optional localization parameters for the element label.
        */
-      l10nParams: Object;
+      l10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * Side enum specifying which side the label appears on - Default kTop
@@ -44,7 +44,7 @@ declare module 'lumin' {
     /**
      * UiTimePicker - This node represents a timepicker component.
      */
-    class UiTimePicker extends UiNode {
+    class UiTimePicker extends ui.UiNode {
 
       /**
        * Deprecated - please use Create(Prism*, const TimePickerParams&);
@@ -59,7 +59,7 @@ declare module 'lumin' {
        *
        * @return The new UiTimePicker node.
        */
-      static Create(volume: Prism, label?: string, labelSide?: ui.Side, timeFormat?: string, defaultTime?: ui.Time): ui.UiTimePicker
+      static Create(volume: Prism | null, label?: string, labelSide?: ui.Side, timeFormat?: string, defaultTime?: ui.Time): ui.UiTimePicker | null
 
       /**
        * Creates a UiTimePicker element using default settings.
@@ -69,14 +69,14 @@ declare module 'lumin' {
        *
        * @return The new UiTimePicker node.
        */
-      static Create(volume: Prism, timePickerParams: ui.TimePickerParams): ui.UiTimePicker
+      static Create(volume: Prism | null, timePickerParams: ui.TimePickerParams): ui.UiTimePicker | null
 
       /**
        * The on time changed Event.
        *
        * This event is dispatched whenever the time has been changed.
        */
-      onTimeChangedSub(callback: (arg0: ui.UiEventData, arg1: string, arg2: ui.Time) => void): utils.CallbackID
+      onTimeChangedSub(callback: ((arg0: ui.UiEventData, arg1: string, arg2: ui.Time) => void) | null /* std::function<void(UiEventData,std::string,Time)> */): utils.CallbackID
       onTimeChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -84,7 +84,7 @@ declare module 'lumin' {
        *
        * This event is dispatched when the user has activated a selected time.
        */
-      onTimeConfirmedSub(callback: (arg0: ui.UiEventData, arg1: string, arg2: ui.Time) => void): utils.CallbackID
+      onTimeConfirmedSub(callback: ((arg0: ui.UiEventData, arg1: string, arg2: ui.Time) => void) | null /* std::function<void(UiEventData,std::string,Time)> */): utils.CallbackID
       onTimeConfirmedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -115,7 +115,7 @@ declare module 'lumin' {
        *
        * @param color The color to set
        */
-      setColor(color: [number, number, number, number] /* glm::vec4 */): void
+      setColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the TimePicker component's color
@@ -129,7 +129,7 @@ declare module 'lumin' {
        *
        * @return a pointer to the UiText label
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
 
       /**
        * To show the selected Time eg. 12:30:00 or the format hint eg. hh:mm:ss

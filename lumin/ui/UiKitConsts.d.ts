@@ -35,6 +35,16 @@ declare module 'lumin' {
       kAddressBook,
 
       /**
+       * `value = 228`
+       */
+      kAirplaneMode,
+
+      /**
+       * `value = 229`
+       */
+      kAirplaneModeOff,
+
+      /**
        * `value = 6`
        */
       kAlbumAdd,
@@ -53,6 +63,11 @@ declare module 'lumin' {
        * `value = 9`
        */
       kAnalytics,
+
+      /**
+       * `value = 234`
+       */
+      kAnnotation,
 
       /**
        * `value = 10`
@@ -250,6 +265,21 @@ declare module 'lumin' {
       kCollection,
 
       /**
+       * `value = 245`
+       */
+      kColorDropper,
+
+      /**
+       * `value = 235`
+       */
+      kComment,
+
+      /**
+       * `value = 230`
+       */
+      kComputer,
+
+      /**
        * `value = 45`
        */
       kController,
@@ -330,6 +360,11 @@ declare module 'lumin' {
       kEnter,
 
       /**
+       * `value = 231`
+       */
+      kEraser,
+
+      /**
        * `value = 60`
        */
       kExit,
@@ -385,6 +420,11 @@ declare module 'lumin' {
       kFlagGermany,
 
       /**
+       * `value = 226`
+       */
+      kFlagItaly,
+
+      /**
        * `value = 212`
        */
       kFlagJapan,
@@ -393,6 +433,11 @@ declare module 'lumin' {
        * `value = 213`
        */
       kFlagSouthKorea,
+
+      /**
+       * `value = 227`
+       */
+      kFlagSpain,
 
       /**
        * `value = 214`
@@ -480,6 +525,11 @@ declare module 'lumin' {
       kInfo,
 
       /**
+       * `value = 236`
+       */
+      kJoinCode,
+
+      /**
        * `value = 83`
        */
       kKeyboard,
@@ -505,6 +555,11 @@ declare module 'lumin' {
       kKeyboardNumber,
 
       /**
+       * `value = 237`
+       */
+      kLightPack,
+
+      /**
        * `value = 87`
        */
       kLink,
@@ -518,6 +573,16 @@ declare module 'lumin' {
        * `value = 89`
        */
       kLocalAreaServer,
+
+      /**
+       * `value = 232`
+       */
+      kMarker,
+
+      /**
+       * `value = 233`
+       */
+      kMarkerSize,
 
       /**
        * `value = 90`
@@ -645,6 +710,11 @@ declare module 'lumin' {
       kPersonAdd,
 
       /**
+       * `value = 238`
+       */
+      kPersonalWorld,
+
+      /**
        * `value = 114`
        */
       kPersonBlock,
@@ -733,6 +803,11 @@ declare module 'lumin' {
        * `value = 203`
        */
       kPlaylistShuffleOff,
+
+      /**
+       * `value = 239`
+       */
+      kPointer,
 
       /**
        * `value = 131`
@@ -830,6 +905,16 @@ declare module 'lumin' {
       kSend,
 
       /**
+       * `value = 240`
+       */
+      kSessionAway,
+
+      /**
+       * `value = 241`
+       */
+      kSessionLocal,
+
+      /**
        * `value = 147`
        */
       kSettings,
@@ -838,6 +923,11 @@ declare module 'lumin' {
        * `value = 148`
        */
       kShare,
+
+      /**
+       * `value = 242`
+       */
+      kSharedWorld,
 
       /**
        * `value = 207`
@@ -1055,6 +1145,11 @@ declare module 'lumin' {
       kWifi,
 
       /**
+       * `value = 246`
+       */
+      kWifiAlert,
+
+      /**
        * `value = 188`
        */
       kWifiNoBar,
@@ -1123,6 +1218,16 @@ declare module 'lumin' {
        * `value = 200`
        */
       kWorkspaces,
+
+      /**
+       * `value = 243`
+       */
+      kWorldFeature,
+
+      /**
+       * `value = 244`
+       */
+      kWorldModel,
 
       /**
        * `value = 201`

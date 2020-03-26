@@ -19,7 +19,7 @@ declare module 'lumin' {
      *
      * @return Resource The underlying resource, can be a nullptr.
      */
-    getRenderResource(): Resource
+    getRenderResource(): Resource | null
 
     /**
      * Returns the texture coordinates used by the Quad3dNode.
@@ -33,14 +33,14 @@ declare module 'lumin' {
      * if the resource is not a Texture3dResource, this will have no effect.
      * @param texCoords The coordinates.
      */
-    setTexCoords(texCoords: Array<[number, number, number]> /* std::vector<glm::vec3> */): void
+    setTexCoords(texCoords: Array<[number, number, number] | Float32Array> /* std::vector<glm::vec3> */): void
 
     /**
      * Set the custom size, which is by default one: { 1, 1 }.
      *
      * @param size for the width and height of the Quad3dNode.
      */
-    setSize(size: [number, number] /* glm::vec2 */): void
+    setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
     /**
      * Get the custom size, which is by default one: { 1, 1 }.

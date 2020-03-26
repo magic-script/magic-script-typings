@@ -169,6 +169,26 @@ declare module 'lumin' {
      * `value = 315`
      */
     kHandMesh,
+
+    /**
+     * `value = 350`
+     */
+    kConnectionAccess,
+
+    /**
+     * `value = 351`
+     */
+    kConnectionAudioCaptureStreaming,
+
+    /**
+     * `value = 352`
+     */
+    kConnectionVideoCaptureStreaming,
+
+    /**
+     * `value = 381`
+     */
+    kSessionCapabilityAccess,
   }
 
   /**

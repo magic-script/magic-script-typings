@@ -29,6 +29,6 @@ declare module 'lumin' {
      * @return the FileInfo object or nullptr if out of bounds.
      * @priv none
      */
-    getFileInfo(index: number /* uint32_t */): FileInfo
+    getFileInfo(index: number /* uint32_t */): FileInfo | null
   }
 }

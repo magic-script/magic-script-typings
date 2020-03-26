@@ -1,4 +1,26 @@
 declare module 'lumin' {
+  class ModelResourceCamera {
+    constructor()
+    getLocalTransform(): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    type: ModelResourceCamera.Type;
+    xmag: number /* float */;
+    ymag: number /* float */;
+    aspectRatio: number /* float */;
+    yfov: number /* float */;
+    znear: number /* float */;
+    zfar: number /* float */;
+  }
+  namespace ModelResourceCamera {
+    enum Type {
+
+      /**
+       * `value = 0`
+       */
+      Undefined,
+      Orthographic,
+      Perspective,
+    }
+  }
 
   /**
    * Resource loads a Model and its mesh and textures etc
@@ -21,5 +43,11 @@ declare module 'lumin' {
     * @return The vector of sub mesh names associated with this ModelResource
     */
     getSubMeshNames(): Array<string> /* std::vector<std::string> */
+
+    /**
+     * Gets the list of Cameras that are imported with this model resource.
+     * Only GLTF resource files support Camera information import as of now.
+     */
+    getCameraList(): Array<ModelResourceCamera | null> /* std::vector<ModelResourceCamera*> */
   }
 }

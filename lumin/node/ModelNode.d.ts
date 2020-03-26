@@ -36,7 +36,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    playAnimation(a_ID: bigint /* uint64_t */, a_pAnimationName: string, a_bPaused: boolean, a_uiNumLoops?: number /* uint32_t */): void
+    playAnimation(a_ID: bigint /* uint64_t */, a_pAnimationName: string | null /* char* */, a_bPaused: boolean, a_uiNumLoops?: number /* uint32_t */): void
 
     /**
      * Sets the animation pause state for the current model node.
@@ -97,12 +97,12 @@ declare module 'lumin' {
      * @priv none
      */
     playBlendSetup(a_motionSetID: bigint /* uint64_t */, a_blendSetupID: bigint /* uint64_t */): void
-    blendSetupSetParam(param: string, value: number /* float */): void
-    blendSetupSetParam(param: string, value: boolean): void
-    blendSetupSetParamVec(param: string, value: [number, number] /* glm::vec2 */): void
-    blendSetupSetParamVec(param: string, value: [number, number, number] /* glm::vec3 */): void
-    blendSetupSetParamVec(param: string, value: [number, number, number, number] /* glm::vec4 */): void
-    blendSetupSetParamQuat(param: string, value: [number, number, number, number] /* glm::quat */): void
+    blendSetupSetParam(param: string | null /* char* */, value: number /* float */): void
+    blendSetupSetParam(param: string | null /* char* */, value: boolean): void
+    blendSetupSetParamVec(param: string | null /* char* */, value: [number, number] | Float32Array /* glm::vec2 */): void
+    blendSetupSetParamVec(param: string | null /* char* */, value: [number, number, number] | Float32Array /* glm::vec3 */): void
+    blendSetupSetParamVec(param: string | null /* char* */, value: [number, number, number, number] | Float32Array /* glm::vec4 */): void
+    blendSetupSetParamQuat(param: string | null /* char* */, value: [number, number, number, number] | Float32Array /* glm::quat */): void
 
     /**
      * Sets the texture of a given material by the new texture ID.

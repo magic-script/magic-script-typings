@@ -13,7 +13,7 @@ declare module 'lumin' {
 
       /** Initially, the AABB is empty. */
       constructor()
-      constructor(min: [number, number, number] /* glm::vec3 */, max: [number, number, number] /* glm::vec3 */)
+      constructor(min: [number, number, number] | Float32Array /* glm::vec3 */, max: [number, number, number] | Float32Array /* glm::vec3 */)
 
       /**
        * Get whether the AABB is EMPTY.
@@ -73,12 +73,12 @@ declare module 'lumin' {
       /**
        * Set the minimum coordinate of the bounding box
        */
-      setMin(min: [number, number, number] /* glm::vec3 */): void
+      setMin(min: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Set the maximum coordinate of the bounding box
        */
-      setMax(max: [number, number, number] /* glm::vec3 */): void
+      setMax(max: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Extend this AABB to also enclose the given AABB.
@@ -88,24 +88,24 @@ declare module 'lumin' {
       /**
        * Extend this AABB to enclose the given point.
        */
-      extend(point: [number, number, number] /* glm::vec3 */): void
+      extend(point: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Translate this AABB by the given offset.
        */
-      translate(offset: [number, number, number] /* glm::vec3 */): void
+      translate(offset: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Transform the AABB.  The resulting AABB will be the
        * minimal AABB enclosing the original AABB with the provided
        * transform applied.
        */
-      transform(mat: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): void
+      transform(mat: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */): void
 
       /**
        * Is the point contained within the bounds.
        */
-      contains(point: [number, number, number] /* glm::vec3 */): boolean
+      contains(point: [number, number, number] | Float32Array /* glm::vec3 */): boolean
 
       /**
        * Return a readable string representation of the given AABB object.
@@ -120,7 +120,7 @@ declare module 'lumin' {
        * @param rayDir Direction of the ray. The ray is assumed to be infinite in length.
        * @return Distance to the intersection. To get the intersection point, use rayOri + rayDir * dist.
        */
-      intersect(rayOri: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */): number /* float */
+      intersect(rayOri: [number, number, number] | Float32Array /* glm::vec3 */, rayDir: [number, number, number] | Float32Array /* glm::vec3 */): number | null /* std::optional<float> */
     }
   }
 }

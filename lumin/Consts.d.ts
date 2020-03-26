@@ -461,6 +461,199 @@ declare module 'lumin' {
   }
 
   /**
+   * MediaPlayerInfo Indicates the type of video info event
+   */
+  enum MediaPlayerInfo {
+
+    /**
+     * Unknown Info
+     *
+     * `value = 1`
+     */
+    kUnknown,
+
+    /**
+     * The player was started because it was used as the next player.
+     *
+     * `value = 2`
+     */
+    kStartedAsNext,
+
+    /**
+     * The player just pushed the very first video frame for rendering.
+     *
+     * `value = 3`
+     */
+    kRenderingStart,
+
+    /**
+     * The player just reached EOS and started from beginning (loop).
+     *
+     * `value = 4`
+     */
+    kLooping,
+
+    /**
+     * The player acknowledgement that it is started playing.
+     *
+     * `value = 5`
+     */
+    kStarted,
+
+    /**
+     * The player acknowledgement that it has paused.
+     *
+     * `value = 6`
+     */
+    kPaused,
+
+    /**
+     * The player acknowledgement that it has stopped playing.
+     *
+     * `value = 7`
+     */
+    kStopped,
+
+    /**
+     * Media player is started playback as a result of shared player's request.
+     *
+     * `value = 8`
+     */
+    kStartedBySharedPlayer,
+
+    /**
+     * Media player is paused playback as a result of shared player's request.
+     *
+     * `value = 9`
+     */
+    kPausedBySharedPlayer,
+
+    /**
+     * Media player is seeking as a result of shared player's request.
+     *
+     * `value = 10`
+     */
+    kSeekBySharedPlayer,
+
+    /**
+     * Media player has stopped as a result of shared player's request.
+     *
+     * `value = 11`
+     */
+    kStoppedBySharedPlayer,
+
+    /**
+     * Media player has started sync'ing with other shared players.
+     *
+     * `value = 12`
+     */
+    kSyncStart,
+
+    /**
+     * Media player has completed sync'ing with other shared players.
+     *
+     * `value = 13`
+     */
+    kSyncComplete,
+
+    /**
+     * The video is too complex for the decoder: it can't decode frames fast enough.
+     *
+     * `value = 700`
+     */
+    kVideoTrackLagging,
+
+    /**
+     * Media player is temporarily pausing playback.
+     *
+     * `value = 701`
+     */
+    kBufferingStart,
+
+    /**
+     * Media player is resuming playback after filling buffers.
+     *
+     * `value = 702`
+     */
+    kBufferingEnd,
+
+    /**
+     * Network bandwidth info.
+     *
+     * `value = 703`
+     */
+    kNetworkBandwidth,
+
+    /**
+     * Dash Live stream is Behind Live Window. It may recover soon.
+     *
+     * `value = 704`
+     */
+    kBehindLiveWindow,
+
+    /**
+     * Playback Paused because of Power State Transition.
+     *
+     * `value = 705`
+     */
+    kPowerStatePause,
+
+    /**
+     * Playback Resumed because of Power State Transition.
+     *
+     * `value = 706`
+     */
+    kPowerStateResume,
+
+    /**
+     * Duration in milliseconds of buffered content.
+     *
+     * `value = 707`
+     */
+    kBufferedDuration,
+
+    /**
+     * Bad interleaving means that a media has been improperly interleaved.
+     *
+     * `value = 800`
+     */
+    kBadInterleaving,
+
+    /**
+     * The media is not seekable (e.g live stream).
+     *
+     * `value = 801`
+     */
+    kNotSeekable,
+
+    /**
+     * New media metadata is available.
+     *
+     * `value = 802`
+     */
+    kMetadataUpdate,
+
+    /**
+     * Audio can not be played.
+     *
+     * `value = 804`
+     */
+    kPlayAudioError,
+
+    /**
+     * Video can not be played.
+     *
+     * `value = 805`
+     */
+    kPlayVideoError,
+
+    /**
+     * `value = 900`
+     */
+    kTimedTextError,
+  }
+
+  /**
    * VideoEventType Indicates types of video specific events.
    */
   enum VideoEventType {
@@ -475,6 +668,19 @@ declare module 'lumin' {
     kPrepared,
     kSeekComplete,
     kVideoSizeChanged,
+  }
+
+  /**
+   * MediaSharedType Indicates the type of media sharing
+   */
+  enum MediaSharedType {
+
+    /**
+     * `value = 0`
+     */
+    kNone,
+    kInitiator,
+    kFollower,
   }
 
   /** Event types triggered on the server when a SpriteNode updates. */

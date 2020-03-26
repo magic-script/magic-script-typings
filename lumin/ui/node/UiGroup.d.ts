@@ -12,7 +12,7 @@ declare module 'lumin' {
      * The aggregated UI events:  onHoverEnter, onHoverExit,
      * onPress, onRelease, onActivate.
      */
-    class UiGroup extends UiNode {
+    class UiGroup extends ui.UiNode {
 
       /**
        * Create a new UiGroup
@@ -22,7 +22,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiGroup
+      static Create(prism: Prism | null): ui.UiGroup | null
     }
   }
 }

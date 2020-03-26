@@ -17,7 +17,7 @@ declare module 'lumin' {
       /**
        * The optional localization parameters for the element label.
        */
-      l10nParams: Object;
+      l10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * Side enum specifying which side the label appears on - Default kTop
@@ -54,7 +54,7 @@ declare module 'lumin' {
     /**
      * UiDatePicker - This node represents a datepicker component.
      */
-    class UiDatePicker extends UiNode {
+    class UiDatePicker extends ui.UiNode {
 
       /**
        * Deprecated - please use Create(Prism*, const DatePickerParams&);
@@ -70,7 +70,7 @@ declare module 'lumin' {
        *
        * @return The new UiDatePicker node.
        */
-      static Create(volume: Prism, label?: string, labelSide?: ui.Side, dateFormat?: string, defaultDate?: ui.Date, yearMin?: number /* int */, yearMax?: number /* int */): ui.UiDatePicker
+      static Create(volume: Prism | null, label?: string, labelSide?: ui.Side, dateFormat?: string, defaultDate?: ui.Date, yearMin?: number /* int */, yearMax?: number /* int */): ui.UiDatePicker | null
 
       /**
        * Creates a UiDatePicker element using default settings.
@@ -80,14 +80,14 @@ declare module 'lumin' {
        *
        * @return The new UiDatePicker node.
        */
-      static Create(volume: Prism, datePickerParams: ui.DatePickerParams): ui.UiDatePicker
+      static Create(volume: Prism | null, datePickerParams: ui.DatePickerParams): ui.UiDatePicker | null
 
       /**
        * The on Date changed Event.
        *
        * This event is dispatched whenever a dateComponent has been changed.
        */
-      onDateChangedSub(callback: (arg0: ui.UiEventData, arg1: string, arg2: ui.Date) => void): utils.CallbackID
+      onDateChangedSub(callback: ((arg0: ui.UiEventData, arg1: string, arg2: ui.Date) => void) | null /* std::function<void(UiEventData,std::string,Date)> */): utils.CallbackID
       onDateChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -95,7 +95,7 @@ declare module 'lumin' {
        *
        * This event is dispatched when the user has activated a selected date.
        */
-      onDateConfirmedSub(callback: (arg0: ui.UiEventData, arg1: string, arg2: ui.Date) => void): utils.CallbackID
+      onDateConfirmedSub(callback: ((arg0: ui.UiEventData, arg1: string, arg2: ui.Date) => void) | null /* std::function<void(UiEventData,std::string,Date)> */): utils.CallbackID
       onDateConfirmedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -126,7 +126,7 @@ declare module 'lumin' {
        *
        * @param color The color to set.
        */
-      setColor(color: [number, number, number, number] /* glm::vec4 */): void
+      setColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the DatePicker component's color.
@@ -140,7 +140,7 @@ declare module 'lumin' {
        *
        * @return a pointer to the UiText label
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
 
       /**
        * To show the selected Date eg. 01/01/2019 or the format hint eg. MM/DD/YYYY

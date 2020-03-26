@@ -5,7 +5,7 @@ declare module 'lumin' {
      * UiLinearLayout provides for automatic layout of elements
      * in a horizontal or vertical orientation.
      */
-    class UiLinearLayout extends UiLayout {
+    class UiLinearLayout extends ui.UiLayout {
 
       /**
        * Creates a new UiLinearLayout
@@ -15,7 +15,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiLinearLayout
+      static Create(prism: Prism | null): ui.UiLinearLayout | null
 
       /**
        * Sets the horizontal or vertical orientation of this linear layout.
@@ -57,7 +57,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setDefaultItemPadding(padding: [number, number, number, number] /* glm::vec4 */): void
+      setDefaultItemPadding(padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the default padding for items within the linear layout.
@@ -105,7 +105,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemCount(): number /* int */
+      getItemCount(): number /* unsigned int */
 
       /**
        * Adds an item to the list.
@@ -114,7 +114,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItem(item: TransformNode): void
+      addItem(item: TransformNode | null): void
 
       /**
        * Adds an item to the list.
@@ -131,7 +131,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItem(item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItem(item: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Adds an item to the list.
@@ -149,7 +149,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItem(item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItem(item: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Adds an item to the list at the specific index.
@@ -160,7 +160,7 @@ declare module 'lumin' {
        * @param index index at which item will be placed
        * @param item The node hierarchy to add to the list.
        */
-      addItemAt(index: number /* int */, item: TransformNode): void
+      addItemAt(index: number /* unsigned int */, item: TransformNode | null): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -180,7 +180,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number /* int */, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
+      addItemAt(index: number /* unsigned int */, item: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Adds an item to the list at the specified index.
@@ -201,7 +201,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addItemAt(index: number /* int */, item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment: ui.Alignment): void
+      addItemAt(index: number /* unsigned int */, item: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */, alignment: ui.Alignment): void
 
       /**
        * Sets the item padding at the specified index.
@@ -218,7 +218,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(index: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(index: number /* unsigned int */, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Sets the item padding.
@@ -235,7 +235,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemPadding(item: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
+      setItemPadding(item: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the item padding at the specified index.
@@ -245,7 +245,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemPadding(index: number /* int */): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(index: number /* unsigned int */): [number, number, number, number] | null /* std::optional<glm::vec4> */
 
       /**
        * Gets the item padding.
@@ -255,7 +255,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemPadding(item: TransformNode): [number, number, number, number] /* glm::vec4 */
+      getItemPadding(item: TransformNode | null): [number, number, number, number] | null /* std::optional<glm::vec4> */
 
       /**
        * Sets the item alignment at the specified index.
@@ -272,7 +272,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(index: number /* int */, alignment: ui.Alignment): void
+      setItemAlignment(index: number /* unsigned int */, alignment: ui.Alignment): void
 
       /**
        * Sets the item alignment.
@@ -289,7 +289,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setItemAlignment(item: TransformNode, alignment: ui.Alignment): void
+      setItemAlignment(item: TransformNode | null, alignment: ui.Alignment): void
 
       /**
        * Gets the item alignment at the specified index.
@@ -299,7 +299,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemAlignment(index: number /* int */): ui.Alignment
+      getItemAlignment(index: number /* unsigned int */): ui.Alignment | null /* std::optional<Alignment> */
 
       /**
        * Gets the item alignment.
@@ -309,7 +309,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItemAlignment(item: TransformNode): ui.Alignment
+      getItemAlignment(item: TransformNode | null): ui.Alignment | null /* std::optional<Alignment> */
 
       /**
        * Gets the n'th item in the list.
@@ -321,7 +321,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getItem(index: number /* int */): TransformNode
+      getItem(index: number /* unsigned int */): TransformNode | null
 
       /**
        * Removes the n'th item from the list.
@@ -336,7 +336,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeItem(index: number /* int */): TransformNode
+      removeItem(index: number /* unsigned int */): TransformNode | null
 
       /**
        * Removes the item from the list.
@@ -351,7 +351,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removeItem(item: TransformNode): boolean
+      removeItem(item: TransformNode | null): boolean
 
       /**
        * Replaces the n'th item in the list.
@@ -365,7 +365,7 @@ declare module 'lumin' {
        * @param newItem The pointer for the new new item replacing the Node in the n'th position
        * @return replaced item's pointer.
        */
-      replaceItem(index: number /* int */, newItem: TransformNode): TransformNode
+      replaceItem(index: number /* unsigned int */, newItem: TransformNode | null): TransformNode | null
 
       /**
        * Replaces an existing item in the list with a new item
@@ -377,7 +377,7 @@ declare module 'lumin' {
        * @param newItem The pointer for the new item replacing the oldItem in the list
        * @return true if the newItem has successfully replaced the oldItem
        */
-      replaceItem(oldItem: TransformNode, newItem: TransformNode): boolean
+      replaceItem(oldItem: TransformNode | null, newItem: TransformNode | null): boolean
 
       /**
        * Swap two items in the list.
@@ -388,7 +388,7 @@ declare module 'lumin' {
        * @param index2 a valid index in the list
        * @return true if the two nodes at index1 and index2 have been sucessfully swapped
        */
-      swapItems(index1: number /* int */, index2: number /* int */): boolean
+      swapItems(index1: number /* unsigned int */, index2: number /* unsigned int */): boolean
 
       /**
        * Swap two items in the list.
@@ -400,7 +400,7 @@ declare module 'lumin' {
        * @param item2 The pointer for a valid item in the list
        * @return true if item1 and item2 have successfully been swapped
        */
-      swapItems(item1: TransformNode, item2: TransformNode): boolean
+      swapItems(item1: TransformNode | null, item2: TransformNode | null): boolean
 
       /**
        * Skips invisble items.

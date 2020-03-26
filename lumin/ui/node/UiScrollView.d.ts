@@ -4,7 +4,7 @@ declare module 'lumin' {
     /**
      * UiScrollView - This node represents a scrollable view.
      */
-    class UiScrollView extends UiNode {
+    class UiScrollView extends ui.UiNode {
 
       /**
        * Creates a new UiScrollView
@@ -14,7 +14,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiScrollView
+      static Create(prism: Prism | null): ui.UiScrollView | null
 
       /**
        * The on scroll changed Event.
@@ -23,7 +23,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onScrollChangedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onScrollChangedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onScrollChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -40,7 +40,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollContent(pNode: TransformNode, offset?: [number, number, number] /* glm::vec3 */): void
+      setScrollContent(pNode: TransformNode | null, offset?: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the Node hierarchy used as scrollable content for this UiScrollView.
@@ -49,7 +49,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollContent(): TransformNode
+      getScrollContent(): TransformNode | null
 
       /**
        * Sets the scroll direction for the scroll view (default is vertical).
@@ -94,7 +94,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollOffset(offset: [number, number, number] /* glm::vec3 */): void
+      setScrollOffset(offset: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the scroll content offset.
@@ -173,7 +173,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScrollBar(orientation: ui.Orientation, uiSB: ui.UiScrollBar): void
+      setScrollBar(orientation: ui.Orientation, uiSB: ui.UiScrollBar | null): void
 
       /**
        * Gets the scrollbar accosiated to the indicated orientation.
@@ -183,7 +183,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getScrollBar(orientation: ui.Orientation): ui.UiScrollBar
+      getScrollBar(orientation: ui.Orientation): ui.UiScrollBar | null
 
       /**
        * Sets the vibility mode of any scrollbar(s) attached.

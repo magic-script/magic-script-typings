@@ -71,7 +71,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTextureDims(textureId: number /* int */): [number, number, number] /* glm::ivec3 */
+    getTextureDims(textureId: number /* unsigned int */): [number, number, number] /* glm::ivec3 */
 
     /**
      * Get the IDs of all 2D texture arrays containing the glyphs of the font.

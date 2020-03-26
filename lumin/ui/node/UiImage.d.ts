@@ -5,7 +5,7 @@ declare module 'lumin' {
      * UiImage - This node represents an image that can be aligned and
      * send out standard UI events (onHoverEnter, onHoverExit, etc.)
      */
-    class UiImage extends UiNode {
+    class UiImage extends ui.UiNode {
 
       /**
        * Creates a UiImage element with System icon.
@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, type: ui.SystemIcon, height: number /* float */): ui.UiImage
+      static Create(prism: Prism | null, type: ui.SystemIcon, height: number /* float */): ui.UiImage | null
 
       /**
        * Creates a UiImage element with default settings.
@@ -31,7 +31,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, resID: bigint /* uint64_t */, width: number /* float */, height: number /* float */, useFrame?: boolean): ui.UiImage
+      static Create(prism: Prism | null, resID: bigint /* uint64_t */, width: number /* float */, height: number /* float */, useFrame?: boolean): ui.UiImage | null
 
       /**
        * Creates a UiImage element with default settings.
@@ -46,7 +46,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, pngFile: string, width: number /* float */, height: number /* float */, a_absolutePath?: boolean, useFrame?: boolean): ui.UiImage
+      static Create(prism: Prism | null, pngFile: string, width: number /* float */, height: number /* float */, a_absolutePath?: boolean, useFrame?: boolean): ui.UiImage | null
 
       /**
        * Gets the texture resource for the system icon.
@@ -58,7 +58,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static GetSystemIconResource(prism: Prism, icon: ui.SystemIcon): bigint /* uint64_t */
+      static GetSystemIconResource(prism: Prism | null, icon: ui.SystemIcon): bigint /* uint64_t */
 
       /**
        * Sets the render resource used for the image.
@@ -108,7 +108,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTexCoords(texCoords: Array<[number, number]> /* std::vector<glm::vec2> */): void
+      setTexCoords(texCoords: Array<[number, number] | Float32Array> /* std::vector<glm::vec2> */): void
 
       /**
        * Returns the texture coordinates used by the UiImage.
@@ -126,7 +126,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setColor(color: [number, number, number, number] /* glm::vec4 */): void
+      setColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the image color.
@@ -162,7 +162,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSize(size: [number, number] /* glm::vec2 */): void
+      setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the image size.

@@ -21,7 +21,7 @@ declare module 'lumin' {
      * Sets the light color.
      * @param a_color The required light color.
      */
-    setColor(a_color: [number, number, number] /* glm::vec3 */): void
+    setColor(a_color: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Gets the light color.
@@ -89,7 +89,7 @@ declare module 'lumin' {
      * @param a_on Flags whether or not the light will use the headpose world transform.
      * @param a_offset `default = glm.vec4()`<br/> The offset to apply when using the headpose matrix.
      */
-    setUseHeadPose(a_on: boolean, a_offset?: [number, number, number, number] /* glm::vec4 */): void
+    setUseHeadPose(a_on: boolean, a_offset?: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
     /**
      * Gets the head pose status of the light.

@@ -10,7 +10,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function GetPosition(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): [number, number, number] /* glm::vec3 */
+    function GetPosition(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */): [number, number, number] /* glm::vec3 */
 
     /**
      * Returns the rotation component of a transform matrix. The transform is assumed to be a view
@@ -21,7 +21,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function GetRotation(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): [number, number, number, number] /* glm::quat */
+    function GetRotation(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */): [number, number, number, number] /* glm::quat */
 
     /**
      * Returns the scale component of a transform matrix. The transform is assumed to be a view
@@ -32,7 +32,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function GetScale(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): [number, number, number] /* glm::vec3 */
+    function GetScale(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */): [number, number, number] /* glm::vec3 */
 
     /**
      * Returns a copy of a transform matrix, with the position component replaced by a new position.
@@ -44,7 +44,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function SetPosition(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_position: [number, number, number] /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function SetPosition(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_position: [number, number, number] | Float32Array /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Returns a copy of a transform matrix, with the rotation component replaced by a new rotation.
@@ -56,7 +56,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function SetRotation(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_rotation: [number, number, number, number] /* glm::quat */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function SetRotation(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_rotation: [number, number, number, number] | Float32Array /* glm::quat */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Returns a copy of a transform matrix, with the scale component replaced by a new scale. The
@@ -68,7 +68,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function SetScale(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_scale: [number, number, number] /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function SetScale(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_scale: [number, number, number] | Float32Array /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Creates a view transform matrix from position, rotation, and scale components.
@@ -80,7 +80,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function GetViewTransform(a_position: [number, number, number] /* glm::vec3 */, a_rotation: [number, number, number, number] /* glm::quat */, a_scale: [number, number, number] /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function GetViewTransform(a_position: [number, number, number] | Float32Array /* glm::vec3 */, a_rotation: [number, number, number, number] | Float32Array /* glm::quat */, a_scale: [number, number, number] | Float32Array /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Moves a transform by a given position, and returns the new transform. The transform is assumed
@@ -92,7 +92,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function ApplyPosition(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_position: [number, number, number] /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function ApplyPosition(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_position: [number, number, number] | Float32Array /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Moves a transform by a given position, and returns the new transform. The move is in the local
@@ -106,7 +106,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function ApplyPositionLocal(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_position: [number, number, number] /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function ApplyPositionLocal(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_position: [number, number, number] | Float32Array /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Applies a rotation to a transform, and returns the new transform. The transform is assumed
@@ -118,7 +118,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function ApplyRotation(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_rotation: [number, number, number, number] /* glm::quat */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function ApplyRotation(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_rotation: [number, number, number, number] | Float32Array /* glm::quat */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Applies a rotation to a transform, and returns the new transform. The rotation is in the local
@@ -132,7 +132,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function ApplyRotationLocal(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_rotation: [number, number, number, number] /* glm::quat */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function ApplyRotationLocal(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_rotation: [number, number, number, number] | Float32Array /* glm::quat */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Scales a transform by a given amount, and returns the new transform. The transform is assumed
@@ -144,6 +144,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    function ApplyScale(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */, a_scale: [number, number, number] /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    function ApplyScale(a_transform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */, a_scale: [number, number, number] | Float32Array /* glm::vec3 */): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
   }
 }

@@ -117,7 +117,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getTabWidth(): number /* int */
+    getTabWidth(): number /* unsigned int */
 
     /**
      * Set the number of spaces to use for '\t' characters in
@@ -128,7 +128,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setTabWidth(width: number /* int */): void
+    setTabWidth(width: number /* unsigned int */): void
 
     /**
      * Get the height of the tallest glyph, which is provided
@@ -204,7 +204,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getMaxGlyphsPerLine(): number /* int */
+    getMaxGlyphsPerLine(): number /* unsigned int */
 
     /**
      * If 0, the default, no limit will be enforced on the line
@@ -215,7 +215,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setMaxGlyphsPerLine(max: number /* int */): void
+    setMaxGlyphsPerLine(max: number /* unsigned int */): void
 
     /**
      * Get the text justification, which is kStart by default.
@@ -250,7 +250,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setFixedBounds(pData?: text.FixedBoundsData): void
+    setFixedBounds(pData?: text.FixedBoundsData | null): void
 
     /**
      * @return the fixed bounds of the text node or else nullptr
@@ -259,7 +259,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getFixedBounds(): text.FixedBoundsData
+    getFixedBounds(): text.FixedBoundsData | null
 
     /**
      * Get the font resource or nullptr if no font has been set.
@@ -268,7 +268,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getFontResource(): Font2dResource
+    getFontResource(): Font2dResource | null
 
     /**
      * Get the text currently set to be rendered by this node.

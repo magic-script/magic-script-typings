@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/styles.743b2c78.css">
 
 
-<link rel="preload" href="/styles.df2f83d9.js" as="script">
+<link rel="preload" href="/styles.db6d1577.js" as="script">
 
-<link rel="preload" href="/runtime~main.9da128c8.js" as="script">
+<link rel="preload" href="/runtime~main.3edb5df3.js" as="script">
 
-<link rel="preload" href="/main.c53afd97.js" as="script">
+<link rel="preload" href="/main.a1c4d1ff.js" as="script">
 
-<link rel="preload" href="/1.4921e441.js" as="script">
+<link rel="preload" href="/1.203f7306.js" as="script">
 
-<link rel="preload" href="/2.fcb2d241.js" as="script">
+<link rel="preload" href="/2.0e46f443.js" as="script">
 
-<link rel="preload" href="/1be78505.85cd4cf6.js" as="script">
+<link rel="preload" href="/1be78505.5bc823fa.js" as="script">
 
-<link rel="preload" href="/427.056c6c90.js" as="script">
+<link rel="preload" href="/427.6e8228f8.js" as="script">
 
-<link rel="preload" href="/20ac7829.35612d9d.js" as="script">
+<link rel="preload" href="/20ac7829.492f4af3.js" as="script">
 
-<link rel="preload" href="/17896441.9bc7bd0c.js" as="script">
+<link rel="preload" href="/17896441.55df7119.js" as="script">
 
-<link rel="preload" href="/1ad04f6c.9600a26f.js" as="script">
+<link rel="preload" href="/1ad04f6c.8fb45f99.js" as="script">
 
 </head>
 <body>
@@ -44,25 +44,25 @@
 See <a href="http://docs.libuv.org/en/v1.x/check.html">http://docs.libuv.org/en/v1.x/check.html</a></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="hierarchy"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#hierarchy" title="Direct link to heading">#</a>Hierarchy</h2><ul><li><p><a href="/docs/classes/_uv_.handle">Handle</a></p><p>↳ <strong>Check</strong></p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="constructors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#constructors" title="Direct link to heading">#</a>Constructors</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="constructor"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#constructor" title="Direct link to heading">#</a>constructor</h3><p>+ <strong>new Check</strong>(): <em><a href="/docs/classes/_uv_.check">Check</a></em></p><p>Create and initialize a new wrapped <code>uv_check_t</code> handle.</p><p><strong>Returns:</strong> <em><a href="/docs/classes/_uv_.check">Check</a></em></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="methods"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#methods" title="Direct link to heading">#</a>Methods</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="close"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#close" title="Direct link to heading">#</a>close</h3><p>▸ <strong>close</strong>(<code>onClose?</code>: function): <em>void</em></p><p><em>Inherited from <a href="/docs/classes/_uv_.handle">Handle</a>.<a href="/docs/classes/_uv_.handle#close">close</a></em></p><p>Request handle to be closed.</p><p>Wrapper for <code>uv_close</code>.</p><p><strong>Parameters:</strong></p><p>▪<code>Optional</code>  <strong>onClose</strong>: <em>function</em></p><p>▸ (): <em>void</em></p><p><strong>Returns:</strong> <em>void</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="hasref"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#hasref" title="Direct link to heading">#</a>hasRef</h3><p>▸ <strong>hasRef</strong>(): <em>boolean</em></p><p><em>Inherited from <a href="/docs/classes/_uv_.handle">Handle</a>.<a href="/docs/classes/_uv_.handle#hasref">hasRef</a></em></p><p>Returns <code>true</code> if the handle referenced, <code>false</code> otherwise.</p><p>Wrapper for <code>uv_has_ref</code>.</p><p><strong>Returns:</strong> <em>boolean</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="ref"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#ref" title="Direct link to heading">#</a>ref</h3><p>▸ <strong>ref</strong>(): <em>void</em></p><p><em>Inherited from <a href="/docs/classes/_uv_.handle">Handle</a>.<a href="/docs/classes/_uv_.handle#ref">ref</a></em></p><p>Reference the handle.</p><p>Wrapper for <code>uv_ref</code>.</p><p><strong>Returns:</strong> <em>void</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="start"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#start" title="Direct link to heading">#</a>start</h3><p>▸ <strong>start</strong>(<code>onCheck</code>: function): <em>void</em></p><p>Check handles will run the given callback once per loop iteration, right after polling for i/o.</p><p>Wrapper for <code>uv_check_start</code>.</p><p><strong>Parameters:</strong></p><p>▪ <strong>onCheck</strong>: <em>function</em></p><p>▸ (): <em>void</em></p><p><strong>Returns:</strong> <em>void</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="stop"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#stop" title="Direct link to heading">#</a>stop</h3><p>▸ <strong>stop</strong>(): <em>void</em></p><p>Stop the handle, the callback will no longer be called.</p><p>Wrapper for <code>uv_check_stop</code>.</p><p><strong>Returns:</strong> <em>void</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="unref"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#unref" title="Direct link to heading">#</a>unref</h3><p>▸ <strong>unref</strong>(): <em>void</em></p><p><em>Inherited from <a href="/docs/classes/_uv_.handle">Handle</a>.<a href="/docs/classes/_uv_.handle#unref">unref</a></em></p><p>Un-reference the handle.</p><p>Wrapper for <code>uv_unref</code>.</p><p><strong>Returns:</strong> <em>void</em></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/classes/_ssl_.ssl"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« ssl.Ssl</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/classes/_uv_.connect"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">uv.Connect »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#hierarchy" class="contents__link">Hierarchy</a></li><li><a href="#constructors" class="contents__link">Constructors</a><ul><li><a href="#constructor" class="contents__link">constructor</a></li></ul></li><li><a href="#methods" class="contents__link">Methods</a><ul><li><a href="#close" class="contents__link">close</a></li><li><a href="#hasref" class="contents__link">hasRef</a></li><li><a href="#ref" class="contents__link">ref</a></li><li><a href="#start" class="contents__link">start</a></li><li><a href="#stop" class="contents__link">stop</a></li><li><a href="#unref" class="contents__link">unref</a></li></ul></li></ul></div></div></div></div></div></main></div>
 </div>
 
-<script src="/styles.df2f83d9.js"></script>
+<script src="/styles.db6d1577.js"></script>
 
-<script src="/runtime~main.9da128c8.js"></script>
+<script src="/runtime~main.3edb5df3.js"></script>
 
-<script src="/main.c53afd97.js"></script>
+<script src="/main.a1c4d1ff.js"></script>
 
-<script src="/1.4921e441.js"></script>
+<script src="/1.203f7306.js"></script>
 
-<script src="/2.fcb2d241.js"></script>
+<script src="/2.0e46f443.js"></script>
 
-<script src="/1be78505.85cd4cf6.js"></script>
+<script src="/1be78505.5bc823fa.js"></script>
 
-<script src="/427.056c6c90.js"></script>
+<script src="/427.6e8228f8.js"></script>
 
-<script src="/20ac7829.35612d9d.js"></script>
+<script src="/20ac7829.492f4af3.js"></script>
 
-<script src="/17896441.9bc7bd0c.js"></script>
+<script src="/17896441.55df7119.js"></script>
 
-<script src="/1ad04f6c.9600a26f.js"></script>
+<script src="/1ad04f6c.8fb45f99.js"></script>
 
 
 </body>

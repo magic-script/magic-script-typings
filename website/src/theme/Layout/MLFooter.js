@@ -3,22 +3,15 @@
 // See LICENSE file in the project root for full license information.
 
 import React from "react";
-import ScriptLoader from "react-script-loader-hoc";
-
-function createMarkup() {
-  return {
-    __html: window.startCookieControl.load({
-      apiKey: "bd100834001edf98bd5458ce61e48ca552418f9c",
-      footerSelector: "#foot-boi"
-    })
-  };
-}
-
-const MLFooter = ({ scriptsLoadedSuccessfully }) => {
-  if (!scriptsLoadedSuccessfully) return null;
-  return <section id="foot-boi" dangerouslySetInnerHTML={createMarkup()} />;
+const options = {
+  apiKey: "bd100834001edf98bd5458ce61e48ca552418f9c",
+  footerSelector: "#foot-boi"
 };
+const MLFooter = () => (
+  <>
+    <section id="foot-boi" />
+    <script src="https://magicleap.com/assets/js/cookie-control-js/cookie-control-vanilla.min.js" onLoad={() => window.startCookieControl.load(JSON.stringify(options))} />
+  </>
+);
+export default MLFooter;
 
-export default ScriptLoader(
-  "https://magicleap.com/assets/js/cookie-control-js/cookie-control-vanilla.min.js"
-)(MLFooter);

@@ -7,11 +7,23 @@ const options = {
   apiKey: "bd100834001edf98bd5458ce61e48ca552418f9c",
   footerSelector: "#foot-boi"
 };
-const MLFooter = () => (
-  <>
-    <section id="foot-boi" />
-    <script src="https://magicleap.com/assets/js/cookie-control-js/cookie-control-vanilla.min.js" onLoad={() => window.startCookieControl.load(JSON.stringify(options))} />
-  </>
-);
+
+let loaded = false;
+function loadCookieControl() {
+  if (loaded) return;
+  loaded = true;
+  const script = document.createElement('script');
+  script.setAttribute('src', 'https://magicleap.com/assets/js/cookie-control-js/cookie-control-vanilla.min.js')
+  script.onload = () => {
+    window.startCookieControl.load(options)
+  }
+  document.body.appendChild(script);
+}
+
+const MLFooter = () => {
+  loadCookieControl();
+  return <section id="foot-boi" />
+}
+
 export default MLFooter;
 

@@ -16,25 +16,23 @@
 <link rel="stylesheet" href="/styles.743b2c78.css">
 
 
-<link rel="preload" href="/styles.db6d1577.js" as="script">
+<link rel="preload" href="/styles.dca6b1ec.js" as="script">
 
-<link rel="preload" href="/runtime~main.3edb5df3.js" as="script">
+<link rel="preload" href="/runtime~main.eb1e5638.js" as="script">
 
-<link rel="preload" href="/main.a1c4d1ff.js" as="script">
+<link rel="preload" href="/main.e4f5d544.js" as="script">
 
-<link rel="preload" href="/1.203f7306.js" as="script">
+<link rel="preload" href="/1.6c20fbcf.js" as="script">
 
-<link rel="preload" href="/2.0e46f443.js" as="script">
+<link rel="preload" href="/1be78505.b724e13b.js" as="script">
 
-<link rel="preload" href="/1be78505.5bc823fa.js" as="script">
+<link rel="preload" href="/426.2073e24e.js" as="script">
 
-<link rel="preload" href="/427.6e8228f8.js" as="script">
+<link rel="preload" href="/20ac7829.66eea59f.js" as="script">
 
-<link rel="preload" href="/20ac7829.492f4af3.js" as="script">
+<link rel="preload" href="/17896441.a6570949.js" as="script">
 
-<link rel="preload" href="/17896441.55df7119.js" as="script">
-
-<link rel="preload" href="/7bb5fd00.058fef53.js" as="script">
+<link rel="preload" href="/7bb5fd00.91ec18de.js" as="script">
 
 </head>
 <body>
@@ -44,28 +42,26 @@
 Read outgoing encrypted data to be sent directly to server</p><p><strong>Returns:</strong> <em>ArrayBuffer</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="biowrite"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#biowrite" title="Direct link to heading">#</a>bioWrite</h3><p>▸ <strong>bioWrite</strong>(<code>data</code>: ArrayBuffer | string): <em>number</em></p><p>Expose <code>BIO_write</code> and forward return value to JS.
 Write incoming encrypted data to our SSL resource.</p><p><strong>Parameters:</strong></p><table><thead><tr><th>Name</th><th>Type</th></tr></thead><tbody><tr><td><code>data</code></td><td>ArrayBuffer | string</td></tr></tbody></table><p><strong>Returns:</strong> <em>number</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="dohandshake"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#dohandshake" title="Direct link to heading">#</a>doHandshake</h3><p>▸ <strong>doHandshake</strong>(): <em>number</em></p><p>Expose <code>SSL_do_handshake</code> and forward return value to JS.</p><p><strong>Returns:</strong> <em>number</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="geterror"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#geterror" title="Direct link to heading">#</a>getError</h3><p>▸ <strong>getError</strong>(<code>returnCode</code>: number): <em>string</em></p><p>Use <code>SSL_get_error</code> to convert an error code into a string.</p><p><strong>Parameters:</strong></p><table><thead><tr><th>Name</th><th>Type</th></tr></thead><tbody><tr><td><code>returnCode</code></td><td>number</td></tr></tbody></table><p><strong>Returns:</strong> <em>string</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="getverify"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#getverify" title="Direct link to heading">#</a>getVerify</h3><p>▸ <strong>getVerify</strong>(): <em>boolean</em></p><p>Expose <code>SSL_get_verify_result</code> and forward return value to JS.</p><p><strong>Returns:</strong> <em>boolean</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sethostname"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sethostname" title="Direct link to heading">#</a>setHostname</h3><p>▸ <strong>setHostname</strong>(<code>name</code>: string): <em>void</em></p><p>Expose <code>SSL_set_tlsext_host_name</code> to set SNI hostname .</p><p><strong>Parameters:</strong></p><table><thead><tr><th>Name</th><th>Type</th></tr></thead><tbody><tr><td><code>name</code></td><td>string</td></tr></tbody></table><p><strong>Returns:</strong> <em>void</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sslread"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sslread" title="Direct link to heading">#</a>sslRead</h3><p>▸ <strong>sslRead</strong>(<code>buf</code>: ArrayBuffer): <em>number</em></p><p>Expose <code>SSL_read</code> and forward return value to JS.
 Read unencrypted data out of the SSL resource into an array buffer</p><p><strong>Parameters:</strong></p><table><thead><tr><th>Name</th><th>Type</th></tr></thead><tbody><tr><td><code>buf</code></td><td>ArrayBuffer</td></tr></tbody></table><p><strong>Returns:</strong> <em>number</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sslshutdown"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sslshutdown" title="Direct link to heading">#</a>sslShutdown</h3><p>▸ <strong>sslShutdown</strong>(): <em>number</em></p><p>Expose <code>SSL_shutdown</code> and forward return value to JS.</p><p><strong>Returns:</strong> <em>number</em></p><hr><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sslwrite"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sslwrite" title="Direct link to heading">#</a>sslWrite</h3><p>▸ <strong>sslWrite</strong>(<code>data</code>: ArrayBuffer | string): <em>number</em></p><p>Expose <code>SSL_write</code> and forward return value to JS.
-Write unencrypted data out of the SSL resource.</p><p><strong>Parameters:</strong></p><table><thead><tr><th>Name</th><th>Type</th></tr></thead><tbody><tr><td><code>data</code></td><td>ArrayBuffer | string</td></tr></tbody></table><p><strong>Returns:</strong> <em>number</em></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/classes/_lumin_.worldraycastresult"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« lumin.WorldRayCastResult</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/classes/_uv_.check"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">uv.Check »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#hierarchy" class="contents__link">Hierarchy</a></li><li><a href="#methods" class="contents__link">Methods</a><ul><li><a href="#bioread" class="contents__link">bioRead</a></li><li><a href="#biowrite" class="contents__link">bioWrite</a></li><li><a href="#dohandshake" class="contents__link">doHandshake</a></li><li><a href="#geterror" class="contents__link">getError</a></li><li><a href="#getverify" class="contents__link">getVerify</a></li><li><a href="#sethostname" class="contents__link">setHostname</a></li><li><a href="#sslread" class="contents__link">sslRead</a></li><li><a href="#sslshutdown" class="contents__link">sslShutdown</a></li><li><a href="#sslwrite" class="contents__link">sslWrite</a></li></ul></li></ul></div></div></div></div></div></main></div>
+Write unencrypted data out of the SSL resource.</p><p><strong>Parameters:</strong></p><table><thead><tr><th>Name</th><th>Type</th></tr></thead><tbody><tr><td><code>data</code></td><td>ArrayBuffer | string</td></tr></tbody></table><p><strong>Returns:</strong> <em>number</em></p></div></article><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/classes/_lumin_.worldraycastresult"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« lumin.WorldRayCastResult</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/docs/classes/_uv_.check"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">uv.Check »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#hierarchy" class="contents__link">Hierarchy</a></li><li><a href="#methods" class="contents__link">Methods</a><ul><li><a href="#bioread" class="contents__link">bioRead</a></li><li><a href="#biowrite" class="contents__link">bioWrite</a></li><li><a href="#dohandshake" class="contents__link">doHandshake</a></li><li><a href="#geterror" class="contents__link">getError</a></li><li><a href="#getverify" class="contents__link">getVerify</a></li><li><a href="#sethostname" class="contents__link">setHostname</a></li><li><a href="#sslread" class="contents__link">sslRead</a></li><li><a href="#sslshutdown" class="contents__link">sslShutdown</a></li><li><a href="#sslwrite" class="contents__link">sslWrite</a></li></ul></li></ul></div></div></div></div></div></main></div><section id="foot-boi"></section><script src="https://magicleap.com/assets/js/cookie-control-js/cookie-control-vanilla.min.js"></script>
 </div>
 
-<script src="/styles.db6d1577.js"></script>
+<script src="/styles.dca6b1ec.js"></script>
 
-<script src="/runtime~main.3edb5df3.js"></script>
+<script src="/runtime~main.eb1e5638.js"></script>
 
-<script src="/main.a1c4d1ff.js"></script>
+<script src="/main.e4f5d544.js"></script>
 
-<script src="/1.203f7306.js"></script>
+<script src="/1.6c20fbcf.js"></script>
 
-<script src="/2.0e46f443.js"></script>
+<script src="/1be78505.b724e13b.js"></script>
 
-<script src="/1be78505.5bc823fa.js"></script>
+<script src="/426.2073e24e.js"></script>
 
-<script src="/427.6e8228f8.js"></script>
+<script src="/20ac7829.66eea59f.js"></script>
 
-<script src="/20ac7829.492f4af3.js"></script>
+<script src="/17896441.a6570949.js"></script>
 
-<script src="/17896441.55df7119.js"></script>
-
-<script src="/7bb5fd00.058fef53.js"></script>
+<script src="/7bb5fd00.91ec18de.js"></script>
 
 
 </body>

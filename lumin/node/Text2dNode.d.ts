@@ -208,8 +208,10 @@ declare module 'lumin' {
 
     /**
      * If 0, the default, no limit will be enforced on the line
-     * length.  If positive, line breaks will be added so this
-     * limit is not exceeded.
+     * length.
+     * If positive and wrapping is enabled, line breaks will be added
+     * so this limit is not exceeded. If wrapping is not enabled,
+     * text will be truncated, instead.
      *
      * @param max Number of glyphs before a line break.
      *

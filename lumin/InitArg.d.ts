@@ -15,6 +15,23 @@ declare module 'lumin' {
     getUri(): string
 
     /**
+     * Gets the map Args.
+     *
+     * @return ArgMap a map of the arguments.
+     * @priv none
+     */
+    getArgs(): { [key:string]: string } /* std::unordered_map<std::string, std::string> */
+
+    /**
+     * Gets the Arg with the specified key.
+     *
+     * @param a_key The key of the arg pair to find and return.
+     * @return Out parameter, the value of the Arg.
+     * @priv none
+     */
+    getArg(a_key: string): string | null /* std::optional<std::string> */
+
+    /**
      * Get the count of FileInfo objects in this argument.
      *
      * @return the count of FileInfo objects.

@@ -466,32 +466,11 @@ declare module 'lumin' {
   enum MediaPlayerInfo {
 
     /**
-     * Unknown Info
-     *
-     * `value = 1`
-     */
-    kUnknown,
-
-    /**
-     * The player was started because it was used as the next player.
-     *
-     * `value = 2`
-     */
-    kStartedAsNext,
-
-    /**
      * The player just pushed the very first video frame for rendering.
      *
      * `value = 3`
      */
     kRenderingStart,
-
-    /**
-     * The player just reached EOS and started from beginning (loop).
-     *
-     * `value = 4`
-     */
-    kLooping,
 
     /**
      * The player acknowledgement that it is started playing.
@@ -557,13 +536,6 @@ declare module 'lumin' {
     kSyncComplete,
 
     /**
-     * The video is too complex for the decoder: it can't decode frames fast enough.
-     *
-     * `value = 700`
-     */
-    kVideoTrackLagging,
-
-    /**
      * Media player is temporarily pausing playback.
      *
      * `value = 701`
@@ -571,86 +543,9 @@ declare module 'lumin' {
     kBufferingStart,
 
     /**
-     * Media player is resuming playback after filling buffers.
-     *
      * `value = 702`
      */
     kBufferingEnd,
-
-    /**
-     * Network bandwidth info.
-     *
-     * `value = 703`
-     */
-    kNetworkBandwidth,
-
-    /**
-     * Dash Live stream is Behind Live Window. It may recover soon.
-     *
-     * `value = 704`
-     */
-    kBehindLiveWindow,
-
-    /**
-     * Playback Paused because of Power State Transition.
-     *
-     * `value = 705`
-     */
-    kPowerStatePause,
-
-    /**
-     * Playback Resumed because of Power State Transition.
-     *
-     * `value = 706`
-     */
-    kPowerStateResume,
-
-    /**
-     * Duration in milliseconds of buffered content.
-     *
-     * `value = 707`
-     */
-    kBufferedDuration,
-
-    /**
-     * Bad interleaving means that a media has been improperly interleaved.
-     *
-     * `value = 800`
-     */
-    kBadInterleaving,
-
-    /**
-     * The media is not seekable (e.g live stream).
-     *
-     * `value = 801`
-     */
-    kNotSeekable,
-
-    /**
-     * New media metadata is available.
-     *
-     * `value = 802`
-     */
-    kMetadataUpdate,
-
-    /**
-     * Audio can not be played.
-     *
-     * `value = 804`
-     */
-    kPlayAudioError,
-
-    /**
-     * Video can not be played.
-     *
-     * `value = 805`
-     */
-    kPlayVideoError,
-
-    /**
-     * `value = 900`
-     */
-    kTimedTextError,
   }
 
   /**

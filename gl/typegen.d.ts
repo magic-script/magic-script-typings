@@ -1,0 +1,10 @@
+type binary = ArrayBuffer | ArrayBufferView;
+type cstring = string;
+type f32 = number;
+type f64 = number;
+type i32 = number;
+type i64 = number;
+type integer = number;
+type ptr = any;
+type u32 = number;
+type u64 = number;

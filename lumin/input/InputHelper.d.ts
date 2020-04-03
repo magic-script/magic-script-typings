@@ -3,6 +3,25 @@ declare module 'lumin' {
     constructor()
 
     /**
+     * Returns The DeviceID for the primary control device.
+     * @return The DeviceID of the primary Control, if no devices then be invalid returned.
+     */
+    getPrimaryDeviceId(): number /* int32_t */
+
+    /**
+     * Returns The DeviceInfo for the primary control device.
+     * @return a DeviceInfo instance, if no devices then DeviceInfo.deviceID will be invalid
+     */
+    getPrimaryDevice(): InputHelper.DeviceInfo
+
+    /**
+     * Returns Checks if the DeviceId provided is the Primary DeviceId.
+     * @param deviceID the ID of the device to check.
+     * @return true if the deviceId is that of the Primary device otherwise false is returned.
+     */
+    isPrimaryDevice(deviceID: number /* int32_t */): boolean
+
+    /**
      * Returns infomation about the devices that have been used with this client
      * @return a vector containing the active device information
      */
@@ -13,7 +32,7 @@ declare module 'lumin' {
      * @param deviceID the ID of the device
      * @return the type of the device
      */
-    getDeviceType(deviceID: number /* int32_t */): input.EventSource
+    getDeviceType(deviceID: number /* int32_t */): input.EventSource | null /* std::optional<input::EventSource> */
 
     /**
      * Returns whether a given key has been pressed on ANY active device this frame (Note that
@@ -41,14 +60,14 @@ declare module 'lumin' {
      * @param keycode the code of the key to test
      * @return the list of devices that have the given key pressed
      */
-    getDevicesButtonPressed(keycode: input.KeyCodes): Array<number> /* std::vector<int32_t> */
+    getDevicesButtonPressed(keycode: input.KeyCodes): Array<number> | null /* std::optional<std::vector<int32_t>> */
 
     /**
      * Returns a map of all keys pressed this frame, mapped by their devices
      * @return a map of devices to lists of keys that are currently pressed
      *        on that device
      */
-    getPressedButtons(): Object
+    getPressedButtons(): { [key:number]: Array<input.KeyCodes> } | null /* std::optional<std::unordered_map<int32_t, std::vector<input::KeyCodes>>> */
 
     /**
      * Returns whether a given key is currently down on ANY active device (Note that a button
@@ -73,14 +92,14 @@ declare module 'lumin' {
      * @param keycode the code of the key to test
      * @return the list of devices that have the given key down
      */
-    getDevicesButtonDown(keycode: input.KeyCodes): Array<number> /* std::vector<int32_t> */
+    getDevicesButtonDown(keycode: input.KeyCodes): Array<number> | null /* std::optional<std::vector<int32_t>> */
 
     /**
      * Returns a map of all keys down this frame, mapped by their devices
      * @return a map of devices to lists of keys that are currently down on
      *        that device
      */
-    getDownButtons(): Object
+    getDownButtons(): { [key:number]: Array<input.KeyCodes> } | null /* std::optional<std::unordered_map<int32_t, std::vector<input::KeyCodes>>> */
 
     /**
      * Returns whether a given key has been released on ANY active device this frame
@@ -102,13 +121,13 @@ declare module 'lumin' {
       * @param keycode the code of the key to test
       * @return the list of devices that have the given key released
       */
-    getDevicesButtonReleased(keycode: input.KeyCodes): Array<number> /* std::vector<int32_t> */
+    getDevicesButtonReleased(keycode: input.KeyCodes): Array<number> | null /* std::optional<std::vector<int32_t>> */
 
     /**
      * Returns a map of all keys released this frame, mapped by their devices
      * @return a map of devices to lists of keys released on that device
      */
-    getReleasedButtons(): Object
+    getReleasedButtons(): { [key:number]: Array<input.KeyCodes> } | null /* std::optional<std::unordered_map<int32_t, std::vector<input::KeyCodes>>> */
 
     /**
      * Checks if the given device's orientation has been updated this frame
@@ -123,7 +142,7 @@ declare module 'lumin' {
      * @param deviceID the ID of the device to retreive the orientation for
      * @return the given device's orientation (in world coordinates)
      */
-    getDeviceOrientation(deviceID: number /* int32_t */): [number, number, number, number] /* glm::quat */
+    getDeviceOrientation(deviceID: number /* int32_t */): [number, number, number, number] | null /* std::optional<glm::quat> */
 
     /**
      * Checks if the given device's position has been updated this frame
@@ -138,7 +157,7 @@ declare module 'lumin' {
      * @param deviceID the ID of the device to retreive the position for
      * @return the given device's position (in world coordinates)
      */
-    getDevicePosition(deviceID: number /* int32_t */): [number, number, number] /* glm::vec3 */
+    getDevicePosition(deviceID: number /* int32_t */): [number, number, number] | null /* std::optional<glm::vec3> */
 
     /**
      * Returns whether ANY active device's touchpad is currently being used
@@ -157,14 +176,14 @@ declare module 'lumin' {
      * @param deviceID the ID of the device to retreive the touchpad position for
      * @return the returned touchpad information
      */
-    getTouchPadPosition(deviceID: number /* int32_t */): InputHelper.TouchPadState
+    getTouchPadPosition(deviceID: number /* int32_t */): InputHelper.TouchPadState | null /* std::optional<InputHelper::TouchPadState> */
 
     /**
      * Returns the touchpad touch information for all active devices that have touchpad information
      * @return touchPadInfo the list of device touchpad information
      * return true if at least one device with touchpad information exists, false otherwise
      */
-    getTouchPadPosition(): Array<InputHelper.TouchPadState> /* std::vector<InputHelper::TouchPadState> */
+    getTouchPadPosition(): Array<InputHelper.TouchPadState> | null /* std::optional<std::vector<InputHelper::TouchPadState>> */
 
     /**
      * Returns whether ANY device is receiving (or has received) a given gesture this frame
@@ -181,7 +200,7 @@ declare module 'lumin' {
      * @return a list of devices currently performing the given gesture
      *         any device, false otherwise
      */
-    getDevicesGesturePerformed(gesture: input.GestureType): Array<number> /* std::vector<int32_t> */
+    getDevicesGesturePerformed(gesture: input.GestureType): Array<number> | null /* std::optional<std::vector<int32_t>> */
 
     /**
      * Returns a list of all gestures performed (or being performed) on a given device this frame
@@ -189,13 +208,13 @@ declare module 'lumin' {
      * @return the list of gestures performed (or being performed) this frame
      *         device this frame, false otherwise
      */
-    getPerformedGesture(deviceID: number /* int32_t */): Array<input.GestureType> /* std::vector<input::GestureType> */
+    getPerformedGesture(deviceID: number /* int32_t */): Array<input.GestureType> | null /* std::optional<std::vector<input::GestureType>> */
 
     /**
      * Returns a map of the gestures performed by all the active devices, mapped by their device IDs
      * @return the map of devices and gestures
      */
-    getAllPerformedGestures(): Object
+    getAllPerformedGestures(): { [key:number]: Array<input.GestureType> } | null /* std::optional<std::unordered_map<int32_t, std::vector<input::GestureType>>> */
 
     /**
      * Returns whether new data for a gesture has been received this frame
@@ -213,7 +232,7 @@ declare module 'lumin' {
      * @return a list of the gesture data that has been received since it was last
      *        updated
      */
-    getGestureData(deviceID: number /* int32_t */, gesture: input.GestureType): Array<InputHelper.GestureState> /* std::vector<InputHelper::GestureState> */
+    getGestureData(deviceID: number /* int32_t */, gesture: input.GestureType): Array<InputHelper.GestureState> | null /* std::optional<std::vector<InputHelper::GestureState>> */
 
     /**
      * Returns whether or not new eye tracking information has been received this frame
@@ -231,7 +250,7 @@ declare module 'lumin' {
      *         - isBlinking true if the user has their left eye closed, false otherwise
      *         null otherwise
      */
-    getLeftEyeInformation(): InputHelper.EyeInfo
+    getLeftEyeInformation(): InputHelper.EyeInfo | null /* std::optional<EyeInfo> */
 
     /**
      * Returns the data associated with the right eye (in world coordinates)
@@ -243,7 +262,7 @@ declare module 'lumin' {
      *         - isBlinking true if the user has their right eye closed, false otherwise
      *         null otherwise
      */
-    getRightEyeInformation(): InputHelper.EyeInfo
+    getRightEyeInformation(): InputHelper.EyeInfo | null /* std::optional<EyeInfo> */
 
     /**
      * Returns the data associated with the fixation of the eyes (in world coordinates)
@@ -251,7 +270,7 @@ declare module 'lumin' {
      *         by the eye tracking system(ranges from 0.0 to 1.0f), null if eye fixation
                data doesn't exist
      */
-    getEyeFixationPosition(): InputHelper.EyeFixationPosition
+    getEyeFixationPosition(): InputHelper.EyeFixationPosition | null /* std::optional<EyeFixationPosition> */
 
     /**
      * Returns data about potential eye stress
@@ -265,7 +284,7 @@ declare module 'lumin' {
      *           violation occurs
      *         null thoerwise
      */
-    getEyeStressInformation(): InputHelper.EyeStressInfo
+    getEyeStressInformation(): InputHelper.EyeStressInfo | null /* std::optional<EyeStressInfo> */
 
     /**
      * Returns whether or not new left hand tracking information has been received this frame
@@ -278,7 +297,7 @@ declare module 'lumin' {
      * Returns the left hand tracking information
      * @return the left hand tracking information
      */
-    getLeftHandState(): InputHelper.HandState
+    getLeftHandState(): InputHelper.HandState | null /* std::optional<InputHelper::HandState> */
 
     /**
      * Returns whether or not new right hand tracking information has been received this frame
@@ -291,7 +310,7 @@ declare module 'lumin' {
      * Returns the right hand tracking information
      * @return the right hand tracking information
      */
-    getRightHandState(): InputHelper.HandState
+    getRightHandState(): InputHelper.HandState | null /* std::optional<InputHelper::HandState> */
   }
   namespace InputHelper {
 

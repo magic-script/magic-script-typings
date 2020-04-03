@@ -21,7 +21,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setResource(a_spriteRes: TexturePackResource): void
+    setResource(a_spriteRes: TexturePackResource | null): void
 
     /**
      * Accessor function to retrieve the current PlaybackOrder.

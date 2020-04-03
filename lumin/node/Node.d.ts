@@ -13,7 +13,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    static Delete(node: Node): void
+    static Delete(node: Node | null): void
 
     /**
      * Gets the Node Id of this Node
@@ -46,7 +46,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    addChild(a_pChild: Node): boolean
+    addChild(a_pChild: Node | null): boolean
 
     /**
      * Set the bone in the parent by name that this child will attach to
@@ -76,7 +76,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    removeChild(a_pChild: Node): void
+    removeChild(a_pChild: Node | null): void
 
     /**
      * Gets the n'th child from this Node's children
@@ -86,7 +86,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getChild(a_iIndex: number /* int */): Node
+    getChild(a_iIndex: number /* unsigned int */): Node | null
 
     /**
      * Gets the number of immediate children this Node has
@@ -95,7 +95,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getChildCount(): number /* int */
+    getChildCount(): number /* unsigned int */
 
     /**
      * Get the local AABB of this Node only, not including children,
@@ -142,7 +142,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    findChild(name: string): Node
+    findChild(name: string): Node | null
 
     /**
      * Does a breadth-first search of the child node hierarchy
@@ -155,7 +155,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    findChildren(a_type: number /* int32_t */, a_bExactType?: boolean, a_bIncludeSelf?: boolean): Array<Node> /* std::vector<Node*> */
+    findChildren(a_type: number /* int32_t */, a_bExactType?: boolean, a_bIncludeSelf?: boolean): Array<Node | null> /* std::vector<Node*> */
 
     /**
      * Searches up the tree parentage for the specific Node type.
@@ -166,7 +166,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    findParent(a_type: number /* int32_t */, a_bExactType?: boolean): Node
+    findParent(a_type: number /* int32_t */, a_bExactType?: boolean): Node | null
 
     /**
      * Gets this Node's immediate parent
@@ -175,7 +175,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getParent(): Node
+    getParent(): Node | null
 
     /**
      * Determines if this Node is within the subtree.
@@ -184,7 +184,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    isInSubtree(pParent: Node): boolean
+    isInSubtree(pParent: Node | null): boolean
 
     /**
      * Gets the root node of the node tree this node belongs to.
@@ -193,7 +193,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRoot(): RootNode
+    getRoot(): RootNode | null
 
     /**
      * Sets the visibility state of the node.

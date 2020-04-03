@@ -4,7 +4,7 @@ declare module 'lumin' {
     /**
      * UiScrollBar - This node represents a scrollable view.
      */
-    class UiScrollBar extends UiNode {
+    class UiScrollBar extends ui.UiNode {
 
       /**
        * Creates a UiScrollBar element with default settings.
@@ -16,7 +16,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width: number /* float */, height?: number /* float */): ui.UiScrollBar
+      static Create(prism: Prism | null, width: number /* float */, height?: number /* float */): ui.UiScrollBar | null
 
       /**
        * Sets the size of the thumb.

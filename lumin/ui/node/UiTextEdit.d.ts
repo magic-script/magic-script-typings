@@ -6,7 +6,7 @@ declare module 'lumin' {
     /**
      * UiTextEdit provides for text input and editing.
      */
-    class UiTextEdit extends UiNode {
+    class UiTextEdit extends ui.UiNode {
 
       /**
        * Creates a UiTextEdit element with default settings.
@@ -19,7 +19,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, text: string, width: number /* float */, height: number /* float */): ui.UiTextEdit
+      static Create(prism: Prism | null, text: string, width: number /* float */, height: number /* float */): ui.UiTextEdit | null
 
       /**
        * The on text changed Event.
@@ -28,7 +28,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onTextChangedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onTextChangedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onTextChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -39,7 +39,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCharacterEnteredSub(callback: (arg0: ui.UiEventData, arg1: number /* char32_t */) => void): utils.CallbackID
+      onCharacterEnteredSub(callback: ((arg0: ui.UiEventData, arg1: number) => void) | null /* std::function<void(UiEventData, char32_t)> */): utils.CallbackID
       onCharacterEnteredUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -50,7 +50,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onKeyboardEventSub(callback: (arg0: ui.UiEventData, arg1: ui.KeyboardEvent.EventData) => void): utils.CallbackID
+      onKeyboardEventSub(callback: ((arg0: ui.UiEventData, arg1: ui.KeyboardEvent.EventData) => void) | null /* std::function<void(UiEventData,KeyboardEvent::EventData)> */): utils.CallbackID
       onKeyboardEventUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -105,7 +105,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getFontResource(): Font2dResource
+      getFontResource(): Font2dResource | null
 
       /**
        * Sets the RGBA color of the rendered text.
@@ -114,7 +114,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setTextColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the RGBA color of the rendered text.
@@ -135,7 +135,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextPadding(padding: [number, number, number, number] /* glm::vec4 */): void
+      setTextPadding(padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the content padding of the 4 sides.
@@ -336,7 +336,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSelectedText(startIndex: number /* int */, endIndex: number /* int */): void
+      setSelectedText(startIndex: number /* unsigned int */, endIndex: number /* unsigned int */): void
 
       /**
        * Selects all characters in the text edit.
@@ -389,7 +389,7 @@ declare module 'lumin' {
        * @param key The localization key.  Use empty string, "", to unset the key.
        * @param params `default = []`<br/> The list of optional localization parameters.
        */
-      setLocalizedHintText(key: string, params?: Object): void
+      setLocalizedHintText(key: string, params?: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, utils::LocaleHelper::Param> */): void
 
       /**
        * Gets the text color of the hint.
@@ -405,7 +405,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setHintTextColor(color: [number, number, number, number] /* glm::vec4 */): void
+      setHintTextColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Creates and shows the scrollbar in the vertical direction.

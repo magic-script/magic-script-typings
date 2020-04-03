@@ -25,7 +25,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getDefaultUiFont2d(style?: resources.FontStyle, weight?: resources.FontWeight): Font2dResource
+      getDefaultUiFont2d(style?: resources.FontStyle, weight?: resources.FontWeight): Font2dResource | null
 
       /**
        * Get the Magic Leap default UI font, which is called Lomino.
@@ -34,7 +34,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getDefaultUiFont2d(styleAndWeight: resources.Preloaded.StyleAndWeight): Font2dResource
+      getDefaultUiFont2d(styleAndWeight: resources.Preloaded.StyleAndWeight): Font2dResource | null
     }
     namespace Preloaded {
       class StyleAndWeight {

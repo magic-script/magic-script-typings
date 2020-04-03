@@ -7,6 +7,16 @@ declare module 'lumin' {
     constructor()
 
     /**
+     * Returns the ray origin, in prism coordinates.
+     */
+    getRayOrigin(): [number, number, number] /* glm::vec3 */
+
+    /**
+     * Returns the ray direction, in prism coordinates.
+     */
+    getRayDirection(): [number, number, number] /* glm::vec3 */
+
+    /**
      * Returns the point in prism coordinates where the ray intersection occurred
      *
      * @priv none
@@ -46,7 +56,7 @@ declare module 'lumin' {
     /**
      * Factory
      */
-    static Create(): RaycastNodeResult
+    static Create(): RaycastNodeResult | null /* std::shared_ptr<RaycastNodeResult> */
 
     /**
      * Returns the ID of the Node that was intersected by a raycast

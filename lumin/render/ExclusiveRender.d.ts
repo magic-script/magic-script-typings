@@ -5,10 +5,10 @@ declare module 'lumin' {
    */
   class ExclusiveRender {
     constructor()
-    beginFrame(params: ExclusiveRender.FrameParams, outFrameHandle: ExclusiveRender.FrameInfo): number /* int32_t */
-    endFrame(frame: ExclusiveRender.FrameInfo, signalComplete?: boolean): number /* int32_t */
+    beginFrame(params: ExclusiveRender.FrameParams, outFrameHandle: ExclusiveRender.FrameInfo | null): number /* int32_t */
+    endFrame(frame: ExclusiveRender.FrameInfo | null, signalComplete?: boolean): number /* int32_t */
     setFrameTimingHint(timing: ExclusiveRender.FrameTimingHint): number /* int32_t */
-    signalRenderComplete(frame: ExclusiveRender.FrameInfo, camIdx: number /* uint32_t */): number /* int32_t */
+    signalRenderComplete(frame: ExclusiveRender.FrameInfo | null, camIdx: number /* uint32_t */): number /* int32_t */
   }
   namespace ExclusiveRender {
     enum Format {

@@ -21,7 +21,7 @@ declare module 'lumin' {
      * @return Prism - The prism
      * @priv none
      */
-    requestNewPrism(a_size: [number, number, number] /* glm::vec3 */): Prism
+    requestNewPrism(a_size: [number, number, number] | Float32Array /* glm::vec3 */): Prism | null
 
     /**
      * Stops persisting a given Prism's content across reboots
@@ -37,7 +37,7 @@ declare module 'lumin' {
      * @param a_prism the Prism
      * @return whether this call was successful or not
      */
-    disableContentPersistence(a_prism: Prism): boolean
+    disableContentPersistence(a_prism: Prism | null): boolean
 
     /**
      * Gets the Content Persistence ID assigned to the Prism
@@ -49,7 +49,7 @@ declare module 'lumin' {
      * @param a_prism the Prism
      * @return the Content Persistence ID assigned to this Prism
      */
-    getContentPersistenceId(a_prism: Prism): string
+    getContentPersistenceId(a_prism: Prism | null): string | null /* std::optional<std::string> */
 
     /**
      * Sets a body dynamic with the given parameters to the Prism
@@ -62,7 +62,7 @@ declare module 'lumin' {
      * @param a_bodyDynamicType the body dynamic type to set to the prism
      * @return whether this call was successful or not
      */
-    setBodyDynamic(a_prism: Prism, a_bodyDynamicType: BodyDynamicType): boolean
+    setBodyDynamic(a_prism: Prism | null, a_bodyDynamicType: BodyDynamicType): boolean
 
     /**
      * Retrieves the current body dynamic type for the Prism
@@ -72,7 +72,7 @@ declare module 'lumin' {
      * @param a_prism the Prism
      * @return the body dynamic of the Prism
      */
-    getBodyDynamic(a_prism: Prism): BodyDynamicType
+    getBodyDynamic(a_prism: Prism | null): BodyDynamicType | null /* std::optional<BodyDynamicType> */
 
     /**
      * Sets the scale mode for the Prism
@@ -84,7 +84,7 @@ declare module 'lumin' {
      * @param a_scaleModeType the scale mode to set to the Prism
      * @return whether this call was successful or not
      */
-    setScaleMode(a_prism: Prism, a_scaleModeType: ScaleModeType): boolean
+    setScaleMode(a_prism: Prism | null, a_scaleModeType: ScaleModeType): boolean
 
     /**
      * Gets the scale mode of the Prism
@@ -94,7 +94,7 @@ declare module 'lumin' {
      * @param a_prism the Prism
      * @return the scale mode retrieved from the Prism
      */
-    getScaleMode(a_prism: Prism): ScaleModeType
+    getScaleMode(a_prism: Prism | null): ScaleModeType | null /* std::optional<ScaleModeType> */
 
     /**
      * Sets whether this Prism should snap while being moved or not
@@ -106,7 +106,7 @@ declare module 'lumin' {
      * @param a_snap whether this Prism should snap or not
      * @return whether this call was successful or not
      */
-    setSnap(a_prism: Prism, a_snap: boolean): boolean
+    setSnap(a_prism: Prism | null, a_snap: boolean): boolean
 
     /**
      * Gets whether this Prism should snap while being moved or not
@@ -116,7 +116,7 @@ declare module 'lumin' {
      * @param a_prism the Prism
      * @return whether this Prism is snapping or not
      */
-    getSnap(a_prism: Prism): boolean
+    getSnap(a_prism: Prism | null): boolean | null /* std::optional<bool> */
 
     /**
      * Sets the physical size range for the Prism
@@ -128,7 +128,7 @@ declare module 'lumin' {
      * @param a_max the maximum physical size this prism can be, in meters
      * @return whether this call was successful or not
      */
-    setPhysicalSizeRange(a_prism: Prism, a_min: number /* float */, a_max: number /* float */): boolean
+    setPhysicalSizeRange(a_prism: Prism | null, a_min: number /* float */, a_max: number /* float */): boolean
 
     /**
      * Gets the physical size range of the Prism
@@ -139,7 +139,7 @@ declare module 'lumin' {
      * @return pair of minimum/maximum phisical size this prism can be, in meters
      *         or null if call was not successful
      */
-    getPhysicalSizeRange(a_prism: Prism): [number, number] /* glm::vec2 */
+    getPhysicalSizeRange(a_prism: Prism | null): [number, number] | null /* std::optional<glm::vec2> */
 
     /**
      * Sets whether this Prism can be directly manipulated while being moved or not
@@ -152,7 +152,7 @@ declare module 'lumin' {
      * @param a_enableDirectManipulation Whether this prism can be directly manipulated or not.
      * @return whether this call was successful or not
      */
-    setDirectManipulationEnabled(a_prism: Prism, a_enableDirectManipulation: boolean): boolean
+    setDirectManipulationEnabled(a_prism: Prism | null, a_enableDirectManipulation: boolean): boolean
 
     /**
      * Gets the bool for whether direct manipulation is enabled or not for this Prism
@@ -162,7 +162,7 @@ declare module 'lumin' {
      * @param a_prism the Prism
      * @return whether direct manipulation is enabled for the prism
      */
-    getDirectManipulationEnabled(a_prism: Prism): boolean
+    getDirectManipulationEnabled(a_prism: Prism | null): boolean | null /* std::optional<bool> */
 
     /**
      * Set whether the given prism participates in collisions when prisms are in motion.
@@ -175,7 +175,7 @@ declare module 'lumin' {
      * @param a_enableCollisions Collisions will be enabled if true; disabled if false.
      * @return True if this call was successful; false otherwise.
      */
-    setCollisionsEnabled(a_prism: Prism, a_enableCollisions: boolean): boolean
+    setCollisionsEnabled(a_prism: Prism | null, a_enableCollisions: boolean): boolean
 
     /**
      * Get whether the given prism participates in collisions when prisms are in motion.
@@ -184,7 +184,7 @@ declare module 'lumin' {
      * @return True if collisions are enabled
      * for the given prism; false otherwise.
      */
-    getCollisionsEnabled(a_prism: Prism): boolean
+    getCollisionsEnabled(a_prism: Prism | null): boolean | null /* std::optional<bool> */
 
     /**
      * Set the components of the transform of the collision box attached to the given prism.
@@ -203,7 +203,7 @@ declare module 'lumin' {
      * @return True if the call was successful and the collision-box transform was set;
      * false otherwise, in which case additional information will be posted in the log.
      */
-    setCollisionBoxTransform(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */, a_rotation: [number, number, number, number] /* glm::quat */, a_scale: [number, number, number] /* glm::vec3 */): boolean
+    setCollisionBoxTransform(a_prism: Prism | null, a_position: [number, number, number] | Float32Array /* glm::vec3 */, a_rotation: [number, number, number, number] | Float32Array /* glm::quat */, a_scale: [number, number, number] | Float32Array /* glm::vec3 */): boolean
 
     /**
      * Get the transform of the collision box attached to the given prism.
@@ -212,7 +212,7 @@ declare module 'lumin' {
      * @return transform of collision box attached to the given prism
      *         or null if call was not successful
      */
-    getCollisionBoxTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    getCollisionBoxTransform(a_prism: Prism | null): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | null /* std::optional<glm::mat4> */
 
     /**
      * Start a full screen exclusive mode for a landscape app which does its own rendering full screen
@@ -221,7 +221,7 @@ declare module 'lumin' {
      * @param clientVol owner volume id
      * @return exclusive mode renderer
      */
-    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void, clientVol: bigint /* uint64_t */): ExclusiveRender
+    startExclusiveModeGL(options: ExclusiveRender.ClientOptions, ctxGl: void | null /* void* */, clientVol: bigint /* uint64_t */): ExclusiveRender | null
 
     /**
      * Stop full screen exclusive mode
@@ -238,6 +238,6 @@ declare module 'lumin' {
     onDeviceReality(): void
     onDeviceStandby(): void
     updateLoop(a_fDelta: number /* float */): boolean
-    eventListener(a_pEvent: ServerEvent): boolean
+    eventListener(a_pEvent: ServerEvent | null): boolean
   }
 }

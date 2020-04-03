@@ -5,6 +5,9 @@ declare module 'lumin' {
     constructor()
     constructor(d0: bigint /* uint64_t */, d1: bigint /* uint64_t */)
     equals(other: PCFId): boolean
+    static FromString(pcfIdString: string): PCFId
+    toString(): string
+    getData(): bigint /* uint64_t */
   }
 
   /**

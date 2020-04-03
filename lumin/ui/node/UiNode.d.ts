@@ -84,7 +84,7 @@ declare module 'lumin' {
       /**
        * @priv none
        */
-      getUiNode(): ui.UiNode
+      getUiNode(): ui.UiNode | null
     }
 
     /**
@@ -101,7 +101,7 @@ declare module 'lumin' {
        * @priv none
        */
       // For now, manually disable this since it breaks typescript.
-      //static Create(prism: Prism): ui.UiNode
+      //static Create(prism: Prism | null): ui.UiNode | null
 
       /**
        * Requests focus for a UiNode.
@@ -110,7 +110,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static RequestFocus(pUiNode: ui.UiNode): void
+      static RequestFocus(pUiNode: ui.UiNode | null): void
 
       /**
        * The on hover enter Event.
@@ -119,7 +119,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onHoverEnterSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onHoverEnterSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onHoverEnterUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -129,7 +129,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onHoverExitSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onHoverExitSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onHoverExitUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -139,7 +139,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onHoverMoveSub(callback: (arg0: ui.UiEventData, arg1: [number, number, number] /* glm::vec3 */) => void): utils.CallbackID
+      onHoverMoveSub(callback: ((arg0: ui.UiEventData, arg1: [number, number, number] | Float32Array) => void) | null /* std::function<void(UiEventData,glm::vec3)> */): utils.CallbackID
       onHoverMoveUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -149,7 +149,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onActivateSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onActivateSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onActivateUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -159,7 +159,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onLongPressSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onLongPressSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onLongPressUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -169,7 +169,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onEnabledSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onEnabledSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onEnabledUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -179,7 +179,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onDisabledSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onDisabledSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onDisabledUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -189,7 +189,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onFocusGainedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onFocusGainedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onFocusGainedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -199,7 +199,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onFocusLostSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onFocusLostSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onFocusLostUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -209,7 +209,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onFocusInputSub(callback: (arg0: ui.UiEventData, arg1: InputEventData) => void): utils.CallbackID
+      onFocusInputSub(callback: ((arg0: ui.UiEventData, arg1: InputEventData) => void) | null /* std::function<void(UiEventData,InputEventData)> */): utils.CallbackID
       onFocusInputUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -219,7 +219,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onUpdateSub(callback: (arg0: ui.UiEventData, arg1: number /* float */) => void): utils.CallbackID
+      onUpdateSub(callback: ((arg0: ui.UiEventData, arg1: number) => void) | null /* std::function<void(UiEventData, float)> */): utils.CallbackID
       onUpdateUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -229,7 +229,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onDeletedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onDeletedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onDeletedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -239,7 +239,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onPressedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onPressedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onPressedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -249,7 +249,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onReleasedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onReleasedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onReleasedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -460,7 +460,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getEventSound(event: ui.SoundEvent): Sound
+      getEventSound(event: ui.SoundEvent): Sound | null
 
       /**
        * Clears the sound for the specifiec event.

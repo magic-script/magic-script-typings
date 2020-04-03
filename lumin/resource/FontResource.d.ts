@@ -26,7 +26,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getFontSize(): number /* int */
+    getFontSize(): number /* unsigned int */
 
     /**
      * Get the list of character codes for which glyphs have been loaded.

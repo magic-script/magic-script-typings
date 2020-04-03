@@ -11,7 +11,7 @@ declare module 'lumin' {
      *  Set a web view client using 'setWebViewClient'.
      *  UiWebView will notify errors or statechanges.
      */
-    class UiWebView extends UiNode {
+    class UiWebView extends ui.UiNode {
       constructor()
 
       /**
@@ -29,7 +29,7 @@ declare module 'lumin' {
        * @param size the width and height of the WebView
        * @return the new UiWebView node
        */
-      static Create(volume: Prism, size: [number, number] /* glm::vec2 */): ui.UiWebView
+      static Create(volume: Prism | null, size: [number, number] | Float32Array /* glm::vec2 */): ui.UiWebView | null
 
       /**
        * Set the URL to load in the webview
@@ -100,7 +100,7 @@ declare module 'lumin' {
        *
        * @return a pointer to UiWebViewDataManager.
        */
-      getDataManagerInstance(): ui.UiWebViewDataManager
+      getDataManagerInstance(): ui.UiWebViewDataManager | null /* std::shared_ptr<UiWebViewDataManager> */
 
       /**
        * Set WebViewClient to receive events from webview.
@@ -111,7 +111,7 @@ declare module 'lumin' {
        *
        * @param client a pointer to UiWebViewClient instance.
        */
-      setWebViewClient(client: ui.UiWebViewClient): void
+      setWebViewClient(client: ui.UiWebViewClient | null): void
 
       /**
        * Set the speech to text property for virtual keyboard
@@ -132,6 +132,26 @@ declare module 'lumin' {
        * @return a boolean value for the property
        */
       getVirtualKeyboardSpeechToText(): boolean
+
+      /**
+       * Set the disallow http request flag for the webview
+       *
+       * Enable/Disable the disallow http request for webview
+       * By default this flag is disabled.
+       *
+       * @param enabled a boolean value for enabling/disabling the ability to perform http requests
+       */
+      setDisallowHttpRequest(enabled: boolean): void
+
+      /**
+       * Retrieves the disallow http request flag for the webview
+       *
+       * Return the disallow http request flag for the webview
+       * By default this flag is disabled
+       *
+       * @return a boolean value for the property
+       */
+      getDisallowHttpRequest(): boolean
     }
   }
 }

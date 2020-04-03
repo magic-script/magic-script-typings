@@ -19,7 +19,7 @@ declare module 'lumin' {
        * @param path is the relative path to the resource
        * @return the path to the resource if found
        */
-      getLocalizedPath(path: string): string
+      getLocalizedPath(path: string): string | null /* std::optional<std::string> */
 
       /**
        * Initialize the locale helper. This or setLocale must be called before other methods are available.
@@ -33,7 +33,7 @@ declare module 'lumin' {
        * @param arguments a vector of strings - argument names will be numbers (e.g. the first element will be named "0", the second will be "1" etc.)
        * @return the formatted output string
        */
-      formatUTF8String(input: string, arguments: Array<string> /* std::vector<std::string> */): string
+      formatUTF8String(input: string, arguments: Array<string> /* std::vector<std::string> */): string | null /* std::optional<std::string> */
 
       /**
        * Format a given string with the given string arguments (only string replacements are possible with this method)
@@ -41,7 +41,7 @@ declare module 'lumin' {
        * @param arguments a map of argument names to argument string values
        * @return the formatted output string
        */
-      formatUTF8String(input: string, arguments: Object): string
+      formatUTF8String(input: string, arguments: { [key:string]: string } | Map<string, string> /* std::unordered_map<std::string, std::string> */): string | null /* std::optional<std::string> */
 
       /**
        * Format a given string with the given Params
@@ -49,7 +49,7 @@ declare module 'lumin' {
        * @param arguments a vector of Params - argument names will be numbers (e.g. the first element will be named "0", the second will be "1" etc.)
        * @return the formatted output string
        */
-      formatUTF8String(input: string, arguments: Array<utils.LocaleHelper.Param> /* std::vector<Param> */): string
+      formatUTF8String(input: string, arguments: Array<utils.LocaleHelper.Param> /* std::vector<Param> */): string | null /* std::optional<std::string> */
 
       /**
        * Format a given string with the given Params
@@ -57,14 +57,14 @@ declare module 'lumin' {
        * @param arguments a map of argument names to Params
        * @return the formatted output string
        */
-      formatUTF8String(input: string, arguments: Object): string
+      formatUTF8String(input: string, arguments: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, Param> */): string | null /* std::optional<std::string> */
 
       /**
        * Retrieves a string from the locale data with the given key and performs no formatting
        * @param key the key of the requested localized string
        * @return the requested string
        */
-      getUTF8String(key: string): string
+      getUTF8String(key: string): string | null /* std::optional<std::string> */
 
       /**
        * Locate a string in the locale data with the given key and format it with the given string arguments (only string replacements are possible with this method)
@@ -72,7 +72,7 @@ declare module 'lumin' {
        * @param arguments a vector of strings - argument names will be numbers (e.g. the first element will be named "0", the second will be "1" etc.)
        * @return the formatted output string
        */
-      getFormattedUTF8String(key: string, arguments: Array<string> /* std::vector<std::string> */): string
+      getFormattedUTF8String(key: string, arguments: Array<string> /* std::vector<std::string> */): string | null /* std::optional<std::string> */
 
       /**
        * Locate a string in the locale data with the given key and format it with the given string arguments (only string replacements are possible with this method)
@@ -80,7 +80,7 @@ declare module 'lumin' {
        * @param arguments a map of argument names to argument string values
        * @return the formatted output string
        */
-      getFormattedUTF8String(key: string, arguments: Object): string
+      getFormattedUTF8String(key: string, arguments: { [key:string]: string } | Map<string, string> /* std::unordered_map<std::string, std::string> */): string | null /* std::optional<std::string> */
 
       /**
        * Locate a string in the locale data with the given key and format it with the given Params
@@ -88,7 +88,7 @@ declare module 'lumin' {
        * @param arguments a vector of Params - argument names will be numbers (e.g. the first element will be named "0", the second will be "1" etc.)
        * @return the formatted output string
        */
-      getFormattedUTF8String(key: string, arguments: Array<utils.LocaleHelper.Param> /* std::vector<Param> */): string
+      getFormattedUTF8String(key: string, arguments: Array<utils.LocaleHelper.Param> /* std::vector<Param> */): string | null /* std::optional<std::string> */
 
       /**
        * Locate a string in the locale data with the given key and format it with the given Params
@@ -96,7 +96,7 @@ declare module 'lumin' {
        * @param arguments a map of argument names to Params
        * @return the formatted output string
        */
-      getFormattedUTF8String(key: string, arguments: Object): string
+      getFormattedUTF8String(key: string, arguments: { [key:string]: utils.LocaleHelper.Param } | Map<string, utils.LocaleHelper.Param> /* std::unordered_map<std::string, Param> */): string | null /* std::optional<std::string> */
 
       /**
        * Change the locale of the locale helper
@@ -121,9 +121,9 @@ declare module 'lumin' {
         constructor(intParam: bigint /* int64_t */)
         constructor(doubleParam: number /* double */)
         getParamType(): utils.LocaleHelper.Param.ParamType
-        getString(): string
-        getInt(): bigint /* int64_t */
-        getDouble(): number /* double */
+        getString(): string | null /* std::optional<std::string> */
+        getInt(): bigint | null /* std::optional<int64_t> */
+        getDouble(): number | null /* std::optional<double> */
         set(strParam: string): void
         set(intParam: bigint /* int64_t */): void
         set(doubleParam: number /* double */): void

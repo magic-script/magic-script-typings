@@ -4,7 +4,7 @@ declare module 'lumin' {
     /**
      * UiToggleGroup - This node represents a group of standard, clickable toggles.
      */
-    class UiToggleGroup extends UiNode {
+    class UiToggleGroup extends ui.UiNode {
 
       /**
        * Creates a UiToggleGroup element using default settings.
@@ -16,7 +16,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, allowMultipleOn?: boolean, allowAllOff?: boolean): ui.UiToggleGroup
+      static Create(prism: Prism | null, allowMultipleOn?: boolean, allowAllOff?: boolean): ui.UiToggleGroup | null
 
       /**
        * Returns toggles switched ON in the toggle group.
@@ -25,7 +25,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTogglesOn(): Array<ui.UiToggle> /* std::vector<UiToggle*> */
+      getTogglesOn(): Array<ui.UiToggle | null> /* std::vector<UiToggle*> */
 
       /**
        * Returns toggles switched OFF in the toggle group.
@@ -34,7 +34,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getTogglesOff(): Array<ui.UiToggle> /* std::vector<UiToggle*> */
+      getTogglesOff(): Array<ui.UiToggle | null> /* std::vector<UiToggle*> */
 
       /**
        * Returns whether any of the toggles are ON.

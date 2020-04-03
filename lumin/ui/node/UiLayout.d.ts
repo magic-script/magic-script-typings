@@ -7,7 +7,7 @@ declare module 'lumin' {
      * UI Layout classes generally provide layout of content within
      * a planar XY rectangular area.
      */
-    class UiLayout extends UiNode {
+    class UiLayout extends ui.UiNode {
 
       /**
        * Sets the requested size of the layout's rectangular area in
@@ -28,7 +28,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSize(size: [number, number] /* glm::vec2 */): void
+      setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the requested size of the layout area.

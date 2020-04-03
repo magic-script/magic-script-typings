@@ -92,7 +92,7 @@ declare module 'lumin' {
      * @param sound A Sound object to apply it's properties to this AudioNode.
      * @param autoDestroy `default = false`<br/> Default is false and currently ignored.
      */
-    createWithSound(sound: Sound, autoDestroy?: boolean): void
+    createWithSound(sound: Sound | null, autoDestroy?: boolean): void
 
     /**
      * Similar to createWithSound with a difference that the sound has already
@@ -108,7 +108,7 @@ declare module 'lumin' {
      * @param sound A Sound object to apply it's properties to this AudioNode.
      *
      */
-    setSoundProperties(sound: Sound): void
+    setSoundProperties(sound: Sound | null): void
 
     /**
      * AudioNode can have multiple AudioResource(s) associated with it.
@@ -192,7 +192,7 @@ declare module 'lumin' {
      *
      * @return Number of resources.
      */
-    getNumResources(): number /* int */
+    getNumResources(): number /* unsigned int */
 
     /**
      * Gets the list of already associated resource IDs
@@ -395,7 +395,7 @@ declare module 'lumin' {
      * @param sound Sound instance that contains audio properties for the created AudioNode.
      * @return True if the audio node was successfully created, added to the scene and set to delete on play end.
      */
-    static playSound(prism: Prism, sound: Sound): boolean
+    static playSound(prism: Prism | null, sound: Sound | null): boolean
 
     /**
      * Fire and forget API.
@@ -405,7 +405,7 @@ declare module 'lumin' {
      * @param pos Position to set to the created AudioNode.
      * @return True if the audio node was successfully created, added to the scene and set to delete on play end.
      */
-    static playSound(prism: Prism, sound: Sound, pos: [number, number, number] /* glm::vec3 */): boolean
+    static playSound(prism: Prism | null, sound: Sound | null, pos: [number, number, number] | Float32Array /* glm::vec3 */): boolean
 
     /**
      * Fire and forget API.
@@ -414,7 +414,7 @@ declare module 'lumin' {
      * @param soundName name of a Sound instance that contains audio properties for the created AudioNode.
      * @return True if the audio node was successfully created, added to the scene and set to delete on play end.
      */
-    static playSound(prism: Prism, soundName: string): boolean
+    static playSound(prism: Prism | null, soundName: string): boolean
 
     /**
      * Fire and forget API.
@@ -424,7 +424,7 @@ declare module 'lumin' {
      * @param pos Position to set to the created AudioNode.
      * @return True if the audio node was successfully created, added to the scene and set to delete on play end.
      */
-    static playSound(prism: Prism, soundName: string, pos: [number, number, number] /* glm::vec3 */): boolean
+    static playSound(prism: Prism | null, soundName: string, pos: [number, number, number] | Float32Array /* glm::vec3 */): boolean
 
     /**
      * Set the position of a given audio channel relative to this nodes local position.
@@ -437,7 +437,7 @@ declare module 'lumin' {
      *
      *
      */
-    setSpatialSoundPosition(channel: number /* uint32_t */, channelPosition: [number, number, number] /* glm::vec3 */): void
+    setSpatialSoundPosition(channel: number /* uint32_t */, channelPosition: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      *  Get position of the given audio channel. Position is relative to audio node's
@@ -461,7 +461,7 @@ declare module 'lumin' {
      * @param channelDirection - A quaternion (glm::quat) specifying the direction of the sound for the given channel
      *                          relative to the node's local orientation.
      */
-    setSpatialSoundDirection(channel: number /* uint32_t */, channelDirection: [number, number, number, number] /* glm::quat */): void
+    setSpatialSoundDirection(channel: number /* uint32_t */, channelDirection: [number, number, number, number] | Float32Array /* glm::quat */): void
 
     /**
      *  Get sound direction of a given audio channel.

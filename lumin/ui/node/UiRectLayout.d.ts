@@ -6,7 +6,7 @@ declare module 'lumin' {
      * within a planar XY rectangular area, with given
      * side padding and content alignment.
      */
-    class UiRectLayout extends UiLayout {
+    class UiRectLayout extends ui.UiLayout {
 
       /**
        * Creates a new UiRectLayout.
@@ -16,7 +16,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiRectLayout
+      static Create(prism: Prism | null): ui.UiRectLayout | null
 
       /**
        * Sets the Node hierarchy used as content.
@@ -27,7 +27,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setContent(pNode: TransformNode): void
+      setContent(pNode: TransformNode | null): void
 
       /**
        * Gets the Node hierarchy used as content for this UiRectLayout.
@@ -36,7 +36,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getContent(): TransformNode
+      getContent(): TransformNode | null
 
       /**
        * Detaches the content node hierarchy from this UiRectLayout.
@@ -46,7 +46,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachContent(): TransformNode
+      detachContent(): TransformNode | null
 
       /**
        * Sets the content padding for the 4 sides of the rectangular area,
@@ -65,7 +65,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPadding(padding: [number, number, number, number] /* glm::vec4 */): void
+      setPadding(padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the content padding of the 4 sides.

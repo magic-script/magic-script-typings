@@ -107,7 +107,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setAngularVelocity(velocity: [number, number, number] /* glm::vec3 */): void
+      setAngularVelocity(velocity: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Returns the linear velocity of the mesh.
@@ -125,7 +125,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setLinearVelocity(velocity: [number, number, number] /* glm::vec3 */): void
+      setLinearVelocity(velocity: [number, number, number] | Float32Array /* glm::vec3 */): void
     }
     namespace ShapeSampler {
       enum Type {
@@ -139,7 +139,7 @@ declare module 'lumin' {
         kMesh,
       }
     }
-    class BoxShapeSampler extends ShapeSampler {
+    class BoxShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()
@@ -149,7 +149,7 @@ declare module 'lumin' {
        *
        * @param size Box size.
        **/
-      constructor(size: [number, number, number] /* glm::vec3 */)
+      constructor(size: [number, number, number] | Float32Array /* glm::vec3 */)
 
       /**
        * Returns the box size.
@@ -167,9 +167,9 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSize(size: [number, number, number] /* glm::vec3 */): void
+      setSize(size: [number, number, number] | Float32Array /* glm::vec3 */): void
     }
-    class SphereShapeSampler extends ShapeSampler {
+    class SphereShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()
@@ -218,7 +218,7 @@ declare module 'lumin' {
        */
       setInnerRadius(radius: number /* float */): void
     }
-    class EllipsoidShapeSampler extends ShapeSampler {
+    class EllipsoidShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()
@@ -231,7 +231,7 @@ declare module 'lumin' {
        * @param cut Cut plane position of for the ellipsoid. 1 = full sphere, 0 = entire sphere removed
        * @param scale Scale of the ellipsoid
        **/
-      constructor(outerRadius: number /* float */, innerRadius: number /* float */, cut: number /* float */, scale: [number, number, number] /* glm::vec3 */)
+      constructor(outerRadius: number /* float */, innerRadius: number /* float */, cut: number /* float */, scale: [number, number, number] | Float32Array /* glm::vec3 */)
 
       /**
        * Returns the ellipsoid outer radius.
@@ -303,9 +303,9 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setScale(scale: [number, number, number] /* glm::vec3 */): void
+      setScale(scale: [number, number, number] | Float32Array /* glm::vec3 */): void
     }
-    class CylinderShapeSampler extends ShapeSampler {
+    class CylinderShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()
@@ -373,7 +373,7 @@ declare module 'lumin' {
        */
       setHeight(height: number /* float */): void
     }
-    class CapsuleShapeSampler extends ShapeSampler {
+    class CapsuleShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()
@@ -441,7 +441,7 @@ declare module 'lumin' {
        */
       setHeight(height: number /* float */): void
     }
-    class ConeShapeSampler extends ShapeSampler {
+    class ConeShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()
@@ -490,7 +490,7 @@ declare module 'lumin' {
        */
       setHeight(height: number /* float */): void
     }
-    class MeshShapeSampler extends ShapeSampler {
+    class MeshShapeSampler extends particles.ShapeSampler {
 
       /** Default constructor */
       constructor()

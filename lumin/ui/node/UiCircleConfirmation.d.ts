@@ -7,7 +7,7 @@ declare module 'lumin' {
      * When the user gets the knob to make a complete circle, UiCircleConfirmation signals this to the client code.
      * The client code would power off upon receipt of confirmation.
      */
-    class UiCircleConfirmation extends UiNode {
+    class UiCircleConfirmation extends ui.UiNode {
 
       /**
        * Creates a UiCircleConfirmation element using default settings.
@@ -18,7 +18,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, height?: number /* float */): ui.UiCircleConfirmation
+      static Create(prism: Prism | null, height?: number /* float */): ui.UiCircleConfirmation | null
 
       /**
        * Returns the angle of the vector origin-knob with respect to 3 o'clock direction.
@@ -37,7 +37,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onConfirmationCompleteSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onConfirmationCompleteSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onConfirmationCompleteUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -48,7 +48,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onConfirmationCanceledSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onConfirmationCanceledSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onConfirmationCanceledUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -60,7 +60,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onConfirmationUpdateSub(callback: (arg0: ui.UiEventData, arg1: number /* float */) => void): utils.CallbackID
+      onConfirmationUpdateSub(callback: ((arg0: ui.UiEventData, arg1: number) => void) | null /* std::function<void(UiEventData,float)> */): utils.CallbackID
       onConfirmationUpdateUnsub(callbackID: utils.CallbackID): boolean
     }
   }

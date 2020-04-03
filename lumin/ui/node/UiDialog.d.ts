@@ -27,7 +27,7 @@ declare module 'lumin' {
       /**
        * The dialog title localization parameters
        */
-      titleL10nParams: Object;
+      titleL10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * The dialog message text
@@ -42,7 +42,7 @@ declare module 'lumin' {
       /**
        * The dialog message localization parameters
        */
-      messageL10nParams: Object;
+      messageL10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * The confirm button text
@@ -57,7 +57,7 @@ declare module 'lumin' {
       /**
        * The confirm button localization params
        */
-      confirmL10nParams: Object;
+      confirmL10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * The confirm button icon
@@ -77,7 +77,7 @@ declare module 'lumin' {
       /**
        * The cancel button localization params
        */
-      cancelL10nParams: Object;
+      cancelL10nParams: { [key:string]: utils.LocaleHelper.Param } /* std::unordered_map<std::string, utils::LocaleHelper::Param> */;
 
       /**
        * The cancel button icon
@@ -104,7 +104,7 @@ declare module 'lumin' {
     /**
      * UiDialog - Supports modal and modeless dialogs.
      */
-    class UiDialog extends UiNode {
+    class UiDialog extends ui.UiNode {
 
       /**
        * Create a new UiDialog with provided parameters.
@@ -114,7 +114,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, params: ui.DialogParams): ui.UiDialog
+      static Create(prism: Prism | null, params: ui.DialogParams): ui.UiDialog | null
 
       /**
        * Creates a new UiDialog ready for content.
@@ -126,7 +126,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, dialogType: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog
+      static Create(prism: Prism | null, dialogType: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog | null
 
       /**
        * Creates a new UiDialog with generated content.
@@ -141,7 +141,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, title: string, message: string, imageModel?: TransformNode, dialogType?: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog
+      static Create(prism: Prism | null, title: string, message: string, imageModel?: TransformNode | null, dialogType?: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog | null
 
       /**
        * Creates a new UiDialog with vertical scrolling content.
@@ -155,7 +155,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateScrolling(prism: Prism, title: string, message: string, dialogType?: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog
+      static CreateScrolling(prism: Prism | null, title: string, message: string, dialogType?: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog | null
 
       /**
        * Create a new UiDialog with vertical scrolling content.
@@ -169,7 +169,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateScrolling(prism: Prism, title: string, scrollContent: TransformNode, dialogType?: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog
+      static CreateScrolling(prism: Prism | null, title: string, scrollContent: TransformNode | null, dialogType?: ui.DialogType, dialogLayout?: ui.DialogLayout): ui.UiDialog | null
 
       /**
        * The on cancel event.
@@ -178,7 +178,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCancelSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onCancelSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onCancelUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -188,7 +188,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onConfirmSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onConfirmSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onConfirmUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -198,7 +198,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onTimeExpiredSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onTimeExpiredSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onTimeExpiredUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -213,7 +213,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setDialogContent(pNode: TransformNode): void
+      setDialogContent(pNode: TransformNode | null): void
 
       /**
        * Gets the dialog content, not including any confirm/cancel buttons
@@ -223,7 +223,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getDialogContent(): TransformNode
+      getDialogContent(): TransformNode | null
 
       /**
        * Detaches the content from the UiDialog.
@@ -233,7 +233,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachDialogContent(): TransformNode
+      detachDialogContent(): TransformNode | null
 
       /**
        * Sets the dialog image at the top of the dialog, above content and title.
@@ -246,7 +246,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setDialogImage(pNode: TransformNode): void
+      setDialogImage(pNode: TransformNode | null): void
 
       /**
        * Gets the dialog image.
@@ -255,7 +255,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getDialogImage(): TransformNode
+      getDialogImage(): TransformNode | null
 
       /**
        * Detaches the image from the UiDialog.
@@ -265,7 +265,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachDialogImage(): TransformNode
+      detachDialogImage(): TransformNode | null
 
       /**
        * Sets the expiration time for the dialog in seconds.

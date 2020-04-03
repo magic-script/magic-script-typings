@@ -154,7 +154,7 @@ declare module 'lumin' {
          * `value = [0,0]`
          */
         static readonly NONE: [number, number] /* glm::vec2 */;
-        static IsNone(vector: [number, number] /* glm::vec2 */): boolean
+        static IsNone(vector: [number, number] | Float32Array /* glm::vec2 */): boolean
         constructor(prev: number /* char32_t */, code: number /* char32_t */)
 
         /**
@@ -338,12 +338,12 @@ declare module 'lumin' {
       /**
        * ID of the 2D texture array in which this glyph's tile is drawn.
        */
-      textureId: number /* int */;
+      textureId: number /* unsigned int */;
 
       /**
        * Index of the layer in the 2D texture array containing the glyph.
        */
-      layerIndex: number /* int */;
+      layerIndex: number /* unsigned int */;
 
       /**
        * Min texture coordinate (u, v) on the 2D-texture layer.
@@ -364,7 +364,7 @@ declare module 'lumin' {
        * Positioning information for the glyph in a string of text.
        */
       metrics: glyph.Metrics;
-      constructor(code: number /* char32_t */, texId: number /* int */, layer: number /* int */, texMin: [number, number] /* glm::vec2 */, texMax: [number, number] /* glm::vec2 */, size: glyph.TextureSize, mt: glyph.Metrics)
+      constructor(code: number /* char32_t */, texId: number /* unsigned int */, layer: number /* unsigned int */, texMin: [number, number] | Float32Array /* glm::vec2 */, texMax: [number, number] | Float32Array /* glm::vec2 */, size: glyph.TextureSize, mt: glyph.Metrics)
     }
 
     /** Object that can be used to create a BitmapFontResource object. */
@@ -461,19 +461,19 @@ declare module 'lumin' {
      * Don't override the font's default glyph height
      */
     glyphHeight: number /* float */;
-    tabWidth: number /* int */;
+    tabWidth: number /* unsigned int */;
     lineSpacing: number /* float */;
     characterSpacing: number /* float */;
 
     /**
      * 0 implies no limit by default
      */
-    maxGlyphsPerLine: number /* int */;
+    maxGlyphsPerLine: number /* unsigned int */;
     justification: text.Justification;
     colorRGBA: [number, number, number, number] /* glm::vec4 */;
     constructor(text: string)
   }
-  function ToString(vector: [number, number] /* glm::vec2 */): string
+  function ToString(vector: [number, number] | Float32Array /* glm::vec2 */): string
 
   /** Convert to a string representation. */
   function ToString(size: glyph.TextureSize): string

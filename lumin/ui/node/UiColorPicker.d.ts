@@ -1,6 +1,6 @@
 declare module 'lumin' {
   namespace ui {
-    class UiColorPicker extends UiNode {
+    class UiColorPicker extends ui.UiNode {
 
       /**
        * Creates a UiColorPicker element using default settings.
@@ -13,7 +13,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, startingColor?: [number, number, number, number] /* glm::vec4 */, height?: number /* float */): ui.UiColorPicker
+      static Create(prism: Prism | null, startingColor?: [number, number, number, number] | Float32Array /* glm::vec4 */, height?: number /* float */): ui.UiColorPicker | null
 
       /**
        * The on color changed Event.
@@ -22,7 +22,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onColorChangedSub(callback: (arg0: ui.UiEventData, arg1: [number, number, number, number] /* glm::vec4 */) => void): utils.CallbackID
+      onColorChangedSub(callback: ((arg0: ui.UiEventData, arg1: [number, number, number, number] | Float32Array) => void) | null /* std::function<void(UiEventData,glm::vec4)> */): utils.CallbackID
       onColorChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -32,7 +32,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onConfirmSub(callback: (arg0: ui.UiEventData, arg1: [number, number, number, number] /* glm::vec4 */) => void): utils.CallbackID
+      onConfirmSub(callback: ((arg0: ui.UiEventData, arg1: [number, number, number, number] | Float32Array) => void) | null /* std::function<void(UiEventData,glm::vec4)> */): utils.CallbackID
       onConfirmUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -42,7 +42,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onCancelSub(callback: (arg0: ui.UiEventData, arg1: [number, number, number, number] /* glm::vec4 */) => void): utils.CallbackID
+      onCancelSub(callback: ((arg0: ui.UiEventData, arg1: [number, number, number, number] | Float32Array) => void) | null /* std::function<void(UiEventData,glm::vec4)> */): utils.CallbackID
       onCancelUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -61,7 +61,7 @@ declare module 'lumin' {
       *
       * @priv none
       */
-      setColor(color: [number, number, number, number] /* glm::vec4 */): void
+      setColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
     }
   }
 }

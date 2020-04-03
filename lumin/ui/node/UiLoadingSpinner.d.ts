@@ -14,7 +14,7 @@ declare module 'lumin' {
     /**
      * UiLoadingSpinner - This node represents a visual effect showing loading state.
      */
-    class UiLoadingSpinner extends UiNode {
+    class UiLoadingSpinner extends ui.UiNode {
 
       /**
        * Creates an indeterminate UiLoadingSpinner element using default settings.
@@ -28,7 +28,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, type: ui.LoadingSpinnerType, resID?: bigint /* uint64_t */, resPath?: string, height?: number /* float */): ui.UiLoadingSpinner
+      static Create(prism: Prism | null, type: ui.LoadingSpinnerType, resID?: bigint /* uint64_t */, resPath?: string, height?: number /* float */): ui.UiLoadingSpinner | null
 
       /**
        * Creates a determinate UiLoadingSpinner element using default settings.
@@ -37,7 +37,7 @@ declare module 'lumin' {
        * @param height `default = 0.0`<br/> - The height of the loading spinner (optional).
        * @return The new UiLoadingSpinner node.
        */
-      static CreateDeterminate(volume: Prism, height?: number /* float */): ui.UiLoadingSpinner
+      static CreateDeterminate(volume: Prism | null, height?: number /* float */): ui.UiLoadingSpinner | null
 
       /**
        * Gets the ParticleNode for this UiLoadingSpinner if one exists
@@ -47,7 +47,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getParticleEffect(): ParticleNode
+      getParticleEffect(): ParticleNode | null
 
       /**
        * Gets the SpriteNode for this UiLoadingSpinner if one exists
@@ -57,7 +57,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getSpriteNode(): SpriteNode
+      getSpriteNode(): SpriteNode | null
 
       /**
        * Sets the UiLoadingSpinner size.
@@ -70,7 +70,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSize(size: [number, number] /* glm::vec2 */): void
+      setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the UiLoadingSpinner size.

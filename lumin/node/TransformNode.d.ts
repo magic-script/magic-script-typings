@@ -13,7 +13,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLocalPosition(aPos: [number, number, number] /* glm::vec3 */): void
+    setLocalPosition(aPos: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Set the local scale of this Node
@@ -22,7 +22,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLocalScale(aScale: [number, number, number] /* glm::vec3 */): void
+    setLocalScale(aScale: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Set the local rotation of this Node
@@ -31,7 +31,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLocalRotation(aRot: [number, number, number, number] /* glm::quat */): void
+    setLocalRotation(aRot: [number, number, number, number] | Float32Array /* glm::quat */): void
 
     /**
      * Set the local transform of this Node
@@ -40,7 +40,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setLocalTransform(aTransform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */): void
+    setLocalTransform(aTransform: [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] | Float32Array /* glm::mat4 */): void
 
     /**
      * Get the Local Position of this Node
@@ -79,7 +79,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setAnchorPosition(a_position: [number, number, number] /* glm::vec3 */): void
+    setAnchorPosition(a_position: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Get the World Position of this Node
@@ -133,6 +133,6 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRigidBody(): PhysicsRigidBody
+    getRigidBody(): PhysicsRigidBody | null
   }
 }

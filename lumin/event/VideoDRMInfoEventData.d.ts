@@ -22,7 +22,7 @@ declare module 'lumin' {
      * @brief return PSSH infod
      * @return PSSH info
      */
-    getPssh(): Object
+    getPssh(): Map<Array<number>, Array<number>> /* std::map<std::vector<uint8_t>, std::vector<uint8_t>> */
 
     /**
      * @brief Returns supported schemes

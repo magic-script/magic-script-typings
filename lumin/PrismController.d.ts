@@ -85,7 +85,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    onPreAttachPrism(prism: Prism): void
+    onPreAttachPrism(prism: Prism | null): void
 
     /**
      * Override this method to initialize the Prism after this
@@ -100,7 +100,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    onAttachPrism(prism: Prism): void
+    onAttachPrism(prism: Prism | null): void
 
     /**
      * Override this method to do any necessary cleanup before the
@@ -111,7 +111,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    onDetachPrism(prism: Prism): void
+    onDetachPrism(prism: Prism | null): void
 
     /**
       * Override this method to react to incoming events
@@ -123,7 +123,7 @@ declare module 'lumin' {
       *
       * @priv none
       */
-    onEvent(a_pEvent: ServerEvent): boolean
+    onEvent(a_pEvent: ServerEvent | null): boolean
 
     /**
      * Override this method to get periodic callbacks on the client main thread
@@ -133,6 +133,14 @@ declare module 'lumin' {
      * @priv none
      */
     onUpdate(a_fDelta: number /* float */): void
+
+    /**
+     * Override this method to handle back navigation (from home button tap).
+     *
+     * @return true if back navigation was handled internally or false to continue
+     *         propagating the event.
+     */
+    onBack(): boolean
 
     /**
      * Returns the optional name for this PrismController (used for diagnostics).
@@ -146,7 +154,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getPrism(): Prism
+    getPrism(): Prism | null
 
     /**
      * Returns the root node for the segment of the scene graph managed by this controller.
@@ -160,7 +168,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRoot(): TransformNode
+    getRoot(): TransformNode | null
 
     /**
      * Deletes the part of the scene graph controlled by this prism controller.
@@ -194,7 +202,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    addChildController(controller: PrismController): void
+    addChildController(controller: PrismController | null /* std::shared_ptr<PrismController> */): void
 
     /**
      * Removes the specified controller as a child.
@@ -206,7 +214,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    removeChildController(controller: PrismController): void
+    removeChildController(controller: PrismController | null /* std::shared_ptr<PrismController> */): void
 
     /**
      * Set the Event Sleep Time

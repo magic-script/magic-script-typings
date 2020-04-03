@@ -71,7 +71,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setTexCoords(texCoords: Array<[number, number]> /* std::vector<glm::vec2> */): void
+    setTexCoords(texCoords: Array<[number, number] | Float32Array> /* std::vector<glm::vec2> */): void
 
     /**
      * Get the vertices that define the quad geometry.
@@ -87,7 +87,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    setSize(size: [number, number] /* glm::vec2 */): void
+    setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
     /**
      * Get the custom size, which is by default one: { 1, 1 }.
@@ -105,7 +105,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getRenderResource(): Resource
+    getRenderResource(): Resource | null
 
     /**
      * Get the type of the shader that will be applied to the QuadNode.

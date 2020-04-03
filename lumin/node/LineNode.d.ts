@@ -13,7 +13,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    addPoints(a_vPos: [number, number, number] /* glm::vec3 */): void
+    addPoints(a_vPos: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Remove all line segment points.

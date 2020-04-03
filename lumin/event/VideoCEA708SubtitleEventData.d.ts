@@ -23,55 +23,55 @@ declare module 'lumin' {
 
     /**
      */
-    getBuffer(): string
+    getBuffer(): string | null /* std::optional<std::string> */
 
     /**
      */
-    getControl(): number /* size_t */
+    getControl(): number | null /* std::optional<size_t> */
 
     /**
      */
-    getCWXWindowID(): number /* int32_t */
+    getCWXWindowID(): number | null /* std::optional<int32_t> */
 
     /**
      */
-    getCLWWindowBitmap(): number /* int32_t */
+    getCLWWindowBitmap(): number | null /* std::optional<int32_t> */
 
     /**
      */
-    getDSWWindowBitmap(): number /* int32_t */
+    getDSWWindowBitmap(): number | null /* std::optional<int32_t> */
 
     /**
      */
-    getHDWWindowBitmap(): number /* int32_t */
+    getHDWWindowBitmap(): number | null /* std::optional<int32_t> */
 
     /**
      */
-    getTGWWindowBitmap(): number /* int32_t */
+    getTGWWindowBitmap(): number | null /* std::optional<int32_t> */
 
     /**
      */
-    getDLWWindowBitmap(): number /* int32_t */
+    getDLWWindowBitmap(): number | null /* std::optional<int32_t> */
 
     /**
      */
-    getSPAPenAttributes(): VideoCEA708SubtitleEventData.PenAttributes
+    getSPAPenAttributes(): VideoCEA708SubtitleEventData.PenAttributes | null /* std::optional<PenAttributes> */
 
     /**
      */
-    getSPCPenColor(): VideoCEA708SubtitleEventData.PenColor
+    getSPCPenColor(): VideoCEA708SubtitleEventData.PenColor | null /* std::optional<PenColor> */
 
     /**
      */
-    getSPLPenLocation(): VideoCEA708SubtitleEventData.PenLocation
+    getSPLPenLocation(): VideoCEA708SubtitleEventData.PenLocation | null /* std::optional<PenLocation> */
 
     /**
      */
-    getSWAWindowAttributes(): VideoCEA708SubtitleEventData.WindowAttributes
+    getSWAWindowAttributes(): VideoCEA708SubtitleEventData.WindowAttributes | null /* std::optional<WindowAttributes> */
 
     /**
      */
-    getDFXCaptionWindow(): VideoCEA708SubtitleEventData.Window
+    getDFXCaptionWindow(): VideoCEA708SubtitleEventData.Window | null /* std::optional<Window> */
   }
   namespace VideoCEA708SubtitleEventData {
     enum CaptionEmitTypeCommand {

@@ -5,7 +5,7 @@ declare module 'lumin' {
      * UiPageView is used to switch display of individual page Node
      * hierarchies.
      */
-    class UiPageView extends UiNode {
+    class UiPageView extends ui.UiNode {
 
       /**
        * Creates a UiPageView element with default settings.
@@ -17,7 +17,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width?: number /* float */, height?: number /* float */): ui.UiPageView
+      static Create(prism: Prism | null, width?: number /* float */, height?: number /* float */): ui.UiPageView | null
 
       /**
        * Sets the size of the page view.
@@ -35,7 +35,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSize(size: [number, number] /* glm::vec2 */): void
+      setSize(size: [number, number] | Float32Array /* glm::vec2 */): void
 
       /**
        * Gets the size of the page view.
@@ -67,7 +67,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setDefaultPagePadding(padding: [number, number, number, number] /* glm::vec4 */): void
+      setDefaultPagePadding(padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the default padding for pages within the view.
@@ -113,7 +113,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPageCount(): number /* int */
+      getPageCount(): number /* unsigned int */
 
       /**
        * Adds a page to the view.
@@ -122,7 +122,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addPage(page: TransformNode): void
+      addPage(page: TransformNode | null): void
 
       /**
        * Adds a page to the view.
@@ -142,7 +142,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addPage(page: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment?: ui.Alignment): void
+      addPage(page: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */, alignment?: ui.Alignment): void
 
       /**
        * Adds a page to the view at the specific index.
@@ -155,7 +155,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addPageAt(index: number /* int */, page: TransformNode): void
+      addPageAt(index: number /* unsigned int */, page: TransformNode | null): void
 
       /**
        * Adds a page to the view at the specific index.
@@ -178,7 +178,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      addPageAt(index: number /* int */, page: TransformNode, padding: [number, number, number, number] /* glm::vec4 */, alignment?: ui.Alignment): void
+      addPageAt(index: number /* unsigned int */, page: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */, alignment?: ui.Alignment): void
 
       /**
        * Sets the page padding at the specified index.
@@ -193,7 +193,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPagePadding(index: number /* int */, padding: [number, number, number, number] /* glm::vec4 */): void
+      setPagePadding(index: number /* unsigned int */, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Sets the page padding.
@@ -208,7 +208,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPagePadding(page: TransformNode, padding: [number, number, number, number] /* glm::vec4 */): void
+      setPagePadding(page: TransformNode | null, padding: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the page padding at the specified index.
@@ -218,7 +218,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPagePadding(index: number /* int */): [number, number, number, number] /* glm::vec4 */
+      getPagePadding(index: number /* unsigned int */): [number, number, number, number] | null /* std::optional<glm::vec4> */
 
       /**
        * Gets the page padding.
@@ -228,7 +228,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPagePadding(page: TransformNode): [number, number, number, number] /* glm::vec4 */
+      getPagePadding(page: TransformNode | null): [number, number, number, number] | null /* std::optional<glm::vec4> */
 
       /**
        * Sets the page alignment at the specified index.
@@ -243,7 +243,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPageAlignment(index: number /* int */, alignment: ui.Alignment): void
+      setPageAlignment(index: number /* unsigned int */, alignment: ui.Alignment): void
 
       /**
        * Sets the page alignment.
@@ -258,7 +258,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setPageAlignment(page: TransformNode, alignment: ui.Alignment): void
+      setPageAlignment(page: TransformNode | null, alignment: ui.Alignment): void
 
       /**
        * Gets the page alignment at the specified index.
@@ -268,7 +268,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPageAlignment(index: number /* int */): ui.Alignment
+      getPageAlignment(index: number /* unsigned int */): ui.Alignment | null /* std::optional<Alignment> */
 
       /**
        * Gets the page alignment.
@@ -278,7 +278,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPageAlignment(page: TransformNode): ui.Alignment
+      getPageAlignment(page: TransformNode | null): ui.Alignment | null /* std::optional<Alignment> */
 
       /**
        * Gets the n'th page in the view.
@@ -290,7 +290,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getPage(index: number /* int */): TransformNode
+      getPage(index: number /* unsigned int */): TransformNode | null
 
       /**
        * Removes the n'th page from the view.
@@ -305,7 +305,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removePage(index: number /* int */): TransformNode
+      removePage(index: number /* unsigned int */): TransformNode | null
 
       /**
        * Removes the page from the view.
@@ -320,7 +320,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      removePage(page: TransformNode): boolean
+      removePage(page: TransformNode | null): boolean
 
       /**
        * Shows the n'th page in the page view, all others will be invisible.
@@ -329,7 +329,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      showPage(index: number /* int */): void
+      showPage(index: number /* unsigned int */): void
 
       /**
        * Shows the page in the page view, all others will be invisible.
@@ -338,7 +338,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      showPage(page: TransformNode): void
+      showPage(page: TransformNode | null): void
 
       /**
        * Gets the currently active (displayed) page index in the page view.
@@ -347,7 +347,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getActivePageIndex(): number /* int */
+      getActivePageIndex(): number /* unsigned int */
 
       /**
        * Gets the currently active (displayed) page in the page view.
@@ -358,7 +358,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getActivePage(): TransformNode
+      getActivePage(): TransformNode | null
     }
   }
 }

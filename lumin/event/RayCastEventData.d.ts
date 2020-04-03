@@ -11,7 +11,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getHitData(): RaycastResult
+    getHitData(): RaycastResult | null /* std::shared_ptr<RaycastResult> */
 
     /**
      * Get the Raycast event type

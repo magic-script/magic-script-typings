@@ -68,7 +68,7 @@ declare module 'lumin' {
     /**
      * UiSlider - This node represents a standard slider.
      */
-    class UiSlider extends UiNode {
+    class UiSlider extends ui.UiNode {
 
       /**
        * Creates a UiSlider element using default settings.
@@ -87,7 +87,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, width: number /* float */, height?: number /* float */): ui.UiSlider
+      static Create(prism: Prism | null, width: number /* float */, height?: number /* float */): ui.UiSlider | null
 
       /**
        * Creates an Eclipse slider from UX specifications.
@@ -98,7 +98,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateEclipseSlider(prism: Prism, sliderParams: ui.EclipseSliderParams): ui.UiSlider
+      static CreateEclipseSlider(prism: Prism | null, sliderParams: ui.EclipseSliderParams): ui.UiSlider | null
 
       /**
        * The on slider changed Event.
@@ -107,7 +107,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      onSliderChangedSub(callback: (arg0: ui.UiEventData) => void): utils.CallbackID
+      onSliderChangedSub(callback: ((arg0: ui.UiEventData) => void) | null /* std::function<void(UiEventData)> */): utils.CallbackID
       onSliderChangedUnsub(callbackID: utils.CallbackID): boolean
 
       /**
@@ -202,7 +202,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setSliderModel(pNode: Node, offset?: [number, number, number] /* glm::vec3 */): void
+      setSliderModel(pNode: Node | null, offset?: [number, number, number] | Float32Array /* glm::vec3 */): void
 
       /**
        * Gets the Node hierarchy used as visual representation for this UiSlider.
@@ -211,7 +211,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getSliderModel(): Node
+      getSliderModel(): Node | null
 
       /**
        * Detaches the Node hierarchy used as visual representation for this UiSlider.
@@ -221,7 +221,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      detachSliderModel(): Node
+      detachSliderModel(): Node | null
 
       /**
        * Gets the size of the slider.
@@ -240,7 +240,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiImageIcon(): ui.UiImage
+      getUiImageIcon(): ui.UiImage | null
 
       /**
        * Gets the UiText label for this slider if one exists
@@ -250,7 +250,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
     }
   }
 }

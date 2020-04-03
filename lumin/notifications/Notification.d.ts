@@ -165,14 +165,14 @@ declare module 'lumin' {
      * @param action the callback to run on activate
      * @priv none
      */
-    setActivateAction(action: (arg0: Notification) => void): void
+    setActivateAction(action: ((arg0: Notification) => void) | null /* std::function<void(Notification)> */): void
 
     /**
      * Set the callback for the action performed when the notification is dismissed
      * @param action the callback to run on dismiss
      * @priv none
      */
-    setDismissAction(action: (arg0: Notification) => void): void
+    setDismissAction(action: ((arg0: Notification) => void) | null /* std::function<void(Notification)> */): void
   }
   namespace Notification {
 

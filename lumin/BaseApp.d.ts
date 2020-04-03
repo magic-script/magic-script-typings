@@ -209,7 +209,7 @@ declare module 'lumin' {
      * @return true = Event has been consumed
      * @priv none
      */
-    eventListener(a_pEvent: ServerEvent): boolean
+    eventListener(a_pEvent: ServerEvent | null): boolean
 
     /**
      * Returns pointer to the Prism
@@ -219,7 +219,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    getPrism(prismId: bigint /* uint64_t */): Prism
+    getPrism(prismId: bigint /* uint64_t */): Prism | null
 
     /**
      * Deletes the prism
@@ -228,7 +228,7 @@ declare module 'lumin' {
      *
      * @priv none
      */
-    deletePrism(prism: Prism): void
+    deletePrism(prism: Prism | null): void
 
     /**
      * Resizes the Prism
@@ -236,7 +236,7 @@ declare module 'lumin' {
      * @param a_prism - the prism to resize
      * @param a_size - the new size of the prism
      */
-    resizePrism(a_prism: Prism, a_size: [number, number, number] /* glm::vec3 */): void
+    resizePrism(a_prism: Prism | null, a_size: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Sets the Prism Position
@@ -244,7 +244,7 @@ declare module 'lumin' {
      * @param a_prism - the prism
      * @param a_position - the new prism position
      */
-    positionPrism(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
+    positionPrism(a_prism: Prism | null, a_position: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Sets the Orientation of the Prism
@@ -252,7 +252,7 @@ declare module 'lumin' {
      * @param a_prism - the prism
      * @param a_orientation - the new prism orientation quaternion
      */
-    orientPrism(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
+    orientPrism(a_prism: Prism | null, a_orientation: [number, number, number, number] | Float32Array /* glm::quat */): void
 
     /**
      * Sets the Prism Position relative to the camera
@@ -260,7 +260,7 @@ declare module 'lumin' {
      * @param a_prism - the prism
      * @param a_position - the new prism position, relative to the camera
      */
-    positionPrismRelativeToCamera(a_prism: Prism, a_position: [number, number, number] /* glm::vec3 */): void
+    positionPrismRelativeToCamera(a_prism: Prism | null, a_position: [number, number, number] | Float32Array /* glm::vec3 */): void
 
     /**
      * Sets the Orientation of the Prism relative to the Camera
@@ -268,7 +268,7 @@ declare module 'lumin' {
      * @param a_prism - the prism
      * @param a_orientation - the new prism orientation quaternion
      */
-    orientPrismRelativeToCamera(a_prism: Prism, a_orientation: [number, number, number, number] /* glm::quat */): void
+    orientPrismRelativeToCamera(a_prism: Prism | null, a_orientation: [number, number, number, number] | Float32Array /* glm::quat */): void
 
     /**
      * Returns the position of a volume in world space
@@ -276,7 +276,7 @@ declare module 'lumin' {
      * @param a_prism - the prism
      * @return - the prism position
      */
-    getPrismPosition(a_prism: Prism): [number, number, number] /* glm::vec3 */
+    getPrismPosition(a_prism: Prism | null): [number, number, number] /* glm::vec3 */
 
     /**
      *  Returns the rotation of a volume in world space
@@ -284,7 +284,7 @@ declare module 'lumin' {
      * @param a_prism - the prism
      * @return - the prism orientation quaternion
      */
-    getPrismRotation(a_prism: Prism): [number, number, number, number] /* glm::quat */
+    getPrismRotation(a_prism: Prism | null): [number, number, number, number] /* glm::quat */
 
     /**
      * Returns the transform of a volume in world space
@@ -292,7 +292,7 @@ declare module 'lumin' {
      * @param a_prism the prism
      * @return The transform of the Prism in world space
      */
-    getPrismTransform(a_prism: Prism): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
+    getPrismTransform(a_prism: Prism | null): [number, number, number, number, number, number, number, number, number, number, number, number, number, number, number, number] /* glm::mat4 */
 
     /**
      * Get the Headpose position in world space.
@@ -343,7 +343,7 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    getFloorHeight(): number /* float */
+    getFloorHeight(): number | null /* std::optional<float> */
 
     /**
      * Checks if a privilege is currently granted.
@@ -383,7 +383,7 @@ declare module 'lumin' {
      *
      * @priv NormalNotificationsUsage
      */
-    postNotification(notification: Notification): boolean
+    postNotification(notification: Notification | null): boolean
 
     /**
      * Dismiss the given notification
@@ -484,7 +484,7 @@ declare module 'lumin' {
      * @param a_rayEnd Ray end position, in volume coordinates.
      * @return Hit data.
      */
-    raycastNodes(a_prism: Prism, a_rayStart: [number, number, number] /* glm::vec3 */, a_rayEnd: [number, number, number] /* glm::vec3 */): RayCastResultLight
+    raycastNodes(a_prism: Prism | null, a_rayStart: [number, number, number] | Float32Array /* glm::vec3 */, a_rayEnd: [number, number, number] | Float32Array /* glm::vec3 */): RayCastResultLight | null /* std::optional<RayCastResultLight> */
 
     /**
     * Performs a single ray cast against the world around you. Results are returned as a WorldRayCastEventData
@@ -499,7 +499,7 @@ declare module 'lumin' {
     *
     * @priv WorldReconstruction
     */
-    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
+    requestWorldRayCast(rayStart: [number, number, number] | Float32Array /* glm::vec3 */, rayDir: [number, number, number] | Float32Array /* glm::vec3 */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
 
     /**
      * Performs an area ray cast against the world around you. Results are returned as a WorldRayCastEventData
@@ -517,7 +517,7 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    requestWorldRayCast(rayStart: [number, number, number] /* glm::vec3 */, rayDir: [number, number, number] /* glm::vec3 */, width: number /* uint32_t */, height: number /* uint32_t */, horizFovDeg: number /* float */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
+    requestWorldRayCast(rayStart: [number, number, number] | Float32Array /* glm::vec3 */, rayDir: [number, number, number] | Float32Array /* glm::vec3 */, width: number /* uint32_t */, height: number /* uint32_t */, horizFovDeg: number /* float */, userValue: bigint /* uint64_t */, confidenceThreshold?: number /* float */): boolean
 
     /**
      * Sends a request to the server to search for planes in the environment that match given
@@ -533,7 +533,7 @@ declare module 'lumin' {
      *
      * @priv WorldReconstruction
      */
-    requestWorldPlaneCast(center: [number, number, number] /* glm::vec3 */, maxDistance: number /* float */, maxPlaneCount: number /* uint32_t */, flags: PlanecastFlags, userValue: bigint /* uint64_t */): boolean
+    requestWorldPlaneCast(center: [number, number, number] | Float32Array /* glm::vec3 */, maxDistance: number /* float */, maxPlaneCount: number /* uint32_t */, flags: PlanecastFlags, userValue: bigint /* uint64_t */): boolean
 
     /**
      * Returns if the image tracking system is ready to be used. Do not call any image tracking functions
@@ -560,7 +560,7 @@ declare module 'lumin' {
      * @return true if tracking was started, false if there was an error.
      * @priv CameraCapture
      */
-    trackStaticImage(imageName: string, dimensions: [number, number] /* glm::vec2 */, file: string, prism: Prism): boolean
+    trackStaticImage(imageName: string, dimensions: [number, number] | Float32Array /* glm::vec2 */, file: string, prism: Prism | null): boolean
 
     /**
      * Starts a request to track a moving image, based on an image file. Moving images are harder to
@@ -576,7 +576,7 @@ declare module 'lumin' {
      * @return true if tracking was started, false if there was an error.
      * @priv CameraCapture
      */
-    trackMovingImage(imageName: string, dimensions: [number, number] /* glm::vec2 */, file: string, prism: Prism): boolean
+    trackMovingImage(imageName: string, dimensions: [number, number] | Float32Array /* glm::vec2 */, file: string, prism: Prism | null): boolean
 
     /**
      * Stops tracking an image. If no images are being tracked, will disable tracking.
@@ -594,7 +594,7 @@ declare module 'lumin' {
      * Gets the LocaleHelper that's set to the current system locale
      * @return the current system LocaleHelper
      */
-    getCurrentLocaleHelper(): utils.LocaleHelper
+    getCurrentLocaleHelper(): utils.LocaleHelper | null
 
     /**
      * Lock the LocaleHelper to the given locale. It will no longer change when the system locale is changed
@@ -610,14 +610,14 @@ declare module 'lumin' {
     /**
      * Get the system locale code
      */
-    getLocaleCode(): string
+    getLocaleCode(): string | null /* std::optional<std::string> */
 
     /**
      * Register a callback for when the system locale is changed
      * @param callbackFunction the function to be called (the new locale code is given as a parameter)
      * @return the internal ID of the callback, can be used to unregister the callback
      */
-    registerOnLocaleChangedCallback(callbackFunction: (arg0: string) => void): utils.CallbackID
+    registerOnLocaleChangedCallback(callbackFunction: ((arg0: string) => void) | null /* std::function<void(std::string)> */): utils.CallbackID
 
     /**
      * Unregister a callback for when the system locale is changed
@@ -631,7 +631,7 @@ declare module 'lumin' {
      *
      * @return a pointer to the input state tracking system
      */
-    getInput(): InputHelper
+    getInput(): InputHelper | null
 
     /**
      * Get WiFi Enabled status.
@@ -711,7 +711,7 @@ declare module 'lumin' {
      *
      * @priv PcfRead
      */
-    getNearestPCF(worldLocation: [number, number, number] /* glm::vec3 */): PCFId
+    getNearestPCF(worldLocation: [number, number, number] | Float32Array /* glm::vec3 */): PCFId
 
     /**
      * Returns the number of Persistent Coordinate Frames the system knows about.
@@ -741,5 +741,27 @@ declare module 'lumin' {
      * @priv PcfRead
      */
     getPCFData(pcf: PCFId): PCFData
+
+    /**
+     * Sets the callback function to be called when audio output device is changed.
+     * Note: The callback will run on main thread.
+     *       No need to use runOnMainThread() inside the callback.
+     *
+     * @param callback std::function to be called as callback.
+     *        See AudioOutputDeviceChangedCallback.
+     */
+    setAudioOutputDeviceChangeCallback(callback: ((arg0: AudioOutputDevice) => void) | null /* std::function<void(AudioOutputDevice)> */): void
+
+    /**
+     * Register this client to receive invites
+     * @return true if successfully registered, false otherwise
+     */
+    registerForConnectionsInviteEvents(): boolean
+
+    /**
+     * Deregister this client from receving invites
+     * @return true if successfully deregistered, false otherwise
+     */
+    deregisterForConnectionsInviteEvents(): boolean
   }
 }

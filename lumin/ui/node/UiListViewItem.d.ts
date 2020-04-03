@@ -9,7 +9,7 @@ declare module 'lumin' {
      *
      * As a UiGroup, this node aggregates certain UI events.
      */
-    class UiListViewItem extends UiNode {
+    class UiListViewItem extends ui.UiNode {
 
       /**
        * Creates a new UiListViewItem
@@ -19,7 +19,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism): ui.UiListViewItem
+      static Create(prism: Prism | null): ui.UiListViewItem | null
 
       /**
        * Sets the background color.
@@ -30,7 +30,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setBackgroundColor(color: [number, number, number, number] /* glm::vec4 */): void
+      setBackgroundColor(color: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Gets the background color.

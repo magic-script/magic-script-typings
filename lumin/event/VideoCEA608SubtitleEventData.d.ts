@@ -21,7 +21,7 @@ declare module 'lumin' {
      * @param index the index at which to retrieve the line
      * @return the given line if it exists, null otherwise
      */
-    getLine(index: number /* uint32_t */): VideoCEA608SubtitleEventData.Line
+    getLine(index: number /* uint32_t */): VideoCEA608SubtitleEventData.Line | null
 
     /**
      * @return the total number of lines

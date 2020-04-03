@@ -4,7 +4,7 @@ declare module 'lumin' {
     /**
      * UiTab - This node represents a clickable text tab.
      */
-    class UiTab extends UiNode {
+    class UiTab extends ui.UiNode {
 
       /**
        * Creates a UiTab element using default settings.
@@ -15,7 +15,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static Create(prism: Prism, labelText: string): ui.UiTab
+      static Create(prism: Prism | null, labelText: string): ui.UiTab | null
 
       /**
        * Creates an Eclipse Tab from UX specifications.
@@ -26,7 +26,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      static CreateEclipseTab(prism: Prism, text: string, labelType: ui.EclipseLabelType): ui.UiTab
+      static CreateEclipseTab(prism: Prism | null, text: string, labelType: ui.EclipseLabelType): ui.UiTab | null
 
       /**
        * Sets the UTF-8 encoded tab text.
@@ -53,7 +53,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      setTextColor(rgba: [number, number, number, number] /* glm::vec4 */): void
+      setTextColor(rgba: [number, number, number, number] | Float32Array /* glm::vec4 */): void
 
       /**
        * Get the RGBA color of the tab text; the default is white; i.e., (1, 1, 1, 1).
@@ -90,7 +90,7 @@ declare module 'lumin' {
        *
        * @priv none
        */
-      getUiTextLabel(): ui.UiText
+      getUiTextLabel(): ui.UiText | null
     }
   }
 }

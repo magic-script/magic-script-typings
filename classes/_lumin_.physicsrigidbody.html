@@ -1,0 +1,1891 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PhysicsRigidBody | MagicScript</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	<link rel="shortcut icon" href="/img/favicon.png">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js"
+				data-base="..">
+				<div class="field">
+					<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+					<input id="tsd-search-field" type="text" />
+				</div>
+				<ul class="results">
+					<li class="state loading">Preparing search index...</li>
+					<li class="state failure">The search index is not available</li>
+				</ul>
+				<a href="/" class="title">
+					<img class="site-icon" src="../assets/images/magicscript.svg"
+					alt="MagicScript Logo">
+					<strong>MagicScript</strong>
+				</a>
+				<a class="title nav-link" target="_blank" rel="noopener noreferrer"
+				href="https://www.magicscript.org/">Home</a>
+				<a class="title nav-link nav-verbose" target="_blank" rel="noopener noreferrer"
+				href="https://www.npmjs.com/package/magic-script-typings">NPM</a>
+				<a class="title nav-link nav-verbose" target="_blank" rel="noopener noreferrer"
+				href="https://github.com/magic-script/magic-script-typings">GitHub</a>
+				<a class="title nav-link nav-verbose" target="_blank" rel="noopener noreferrer"
+				href="https://creator.magicleap.com/learn/guides/magicscript-overview">Creator Portal</a>
+			</div>
+			<div class="table-cell" id="tsd-widgets">
+				<div id="tsd-filter">
+					<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+					<div class="tsd-filter-group">
+						<div class="tsd-select" id="tsd-filter-visibility">
+							<span class="tsd-select-label">All</span>
+							<ul class="tsd-select-list">
+								<li data-value="public">Public</li>
+								<li data-value="protected">Public/Protected</li>
+								<li data-value="private" class="selected">All</li>
+							</ul>
+						</div>
+						<div class="tsd-select" id="tsd-filter-version">
+							<span class="tsd-select-label">V1.7</span>
+							<ul class="tsd-select-list">
+								<li data-value="v1.6">V1.6</li>
+								<li data-value="">V1.7</li>
+							</ul>
+						</div>
+						<input type="checkbox" id="tsd-filter-inherited" checked />
+						<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+					</div>
+				</div>
+				<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_lumin_.html">&quot;lumin&quot;</a>
+				</li>
+				<li>
+					<a href="_lumin_.physicsrigidbody.html">PhysicsRigidBody</a>
+				</li>
+			</ul>
+			<h1>Class PhysicsRigidBody</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Defines the mass and movement properties of a physics object. A rigid body has no inherent shape,
+						one or more PhysicsShapes need to be added to it.</p>
+					</div>
+					<p>A rigid body is one of 3 types: static, kinematic, or dynamic
+						static : The body never moves.
+						kinematic : The body can be moved by external systems, such as animation, but is not
+						affected by forces or collisions.
+					dynamic : The body is affected by forces and collisions.</p>
+					<p>It is important that apart from their initial position, static and dynamic bodies should not
+						have their positions changed by calls to setLocalPosition, etc. This will cause unexpected
+					results in the simulation.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">PhysicsRigidBody</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#addshape" class="tsd-kind-icon">add<wbr>Shape</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#applyforce" class="tsd-kind-icon">apply<wbr>Force</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#applyforceatpos" class="tsd-kind-icon">apply<wbr>Force<wbr>AtPos</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#applylocalforceatpos" class="tsd-kind-icon">apply<wbr>Local<wbr>Force<wbr>AtPos</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#applytorque" class="tsd-kind-icon">apply<wbr>Torque</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#clearcolliderflag" class="tsd-kind-icon">clear<wbr>Collider<wbr>Flag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#clearcollideswithflag" class="tsd-kind-icon">clear<wbr>Collides<wbr>With<wbr>Flag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#clearforce" class="tsd-kind-icon">clear<wbr>Force</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#cleartorque" class="tsd-kind-icon">clear<wbr>Torque</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getangulardamping" class="tsd-kind-icon">get<wbr>Angular<wbr>Damping</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getangularvelocity" class="tsd-kind-icon">get<wbr>Angular<wbr>Velocity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getbodytype" class="tsd-kind-icon">get<wbr>Body<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getcenterofmass" class="tsd-kind-icon">get<wbr>Center<wbr>OfMass</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getcolliderflags" class="tsd-kind-icon">get<wbr>Collider<wbr>Flags</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getcollideswithflags" class="tsd-kind-icon">get<wbr>Collides<wbr>With<wbr>Flags</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getinertiatensor" class="tsd-kind-icon">get<wbr>Inertia<wbr>Tensor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getlineardamping" class="tsd-kind-icon">get<wbr>Linear<wbr>Damping</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getlinearvelocity" class="tsd-kind-icon">get<wbr>Linear<wbr>Velocity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getmass" class="tsd-kind-icon">get<wbr>Mass</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getmaxangularvelocity" class="tsd-kind-icon">get<wbr>Max<wbr>Angular<wbr>Velocity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#getsleepthreshold" class="tsd-kind-icon">get<wbr>Sleep<wbr>Threshold</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#iscolliderflagset" class="tsd-kind-icon">is<wbr>Collider<wbr>Flag<wbr>Set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#iscollideswithflagset" class="tsd-kind-icon">is<wbr>Collides<wbr>With<wbr>Flag<wbr>Set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#lockaxes" class="tsd-kind-icon">lock<wbr>Axes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#node" class="tsd-kind-icon">node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#removeshape" class="tsd-kind-icon">remove<wbr>Shape</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setangulardamping" class="tsd-kind-icon">set<wbr>Angular<wbr>Damping</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setangularvelocity" class="tsd-kind-icon">set<wbr>Angular<wbr>Velocity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setbodytype" class="tsd-kind-icon">set<wbr>Body<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setcenterofmass" class="tsd-kind-icon">set<wbr>Center<wbr>OfMass</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setcolliderflag" class="tsd-kind-icon">set<wbr>Collider<wbr>Flag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setcolliderflags" class="tsd-kind-icon">set<wbr>Collider<wbr>Flags</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setcollideswithflag" class="tsd-kind-icon">set<wbr>Collides<wbr>With<wbr>Flag</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setcollideswithflags" class="tsd-kind-icon">set<wbr>Collides<wbr>With<wbr>Flags</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setenableccd" class="tsd-kind-icon">set<wbr>EnableCCD</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setignoregravity" class="tsd-kind-icon">set<wbr>Ignore<wbr>Gravity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setinertiatensor" class="tsd-kind-icon">set<wbr>Inertia<wbr>Tensor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setlineardamping" class="tsd-kind-icon">set<wbr>Linear<wbr>Damping</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setlinearvelocity" class="tsd-kind-icon">set<wbr>Linear<wbr>Velocity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setmass" class="tsd-kind-icon">set<wbr>Mass</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setmaxangularvelocity" class="tsd-kind-icon">set<wbr>Max<wbr>Angular<wbr>Velocity</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.physicsrigidbody.html#setsleepthreshold" class="tsd-kind-icon">set<wbr>Sleep<wbr>Threshold</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Physics<wbr>Rigid<wbr>Body<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lumin_.physicsrigidbody.html" class="tsd-signature-type">PhysicsRigidBody</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L17">lumin/physics/PhysicsRigidBody.d.ts:17</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_lumin_.physicsrigidbody.html" class="tsd-signature-type">PhysicsRigidBody</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addshape" class="tsd-anchor"></a>
+					<h3>add<wbr>Shape</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Shape<span class="tsd-signature-symbol">(</span>shape<span class="tsd-signature-symbol">: </span><a href="_lumin_.physicsshape.html" class="tsd-signature-type">PhysicsShape</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, position<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span>, rotation<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L169">lumin/physics/PhysicsRigidBody.d.ts:169</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a shape to the body. A shape may not be added to the body after it has been added to a Prism.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>shape: <a href="_lumin_.physicsshape.html" class="tsd-signature-type">PhysicsShape</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The shape to add.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> position: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><code>default = VEC3_ZERO</code><br/> Offset from the body&#39;s location to place the shape.</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> rotation: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p><code>default = QUAT_IDENTITY</code><br/> Rotation of the shape relative to the body&#39;s orientation.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bigint</span></h4>
+							<p>Id of the shape for the body. INVALID_PHYSICS_ID if the shape was not added.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="applyforce" class="tsd-anchor"></a>
+					<h3>apply<wbr>Force</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">apply<wbr>Force<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a>, force<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L340">lumin/physics/PhysicsRigidBody.d.ts:340</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a force to the body. The force will only be applied for the current frame; to apply a
+									continuous force, this function must be called every frame.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Type of force to apply (force or impulse).</p>
+									</div>
+								</li>
+								<li>
+									<h5>force: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Amount of force. Units depend on the force type.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="applyforceatpos" class="tsd-anchor"></a>
+					<h3>apply<wbr>Force<wbr>AtPos</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">apply<wbr>Force<wbr>AtPos<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a>, force<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span>, pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L354">lumin/physics/PhysicsRigidBody.d.ts:354</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a force to the body at a given position. If the force is not at the center of mass, this
+										will result in a torque being applied to the body as well. Both the force and position are in
+										volume-space reference frame. The force will only be applied for the current frame; to apply a
+									continuous force, this function must be called every frame.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Type of force to apply (force or impulse).</p>
+									</div>
+								</li>
+								<li>
+									<h5>force: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Amount of force. Units depend on the force type.</p>
+									</div>
+								</li>
+								<li>
+									<h5>pos: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Position to apply the force</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="applylocalforceatpos" class="tsd-anchor"></a>
+					<h3>apply<wbr>Local<wbr>Force<wbr>AtPos</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">apply<wbr>Local<wbr>Force<wbr>AtPos<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a>, force<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span>, pos<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L368">lumin/physics/PhysicsRigidBody.d.ts:368</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a force to the body at a given position. If the force is not at the center of mass, this
+										will result in a torque being applied to the body as well. Both the force and position are in
+										local-space of the body reference frame. The force will only be applied for the current frame;
+									to apply a continuous force, this function must be called every frame.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Type of force to apply (force or impulse).</p>
+									</div>
+								</li>
+								<li>
+									<h5>force: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Amount of force. Units depend on the force type.</p>
+									</div>
+								</li>
+								<li>
+									<h5>pos: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Position to apply the force</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="applytorque" class="tsd-anchor"></a>
+					<h3>apply<wbr>Torque</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">apply<wbr>Torque<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a>, force<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L379">lumin/physics/PhysicsRigidBody.d.ts:379</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Applies a torque to the body. The torque will only be applied for the current frame; to apply a
+									continuous torque, this function must be called every frame.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/_lumin_.physics.forcetype.html" class="tsd-signature-type">ForceType</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Type of torque to apply (force or impulse).</p>
+									</div>
+								</li>
+								<li>
+									<h5>force: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Amount of torque. Units depend on the force type.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearcolliderflag" class="tsd-anchor"></a>
+					<h3>clear<wbr>Collider<wbr>Flag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Collider<wbr>Flag<span class="tsd-signature-symbol">(</span>flag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L110">lumin/physics/PhysicsRigidBody.d.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clears a single collider flag for the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flag: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Collider flag, in the range of 0 - 31.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearcollideswithflag" class="tsd-anchor"></a>
+					<h3>clear<wbr>Collides<wbr>With<wbr>Flag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Collides<wbr>With<wbr>Flag<span class="tsd-signature-symbol">(</span>flag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L157">lumin/physics/PhysicsRigidBody.d.ts:157</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clears a single collides with flag for the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flag: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Collides with flag, in the range of 0 - 31.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clearforce" class="tsd-anchor"></a>
+					<h3>clear<wbr>Force</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Force<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L386">lumin/physics/PhysicsRigidBody.d.ts:386</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clears all linear forces on the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="cleartorque" class="tsd-anchor"></a>
+					<h3>clear<wbr>Torque</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Torque<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L393">lumin/physics/PhysicsRigidBody.d.ts:393</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clears all angular forces on the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getangulardamping" class="tsd-anchor"></a>
+					<h3>get<wbr>Angular<wbr>Damping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Angular<wbr>Damping<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L281">lumin/physics/PhysicsRigidBody.d.ts:281</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns angular damping coefficient being applied to the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>Damping</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getangularvelocity" class="tsd-anchor"></a>
+					<h3>get<wbr>Angular<wbr>Velocity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Angular<wbr>Velocity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L244">lumin/physics/PhysicsRigidBody.d.ts:244</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the angular velocity of the body, in rad/sec.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>velocity</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbodytype" class="tsd-anchor"></a>
+					<h3>get<wbr>Body<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Body<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.rigidbodytype.html" class="tsd-signature-type">RigidBodyType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L34">lumin/physics/PhysicsRigidBody.d.ts:34</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the rigid body type (static/kinematic/dynamic).</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_lumin_.physics.rigidbodytype.html" class="tsd-signature-type">RigidBodyType</a></h4>
+							<p>The body type.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcenterofmass" class="tsd-anchor"></a>
+					<h3>get<wbr>Center<wbr>OfMass</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Center<wbr>OfMass<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L188">lumin/physics/PhysicsRigidBody.d.ts:188</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the center of mass of the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>Center of mass.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcolliderflags" class="tsd-anchor"></a>
+					<h3>get<wbr>Collider<wbr>Flags</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Collider<wbr>Flags<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L72">lumin/physics/PhysicsRigidBody.d.ts:72</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the collider flags for the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The collider flags.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcollideswithflags" class="tsd-anchor"></a>
+					<h3>get<wbr>Collides<wbr>With<wbr>Flags</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Collides<wbr>With<wbr>Flags<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L119">lumin/physics/PhysicsRigidBody.d.ts:119</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the collides with flags for the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The collides with flags.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getinertiatensor" class="tsd-anchor"></a>
+					<h3>get<wbr>Inertia<wbr>Tensor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Inertia<wbr>Tensor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L207">lumin/physics/PhysicsRigidBody.d.ts:207</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the inertia tensor of the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>Inertia tensor.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlineardamping" class="tsd-anchor"></a>
+					<h3>get<wbr>Linear<wbr>Damping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Linear<wbr>Damping<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L262">lumin/physics/PhysicsRigidBody.d.ts:262</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns linear damping coefficient being applied to the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>Damping</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getlinearvelocity" class="tsd-anchor"></a>
+					<h3>get<wbr>Linear<wbr>Velocity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Linear<wbr>Velocity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L226">lumin/physics/PhysicsRigidBody.d.ts:226</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the linear velocity of the body, in meter/sec.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>velocity</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmass" class="tsd-anchor"></a>
+					<h3>get<wbr>Mass</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Mass<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L54">lumin/physics/PhysicsRigidBody.d.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the mass of the rigid body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>Mass, in kilograms.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmaxangularvelocity" class="tsd-anchor"></a>
+					<h3>get<wbr>Max<wbr>Angular<wbr>Velocity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Max<wbr>Angular<wbr>Velocity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L300">lumin/physics/PhysicsRigidBody.d.ts:300</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the maximum angular velocity of the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>Max velocity</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getsleepthreshold" class="tsd-anchor"></a>
+					<h3>get<wbr>Sleep<wbr>Threshold</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Sleep<wbr>Threshold<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L319">lumin/physics/PhysicsRigidBody.d.ts:319</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the sleep threshold of the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>Threshold</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iscolliderflagset" class="tsd-anchor"></a>
+					<h3>is<wbr>Collider<wbr>Flag<wbr>Set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Collider<wbr>Flag<wbr>Set<span class="tsd-signature-symbol">(</span>flag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L82">lumin/physics/PhysicsRigidBody.d.ts:82</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns if a given collider flag is set.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flag: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Flag value, in the range of 0 - 31.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if the flag is set.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="iscollideswithflagset" class="tsd-anchor"></a>
+					<h3>is<wbr>Collides<wbr>With<wbr>Flag<wbr>Set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Collides<wbr>With<wbr>Flag<wbr>Set<span class="tsd-signature-symbol">(</span>flag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L129">lumin/physics/PhysicsRigidBody.d.ts:129</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns if a given collides with flag is set.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flag: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Flag value, in the range of 0 - 31.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if the flag is set.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="lockaxes" class="tsd-anchor"></a>
+					<h3>lock<wbr>Axes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">lock<wbr>Axes<span class="tsd-signature-symbol">(</span>linear<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.axislock.html" class="tsd-signature-type">AxisLock</a>, angular<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.axislock.html" class="tsd-signature-type">AxisLock</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L412">lumin/physics/PhysicsRigidBody.d.ts:412</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Prevents motion on the given axes. Values can be or&#39;ed together to prevent motion on multiple axes.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>linear: <a href="../enums/_lumin_.physics.axislock.html" class="tsd-signature-type">AxisLock</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Linear axes to lock</p>
+									</div>
+								</li>
+								<li>
+									<h5>angular: <a href="../enums/_lumin_.physics.axislock.html" class="tsd-signature-type">AxisLock</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Angular axes to lock</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="node" class="tsd-anchor"></a>
+					<h3>node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lumin_.node.html" class="tsd-signature-type">Node</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L25">lumin/physics/PhysicsRigidBody.d.ts:25</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the Node this RigidBody is attached to.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="_lumin_.node.html" class="tsd-signature-type">Node</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+							<p>the Node pointer.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removeshape" class="tsd-anchor"></a>
+					<h3>remove<wbr>Shape</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Shape<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L179">lumin/physics/PhysicsRigidBody.d.ts:179</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes a shape from the body. A shape may not be removed from the body after it has been added to a Prism.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">bigint</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Id of the shape to remove.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if the shape was removed</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setangulardamping" class="tsd-anchor"></a>
+					<h3>set<wbr>Angular<wbr>Damping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Angular<wbr>Damping<span class="tsd-signature-symbol">(</span>damping<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L291">lumin/physics/PhysicsRigidBody.d.ts:291</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets angular damping coefficient being applied to the body. This can be used to simulate things
+									like rolling friction.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>damping: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Damping coefficient</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setangularvelocity" class="tsd-anchor"></a>
+					<h3>set<wbr>Angular<wbr>Velocity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Angular<wbr>Velocity<span class="tsd-signature-symbol">(</span>velocity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L253">lumin/physics/PhysicsRigidBody.d.ts:253</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the angular velocity of the body, in rad/sec.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>velocity: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setbodytype" class="tsd-anchor"></a>
+					<h3>set<wbr>Body<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Body<wbr>Type<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.physics.rigidbodytype.html" class="tsd-signature-type">RigidBodyType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L45">lumin/physics/PhysicsRigidBody.d.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the rigid body type (static/kinematic/dynamic). Changing this may result in the loss of
+										data for the body in the simulation. The preferred way to change the body type is to remove
+									the body from its volume, change the type, and re-add to the volume.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <a href="../enums/_lumin_.physics.rigidbodytype.html" class="tsd-signature-type">RigidBodyType</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<p>The body type.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcenterofmass" class="tsd-anchor"></a>
+					<h3>set<wbr>Center<wbr>OfMass</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Center<wbr>OfMass<span class="tsd-signature-symbol">(</span>com<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L198">lumin/physics/PhysicsRigidBody.d.ts:198</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the center of mass of the body. Note setting it outside the body&#39;s area as defined by
+									the shapes attached to it may result in an unstable simulation.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>com: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Center of mass</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcolliderflag" class="tsd-anchor"></a>
+					<h3>set<wbr>Collider<wbr>Flag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Collider<wbr>Flag<span class="tsd-signature-symbol">(</span>flag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L101">lumin/physics/PhysicsRigidBody.d.ts:101</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets a single collider flag for the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flag: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Collider flag, in the range of 0 - 31.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcolliderflags" class="tsd-anchor"></a>
+					<h3>set<wbr>Collider<wbr>Flags</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Collider<wbr>Flags<span class="tsd-signature-symbol">(</span>flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L92">lumin/physics/PhysicsRigidBody.d.ts:92</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the collider flags for the body. If the collider flags of one body anded with the
+									collides with flags of another body is 0, the bodies will not collide.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flags: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Collider flags.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcollideswithflag" class="tsd-anchor"></a>
+					<h3>set<wbr>Collides<wbr>With<wbr>Flag</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Collides<wbr>With<wbr>Flag<span class="tsd-signature-symbol">(</span>flag<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L148">lumin/physics/PhysicsRigidBody.d.ts:148</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets a single collides with flag for the body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flag: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Collides with flag, in the range of 0 - 31.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcollideswithflags" class="tsd-anchor"></a>
+					<h3>set<wbr>Collides<wbr>With<wbr>Flags</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Collides<wbr>With<wbr>Flags<span class="tsd-signature-symbol">(</span>flags<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L139">lumin/physics/PhysicsRigidBody.d.ts:139</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the collides with flags for the body. If the collider flags of one body anded with the
+									collides with flags of another body is 0, the bodies will not collide.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>flags: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Collides with flags.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setenableccd" class="tsd-anchor"></a>
+					<h3>set<wbr>EnableCCD</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>EnableCCD<span class="tsd-signature-symbol">(</span>enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L425">lumin/physics/PhysicsRigidBody.d.ts:425</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enable/disable continuous collision detection (CCD) for this body. Enabling CCD can be used to
+									prevent a body from &quot;tunneling&quot; through another due to it moving too fast.</p>
+								</div>
+								<p>IMPORTANT: Physics must have been enabled with the solverType initialization data set to
+								kFastNormal or kFastFast for this to have an effect.</p>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>enable: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Flag to enable CCD on the body.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setignoregravity" class="tsd-anchor"></a>
+					<h3>set<wbr>Ignore<wbr>Gravity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Ignore<wbr>Gravity<span class="tsd-signature-symbol">(</span>ignore<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L402">lumin/physics/PhysicsRigidBody.d.ts:402</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Flags the body as ignoring gravity.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ignore: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, the body won&#39;t be affected by gravity.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setinertiatensor" class="tsd-anchor"></a>
+					<h3>set<wbr>Inertia<wbr>Tensor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Inertia<wbr>Tensor<span class="tsd-signature-symbol">(</span>tensor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L217">lumin/physics/PhysicsRigidBody.d.ts:217</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the inertia tensor of the body. A value of 0 is the equivalent of infinite inertia on
+									the axis.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>tensor: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Inertia tensor.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setlineardamping" class="tsd-anchor"></a>
+					<h3>set<wbr>Linear<wbr>Damping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Linear<wbr>Damping<span class="tsd-signature-symbol">(</span>damping<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L272">lumin/physics/PhysicsRigidBody.d.ts:272</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets linear damping coefficient being applied to the body. This can be used to simulate things
+									like air resistance.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>damping: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Damping coefficient</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setlinearvelocity" class="tsd-anchor"></a>
+					<h3>set<wbr>Linear<wbr>Velocity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Linear<wbr>Velocity<span class="tsd-signature-symbol">(</span>velocity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L235">lumin/physics/PhysicsRigidBody.d.ts:235</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the linear velocity of the body, in meter/sec.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>velocity: <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setmass" class="tsd-anchor"></a>
+					<h3>set<wbr>Mass</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Mass<span class="tsd-signature-symbol">(</span>massKg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L63">lumin/physics/PhysicsRigidBody.d.ts:63</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the mass of the rigid body.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>massKg: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Mass, in kilograms. Must be &gt; 0.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setmaxangularvelocity" class="tsd-anchor"></a>
+					<h3>set<wbr>Max<wbr>Angular<wbr>Velocity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Max<wbr>Angular<wbr>Velocity<span class="tsd-signature-symbol">(</span>velocity<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L310">lumin/physics/PhysicsRigidBody.d.ts:310</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the maximum angular velocity of the body. This helps keep the simulation stable; it can become
+									unstable if the object rotates too fast.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>velocity: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Max velocity</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setsleepthreshold" class="tsd-anchor"></a>
+					<h3>set<wbr>Sleep<wbr>Threshold</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Sleep<wbr>Threshold<span class="tsd-signature-symbol">(</span>threshold<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/physics/PhysicsRigidBody.d.ts#L329">lumin/physics/PhysicsRigidBody.d.ts:329</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the sleep threshold of the body. This controls when the body is marked to be stopped
+									simulating due to lack of motion.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>threshold: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Sleep threshold value</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="../modules/_lumin_.html">&quot;lumin&quot;</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.assetpacker.html">Asset<wbr>Packer</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.animation.html">animation</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.color.html">color</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.densemesh.html">densemesh</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.files.html">files</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.glyph.html">glyph</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.haptics.html">haptics</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.headtracking.html">headtracking</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.input.html">input</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.math.html">math</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.multipack.html">multipack</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.particles.html">particles</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.physics.html">physics</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.render.html">render</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.resources.html">resources</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.shader.html">shader</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.text.html">text</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.ui.html">ui</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.utils.html">utils</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="_lumin_.physicsrigidbody.html" class="tsd-kind-icon">Physics<wbr>Rigid<wbr>Body</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#addshape" class="tsd-kind-icon">add<wbr>Shape</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#applyforce" class="tsd-kind-icon">apply<wbr>Force</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#applyforceatpos" class="tsd-kind-icon">apply<wbr>Force<wbr>AtPos</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#applylocalforceatpos" class="tsd-kind-icon">apply<wbr>Local<wbr>Force<wbr>AtPos</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#applytorque" class="tsd-kind-icon">apply<wbr>Torque</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#clearcolliderflag" class="tsd-kind-icon">clear<wbr>Collider<wbr>Flag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#clearcollideswithflag" class="tsd-kind-icon">clear<wbr>Collides<wbr>With<wbr>Flag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#clearforce" class="tsd-kind-icon">clear<wbr>Force</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#cleartorque" class="tsd-kind-icon">clear<wbr>Torque</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getangulardamping" class="tsd-kind-icon">get<wbr>Angular<wbr>Damping</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getangularvelocity" class="tsd-kind-icon">get<wbr>Angular<wbr>Velocity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getbodytype" class="tsd-kind-icon">get<wbr>Body<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getcenterofmass" class="tsd-kind-icon">get<wbr>Center<wbr>OfMass</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getcolliderflags" class="tsd-kind-icon">get<wbr>Collider<wbr>Flags</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getcollideswithflags" class="tsd-kind-icon">get<wbr>Collides<wbr>With<wbr>Flags</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getinertiatensor" class="tsd-kind-icon">get<wbr>Inertia<wbr>Tensor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getlineardamping" class="tsd-kind-icon">get<wbr>Linear<wbr>Damping</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getlinearvelocity" class="tsd-kind-icon">get<wbr>Linear<wbr>Velocity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getmass" class="tsd-kind-icon">get<wbr>Mass</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getmaxangularvelocity" class="tsd-kind-icon">get<wbr>Max<wbr>Angular<wbr>Velocity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#getsleepthreshold" class="tsd-kind-icon">get<wbr>Sleep<wbr>Threshold</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#iscolliderflagset" class="tsd-kind-icon">is<wbr>Collider<wbr>Flag<wbr>Set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#iscollideswithflagset" class="tsd-kind-icon">is<wbr>Collides<wbr>With<wbr>Flag<wbr>Set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#lockaxes" class="tsd-kind-icon">lock<wbr>Axes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#node" class="tsd-kind-icon">node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#removeshape" class="tsd-kind-icon">remove<wbr>Shape</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setangulardamping" class="tsd-kind-icon">set<wbr>Angular<wbr>Damping</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setangularvelocity" class="tsd-kind-icon">set<wbr>Angular<wbr>Velocity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setbodytype" class="tsd-kind-icon">set<wbr>Body<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setcenterofmass" class="tsd-kind-icon">set<wbr>Center<wbr>OfMass</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setcolliderflag" class="tsd-kind-icon">set<wbr>Collider<wbr>Flag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setcolliderflags" class="tsd-kind-icon">set<wbr>Collider<wbr>Flags</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setcollideswithflag" class="tsd-kind-icon">set<wbr>Collides<wbr>With<wbr>Flag</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setcollideswithflags" class="tsd-kind-icon">set<wbr>Collides<wbr>With<wbr>Flags</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setenableccd" class="tsd-kind-icon">set<wbr>EnableCCD</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setignoregravity" class="tsd-kind-icon">set<wbr>Ignore<wbr>Gravity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setinertiatensor" class="tsd-kind-icon">set<wbr>Inertia<wbr>Tensor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setlineardamping" class="tsd-kind-icon">set<wbr>Linear<wbr>Damping</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setlinearvelocity" class="tsd-kind-icon">set<wbr>Linear<wbr>Velocity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setmass" class="tsd-kind-icon">set<wbr>Mass</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setmaxangularvelocity" class="tsd-kind-icon">set<wbr>Max<wbr>Angular<wbr>Velocity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.physicsrigidbody.html#setsleepthreshold" class="tsd-kind-icon">set<wbr>Sleep<wbr>Threshold</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

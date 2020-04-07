@@ -1,0 +1,1096 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Font2dResource | MagicScript</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/custom.css">
+	<link rel="shortcut icon" href="/img/favicon.png">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js"
+				data-base="..">
+				<div class="field">
+					<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+					<input id="tsd-search-field" type="text" />
+				</div>
+				<ul class="results">
+					<li class="state loading">Preparing search index...</li>
+					<li class="state failure">The search index is not available</li>
+				</ul>
+				<a href="/" class="title">
+					<img class="site-icon" src="../assets/images/magicscript.svg"
+					alt="MagicScript Logo">
+					<strong>MagicScript</strong>
+				</a>
+				<a class="title nav-link" target="_blank" rel="noopener noreferrer"
+				href="https://www.magicscript.org/">Home</a>
+				<a class="title nav-link nav-verbose" target="_blank" rel="noopener noreferrer"
+				href="https://www.npmjs.com/package/magic-script-typings">NPM</a>
+				<a class="title nav-link nav-verbose" target="_blank" rel="noopener noreferrer"
+				href="https://github.com/magic-script/magic-script-typings">GitHub</a>
+				<a class="title nav-link nav-verbose" target="_blank" rel="noopener noreferrer"
+				href="https://creator.magicleap.com/learn/guides/magicscript-overview">Creator Portal</a>
+			</div>
+			<div class="table-cell" id="tsd-widgets">
+				<div id="tsd-filter">
+					<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+					<div class="tsd-filter-group">
+						<div class="tsd-select" id="tsd-filter-visibility">
+							<span class="tsd-select-label">All</span>
+							<ul class="tsd-select-list">
+								<li data-value="public">Public</li>
+								<li data-value="protected">Public/Protected</li>
+								<li data-value="private" class="selected">All</li>
+							</ul>
+						</div>
+						<div class="tsd-select" id="tsd-filter-version">
+							<span class="tsd-select-label">V1.7</span>
+							<ul class="tsd-select-list">
+								<li data-value="v1.6">V1.6</li>
+								<li data-value="">V1.7</li>
+							</ul>
+						</div>
+						<input type="checkbox" id="tsd-filter-inherited" checked />
+						<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+					</div>
+				</div>
+				<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_lumin_.html">&quot;lumin&quot;</a>
+				</li>
+				<li>
+					<a href="_lumin_.font2dresource.html">Font2dResource</a>
+				</li>
+			</ul>
+			<h1>Class Font2dResource</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A 2D font is a font rendered onto a planar image (whatever the format),
+						as opposed to a 3D model of the glyphs or other graphical representation.</p>
+					</div>
+					<p>Note, for this implementation, the loadGlyphs() and unloadGlyphs()
+						functions will only work if called on the render thread by the process
+						with the OpenGL context.  These two methods are also not needed by Lumin
+						clients, which can create font resources within their prisms; see
+					Prism::createFont2dResource.</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="_lumin_.fontresource.html" class="tsd-signature-type">FontResource</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Font2dResource</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_lumin_.font2dresource.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getadvancedirection" class="tsd-kind-icon">get<wbr>Advance<wbr>Direction</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getascender" class="tsd-kind-icon">get<wbr>Ascender</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getbasepath" class="tsd-kind-icon">get<wbr>Base<wbr>Path</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getdescender" class="tsd-kind-icon">get<wbr>Descender</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getfilename" class="tsd-kind-icon">get<wbr>File<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getflowdirection" class="tsd-kind-icon">get<wbr>Flow<wbr>Direction</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getfontname" class="tsd-kind-icon">get<wbr>Font<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getfontsize" class="tsd-kind-icon">get<wbr>Font<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getfontstyle" class="tsd-kind-icon">get<wbr>Font<wbr>Style</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getglyphheight" class="tsd-kind-icon">get<wbr>Glyph<wbr>Height</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#getglyphquality" class="tsd-kind-icon">get<wbr>Glyph<wbr>Quality</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getlinespacing" class="tsd-kind-icon">get<wbr>Line<wbr>Spacing</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getloadstatus" class="tsd-kind-icon">get<wbr>Load<wbr>Status</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getloadedglyphs" class="tsd-kind-icon">get<wbr>Loaded<wbr>Glyphs</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#getminalphatodiscard" class="tsd-kind-icon">get<wbr>Min<wbr>Alpha<wbr>ToDiscard</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#getresourceid" class="tsd-kind-icon">get<wbr>Resource<wbr>Id</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#getshadertype" class="tsd-kind-icon">get<wbr>Shader<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#gettexture2darrayids" class="tsd-kind-icon">get<wbr>Texture2d<wbr>Array<wbr>Ids</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#gettexturedims" class="tsd-kind-icon">get<wbr>Texture<wbr>Dims</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#gettileinfo" class="tsd-kind-icon">get<wbr>Tile<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#gettilesize" class="tsd-kind-icon">get<wbr>Tile<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#isprotectedcontent" class="tsd-kind-icon">is<wbr>Protected<wbr>Content</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#isresourcevalid" class="tsd-kind-icon">is<wbr>Resource<wbr>Valid</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_lumin_.font2dresource.html#setfont2ddesc" class="tsd-kind-icon">set<wbr>Font2d<wbr>Desc</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_lumin_.font2dresource.html#setprotectedcontent" class="tsd-kind-icon">set<wbr>Protected<wbr>Content</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Font2d<wbr>Resource<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lumin_.font2dresource.html" class="tsd-signature-type">Font2dResource</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_lumin_.fontresource.html">FontResource</a>.<a href="_lumin_.fontresource.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L15">lumin/resource/Font2dResource.d.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_lumin_.font2dresource.html" class="tsd-signature-type">Font2dResource</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getadvancedirection" class="tsd-anchor"></a>
+					<h3>get<wbr>Advance<wbr>Direction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Advance<wbr>Direction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.glyph.advancedirection.html" class="tsd-signature-type">AdvanceDirection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getadvancedirection">getAdvanceDirection</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L43">lumin/resource/FontResource.d.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the advance direction.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_lumin_.glyph.advancedirection.html" class="tsd-signature-type">AdvanceDirection</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getascender" class="tsd-anchor"></a>
+					<h3>get<wbr>Ascender</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Ascender<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getascender">getAscender</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L69">lumin/resource/FontResource.d.ts:69</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The ascender is the vertical distance from the horizontal
+									baseline to the highest glyph coordinate.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getbasepath" class="tsd-anchor"></a>
+					<h3>get<wbr>Base<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Base<wbr>Path<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#getbasepath">getBasePath</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L49">lumin/resource/Resource.d.ts:49</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the base path of the resource.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>Base path</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getdescender" class="tsd-anchor"></a>
+					<h3>get<wbr>Descender</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Descender<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getdescender">getDescender</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L78">lumin/resource/FontResource.d.ts:78</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The descender is the vertical distance from the horizontal
+										baseline to the lowest glyph coordinate, which is negative
+									if any glyphs extend below the baseline (usually they do).</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getfilename" class="tsd-anchor"></a>
+					<h3>get<wbr>File<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>File<wbr>Name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#getfilename">getFileName</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L40">lumin/resource/Resource.d.ts:40</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the FileName Associated with this resource.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>Filename</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getflowdirection" class="tsd-anchor"></a>
+					<h3>get<wbr>Flow<wbr>Direction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Flow<wbr>Direction<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.text.flowdirection.html" class="tsd-signature-type">FlowDirection</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getflowdirection">getFlowDirection</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L50">lumin/resource/FontResource.d.ts:50</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the text-flow direction.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_lumin_.text.flowdirection.html" class="tsd-signature-type">FlowDirection</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getfontname" class="tsd-anchor"></a>
+					<h3>get<wbr>Font<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Font<wbr>Name<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getfontname">getFontName</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L15">lumin/resource/FontResource.d.ts:15</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the font family; e.g., &quot;Liberation Mono&quot;.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getfontsize" class="tsd-anchor"></a>
+					<h3>get<wbr>Font<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Font<wbr>Size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getfontsize">getFontSize</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L29">lumin/resource/FontResource.d.ts:29</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the size of the font; the units are not specified by the interface.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getfontstyle" class="tsd-anchor"></a>
+					<h3>get<wbr>Font<wbr>Style</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Font<wbr>Style<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getfontstyle">getFontStyle</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L22">lumin/resource/FontResource.d.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the font style; e.g., &quot;Italic&quot;.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getglyphheight" class="tsd-anchor"></a>
+					<h3>get<wbr>Glyph<wbr>Height</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Glyph<wbr>Height<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getglyphheight">getGlyphHeight</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L88">lumin/resource/FontResource.d.ts:88</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the global glyph height for the font.</p>
+								</div>
+								<p>Formally, this is the difference between the ascender and descender,
+								which is what getGlyphHeight() returns.</p>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getglyphquality" class="tsd-anchor"></a>
+					<h3>get<wbr>Glyph<wbr>Quality</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Glyph<wbr>Quality<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.glyph.quality.html" class="tsd-signature-type">Quality</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L36">lumin/resource/Font2dResource.d.ts:36</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the glyph quality of the font resource specified in the
+									Font2dDesc when the font resource was created.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_lumin_.glyph.quality.html" class="tsd-signature-type">Quality</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getlinespacing" class="tsd-anchor"></a>
+					<h3>get<wbr>Line<wbr>Spacing</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Line<wbr>Spacing<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getlinespacing">getLineSpacing</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L61">lumin/resource/FontResource.d.ts:61</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the space between lines of text written with this font.</p>
+								</div>
+								<p>This is a value provided by the font designer to indicate how
+									much space should separate lines of text written with the font
+								relative to the size of a tile (which is 1 in glyph space).</p>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getloadstatus" class="tsd-anchor"></a>
+					<h3>get<wbr>Load<wbr>Status</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Load<wbr>Status<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.resources.loadstatus.html" class="tsd-signature-type">LoadStatus</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#getloadstatus">getLoadStatus</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L56">lumin/resource/Resource.d.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return a int that contains the result of loading this resource.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_lumin_.resources.loadstatus.html" class="tsd-signature-type">LoadStatus</a></h4>
+							<p>int with the result value.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getloadedglyphs" class="tsd-anchor"></a>
+					<h3>get<wbr>Loaded<wbr>Glyphs</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Loaded<wbr>Glyphs<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.font2dresource.html">Font2dResource</a>.<a href="_lumin_.font2dresource.html#getloadedglyphs">getLoadedGlyphs</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/FontResource.d.ts#L36">lumin/resource/FontResource.d.ts:36</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the list of character codes for which glyphs have been loaded.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getminalphatodiscard" class="tsd-anchor"></a>
+					<h3>get<wbr>Min<wbr>Alpha<wbr>ToDiscard</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Min<wbr>Alpha<wbr>ToDiscard<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L43">lumin/resource/Font2dResource.d.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the minimum value of text fragments to render; see Font2dDesc.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="getresourceid" class="tsd-anchor"></a>
+					<h3>get<wbr>Resource<wbr>Id</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Resource<wbr>Id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">bigint</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#getresourceid">getResourceId</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L19">lumin/resource/Resource.d.ts:19</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the Unique ID of this resource</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">bigint</span></h4>
+							<p>Resource ID</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getshadertype" class="tsd-anchor"></a>
+					<h3>get<wbr>Shader<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Shader<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_lumin_.utils.shadertype.html" class="tsd-signature-type">ShaderType</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L63">lumin/resource/Font2dResource.d.ts:63</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the type of shader to use for rendering this resource.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_lumin_.utils.shadertype.html" class="tsd-signature-type">ShaderType</a></h4>
+							<p>kMAX only if an error occurred; shader type otherwise.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettexture2darrayids" class="tsd-anchor"></a>
+					<h3>get<wbr>Texture2d<wbr>Array<wbr>Ids</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Texture2d<wbr>Array<wbr>Ids<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L81">lumin/resource/Font2dResource.d.ts:81</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the IDs of all 2D texture arrays containing the glyphs of the font.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettexturedims" class="tsd-anchor"></a>
+					<h3>get<wbr>Texture<wbr>Dims</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Texture<wbr>Dims<span class="tsd-signature-symbol">(</span>textureId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L74">lumin/resource/Font2dResource.d.ts:74</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>After the server has loaded the font resource, this will
+									return the dimensions of the texture with the given ID.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>textureId: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></h4>
+							<p>the (height, width, depth) of the texture with the given ID,
+							or else (0, 0, 0) if the textureID equals 0 or is not known.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettileinfo" class="tsd-anchor"></a>
+					<h3>get<wbr>Tile<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Tile<wbr>Info<span class="tsd-signature-symbol">(</span>character<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_lumin_.glyph.tileinfo.html" class="tsd-signature-type">TileInfo</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L54">lumin/resource/Font2dResource.d.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the information for rendering a particular character.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>character: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Glyph identifier</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_lumin_.glyph.tileinfo.html" class="tsd-signature-type">TileInfo</a></h4>
+							<p>Information about the glyph representing the given character,
+							which will equal NONE if no such character has been loaded.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gettilesize" class="tsd-anchor"></a>
+					<h3>get<wbr>Tile<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Tile<wbr>Size<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L28">lumin/resource/Font2dResource.d.ts:28</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the size of the tiles for the glyphs managed by this resource.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isprotectedcontent" class="tsd-anchor"></a>
+					<h3>is<wbr>Protected<wbr>Content</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Protected<wbr>Content<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#isprotectedcontent">isProtectedContent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L70">lumin/resource/Resource.d.ts:70</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check if content is protected</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if protected</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="isresourcevalid" class="tsd-anchor"></a>
+					<h3>is<wbr>Resource<wbr>Valid</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Resource<wbr>Valid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#isresourcevalid">isResourceValid</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L31">lumin/resource/Resource.d.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns True if the Resource was successfully loaded</p>
+								</div>
+								<p>Loading only happens on the server-side so this call is
+								only useful to the server</p>
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>TRUE = Successfully loaded</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setfont2ddesc" class="tsd-anchor"></a>
+					<h3>set<wbr>Font2d<wbr>Desc</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Font2d<wbr>Desc<span class="tsd-signature-symbol">(</span>fontDesc<span class="tsd-signature-symbol">: </span><a href="_lumin_.glyph.font2ddesc.html" class="tsd-signature-type">Font2dDesc</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Font2dResource.d.ts#L21">lumin/resource/Font2dResource.d.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>priv</dt>
+									<dd><p>none</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fontDesc: <a href="_lumin_.glyph.font2ddesc.html" class="tsd-signature-type">Font2dDesc</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="setprotectedcontent" class="tsd-anchor"></a>
+					<h3>set<wbr>Protected<wbr>Content</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Protected<wbr>Content<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_lumin_.fileresource.html">FileResource</a>.<a href="_lumin_.fileresource.html#setprotectedcontent">setProtectedContent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/magic-script/magic-script-typings/blob/dbdb34bc/lumin/resource/Resource.d.ts#L63">lumin/resource/Resource.d.ts:63</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Protected/Copyrighted content, do not share with other clients</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>true if protected</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../index.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-namespace">
+						<a href="../modules/_lumin_.html">&quot;lumin&quot;</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.assetpacker.html">Asset<wbr>Packer</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.animation.html">animation</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.color.html">color</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.densemesh.html">densemesh</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.files.html">files</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.glyph.html">glyph</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.haptics.html">haptics</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.headtracking.html">headtracking</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.input.html">input</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.math.html">math</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.multipack.html">multipack</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.particles.html">particles</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.physics.html">physics</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.render.html">render</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.resources.html">resources</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.shader.html">shader</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.text.html">text</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.ui.html">ui</a>
+							</li>
+							<li class=" tsd-kind-namespace tsd-parent-kind-namespace">
+								<a href="../modules/_lumin_.utils.html">utils</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-namespace">
+						<a href="_lumin_.font2dresource.html" class="tsd-kind-icon">Font2d<wbr>Resource</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_lumin_.font2dresource.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getadvancedirection" class="tsd-kind-icon">get<wbr>Advance<wbr>Direction</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getascender" class="tsd-kind-icon">get<wbr>Ascender</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getbasepath" class="tsd-kind-icon">get<wbr>Base<wbr>Path</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getdescender" class="tsd-kind-icon">get<wbr>Descender</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getfilename" class="tsd-kind-icon">get<wbr>File<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getflowdirection" class="tsd-kind-icon">get<wbr>Flow<wbr>Direction</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getfontname" class="tsd-kind-icon">get<wbr>Font<wbr>Name</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getfontsize" class="tsd-kind-icon">get<wbr>Font<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getfontstyle" class="tsd-kind-icon">get<wbr>Font<wbr>Style</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getglyphheight" class="tsd-kind-icon">get<wbr>Glyph<wbr>Height</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#getglyphquality" class="tsd-kind-icon">get<wbr>Glyph<wbr>Quality</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getlinespacing" class="tsd-kind-icon">get<wbr>Line<wbr>Spacing</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getloadstatus" class="tsd-kind-icon">get<wbr>Load<wbr>Status</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getloadedglyphs" class="tsd-kind-icon">get<wbr>Loaded<wbr>Glyphs</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#getminalphatodiscard" class="tsd-kind-icon">get<wbr>Min<wbr>Alpha<wbr>ToDiscard</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#getresourceid" class="tsd-kind-icon">get<wbr>Resource<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#getshadertype" class="tsd-kind-icon">get<wbr>Shader<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#gettexture2darrayids" class="tsd-kind-icon">get<wbr>Texture2d<wbr>Array<wbr>Ids</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#gettexturedims" class="tsd-kind-icon">get<wbr>Texture<wbr>Dims</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#gettileinfo" class="tsd-kind-icon">get<wbr>Tile<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#gettilesize" class="tsd-kind-icon">get<wbr>Tile<wbr>Size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#isprotectedcontent" class="tsd-kind-icon">is<wbr>Protected<wbr>Content</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#isresourcevalid" class="tsd-kind-icon">is<wbr>Resource<wbr>Valid</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_lumin_.font2dresource.html#setfont2ddesc" class="tsd-kind-icon">set<wbr>Font2d<wbr>Desc</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_lumin_.font2dresource.html#setprotectedcontent" class="tsd-kind-icon">set<wbr>Protected<wbr>Content</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

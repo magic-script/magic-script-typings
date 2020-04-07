@@ -13,11 +13,12 @@
     "uv"
   ],
   "scripts": {
-    "build": "node index.js",
-    "typedoc": "typedoc ./egl ./gl ./jpeg ./lumin ./mxs ./png ./ssl ./uv",
-    "docs:start": "cd website && npm install && npm run start",
-    "docs:build": "cd website && npm install && npm run build",
-    "docs:deploy": "cd website && npm install && npm run deploy"
+    "prepublish": "node index.js",
+    "build": "./website/build.sh"
+  },
+  "devDependencies": {
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3"
   },
   "repository": {
     "type": "git",
@@ -33,9 +34,5 @@
   "bugs": {
     "url": "https://github.com/magic-script/magic-script-typings/issues"
   },
-  "homepage": "https://github.com/magic-script/magic-script-typings#readme",
-  "devDependencies": {
-    "typedoc": "^0.16.7",
-    "typedoc-plugin-markdown": "^2.2.16"
-  }
+  "homepage": "https://github.com/magic-script/magic-script-typings#readme"
 }

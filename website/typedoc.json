@@ -1,0 +1,10 @@
+{
+    "typedocOptions": {
+        "mode": "file",
+        "module": "none",
+        "readme": "none",
+        "theme": "./website/theme",
+        "includeDeclarations": true,
+        "excludeExternals": true
+    }
+}

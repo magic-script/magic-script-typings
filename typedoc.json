@@ -1,13 +1,9 @@
 {
-  "mode": "file",
-  "out": "docs",
-  "ignoreCompilerErrors": true,
-  "includeDeclarations": true,
-  "hideBreadcrumbs": true,
-  "hideIndexes": true,
-  "hideSources": true,
-  "longTitle": true,
-  "theme": "docusaurus2",
-  "excludeExternals": true,
-  "readme": "none"
+    "mode": "file",
+    "module": "none",
+    "readme": "none",
+    "theme": "./website/theme",
+    "includeDeclarations": true,
+    "excludeExternals": true,
+    "excludeNotExported": true
 }

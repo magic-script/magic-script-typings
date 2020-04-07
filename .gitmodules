@@ -1,0 +1,8 @@
+[submodule "website/v1.6"]
+	path = website/v1.6
+	url = git@github.com:magic-script/magic-script-typings.git
+	branch=v1.6.x
+[submodule "website/v1.7"]
+	path = website/v1.7
+	url = git@github.com:magic-script/magic-script-typings.git
+	branch=v1.7.x

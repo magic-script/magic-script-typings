@@ -16,11 +16,5 @@ package-lock.json
 #
 yarn.lock
 
-# jest/coverage
-/coverage/
-
-# Docs
-/Docs
-
-# Sidebars
-/website/sidebars.js
+# Generated website
+/website/gh-pages/

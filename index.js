@@ -20,5 +20,3 @@ var gatherFilesList = function(fileName, path) {
     });
 }
 gatherFilesList(luminIndex, 'lumin');
-fs.closeSync(fs.openSync(index, 'w'));
-fs.writeFileSync(index, '/// <reference path=\'./lumin/index.d.ts\' />');

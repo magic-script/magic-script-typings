@@ -19,7 +19,7 @@ npm install
 2. Make your changes and test them locally
 
 ```bash
-npm build
+npm run build
 npx http-serve website/gh-pages -p 5000
 ```
 

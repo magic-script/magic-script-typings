@@ -504,64 +504,36 @@ var typedoc;
                 _this.bindEvents();
                 return _this;
             }
-            Search.prototype.createIndex = function (data) {
-                var _this = this;
-                var builder = new lunr.Builder();
-                builder.pipeline.add(lunr.trimmer);
-                builder.field('name', { boost: 10 });
-                builder.field('parent');
-                builder.ref('id');
-                var rows = data.rows;
-                var pos = 0;
-                var length = rows.length;
-                var batch = function () {
-                    var cycles = 0;
-                    while (cycles++ < 100) {
-                        builder.add(rows[pos]);
-                        if (++pos == length) {
-                            _this.index = builder.build();
-                            return _this.setLoadingState(SearchLoadingState.Ready);
-                        }
-                    }
-                    setTimeout(batch, 10);
-                };
-                batch();
-            };
             Search.prototype.loadIndex = function () {
                 var _this = this;
-                if (this.loadingState != SearchLoadingState.Idle)
+                if (this.loadingState != SearchLoadingState.Idle || this.data)
                     return;
                 setTimeout(function () {
                     if (_this.loadingState == SearchLoadingState.Idle) {
                         _this.setLoadingState(SearchLoadingState.Loading);
                     }
                 }, 500);
-                if (this.data) {
-                    this.createIndex(this.data);
+                var url = this.el.dataset.index;
+                if (!url) {
+                    this.setLoadingState(SearchLoadingState.Failure);
+                    return;
                 }
-                else {
-                    var url = this.el.dataset.index;
-                    if (!url) {
-                        this.setLoadingState(SearchLoadingState.Failure);
-                        return;
+                fetch(url)
+                    .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('The search index is missing');
                     }
-                    fetch(url)
-                        .then(function (response) {
-                            if (!response.ok) {
-                                throw new Error('The source is not found');
-                            }
-                            return response.text();
-                        })
-                        .then(function (source) {
-                            _this.data = eval(source);
-                            if (_this.data) {
-                                _this.createIndex(_this.data);
-                            }
-                        })
-                        .catch(function () {
-                            _this.setLoadingState(SearchLoadingState.Failure);
-                        });
-                }
+                    return response.json();
+                })
+                    .then(function (source) {
+                    _this.data = source;
+                    _this.index = lunr.Index.load(source.index);
+                    _this.setLoadingState(SearchLoadingState.Ready);
+                })
+                    .catch(function (error) {
+                    console.error(error);
+                    _this.setLoadingState(SearchLoadingState.Failure);
+                });
             };
             Search.prototype.updateResults = function () {
                 if (this.loadingState != SearchLoadingState.Ready)

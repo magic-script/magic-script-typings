@@ -17,7 +17,7 @@
     "build": "./website/build.sh"
   },
   "devDependencies": {
-    "typedoc": "^0.17.3",
+    "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
   "repository": {
